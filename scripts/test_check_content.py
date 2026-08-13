@@ -50,6 +50,10 @@ model: none
 {image}
 
 {attribution}
+
+## 출처
+
+- [원문](https://example.com/source)
 """
 
     def test_accepts_local_image_with_attribution(self) -> None:
@@ -955,6 +959,40 @@ model: none
                     )
                 finally:
                     temporary.cleanup()
+
+    def test_rejects_uppercase_topic_identifier(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace("topic: ai", "topic: AI"), encoding="utf-8"
+        )
+        self.assertTrue(any("topic" in error for error in validate_repository(root)))
+
+    def test_rejects_missing_source_footer(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace(
+                "\n## 출처\n\n- [원문](https://example.com/source)\n", "\n"
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
+
+    def test_accepts_nested_brackets_in_image_alt(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/data-center.webp"
+        image.parent.mkdir()
+        image.write_bytes(WEBP_BYTES)
+        article.write_text(
+            self.article(
+                "![데이터 [센터]](./2026-08-13-ai-daily/data-center.webp)",
+                "*사진: 직접 제작 · 출처: https://example.com/photo · 라이선스: CC BY 4.0*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_repository(root), [])
 
     def test_parses_ebml_tracks_beyond_bounded_signature_scan(self) -> None:
         temporary, root, article = self.repository()

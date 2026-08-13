@@ -18,7 +18,6 @@ from PIL import Image, UnidentifiedImageError
 
 ARTICLE_PATH_RE = re.compile(r"^news/[^/]+/\d{4}/\d{2}/([^/]+)\.md$")
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
-SINGLE_LINE_IMAGE_RE = re.compile(r"^!\[(?:\\.|[^\]\\\r\n])*\]\(((?:\\.|[^\r\n])*)\)$")
 ATTRIBUTION_TEXT_RE = re.compile(
     r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$",
     re.IGNORECASE,
@@ -80,6 +79,33 @@ def plain_alt(image: Token) -> str:
         for token in image.children or []
         if token.type in {"text", "text_special", "code_inline"}
     )
+
+
+def image_destination_syntax(value: str) -> str | None:
+    value = value.strip()
+    if not value.startswith("![") or "\n" in value or "\r" in value:
+        return None
+    depth = 1
+    escaped = False
+    for index, character in enumerate(value[2:], 2):
+        if escaped:
+            escaped = False
+            continue
+        if character == "\\":
+            escaped = True
+        elif character == "[":
+            depth += 1
+        elif character == "]":
+            depth -= 1
+            if depth == 0:
+                if (
+                    index + 2 > len(value)
+                    or value[index + 1] != "("
+                    or not value.endswith(")")
+                ):
+                    return None
+                return value[index + 2 : -1]
+    return None
 
 
 def raw_image_path(value: str) -> str:
@@ -209,8 +235,8 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
         ]
         if len(image_tokens) != 1 or visible_children != image_tokens:
             raise ValueError("사진은 문단에서 단독으로 사용해야 합니다")
-        syntax = SINGLE_LINE_IMAGE_RE.fullmatch(token.content.strip())
-        if not syntax:
+        syntax = image_destination_syntax(token.content)
+        if syntax is None:
             raise ValueError("사진은 한 줄 inline Markdown 문법만 사용할 수 있습니다")
         alt = plain_alt(image_tokens[0]).strip()
         if not alt:
@@ -226,11 +252,34 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
             (
                 alt,
                 (image_tokens[0].attrGet("src") or "").strip(),
-                raw_image_path(syntax.group(1)),
+                raw_image_path(syntax),
                 attribution_valid,
             )
         )
     return images
+
+
+def has_source_footer(markdown: str) -> bool:
+    tokens = COMMONMARK.parse(markdown)
+    in_sources = False
+    for index, token in enumerate(tokens):
+        if token.type == "heading_open" and token.tag == "h2":
+            title = tokens[index + 1].content.strip() if index + 1 < len(tokens) else ""
+            if in_sources:
+                return False
+            in_sources = title == "출처"
+            continue
+        if (
+            in_sources
+            and token.type == "inline"
+            and any(
+                child.type == "link_open"
+                and valid_https_url(str(child.attrGet("href") or ""))
+                for child in token.children or []
+            )
+        ):
+            return True
+    return False
 
 
 def relative_name(root: Path, candidate: Path) -> str:
@@ -652,7 +701,7 @@ def validate_article(
                 errors.append(f"{name}: front matter {field} 값이 필요합니다")
         topic = metadata.get("topic")
         if isinstance(topic, str) and not re.fullmatch(
-            r"[a-z0-9가-힣][a-z0-9가-힣_-]*", topic, re.IGNORECASE
+            r"[a-z0-9가-힣][a-z0-9가-힣_-]*", topic
         ):
             errors.append(f"{name}: front matter topic 형식이 올바르지 않습니다")
         published_at = metadata.get("published_at")
@@ -685,6 +734,8 @@ def validate_article(
         images = article_images(body)
     except ValueError as error:
         return [*errors, f"{name}: {error}"]
+    if not has_source_footer(body):
+        errors.append(f"{name}: ## 출처 섹션에 최소 1개의 HTTPS 원문 링크가 필요합니다")
 
     for _alt, destination, raw_destination, attribution_valid in images:
         bracketed = raw_destination.startswith("<") and raw_destination.endswith(">")
