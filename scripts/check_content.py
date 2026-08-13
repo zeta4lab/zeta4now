@@ -58,7 +58,8 @@ MAX_IMAGE_DIMENSION = 8_000
 MAX_VIDEO_SCAN_BYTES = 1_000_000
 COMMONMARK = MarkdownIt("commonmark")
 EBML_HEADER = b"\x1a\x45\xdf\xa3"
-ASF_HEADER = b"\x30\x26\xb2\x75\x8e\x66\xcf\x11"
+ASF_HEADER = b"\x30\x26\xb2\x75\x8e\x66\xcf\x11\xa6\xd9\x00\xaa\x00\x62\xce\x6c"
+ASF_STREAM_PROPERTIES = b"\x91\x07\xdc\xb7\xb7\xa9\xcf\x11\x8e\xe6\x00\xc0\x0c\x20\x53\x65"
 ASF_VIDEO_MEDIA = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
 
 def contains_html(tokens: list[Token]) -> bool:
@@ -251,20 +252,25 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
     return False
 
 
-def has_ebml_video_track(data: bytes) -> bool:
-    def read_vint(offset: int, *, identifier: bool) -> tuple[int, int] | None:
-        if offset >= len(data):
+def has_ebml_video_track(candidate: Path, start: int = 0) -> bool:
+    def read_vint(
+        stream: BinaryIO, offset: int, *, identifier: bool
+    ) -> tuple[int, int] | None:
+        stream.seek(offset)
+        first_data = stream.read(1)
+        if not first_data:
             return None
-        first = data[offset]
+        first = first_data[0]
         marker = 0x80
         length = 1
         while length <= 8 and not first & marker:
             marker >>= 1
             length += 1
-        if length > 8 or offset + length > len(data):
+        remainder = stream.read(length - 1)
+        if length > 8 or len(remainder) != length - 1:
             return None
         value = first if identifier else first & (marker - 1)
-        for byte in data[offset + 1 : offset + length]:
+        for byte in remainder:
             value = (value << 8) | byte
         return value, length
 
@@ -273,14 +279,14 @@ def has_ebml_video_track(data: bytes) -> bool:
     track_entry_id = 0xAE
     track_type_id = 0x83
 
-    def scan(start: int, end: int, context: int = 0) -> bool:
-        offset = start
+    def scan(stream: BinaryIO, scan_start: int, end: int, context: int = 0) -> bool:
+        offset = scan_start
         while offset < end:
-            identifier = read_vint(offset, identifier=True)
+            identifier = read_vint(stream, offset, identifier=True)
             if not identifier:
                 return False
             element_id, id_length = identifier
-            size_field = read_vint(offset + id_length, identifier=False)
+            size_field = read_vint(stream, offset + id_length, identifier=False)
             if not size_field:
                 return False
             size, size_length = size_field
@@ -296,20 +302,59 @@ def has_ebml_video_track(data: bytes) -> bool:
                 context == track_entry_id
                 and element_id == track_type_id
                 and 1 <= size <= 8
-                and int.from_bytes(data[payload_start:payload_end], "big") == 1
             ):
-                return True
+                stream.seek(payload_start)
+                if int.from_bytes(stream.read(size), "big") == 1:
+                    return True
             child_context = (
                 element_id
                 if element_id in {segment_id, tracks_id, track_entry_id}
                 else 0
             )
-            if child_context and scan(payload_start, payload_end, child_context):
+            if child_context and scan(
+                stream, payload_start, payload_end, child_context
+            ):
                 return True
             offset = payload_end
         return False
 
-    return scan(0, len(data))
+    try:
+        with candidate.open("rb") as stream:
+            return scan(stream, start, candidate.stat().st_size)
+    except OSError:
+        return False
+
+
+def has_asf_video_stream(candidate: Path, start: int = 0) -> bool:
+    try:
+        file_size = candidate.stat().st_size
+        with candidate.open("rb") as stream:
+            stream.seek(start)
+            header = stream.read(30)
+            if len(header) != 30 or header[:16] != ASF_HEADER:
+                return False
+            header_size = int.from_bytes(header[16:24], "little")
+            object_count = int.from_bytes(header[24:28], "little")
+            header_end = start + header_size
+            if header_size < 30 or header_end > file_size or object_count > 10_000:
+                return False
+            offset = start + 30
+            for _index in range(object_count):
+                if offset + 24 > header_end:
+                    return False
+                stream.seek(offset)
+                object_header = stream.read(24)
+                object_size = int.from_bytes(object_header[16:24], "little")
+                if object_size < 24 or offset + object_size > header_end:
+                    return False
+                if object_header[:16] == ASF_STREAM_PROPERTIES:
+                    stream_type = stream.read(16)
+                    if stream_type == ASF_VIDEO_MEDIA:
+                        return True
+                offset += object_size
+    except OSError:
+        return False
+    return False
 
 
 def has_exact_jpeg_container(payload: bytes) -> bool:
@@ -427,9 +472,9 @@ def is_video_file(candidate: Path) -> bool:
     if header.startswith(b"OggS"):
         return has_ogg_video(candidate, scan_offset)
     if header.startswith(EBML_HEADER):
-        return has_ebml_video_track(header)
+        return has_ebml_video_track(candidate, scan_offset)
     if header.startswith(ASF_HEADER):
-        return ASF_VIDEO_MEDIA in header
+        return has_asf_video_stream(candidate, scan_offset)
     return (
         has_video_iso_bmff_track(candidate, scan_offset)
         or (header.startswith(b"RIFF") and header[8:12] == b"AVI ")

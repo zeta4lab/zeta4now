@@ -812,8 +812,12 @@ summary: 요약
         assets = root / "assets"
         assets.mkdir()
         def ebml_element(identifier: bytes, payload: bytes) -> bytes:
-            self.assertLess(len(payload), 127)
-            return identifier + bytes([0x80 | len(payload)]) + payload
+            size = len(payload)
+            length = 1
+            while size >= (1 << (7 * length)) - 1:
+                length += 1
+            encoded_size = (size | (1 << (7 * length))).to_bytes(length, "big")
+            return identifier + encoded_size + payload
 
         def ebml_file(track_type: bytes, codec_private: bytes = b"") -> bytes:
             track = ebml_element(b"\x83", track_type)
@@ -824,19 +828,63 @@ summary: 요약
             segment = ebml_element(b"\x18\x53\x80\x67", tracks)
             return ebml_element(b"\x1a\x45\xdf\xa3", b"") + segment
 
-        asf = b"\x30\x26\xb2\x75\x8e\x66\xcf\x11"
+        asf = b"\x30\x26\xb2\x75\x8e\x66\xcf\x11\xa6\xd9\x00\xaa\x00\x62\xce\x6c"
+        stream_properties = b"\x91\x07\xdc\xb7\xb7\xa9\xcf\x11\x8e\xe6\x00\xc0\x0c\x20\x53\x65"
         audio_guid = b"\x40\x9e\x69\xf8\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
         video_guid = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
+
+        def asf_object(identifier: bytes, payload: bytes) -> bytes:
+            return identifier + (len(payload) + 24).to_bytes(8, "little") + payload
+
+        def asf_file(objects: list[bytes]) -> bytes:
+            payload = len(objects).to_bytes(4, "little") + b"\x01\x02" + b"".join(objects)
+            return asf + (len(payload) + 24).to_bytes(8, "little") + payload
+
         (assets / "podcast.mka").write_bytes(
             ebml_file(b"\x02", b"arbitrary\x83\x81\x01metadata")
         )
         (assets / "movie.bin").write_bytes(ebml_file(b"\x00\x01"))
-        (assets / "podcast.asf").write_bytes(asf + audio_guid)
-        (assets / "recording.dat").write_bytes(asf + video_guid)
+        (assets / "podcast.asf").write_bytes(
+            asf_file(
+                [
+                    asf_object(stream_properties, audio_guid),
+                    asf_object(bytes(16), b"cover" + video_guid),
+                ]
+            )
+        )
+        (assets / "recording.dat").write_bytes(
+            asf_file([asf_object(stream_properties, video_guid)])
+        )
         errors = validate_repository(root)
         self.assertEqual(sum("동영상 파일" in error for error in errors), 2)
         self.assertTrue(any("movie.bin" in error for error in errors))
         self.assertTrue(any("recording.dat" in error for error in errors))
+
+    def test_parses_ebml_tracks_beyond_bounded_signature_scan(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+
+        def element(identifier: bytes, payload: bytes) -> bytes:
+            size = len(payload)
+            length = 1
+            while size >= (1 << (7 * length)) - 1:
+                length += 1
+            encoded_size = (size | (1 << (7 * length))).to_bytes(length, "big")
+            return identifier + encoded_size + payload
+
+        track_type = element(b"\x83", b"\x01")
+        entry = element(b"\xae", track_type)
+        tracks = element(b"\x16\x54\xae\x6b", entry)
+        segment = element(
+            b"\x18\x53\x80\x67", element(b"\xec", bytes(1_100_000)) + tracks
+        )
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(element(b"\x1a\x45\xdf\xa3", b"") + segment)
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
 
     def test_rejects_yuv4mpeg_stream(self) -> None:
         temporary, root, article = self.repository()
