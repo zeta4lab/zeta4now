@@ -63,6 +63,10 @@ ASF_STREAM_PROPERTIES = (
     b"\x91\x07\xdc\xb7\xb7\xa9\xcf\x11\x8e\xe6\x00\xc0\x0c\x20\x53\x65"
 )
 ASF_VIDEO_MEDIA = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
+AI_DISCLOSURES = {
+    "이 글은 공개 출처를 바탕으로 AI가 자동 생성했으며, 중요한 판단 전에는 연결된 원문을 확인해야 합니다.",
+    "이 글은 공개 출처를 바탕으로 AI가 자동 생성한 초안을 검토해 발행했으며, 중요한 판단 전에는 연결된 원문을 확인해야 합니다.",
+}
 
 
 def contains_html(tokens: list[Token]) -> bool:
@@ -259,27 +263,40 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
     return images
 
 
-def has_source_footer(markdown: str) -> bool:
-    tokens = COMMONMARK.parse(markdown)
-    in_sources = False
-    for index, token in enumerate(tokens):
-        if token.type == "heading_open" and token.tag == "h2":
-            title = tokens[index + 1].content.strip() if index + 1 < len(tokens) else ""
-            if in_sources:
-                return False
-            in_sources = title == "출처"
-            continue
-        if (
-            in_sources
-            and token.type == "inline"
-            and any(
-                child.type == "link_open"
-                and valid_https_url(str(child.attrGet("href") or ""))
-                for child in token.children or []
-            )
-        ):
-            return True
-    return False
+def has_source_footer(markdown: str, require_disclosure: bool) -> bool:
+    matches = list(re.finditer(r"(?m)^## 출처\s*$", markdown))
+    if len(matches) != 1:
+        return False
+    footer = markdown[matches[0].end() :].strip()
+    source_block, separator, disclosure = footer.partition("\n\n---\n\n")
+    source_tokens = COMMONMARK.parse(source_block.strip())
+    if (
+        not source_tokens
+        or source_tokens[0].type not in {"bullet_list_open", "ordered_list_open"}
+        or source_tokens[-1].type not in {"bullet_list_close", "ordered_list_close"}
+        or any(
+            token.level == 0
+            and token.type
+            not in {
+                "bullet_list_open",
+                "bullet_list_close",
+                "ordered_list_open",
+                "ordered_list_close",
+            }
+            for token in source_tokens
+        )
+    ):
+        return False
+    has_link = any(
+        child.type == "link_open" and valid_https_url(str(child.attrGet("href") or ""))
+        for token in source_tokens
+        for child in token.children or []
+    )
+    if not has_link:
+        return False
+    if not separator:
+        return not require_disclosure
+    return disclosure.strip() in AI_DISCLOSURES
 
 
 def relative_name(root: Path, candidate: Path) -> str:
@@ -734,7 +751,10 @@ def validate_article(
         images = article_images(body)
     except ValueError as error:
         return [*errors, f"{name}: {error}"]
-    if not has_source_footer(body):
+    require_disclosure = (
+        isinstance(metadata, dict) and metadata.get("generated_by") != "manual"
+    )
+    if not has_source_footer(body, require_disclosure):
         errors.append(f"{name}: ## 출처 섹션에 최소 1개의 HTTPS 원문 링크가 필요합니다")
 
     for _alt, destination, raw_destination, attribution_valid in images:

@@ -46,13 +46,13 @@ jobs:
           path: validator
           persist-credentials: false
 
-      # 공개 fork의 파일은 실행하지 않고 기본 브랜치의 검증기에서 데이터로만 읽는다.
-      - name: Checkout proposed content as data
+      # 공개 fork의 코드는 실행하지 않고 현재 base와 합쳐질 merge ref를 데이터로만 읽는다.
+      - name: Checkout prospective merge tree as data
         if: github.event_name == 'pull_request_target'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.repository }}
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
           path: candidate
           persist-credentials: false
 

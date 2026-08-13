@@ -979,6 +979,23 @@ model: none
         )
         self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
 
+    def test_rejects_generated_article_without_ai_disclosure(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace("generated_by: manual", "generated_by: generator"),
+            encoding="utf-8",
+        )
+        self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
+
+    def test_rejects_content_after_source_footer(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article() + "\n## 뒤늦은 본문\n\n추가 내용\n", encoding="utf-8"
+        )
+        self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
+
     def test_accepts_nested_brackets_in_image_alt(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
