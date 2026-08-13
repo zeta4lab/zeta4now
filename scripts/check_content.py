@@ -91,6 +91,13 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
     tokens = COMMONMARK.parse(markdown)
     if contains_html(tokens):
         raise ValueError("원시 HTML은 허용하지 않습니다")
+    if any(
+        token.type == "link_open"
+        and str(token.attrGet("href") or "").lower().startswith("http://")
+        for parent in tokens
+        for token in (parent.children or [])
+    ):
+        raise ValueError("동영상을 포함한 외부 링크는 HTTPS를 사용해야 합니다")
 
     images: list[tuple[str, str, str, bool]] = []
     for index, token in enumerate(tokens):
@@ -143,7 +150,7 @@ def is_video_file(candidate: Path) -> bool:
         return False
     try:
         with candidate.open("rb") as stream:
-            header = stream.read(64)
+            header = stream.read(512)
     except OSError:
         return False
     return (
@@ -161,6 +168,8 @@ def is_video_file(candidate: Path) -> bool:
                 b"\x06\x0e\x2b\x34\x02\x05\x01\x01\x0d\x01\x02",
             )
         )
+        or (len(header) > 376 and header[0] == header[188] == header[376] == 0x47)
+        or (len(header) > 388 and header[4] == header[196] == header[388] == 0x47)
     )
 
 
@@ -282,6 +291,12 @@ def validate_repository(root: Path) -> list[str]:
         elif is_video_file(candidate):
             continue
         elif suffix in ALLOWED_IMAGE_EXTENSIONS:
+            media_parts = candidate.relative_to(news).parts
+            if len(media_parts) != 5:
+                errors.append(
+                    f"{relative_name(root, candidate)}: 사진은 기사 slug와 같은 이름의 디렉터리 바로 아래에 저장해야 합니다"
+                )
+                continue
             if not is_valid_image_file(candidate):
                 errors.append(
                     f"{relative_name(root, candidate)}: 확장자와 일치하는 유효한 사진 파일이 아닙니다"
@@ -291,7 +306,7 @@ def validate_repository(root: Path) -> list[str]:
                 errors.append(
                     f"{relative_name(root, candidate)}: 대응하는 기사 파일이 없습니다"
                 )
-        elif len(candidate.relative_to(news).parts) == 5:
+        else:
             errors.append(
                 f"{relative_name(root, candidate)}: 기사 미디어 디렉터리에는 webp, jpg, jpeg 또는 png만 저장할 수 있습니다"
             )

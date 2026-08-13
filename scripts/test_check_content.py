@@ -91,6 +91,20 @@ summary: 요약
             )
         )
 
+    def test_rejects_nested_article_media(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        nested = article.parent / "2026-08-13-ai-daily/archive/photo.svg"
+        nested.parent.mkdir(parents=True)
+        nested.write_bytes(b"<svg></svg>")
+        self.assertTrue(
+            any(
+                "webp, jpg, jpeg 또는 png" in error
+                for error in validate_repository(root)
+            )
+        )
+
     def test_rejects_non_image_bytes_with_allowed_extension(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -171,6 +185,15 @@ summary: 요약
         self.assertTrue(
             any("inline Markdown" in error for error in validate_repository(root))
         )
+
+    def test_rejects_http_video_link(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article("[관련 영상](http://www.youtube.com/watch?v=example)"),
+            encoding="utf-8",
+        )
+        self.assertTrue(any("HTTPS" in error for error in validate_repository(root)))
 
     def test_ignores_reference_definitions_inside_html_blocks(self) -> None:
         temporary, root, article = self.repository()
@@ -483,6 +506,19 @@ summary: 요약
         disguised_image.write_bytes(mp4_header)
         errors = validate_repository(root)
         self.assertEqual(sum("동영상 파일" in error for error in errors), 2)
+
+    def test_rejects_disguised_mpeg_transport_stream(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        packet = bytearray(377)
+        packet[0] = packet[188] = packet[376] = 0x47
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(packet)
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
 
 
 if __name__ == "__main__":
