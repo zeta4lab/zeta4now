@@ -208,25 +208,73 @@ def has_annex_b_video(header: bytes) -> bool:
     return False
 
 
-def first_ogg_packet(header: bytes) -> bytes:
-    if len(header) < 28 or not header.startswith(b"OggS"):
-        return b""
-    segment_count = header[26]
-    table_end = 27 + segment_count
-    if len(header) < table_end:
-        return b""
-    packet_length = 0
-    for size in header[27:table_end]:
-        packet_length += size
-        if size < 255:
-            break
-    packet_end = table_end + packet_length
-    return header[table_end:packet_end] if len(header) >= packet_end else b""
+def has_ogg_video(candidate: Path) -> bool:
+    try:
+        with candidate.open("rb") as stream:
+            while header := stream.read(27):
+                if len(header) != 27 or not header.startswith(b"OggS"):
+                    return False
+                segment_table = stream.read(header[26])
+                if len(segment_table) != header[26]:
+                    return False
+                body_size = sum(segment_table)
+                body = stream.read(body_size)
+                if len(body) != body_size:
+                    return False
+                if header[5] & 0x02 and body.startswith(
+                    (b"\x80theora", b"OVP80", b"BBCD")
+                ):
+                    return True
+    except OSError:
+        return False
+    return False
 
 
-def has_ogg_video(header: bytes) -> bool:
-    packet = first_ogg_packet(header)
-    return packet.startswith((b"\x80theora", b"OVP80", b"BBCD"))
+def has_exact_jpeg_container(payload: bytes) -> bool:
+    if not payload.startswith(b"\xff\xd8"):
+        return False
+    offset = 2
+    in_scan = False
+    while offset < len(payload):
+        if in_scan:
+            marker_start = payload.find(b"\xff", offset)
+            if marker_start < 0 or marker_start + 1 >= len(payload):
+                return False
+            marker_end = marker_start + 1
+            while marker_end < len(payload) and payload[marker_end] == 0xFF:
+                marker_end += 1
+            if marker_end >= len(payload):
+                return False
+            marker = payload[marker_end]
+            if marker == 0x00 or 0xD0 <= marker <= 0xD7:
+                offset = marker_end + 1
+                continue
+            offset = marker_start
+            in_scan = False
+            continue
+
+        if payload[offset] != 0xFF:
+            return False
+        marker_end = offset + 1
+        while marker_end < len(payload) and payload[marker_end] == 0xFF:
+            marker_end += 1
+        if marker_end >= len(payload):
+            return False
+        marker = payload[marker_end]
+        offset = marker_end + 1
+        if marker == 0xD9:
+            return offset == len(payload)
+        if marker == 0x01 or marker == 0xD8 or 0xD0 <= marker <= 0xD7:
+            continue
+        if marker == 0x00 or offset + 2 > len(payload):
+            return False
+        segment_length = int.from_bytes(payload[offset : offset + 2], "big")
+        if segment_length < 2 or offset + segment_length > len(payload):
+            return False
+        offset += segment_length
+        if marker == 0xDA:
+            in_scan = True
+    return False
 
 
 def has_video_iso_bmff_brand(header: bytes) -> bool:
@@ -286,7 +334,7 @@ def is_video_file(candidate: Path) -> bool:
     except OSError:
         return False
     if header.startswith(b"OggS"):
-        return has_ogg_video(header)
+        return has_ogg_video(candidate)
     return (
         has_video_iso_bmff_brand(header)
         or (header.startswith(b"RIFF") and header[8:12] == b"AVI ")
@@ -337,7 +385,7 @@ def is_valid_image_file(candidate: Path) -> bool:
             else:
                 return False
         elif suffix in {".jpg", ".jpeg"}:
-            if not payload.startswith(b"\xff\xd8") or not payload.endswith(b"\xff\xd9"):
+            if not has_exact_jpeg_container(payload):
                 return False
         elif suffix == ".webp":
             if (

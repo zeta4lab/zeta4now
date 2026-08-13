@@ -68,6 +68,21 @@ summary: 요약
         )
         self.assertEqual(validate_repository(root), [])
 
+    def test_accepts_jpeg_with_structurally_parsed_end_marker(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/photo.jpg"
+        image.parent.mkdir()
+        Image.new("RGB", (1, 1)).save(image, format="JPEG")
+        article.write_text(
+            self.article(
+                "![사진](./2026-08-13-ai-daily/photo.jpg)",
+                "*사진: 직접 제작 · 출처: https://example.com/photo · 라이선스: CC BY 4.0*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_repository(root), [])
+
     def test_accepts_bracketed_image_path_with_parentheses(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -165,7 +180,7 @@ summary: 요약
         video = b"\x00\x00\x00\x18ftypisom\x00\x00\x00\x00isom"
         for extension, payload in (
             ("png", PNG_BYTES),
-            ("jpg", jpeg.getvalue()),
+            ("jpg", jpeg.getvalue() + video + b"\xff\xd9"),
             ("webp", WEBP_BYTES),
         ):
             with self.subTest(extension=extension):
@@ -173,7 +188,7 @@ summary: 요약
                 try:
                     image = article.parent / f"2026-08-13-ai-daily/polyglot.{extension}"
                     image.parent.mkdir()
-                    image.write_bytes(payload + video)
+                    image.write_bytes(payload + (b"" if extension == "jpg" else video))
                     article.write_text(
                         self.article(
                             f"![사진](./2026-08-13-ai-daily/polyglot.{extension})",
@@ -699,13 +714,23 @@ summary: 요약
         assets.mkdir()
 
         def ogg_page(packet: bytes) -> bytes:
-            return b"OggS" + bytes(22) + b"\x01" + bytes([len(packet)]) + packet
+            return (
+                b"OggS\x00\x02"
+                + bytes(20)
+                + b"\x01"
+                + bytes([len(packet)])
+                + packet
+            )
 
         (assets / "podcast.ogg").write_bytes(ogg_page(b"OpusHead"))
         (assets / "movie.bin").write_bytes(ogg_page(b"\x80theora"))
+        (assets / "multiplexed.dat").write_bytes(
+            ogg_page(b"OpusHead") + ogg_page(b"\x80theora")
+        )
         errors = validate_repository(root)
-        self.assertEqual(sum("동영상 파일" in error for error in errors), 1)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 2)
         self.assertTrue(any("movie.bin" in error for error in errors))
+        self.assertTrue(any("multiplexed.dat" in error for error in errors))
 
     def test_allows_non_video_iso_bmff_brands_outside_news(self) -> None:
         temporary, root, article = self.repository()
