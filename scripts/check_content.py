@@ -17,7 +17,6 @@ ATTRIBUTION_TEXT_RE = re.compile(
     r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$"
 )
 ALLOWED_IMAGE_EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png"}
-UNSUPPORTED_IMAGE_EXTENSIONS = {".svg", ".gif", ".avif", ".bmp", ".tif", ".tiff"}
 VIDEO_EXTENSIONS = {
     ".mp4",
     ".webm",
@@ -229,16 +228,16 @@ def validate_repository(root: Path) -> list[str]:
             errors.extend(validate_article(root, candidate))
         elif is_video_file(candidate):
             continue
-        elif suffix in UNSUPPORTED_IMAGE_EXTENSIONS:
-            errors.append(
-                f"{relative_name(root, candidate)}: 지원하지 않는 사진 형식입니다"
-            )
         elif suffix in ALLOWED_IMAGE_EXTENSIONS:
             article = candidate.parent.parent / f"{candidate.parent.name}.md"
             if not article.is_file():
                 errors.append(
                     f"{relative_name(root, candidate)}: 대응하는 기사 파일이 없습니다"
                 )
+        elif len(candidate.relative_to(news).parts) == 5:
+            errors.append(
+                f"{relative_name(root, candidate)}: 기사 미디어 디렉터리에는 webp, jpg, jpeg 또는 png만 저장할 수 있습니다"
+            )
 
     return errors
 

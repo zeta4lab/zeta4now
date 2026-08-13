@@ -60,6 +60,34 @@ summary: 요약
         )
         self.assertEqual(validate_repository(root), [])
 
+    def test_rejects_entity_encoded_path_traversal(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article(
+                "![사진](./2026-08-13-ai-daily/dummy&#47;..&#47;..&#47;other.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("사진 경로" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_every_unlisted_media_extension(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        media = article.parent / "2026-08-13-ai-daily/photo.heic"
+        media.parent.mkdir()
+        media.write_bytes(b"image")
+        self.assertTrue(
+            any(
+                "webp, jpg, jpeg 또는 png" in error
+                for error in validate_repository(root)
+            )
+        )
+
     def test_rejects_external_reference_style_image(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
