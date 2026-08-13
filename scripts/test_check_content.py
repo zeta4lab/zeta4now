@@ -165,6 +165,42 @@ summary: 요약
         )
         self.assertTrue(any("제작자" in error for error in validate_repository(root)))
 
+    def test_rejects_semantically_empty_alt(self) -> None:
+        for alt in ("&#32;", "&nbsp;"):
+            with self.subTest(alt=alt):
+                temporary, root, article = self.repository()
+                try:
+                    image = article.parent / "2026-08-13-ai-daily/data-center.webp"
+                    image.parent.mkdir()
+                    image.write_bytes(b"image")
+                    article.write_text(
+                        self.article(
+                            f"![{alt}](./2026-08-13-ai-daily/data-center.webp)",
+                            "*사진: 직접 제작 · 출처: https://example.com/photo · 라이선스: CC BY 4.0*",
+                        ),
+                        encoding="utf-8",
+                    )
+                    self.assertTrue(
+                        any(
+                            "대체 텍스트" in error
+                            for error in validate_repository(root)
+                        )
+                    )
+                finally:
+                    temporary.cleanup()
+
+    def test_excludes_frontmatter_from_markdown_parsing(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        markdown = self.article(
+            "![외부 사진](https://example.com/photo.png)",
+            "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*\n\n`",
+        ).replace("title: 오늘의 AI 소식", 'title: "`"')
+        article.write_text(markdown, encoding="utf-8")
+        self.assertTrue(
+            any("사진 경로" in error for error in validate_repository(root))
+        )
+
     def test_ignores_media_examples_in_code(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)

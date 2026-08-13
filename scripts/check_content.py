@@ -44,6 +44,22 @@ MAX_MARKDOWN_BYTES = 1_000_000
 COMMONMARK = MarkdownIt("commonmark")
 
 
+def contains_html(tokens: list[Token]) -> bool:
+    return any(
+        token.type in {"html_block", "html_inline"}
+        or contains_html(token.children or [])
+        for token in tokens
+    )
+
+
+def plain_alt(image: Token) -> str:
+    return "".join(
+        token.content
+        for token in image.children or []
+        if token.type in {"text", "text_special", "code_inline"}
+    )
+
+
 def attribution_after(tokens: list[Token], inline_index: int) -> re.Match[str] | None:
     expected = ("paragraph_close", "paragraph_open", "inline", "paragraph_close")
     following = tokens[inline_index + 1 : inline_index + 5]
@@ -64,7 +80,7 @@ def attribution_after(tokens: list[Token], inline_index: int) -> re.Match[str] |
 
 def article_images(markdown: str) -> list[tuple[str, str, bool]]:
     tokens = COMMONMARK.parse(markdown)
-    if any(token.type == "html_block" for token in tokens):
+    if contains_html(tokens):
         raise ValueError("원시 HTML은 허용하지 않습니다")
 
     images: list[tuple[str, str, bool]] = []
@@ -72,8 +88,6 @@ def article_images(markdown: str) -> list[tuple[str, str, bool]]:
         if token.type != "inline":
             continue
         children = token.children or []
-        if any(child.type == "html_inline" for child in children):
-            raise ValueError("원시 HTML은 허용하지 않습니다")
         image_tokens = [child for child in children if child.type == "image"]
         if not image_tokens:
             continue
@@ -85,7 +99,7 @@ def article_images(markdown: str) -> list[tuple[str, str, bool]]:
         syntax = SINGLE_LINE_IMAGE_RE.fullmatch(token.content.strip())
         if not syntax:
             raise ValueError("사진은 한 줄 inline Markdown 문법만 사용할 수 있습니다")
-        alt = image_tokens[0].content.strip()
+        alt = plain_alt(image_tokens[0]).strip()
         if not alt:
             raise ValueError("사진 대체 텍스트가 비어 있습니다")
         attribution = attribution_after(tokens, index)
@@ -132,7 +146,8 @@ def validate_article(root: Path, article: Path) -> list[str]:
     if slug != path_match.group(1):
         errors.append(f"{name}: front matter slug와 파일명이 일치하지 않습니다")
     try:
-        images = article_images(markdown)
+        body = markdown[frontmatter_match.end() :] if frontmatter_match else markdown
+        images = article_images(body)
     except ValueError as error:
         return [*errors, f"{name}: {error}"]
 
