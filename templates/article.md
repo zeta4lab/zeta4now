@@ -17,12 +17,10 @@ model: gemini-3.6-flash
 
 내용을 작성합니다.
 
-<!-- 사진이 있을 때만 사용합니다. 파일은 같은 위치의 <slug>/ 디렉터리에 저장합니다. -->
 ![사진이 전달하는 내용을 설명하는 대체 텍스트](./2026-08-09-ai-daily/image-01.webp)
 
 *사진: 제작자 또는 제공자 · 출처: https://example.com/original-image · 라이선스: 사용 조건*
 
-<!-- 동영상은 임베드하지 않고 공식 원문의 HTTPS 링크만 사용합니다. -->
 [관련 영상 보기 — 공식 채널](https://www.youtube.com/watch?v=example)
 
 ## 출처

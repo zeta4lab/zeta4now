@@ -429,6 +429,20 @@ summary: 요약
         errors = validate_repository(root)
         self.assertEqual(sum("동영상 파일" in error for error in errors), 3)
 
+    def test_rejects_video_content_with_disguised_extensions(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        mp4_header = b"\x00\x00\x00\x18ftypisom\x00\x00\x00\x00isom"
+        outside = root / "assets/movie.bin"
+        outside.parent.mkdir()
+        outside.write_bytes(mp4_header)
+        disguised_image = article.parent / "2026-08-13-ai-daily/movie.png"
+        disguised_image.parent.mkdir()
+        disguised_image.write_bytes(mp4_header)
+        errors = validate_repository(root)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 2)
+
 
 if __name__ == "__main__":
     unittest.main()

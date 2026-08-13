@@ -124,8 +124,31 @@ def relative_name(root: Path, candidate: Path) -> str:
 
 def is_video_file(candidate: Path) -> bool:
     media_type, _encoding = mimetypes.guess_type(candidate.name)
-    return candidate.suffix.lower() in VIDEO_EXTENSIONS or bool(
+    if candidate.suffix.lower() in VIDEO_EXTENSIONS or bool(
         media_type and media_type.startswith("video/")
+    ):
+        return True
+    if candidate.is_symlink() or not candidate.is_file():
+        return False
+    try:
+        with candidate.open("rb") as stream:
+            header = stream.read(64)
+    except OSError:
+        return False
+    return (
+        (len(header) >= 12 and header[4:8] == b"ftyp")
+        or (header.startswith(b"RIFF") and header[8:12] == b"AVI ")
+        or header.startswith(
+            (
+                b"\x1a\x45\xdf\xa3",
+                b"FLV",
+                b"OggS",
+                b".RMF",
+                b"\x30\x26\xb2\x75\x8e\x66\xcf\x11",
+                b"\x00\x00\x01\xba",
+                b"\x00\x00\x01\xb3",
+            )
+        )
     )
 
 
