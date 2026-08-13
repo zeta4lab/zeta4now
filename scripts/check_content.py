@@ -21,7 +21,8 @@ IMAGE_ATTRIBUTION_RE = re.compile(
     r"출처:\s*(https://[^\s*]+)\s*·\s*라이선스:\s*([^*\r\n]+?)\*[ \t]*(?:\r?\n|\Z)"
 )
 RAW_MEDIA_TAG_RE = re.compile(
-    r"<\s*/?\s*(?:img|iframe|video|audio|object|embed|source)\b", re.IGNORECASE
+    r"<\s*/?\s*(?:img|iframe|video|audio|object|embed|source|svg|image|use|foreignObject)\b",
+    re.IGNORECASE,
 )
 ALLOWED_IMAGE_EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png"}
 UNSUPPORTED_IMAGE_EXTENSIONS = {".svg", ".gif", ".avif", ".bmp", ".tif", ".tiff"}
@@ -72,8 +73,6 @@ def without_markdown_code(markdown: str) -> str:
             fence_character = fence[0]
             fence_length = len(fence)
             mask_range(characters, offset, offset + len(line))
-        elif content.startswith(("    ", "\t")):
-            mask_range(characters, offset, offset + len(line))
         offset += len(line)
 
     masked = "".join(characters)
@@ -116,7 +115,7 @@ def markdown_images(markdown: str) -> list[tuple[str, str | None, int]]:
         destination = (
             f"<{match.group(2)}>" if match.group(2) is not None else match.group(3)
         )
-        if destination:
+        if destination and label not in definitions:
             definitions[label] = destination
 
     images = [
@@ -183,7 +182,16 @@ def validate_article(root: Path, article: Path) -> list[str]:
             )
             continue
 
-        decoded = unquote(destination)
+        if re.search(r"%(?![0-9A-Fa-f]{2})", destination):
+            errors.append(f"{name}: 사진 경로의 percent encoding이 잘못됐습니다")
+            continue
+        try:
+            decoded = unquote(destination, encoding="utf-8", errors="strict")
+        except UnicodeDecodeError:
+            errors.append(
+                f"{name}: 사진 경로는 올바른 UTF-8 percent encoding을 사용해야 합니다"
+            )
+            continue
         parts = decoded.split("/")
         if (
             len(parts) != 3

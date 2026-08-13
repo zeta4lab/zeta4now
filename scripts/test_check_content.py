@@ -60,6 +60,25 @@ summary: 요약
             any("사진 경로" in error for error in validate_repository(root))
         )
 
+    def test_uses_first_duplicate_reference_definition(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/local.webp"
+        image.parent.mkdir()
+        image.write_bytes(b"image")
+        article.write_text(
+            self.article(
+                "![외부 사진][hero]",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*\n\n"
+                "[hero]: https://example.com/photo.png\n"
+                "[hero]: ./2026-08-13-ai-daily/local.webp",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("사진 경로" in error for error in validate_repository(root))
+        )
+
     def test_rejects_external_image_after_even_backslashes(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -111,6 +130,45 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertEqual(validate_repository(root), [])
+
+    def test_checks_indented_list_image(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article(
+                "- 관련 사진\n    ![외부 사진](https://example.com/photo.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("사진 경로" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_invalid_percent_encoding(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article(
+                "![사진](./2026-08-13-ai-daily/photo%ZZ.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("percent encoding" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_raw_svg_media(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article('<svg><image href="https://example.com/photo.png"/></svg>'),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("미디어 태그" in error for error in validate_repository(root))
+        )
 
     def test_rejects_video_outside_news(self) -> None:
         temporary, root, article = self.repository()
