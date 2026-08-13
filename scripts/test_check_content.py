@@ -57,7 +57,7 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("사진 경로" in error for error in validate_repository(root))
+            any("inline Markdown" in error for error in validate_repository(root))
         )
 
     def test_uses_first_duplicate_reference_definition(self) -> None:
@@ -76,7 +76,7 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("사진 경로" in error for error in validate_repository(root))
+            any("inline Markdown" in error for error in validate_repository(root))
         )
 
     def test_collapses_reference_label_whitespace(self) -> None:
@@ -95,7 +95,33 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("사진 경로" in error for error in validate_repository(root))
+            any("inline Markdown" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_multiline_inline_image(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article("![외부 사진](\nhttps://example.com/photo.png\n)"),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("inline Markdown" in error for error in validate_repository(root))
+        )
+
+    def test_ignores_reference_definitions_inside_html_blocks(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article(
+                "<!-- [hero]: ./2026-08-13-ai-daily/local.webp -->\n"
+                "![외부 사진][hero]\n"
+                "[hero]: https://example.com/photo.png"
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("inline Markdown" in error for error in validate_repository(root))
         )
 
     def test_rejects_external_image_after_even_backslashes(self) -> None:
@@ -170,6 +196,19 @@ summary: 요약
         )
         self.assertEqual(validate_repository(root), [])
 
+    def test_masks_fenced_code_inside_containers(self) -> None:
+        for body in (
+            '> ```html\n> <img src="./photo.png">\n> ```',
+            '- 기술 예제\n\n    ```html\n    <video src="./video.mp4"></video>\n    ```',
+        ):
+            with self.subTest(body=body):
+                temporary, root, article = self.repository()
+                try:
+                    article.write_text(self.article(body), encoding="utf-8")
+                    self.assertEqual(validate_repository(root), [])
+                finally:
+                    temporary.cleanup()
+
     def test_rejects_media_after_invalid_fence_opener(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -241,6 +280,17 @@ summary: 요약
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
         )
+
+    def test_rejects_additional_video_extensions(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        for filename in ("movie.wmv", "movie.flv", "movie.3gp"):
+            video = root / "assets" / filename
+            video.parent.mkdir(exist_ok=True)
+            video.write_bytes(b"video")
+        errors = validate_repository(root)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 3)
 
 
 if __name__ == "__main__":

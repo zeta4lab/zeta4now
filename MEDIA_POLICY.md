@@ -14,7 +14,8 @@ news/<topic>/<YYYY>/<MM>/<slug>.md
 news/<topic>/<YYYY>/<MM>/<slug>/<file>.webp
 ```
 
-본문에서는 저장소 상대경로를 사용한다.
+본문에서는 저장소 상대경로를 한 줄 inline Markdown 문법으로 사용한다. 참조형 또는 여러 줄 이미지
+문법은 사용하지 않는다.
 
 ```markdown
 ![사진이 전달하는 내용을 설명하는 대체 텍스트](./<slug>/<file>.webp)

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import mimetypes
 import re
 import sys
 from pathlib import Path
@@ -9,13 +10,7 @@ ARTICLE_PATH_RE = re.compile(r"^news/[^/]+/\d{4}/\d{2}/([^/]+)\.md$")
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
 SLUG_RE = re.compile(r"^slug:\s*([^\s]+)\s*$", re.MULTILINE)
 MARKDOWN_IMAGE_RE = re.compile(r"!\[([^\]\r\n]*)\]\(([^)\r\n]+)\)")
-REFERENCE_IMAGE_RE = re.compile(r"!\[([^\]\r\n]*)\]\[([^\]\r\n]*)\]")
-SHORTCUT_IMAGE_RE = re.compile(r"!\[([^\]\r\n]+)\](?![\[(])")
-REFERENCE_DEFINITION_RE = re.compile(
-    r"^[ \t]{0,3}\[([^\]\r\n]+)\]:[ \t]*(?:<([^>\r\n]+)>|([^\s]+))"
-    r'(?:[ \t]+(?:"[^"\r\n]*"|\'[^\'\r\n]*\'|\([^\)\r\n]*\)))?[ \t]*$',
-    re.MULTILINE,
-)
+IMAGE_OPEN_RE = re.compile(r"!\[")
 IMAGE_ATTRIBUTION_RE = re.compile(
     r"\A[ \t]*\r?\n(?:[ \t]*\r?\n)?[ \t]*\*사진:\s*([^·\r\n]+?)\s*·\s*"
     r"출처:\s*(https://[^\s*]+)\s*·\s*라이선스:\s*([^*\r\n]+?)\*[ \t]*(?:\r?\n|\Z)"
@@ -36,8 +31,21 @@ VIDEO_EXTENSIONS = {
     ".mpeg",
     ".mpg",
     ".ogv",
+    ".wmv",
+    ".flv",
+    ".3gp",
+    ".3g2",
+    ".m2ts",
+    ".mts",
+    ".vob",
+    ".f4v",
+    ".asf",
+    ".rm",
+    ".rmvb",
 }
 MAX_MARKDOWN_BYTES = 1_000_000
+BLOCKQUOTE_PREFIX_RE = re.compile(r"^[ ]{0,3}>[ ]?")
+LIST_MARKER_RE = re.compile(r"^[ ]{0,3}(?:[-+*]|\d{1,9}[.)])([ \t]+)")
 
 
 def mask_range(characters: list[str], start: int, end: int) -> None:
@@ -46,15 +54,39 @@ def mask_range(characters: list[str], start: int, end: int) -> None:
             characters[index] = " "
 
 
+def strip_blockquote_prefixes(content: str) -> str:
+    while match := BLOCKQUOTE_PREFIX_RE.match(content):
+        content = content[match.end() :]
+    return content
+
+
+def fence_view(content: str, list_indent: int, *, update_list: bool) -> tuple[str, int]:
+    view = strip_blockquote_prefixes(content)
+    if update_list:
+        marker = LIST_MARKER_RE.match(view)
+        if marker:
+            return view[marker.end() :], marker.end()
+    leading_spaces = len(view) - len(view.lstrip(" "))
+    if list_indent and leading_spaces >= list_indent:
+        return view[list_indent:], list_indent
+    if update_list and view.strip():
+        list_indent = 0
+    return view, list_indent
+
+
 def without_markdown_code(markdown: str) -> str:
     characters = list(markdown)
     offset = 0
     fence_character = ""
     fence_length = 0
+    list_indent = 0
     for line in markdown.splitlines(keepends=True):
         content = line.rstrip("\r\n")
-        stripped = content.lstrip(" ")
-        indentation = len(content) - len(stripped)
+        view, list_indent = fence_view(
+            content, list_indent, update_list=not fence_character
+        )
+        stripped = view.lstrip(" ")
+        indentation = len(view) - len(stripped)
         backtick_opening = (
             re.fullmatch(r"(`{3,})[^`]*", stripped) if indentation <= 3 else None
         )
@@ -128,41 +160,30 @@ def relative_name(root: Path, candidate: Path) -> str:
     return candidate.relative_to(root).as_posix()
 
 
-def normalize_reference_label(label: str) -> str:
-    return " ".join(label.split()).casefold()
-
-
-def markdown_images(markdown: str) -> list[tuple[str, str | None, int]]:
-    definitions: dict[str, str] = {}
-    for match in REFERENCE_DEFINITION_RE.finditer(markdown):
-        label = normalize_reference_label(match.group(1))
-        destination = (
-            f"<{match.group(2)}>" if match.group(2) is not None else match.group(3)
-        )
-        if destination and label not in definitions:
-            definitions[label] = destination
-
+def markdown_images(markdown: str) -> tuple[list[tuple[str, str, int]], list[int]]:
     images = [
         (match.group(1), match.group(2), match.end())
         for match in MARKDOWN_IMAGE_RE.finditer(markdown)
         if not is_escaped(markdown, match.start())
     ]
-    for match in REFERENCE_IMAGE_RE.finditer(markdown):
-        if is_escaped(markdown, match.start()):
-            continue
-        alt = match.group(1)
-        label = match.group(2).strip() or alt.strip()
-        images.append(
-            (alt, definitions.get(normalize_reference_label(label)), match.end())
-        )
-    for match in SHORTCUT_IMAGE_RE.finditer(markdown):
-        if is_escaped(markdown, match.start()):
-            continue
-        alt = match.group(1)
-        images.append(
-            (alt, definitions.get(normalize_reference_label(alt)), match.end())
-        )
-    return sorted(images, key=lambda image: image[2])
+    valid_starts = {
+        match.start()
+        for match in MARKDOWN_IMAGE_RE.finditer(markdown)
+        if not is_escaped(markdown, match.start())
+    }
+    unsupported = [
+        match.start()
+        for match in IMAGE_OPEN_RE.finditer(markdown)
+        if not is_escaped(markdown, match.start()) and match.start() not in valid_starts
+    ]
+    return images, unsupported
+
+
+def is_video_file(candidate: Path) -> bool:
+    media_type, _encoding = mimetypes.guess_type(candidate.name)
+    return candidate.suffix.lower() in VIDEO_EXTENSIONS or bool(
+        media_type and media_type.startswith("video/")
+    )
 
 
 def validate_article(root: Path, article: Path) -> list[str]:
@@ -191,17 +212,18 @@ def validate_article(root: Path, article: Path) -> list[str]:
     if RAW_MEDIA_TAG_RE.search(media_markdown):
         errors.append(f"{name}: 원시 미디어 태그나 임베드는 허용하지 않습니다")
 
-    for raw_alt, raw_destination, image_end in markdown_images(media_markdown):
+    images, unsupported_images = markdown_images(media_markdown)
+    if unsupported_images:
+        errors.append(f"{name}: 사진은 한 줄 inline Markdown 문법만 사용할 수 있습니다")
+
+    for raw_alt, raw_destination, image_end in images:
         alt = raw_alt.strip()
-        destination = (raw_destination or "").strip()
+        destination = raw_destination.strip()
         bracketed = destination.startswith("<") and destination.endswith(">")
         if bracketed:
             destination = destination[1:-1]
         if not alt:
             errors.append(f"{name}: 사진 대체 텍스트가 비어 있습니다")
-        if not destination:
-            errors.append(f"{name}: 참조형 사진의 경로 정의가 없습니다")
-            continue
         if (
             not bracketed and any(character.isspace() for character in destination)
         ) or any(marker in destination for marker in ("?", "#")):
@@ -260,9 +282,7 @@ def validate_repository(root: Path) -> list[str]:
         relative = candidate.relative_to(root)
         if ".git" in relative.parts:
             continue
-        if candidate.suffix.lower() in VIDEO_EXTENSIONS and (
-            candidate.is_file() or candidate.is_symlink()
-        ):
+        if is_video_file(candidate) and (candidate.is_file() or candidate.is_symlink()):
             errors.append(f"{relative.as_posix()}: 동영상 파일은 저장할 수 없습니다")
 
     for candidate in news.rglob("*"):
@@ -276,7 +296,7 @@ def validate_repository(root: Path) -> list[str]:
         suffix = candidate.suffix.lower()
         if suffix == ".md":
             errors.extend(validate_article(root, candidate))
-        elif suffix in VIDEO_EXTENSIONS:
+        elif is_video_file(candidate):
             continue
         elif suffix in UNSUPPORTED_IMAGE_EXTENSIONS:
             errors.append(
