@@ -82,6 +82,35 @@ def plain_alt(image: Token) -> str:
     )
 
 
+def raw_image_path(value: str) -> str:
+    value = value.strip()
+    if value.startswith("<"):
+        escaped = False
+        for index, character in enumerate(value[1:], 1):
+            if character == ">" and not escaped:
+                return value[: index + 1]
+            escaped = character == "\\" and not escaped
+            if character != "\\":
+                escaped = False
+        return value
+
+    depth = 0
+    escaped = False
+    for index, character in enumerate(value):
+        if escaped:
+            escaped = False
+            continue
+        if character == "\\":
+            escaped = True
+        elif character == "(":
+            depth += 1
+        elif character == ")" and depth:
+            depth -= 1
+        elif character.isspace() and depth == 0:
+            return value[:index]
+    return value
+
+
 def valid_https_url(value: str) -> bool:
     if re.search(r"%(?![0-9A-Fa-f]{2})", value) or any(
         character.isspace() for character in value
@@ -197,7 +226,7 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
             (
                 alt,
                 (image_tokens[0].attrGet("src") or "").strip(),
-                syntax.group(1).strip(),
+                raw_image_path(syntax.group(1)),
                 attribution_valid,
             )
         )
