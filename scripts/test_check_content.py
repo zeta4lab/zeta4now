@@ -816,7 +816,7 @@ summary: 요약
         audio_guid = b"\x40\x9e\x69\xf8\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
         video_guid = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
         (assets / "podcast.mka").write_bytes(ebml + b"\x83\x81\x02")
-        (assets / "movie.bin").write_bytes(ebml + b"\x83\x81\x01")
+        (assets / "movie.bin").write_bytes(ebml + b"\x83\x82\x00\x01")
         (assets / "podcast.wma").write_bytes(asf + audio_guid)
         (assets / "recording.dat").write_bytes(asf + video_guid)
         errors = validate_repository(root)
@@ -903,6 +903,29 @@ summary: 요약
                 for error in validate_immutable_media(base, candidate)
             )
         )
+
+    def test_allows_retiring_published_image_from_article(self) -> None:
+        base_temporary, base, base_article = self.repository()
+        candidate_temporary, candidate, candidate_article = self.repository()
+        self.addCleanup(base_temporary.cleanup)
+        self.addCleanup(candidate_temporary.cleanup)
+        relative = Path("news/ai/2026/08/2026-08-13-ai-daily/photo.png")
+        base_image = base / relative
+        candidate_image = candidate / relative
+        base_image.parent.mkdir()
+        candidate_image.parent.mkdir()
+        base_image.write_bytes(PNG_BYTES)
+        candidate_image.write_bytes(PNG_BYTES)
+        base_article.write_text(
+            self.article(
+                "![사진](./2026-08-13-ai-daily/photo.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        candidate_article.write_text(self.article(), encoding="utf-8")
+        self.assertEqual(validate_repository(candidate, base), [])
+        self.assertEqual(validate_immutable_media(base, candidate), [])
 
 
 if __name__ == "__main__":

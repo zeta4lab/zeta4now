@@ -269,7 +269,12 @@ def has_ebml_video_track(data: bytes) -> bool:
             for value in metadata[size_offset + 1 : size_offset + size_length]:
                 size = (size << 8) | value
             value_offset = size_offset + size_length
-            if size == 1 and value_offset < len(metadata) and metadata[value_offset] == 1:
+            value_end = value_offset + size
+            if (
+                1 <= size <= 8
+                and value_end <= len(metadata)
+                and int.from_bytes(metadata[value_offset:value_end], "big") == 1
+            ):
                 return True
         offset += 1
     return False
@@ -559,11 +564,18 @@ def validate_article(
     return errors
 
 
-def validate_repository(root: Path) -> list[str]:
+def validate_repository(root: Path, base: Path | None = None) -> list[str]:
     errors: list[str] = []
     news = root / "news"
     if not news.is_dir() or news.is_symlink():
         return ["news 디렉터리가 없거나 심볼릭 링크입니다"]
+    previously_published_images = {
+        existing.relative_to(base)
+        for existing in (base / "news").rglob("*")
+        if existing.is_file()
+        and not existing.is_symlink()
+        and existing.suffix.lower() in ALLOWED_IMAGE_EXTENSIONS
+    } if base and (base / "news").is_dir() else set()
 
     for candidate in root.rglob("*"):
         relative = candidate.relative_to(root)
@@ -606,7 +618,10 @@ def validate_repository(root: Path) -> list[str]:
                 errors.append(
                     f"{relative_name(root, candidate)}: 대응하는 기사 파일이 없습니다"
                 )
-            elif candidate not in referenced_images:
+            elif (
+                candidate not in referenced_images
+                and candidate.relative_to(root) not in previously_published_images
+            ):
                 errors.append(
                     f"{relative_name(root, candidate)}: 대응하는 기사에서 참조하지 않은 사진입니다"
                 )
@@ -641,9 +656,9 @@ def validate_immutable_media(base: Path, candidate: Path) -> list[str]:
 
 def main() -> int:
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve(strict=True)
-    errors = validate_repository(root)
-    if len(sys.argv) > 2:
-        base = Path(sys.argv[2]).resolve(strict=True)
+    base = Path(sys.argv[2]).resolve(strict=True) if len(sys.argv) > 2 else None
+    errors = validate_repository(root, base)
+    if base:
         errors.extend(validate_immutable_media(base, root))
     if errors:
         for error in errors:
