@@ -811,12 +811,26 @@ summary: 요약
         article.write_text(self.article(), encoding="utf-8")
         assets = root / "assets"
         assets.mkdir()
-        ebml = b"\x1a\x45\xdf\xa3"
+        def ebml_element(identifier: bytes, payload: bytes) -> bytes:
+            self.assertLess(len(payload), 127)
+            return identifier + bytes([0x80 | len(payload)]) + payload
+
+        def ebml_file(track_type: bytes, codec_private: bytes = b"") -> bytes:
+            track = ebml_element(b"\x83", track_type)
+            if codec_private:
+                track += ebml_element(b"\x63\xa2", codec_private)
+            entry = ebml_element(b"\xae", track)
+            tracks = ebml_element(b"\x16\x54\xae\x6b", entry)
+            segment = ebml_element(b"\x18\x53\x80\x67", tracks)
+            return ebml_element(b"\x1a\x45\xdf\xa3", b"") + segment
+
         asf = b"\x30\x26\xb2\x75\x8e\x66\xcf\x11"
         audio_guid = b"\x40\x9e\x69\xf8\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
         video_guid = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
-        (assets / "podcast.mka").write_bytes(ebml + b"\x83\x81\x02")
-        (assets / "movie.bin").write_bytes(ebml + b"\x83\x82\x00\x01")
+        (assets / "podcast.mka").write_bytes(
+            ebml_file(b"\x02", b"arbitrary\x83\x81\x01metadata")
+        )
+        (assets / "movie.bin").write_bytes(ebml_file(b"\x00\x01"))
         (assets / "podcast.wma").write_bytes(asf + audio_guid)
         (assets / "recording.dat").write_bytes(asf + video_guid)
         errors = validate_repository(root)

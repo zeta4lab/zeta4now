@@ -252,32 +252,64 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
 
 
 def has_ebml_video_track(data: bytes) -> bool:
-    metadata = data.split(b"\x1f\x43\xb6\x75", 1)[0]
-    offset = 0
-    while (offset := metadata.find(b"\x83", offset)) >= 0:
-        size_offset = offset + 1
-        if size_offset >= len(metadata):
-            return False
-        first = metadata[size_offset]
+    def read_vint(offset: int, *, identifier: bool) -> tuple[int, int] | None:
+        if offset >= len(data):
+            return None
+        first = data[offset]
         marker = 0x80
-        size_length = 1
-        while size_length <= 8 and not first & marker:
+        length = 1
+        while length <= 8 and not first & marker:
             marker >>= 1
-            size_length += 1
-        if size_length <= 8 and size_offset + size_length <= len(metadata):
-            size = first & (marker - 1)
-            for value in metadata[size_offset + 1 : size_offset + size_length]:
-                size = (size << 8) | value
-            value_offset = size_offset + size_length
-            value_end = value_offset + size
+            length += 1
+        if length > 8 or offset + length > len(data):
+            return None
+        value = first if identifier else first & (marker - 1)
+        for byte in data[offset + 1 : offset + length]:
+            value = (value << 8) | byte
+        return value, length
+
+    segment_id = 0x18538067
+    tracks_id = 0x1654AE6B
+    track_entry_id = 0xAE
+    track_type_id = 0x83
+
+    def scan(start: int, end: int, context: int = 0) -> bool:
+        offset = start
+        while offset < end:
+            identifier = read_vint(offset, identifier=True)
+            if not identifier:
+                return False
+            element_id, id_length = identifier
+            size_field = read_vint(offset + id_length, identifier=False)
+            if not size_field:
+                return False
+            size, size_length = size_field
+            payload_start = offset + id_length + size_length
+            payload_end = (
+                end
+                if size == (1 << (7 * size_length)) - 1
+                else payload_start + size
+            )
+            if payload_end > end:
+                return False
             if (
-                1 <= size <= 8
-                and value_end <= len(metadata)
-                and int.from_bytes(metadata[value_offset:value_end], "big") == 1
+                context == track_entry_id
+                and element_id == track_type_id
+                and 1 <= size <= 8
+                and int.from_bytes(data[payload_start:payload_end], "big") == 1
             ):
                 return True
-        offset += 1
-    return False
+            child_context = (
+                element_id
+                if element_id in {segment_id, tracks_id, track_entry_id}
+                else 0
+            )
+            if child_context and scan(payload_start, payload_end, child_context):
+                return True
+            offset = payload_end
+        return False
+
+    return scan(0, len(data))
 
 
 def has_exact_jpeg_container(payload: bytes) -> bool:
