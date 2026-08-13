@@ -2,6 +2,8 @@ name: CI
 
 on:
   push:
+    branches:
+      - main
   pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
 
@@ -48,6 +50,14 @@ jobs:
         if: github.event_name == 'push'
         run: python3 candidate/scripts/check_content.py candidate
 
+      - name: Test trusted validator after merge
+        if: github.event_name == 'push'
+        run: python3 -m unittest discover -s candidate/scripts -p 'test_*.py'
+
       - name: Validate proposed content with the trusted base script
         if: github.event_name == 'pull_request_target'
         run: python3 validator/scripts/check_content.py candidate
+
+      - name: Test trusted base validator
+        if: github.event_name == 'pull_request_target'
+        run: python3 -m unittest discover -s validator/scripts -p 'test_*.py'

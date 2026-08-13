@@ -8,7 +8,18 @@ from urllib.parse import unquote
 ARTICLE_PATH_RE = re.compile(r"^news/[^/]+/\d{4}/\d{2}/([^/]+)\.md$")
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
 SLUG_RE = re.compile(r"^slug:\s*([^\s]+)\s*$", re.MULTILINE)
-MARKDOWN_IMAGE_RE = re.compile(r"!\[([^\]\r\n]*)\]\(([^)\r\n]+)\)")
+MARKDOWN_IMAGE_RE = re.compile(r"(?<!\\)!\[([^\]\r\n]*)\]\(([^)\r\n]+)\)")
+REFERENCE_IMAGE_RE = re.compile(r"(?<!\\)!\[([^\]\r\n]*)\]\[([^\]\r\n]*)\]")
+SHORTCUT_IMAGE_RE = re.compile(r"(?<![\\\]])!\[([^\]\r\n]+)\](?![\[(])")
+REFERENCE_DEFINITION_RE = re.compile(
+    r"^[ \t]{0,3}\[([^\]\r\n]+)\]:[ \t]*(?:<([^>\r\n]+)>|([^\s]+))"
+    r'(?:[ \t]+(?:"[^"\r\n]*"|\'[^\'\r\n]*\'|\([^\)\r\n]*\)))?[ \t]*$',
+    re.MULTILINE,
+)
+IMAGE_ATTRIBUTION_RE = re.compile(
+    r"\A[ \t]*\r?\n(?:[ \t]*\r?\n)?[ \t]*\*사진:\s*([^·\r\n]+?)\s*·\s*"
+    r"출처:\s*(https://[^\s*]+)\s*·\s*라이선스:\s*([^*\r\n]+?)\*[ \t]*(?:\r?\n|\Z)"
+)
 RAW_MEDIA_TAG_RE = re.compile(
     r"<\s*/?\s*(?:img|iframe|video|audio|object|embed|source)\b", re.IGNORECASE
 )
@@ -30,6 +41,30 @@ MAX_MARKDOWN_BYTES = 1_000_000
 
 def relative_name(root: Path, candidate: Path) -> str:
     return candidate.relative_to(root).as_posix()
+
+
+def markdown_images(markdown: str) -> list[tuple[str, str | None, int]]:
+    definitions: dict[str, str] = {}
+    for match in REFERENCE_DEFINITION_RE.finditer(markdown):
+        label = match.group(1).strip().casefold()
+        destination = (
+            f"<{match.group(2)}>" if match.group(2) is not None else match.group(3)
+        )
+        if destination:
+            definitions[label] = destination
+
+    images = [
+        (match.group(1), match.group(2), match.end())
+        for match in MARKDOWN_IMAGE_RE.finditer(markdown)
+    ]
+    for match in REFERENCE_IMAGE_RE.finditer(markdown):
+        alt = match.group(1)
+        label = match.group(2).strip() or alt.strip()
+        images.append((alt, definitions.get(label.casefold()), match.end()))
+    for match in SHORTCUT_IMAGE_RE.finditer(markdown):
+        alt = match.group(1)
+        images.append((alt, definitions.get(alt.strip().casefold()), match.end()))
+    return sorted(images, key=lambda image: image[2])
 
 
 def validate_article(root: Path, article: Path) -> list[str]:
@@ -57,16 +92,20 @@ def validate_article(root: Path, article: Path) -> list[str]:
     if RAW_MEDIA_TAG_RE.search(markdown):
         errors.append(f"{name}: 원시 미디어 태그나 임베드는 허용하지 않습니다")
 
-    for match in MARKDOWN_IMAGE_RE.finditer(markdown):
-        alt = match.group(1).strip()
-        destination = match.group(2).strip()
-        if destination.startswith("<") and destination.endswith(">"):
+    for raw_alt, raw_destination, image_end in markdown_images(markdown):
+        alt = raw_alt.strip()
+        destination = (raw_destination or "").strip()
+        bracketed = destination.startswith("<") and destination.endswith(">")
+        if bracketed:
             destination = destination[1:-1]
         if not alt:
             errors.append(f"{name}: 사진 대체 텍스트가 비어 있습니다")
-        if any(character.isspace() for character in destination) or any(
-            marker in destination for marker in ("?", "#")
-        ):
+        if not destination:
+            errors.append(f"{name}: 참조형 사진의 경로 정의가 없습니다")
+            continue
+        if (
+            not bracketed and any(character.isspace() for character in destination)
+        ) or any(marker in destination for marker in ("?", "#")):
             errors.append(
                 f"{name}: 사진 경로에 공백, 쿼리 또는 프래그먼트를 사용할 수 없습니다"
             )
@@ -90,6 +129,10 @@ def validate_article(root: Path, article: Path) -> list[str]:
             errors.append(
                 f"{name}: 참조한 사진 파일이 없거나 심볼릭 링크입니다: {decoded}"
             )
+        if not IMAGE_ATTRIBUTION_RE.match(markdown[image_end:]):
+            errors.append(
+                f"{name}: 각 사진 바로 다음에 제작자·HTTPS 출처·라이선스를 표시해야 합니다"
+            )
 
     return errors
 
@@ -99,6 +142,15 @@ def validate_repository(root: Path) -> list[str]:
     news = root / "news"
     if not news.is_dir() or news.is_symlink():
         return ["news 디렉터리가 없거나 심볼릭 링크입니다"]
+
+    for candidate in root.rglob("*"):
+        relative = candidate.relative_to(root)
+        if ".git" in relative.parts:
+            continue
+        if candidate.suffix.lower() in VIDEO_EXTENSIONS and (
+            candidate.is_file() or candidate.is_symlink()
+        ):
+            errors.append(f"{relative.as_posix()}: 동영상 파일은 저장할 수 없습니다")
 
     for candidate in news.rglob("*"):
         if candidate.is_symlink():
@@ -112,9 +164,7 @@ def validate_repository(root: Path) -> list[str]:
         if suffix == ".md":
             errors.extend(validate_article(root, candidate))
         elif suffix in VIDEO_EXTENSIONS:
-            errors.append(
-                f"{relative_name(root, candidate)}: 동영상 파일은 저장할 수 없습니다"
-            )
+            continue
         elif suffix in UNSUPPORTED_IMAGE_EXTENSIONS:
             errors.append(
                 f"{relative_name(root, candidate)}: 지원하지 않는 사진 형식입니다"
