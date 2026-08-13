@@ -772,12 +772,23 @@ model: none
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
-        for filename in ("movie.wmv", "movie.flv", "movie.mpg", "movie.mxf"):
+        for filename in (
+            "movie.wmv",
+            "movie.flv",
+            "movie.mpg",
+            "movie.mxf",
+            "movie.h264",
+            "movie.264",
+            "movie.avc",
+            "movie.h265",
+            "movie.265",
+            "movie.hevc",
+        ):
             video = root / "assets" / filename
             video.parent.mkdir(exist_ok=True)
             video.write_bytes(b"video")
         errors = validate_repository(root)
-        self.assertEqual(sum("동영상 파일" in error for error in errors), 4)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 10)
 
     def test_rejects_video_content_with_disguised_extensions(self) -> None:
         temporary, root, article = self.repository()
@@ -1047,6 +1058,26 @@ model: none
         self.assertTrue(
             any("topic과 news" in error for error in validate_repository(root))
         )
+
+    def test_rejects_invalid_year_and_month_directories(self) -> None:
+        for year, month in (("0000", "08"), ("2026", "00"), ("2026", "13")):
+            with self.subTest(year=year, month=month):
+                temporary = tempfile.TemporaryDirectory()
+                try:
+                    root = Path(temporary.name)
+                    article = (
+                        root / "news" / "ai" / year / month / "2026-08-13-ai-daily.md"
+                    )
+                    article.parent.mkdir(parents=True)
+                    article.write_text(self.article(), encoding="utf-8")
+                    self.assertTrue(
+                        any(
+                            "기사 경로 계약" in error
+                            for error in validate_repository(root)
+                        )
+                    )
+                finally:
+                    temporary.cleanup()
 
     def test_rejects_missing_source_footer(self) -> None:
         temporary, root, article = self.repository()

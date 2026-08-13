@@ -16,7 +16,9 @@ from markdown_it import MarkdownIt
 from markdown_it.token import Token
 from PIL import Image, UnidentifiedImageError
 
-ARTICLE_PATH_RE = re.compile(r"^news/([^/]+)/\d{4}/\d{2}/([^/]+)\.md$")
+ARTICLE_PATH_RE = re.compile(
+    r"^news/([^/]+)/(?:[1-9]\d{3})/(?:0[1-9]|1[0-2])/([^/]+)\.md$"
+)
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
 ATTRIBUTION_TEXT_RE = re.compile(
     r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$",
@@ -44,6 +46,12 @@ VIDEO_EXTENSIONS = {
     ".rm",
     ".rmvb",
     ".mxf",
+    ".h264",
+    ".264",
+    ".avc",
+    ".h265",
+    ".265",
+    ".hevc",
 }
 SHARED_BMFF_EXTENSIONS = {".mp4", ".mov", ".m4v", ".3gp", ".3g2", ".f4v"}
 MAX_MARKDOWN_BYTES = 1_000_000
