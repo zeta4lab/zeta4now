@@ -996,6 +996,12 @@ model: none
         )
         self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
 
+    def test_ignores_source_heading_text_inside_fenced_code(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article("```markdown\n## 출처\n```"), encoding="utf-8")
+        self.assertEqual(validate_repository(root), [])
+
     def test_accepts_nested_brackets_in_image_alt(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)

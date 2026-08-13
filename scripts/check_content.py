@@ -264,10 +264,21 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
 
 
 def has_source_footer(markdown: str, require_disclosure: bool) -> bool:
-    matches = list(re.finditer(r"(?m)^## 출처\s*$", markdown))
-    if len(matches) != 1:
+    tokens = COMMONMARK.parse(markdown)
+    source_headings = [
+        token
+        for index, token in enumerate(tokens)
+        if token.type == "heading_open"
+        and token.tag == "h2"
+        and index + 1 < len(tokens)
+        and tokens[index + 1].type == "inline"
+        and tokens[index + 1].content.strip() == "출처"
+    ]
+    if len(source_headings) != 1 or not source_headings[0].map:
         return False
-    footer = markdown[matches[0].end() :].strip()
+    footer = "".join(
+        markdown.splitlines(keepends=True)[source_headings[0].map[1] :]
+    ).strip()
     source_block, separator, disclosure = footer.partition("\n\n---\n\n")
     source_tokens = COMMONMARK.parse(source_block.strip())
     if (
