@@ -230,6 +230,12 @@ summary: 요약
                 finally:
                     temporary.cleanup()
 
+    def test_rejects_bare_email_autolink(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article("문의: editor@example.com"), encoding="utf-8")
+        self.assertTrue(any("HTTPS" in error for error in validate_repository(root)))
+
     def test_rejects_uppercase_markdown_extension(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -586,6 +592,17 @@ summary: 요약
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
+    def test_rejects_raw_h264_after_access_unit_delimiter(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(b"\x00\x00\x00\x01\x09\xf0\x00\x00\x00\x01\x67\x64\x00\x1f")
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
     def test_rejects_overwriting_published_image(self) -> None:
         base_temporary, base, base_article = self.repository()
         candidate_temporary, candidate, candidate_article = self.repository()
@@ -603,6 +620,23 @@ summary: 요약
         self.assertTrue(
             any(
                 "덮어쓸 수 없습니다" in error
+                for error in validate_immutable_media(base, candidate)
+            )
+        )
+
+    def test_rejects_deleting_published_image(self) -> None:
+        base_temporary, base, _base_article = self.repository()
+        candidate_temporary, candidate, candidate_article = self.repository()
+        self.addCleanup(base_temporary.cleanup)
+        self.addCleanup(candidate_temporary.cleanup)
+        relative = Path("news/ai/2026/08/2026-08-13-ai-daily/photo.png")
+        base_image = base / relative
+        base_image.parent.mkdir()
+        base_image.write_bytes(PNG_BYTES)
+        candidate_article.write_text(self.article(), encoding="utf-8")
+        self.assertTrue(
+            any(
+                "삭제할 수 없습니다" in error
                 for error in validate_immutable_media(base, candidate)
             )
         )

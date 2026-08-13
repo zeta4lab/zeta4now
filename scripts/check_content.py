@@ -20,6 +20,9 @@ ATTRIBUTION_TEXT_RE = re.compile(
 BARE_EXTERNAL_URL_RE = re.compile(
     r"(?i)(?<![\w])(?:(?:(?:https?|ftp):)?//[^\s<]+|www\.[^\s<]+)"
 )
+BARE_EMAIL_RE = re.compile(
+    r"(?i)(?<![\w.+-])[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9.-]+\.[a-z]{2,}"
+)
 ALLOWED_IMAGE_EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png"}
 VIDEO_EXTENSIONS = {
     ".mp4",
@@ -86,6 +89,8 @@ def has_invalid_bare_link(tokens: list[Token]) -> bool:
             elif token.type == "link_close":
                 link_depth -= 1
             elif token.type == "text" and link_depth == 0:
+                if BARE_EMAIL_RE.search(token.content):
+                    return True
                 for match in BARE_EXTERNAL_URL_RE.finditer(token.content):
                     if not valid_article_link(match.group(0).rstrip(".,;:!?)]}")):
                         return True
@@ -122,7 +127,9 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
     ):
         raise ValueError("링크는 문서 내부 앵커 또는 유효한 HTTPS URL이어야 합니다")
     if has_invalid_bare_link(tokens):
-        raise ValueError("본문의 bare 외부 URL은 HTTPS를 사용해야 합니다")
+        raise ValueError(
+            "bare 외부 URL과 이메일 주소는 허용하지 않으며 HTTPS 링크를 사용해야 합니다"
+        )
 
     images: list[tuple[str, str, str, bool]] = []
     for index, token in enumerate(tokens):
@@ -165,6 +172,19 @@ def relative_name(root: Path, candidate: Path) -> str:
     return candidate.relative_to(root).as_posix()
 
 
+def has_annex_b_video(header: bytes) -> bool:
+    for marker in (b"\x00\x00\x01", b"\x00\x00\x00\x01"):
+        start = 0
+        while (index := header.find(marker, start)) >= 0:
+            nal_index = index + len(marker)
+            if nal_index < len(header):
+                nal = header[nal_index]
+                if nal & 0x1F in {5, 7, 8} or (nal >> 1) & 0x3F in {19, 20, 32, 33, 34}:
+                    return True
+            start = nal_index + 1
+    return False
+
+
 def is_video_file(candidate: Path) -> bool:
     media_type, _encoding = mimetypes.guess_type(candidate.name)
     if candidate.suffix.lower() in VIDEO_EXTENSIONS or bool(
@@ -190,13 +210,10 @@ def is_video_file(candidate: Path) -> bool:
                 b"\x30\x26\xb2\x75\x8e\x66\xcf\x11",
                 b"\x00\x00\x01\xba",
                 b"\x00\x00\x01\xb3",
-                b"\x00\x00\x00\x01\x67",
-                b"\x00\x00\x01\x67",
-                b"\x00\x00\x00\x01\x40",
-                b"\x00\x00\x01\x40",
                 b"\x06\x0e\x2b\x34\x02\x05\x01\x01\x0d\x01\x02",
             )
         )
+        or has_annex_b_video(header)
         or (len(header) > 376 and header[0] == header[188] == header[376] == 0x47)
         or (len(header) > 388 and header[4] == header[196] == header[388] == 0x47)
     )
@@ -368,11 +385,9 @@ def validate_immutable_media(base: Path, candidate: Path) -> list[str]:
             continue
         relative = existing.relative_to(base)
         proposed = candidate / relative
-        if (
-            proposed.is_file()
-            and not proposed.is_symlink()
-            and not cmp(existing, proposed, shallow=False)
-        ):
+        if not proposed.is_file() or proposed.is_symlink():
+            errors.append(f"{relative.as_posix()}: 발행된 사진은 삭제할 수 없습니다")
+        elif not cmp(existing, proposed, shallow=False):
             errors.append(
                 f"{relative.as_posix()}: 발행된 사진은 같은 경로에서 덮어쓸 수 없습니다"
             )
