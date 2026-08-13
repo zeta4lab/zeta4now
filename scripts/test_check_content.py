@@ -79,6 +79,25 @@ summary: 요약
             any("사진 경로" in error for error in validate_repository(root))
         )
 
+    def test_collapses_reference_label_whitespace(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/local.webp"
+        image.parent.mkdir()
+        image.write_bytes(b"image")
+        article.write_text(
+            self.article(
+                "![외부 사진][hero image]",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*\n\n"
+                "[hero  image]: https://example.com/photo.png\n"
+                "[hero image]: ./2026-08-13-ai-daily/local.webp",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("사진 경로" in error for error in validate_repository(root))
+        )
+
     def test_rejects_external_image_after_even_backslashes(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -130,6 +149,48 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertEqual(validate_repository(root), [])
+
+    def test_does_not_mask_after_escaped_backtick(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article('\\`<img src="./photo.png">`'),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("미디어 태그" in error for error in validate_repository(root))
+        )
+
+    def test_keeps_four_space_fence_inside_code(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article('```html\n    ```\n<img src="./photo.png">\n```'),
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_repository(root), [])
+
+    def test_rejects_media_after_invalid_fence_opener(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article("``` bad`\n![외부 사진](https://example.com/photo.png)\n```"),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("사진 경로" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_media_after_unclosed_code_span(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article("`unclosed ![외부 사진](https://example.com/photo.png) ``"),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("사진 경로" in error for error in validate_repository(root))
+        )
 
     def test_checks_indented_list_image(self) -> None:
         temporary, root, article = self.repository()

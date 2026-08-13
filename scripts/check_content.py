@@ -55,12 +55,18 @@ def without_markdown_code(markdown: str) -> str:
         content = line.rstrip("\r\n")
         stripped = content.lstrip(" ")
         indentation = len(content) - len(stripped)
-        opening = re.match(r"(`{3,}|~{3,})", stripped) if indentation <= 3 else None
+        backtick_opening = (
+            re.fullmatch(r"(`{3,})[^`]*", stripped) if indentation <= 3 else None
+        )
+        tilde_opening = (
+            re.fullmatch(r"(~{3,}).*", stripped) if indentation <= 3 else None
+        )
+        opening = backtick_opening or tilde_opening
         closing = (
             re.fullmatch(
                 rf"{re.escape(fence_character)}{{{fence_length},}}[ \t]*", stripped
             )
-            if fence_character
+            if fence_character and indentation <= 3
             else None
         )
         if fence_character:
@@ -79,19 +85,33 @@ def without_markdown_code(markdown: str) -> str:
     characters = list(masked)
     index = 0
     while index < len(masked):
-        if masked[index] != "`":
+        if masked[index] != "`" or is_escaped(masked, index):
             index += 1
             continue
         end = index
         while end < len(masked) and masked[end] == "`":
             end += 1
-        delimiter = masked[index:end]
-        closing_index = masked.find(delimiter, end)
+        delimiter_length = end - index
+        search = end
+        closing_index = -1
+        closing_end = -1
+        while search < len(masked):
+            candidate = masked.find("`", search)
+            if candidate < 0:
+                break
+            candidate_end = candidate
+            while candidate_end < len(masked) and masked[candidate_end] == "`":
+                candidate_end += 1
+            if candidate_end - candidate == delimiter_length:
+                closing_index = candidate
+                closing_end = candidate_end
+                break
+            search = candidate_end
         if closing_index < 0:
             index = end
             continue
-        mask_range(characters, index, closing_index + len(delimiter))
-        index = closing_index + len(delimiter)
+        mask_range(characters, index, closing_end)
+        index = closing_end
     return "".join(characters)
 
 
@@ -108,10 +128,14 @@ def relative_name(root: Path, candidate: Path) -> str:
     return candidate.relative_to(root).as_posix()
 
 
+def normalize_reference_label(label: str) -> str:
+    return " ".join(label.split()).casefold()
+
+
 def markdown_images(markdown: str) -> list[tuple[str, str | None, int]]:
     definitions: dict[str, str] = {}
     for match in REFERENCE_DEFINITION_RE.finditer(markdown):
-        label = match.group(1).strip().casefold()
+        label = normalize_reference_label(match.group(1))
         destination = (
             f"<{match.group(2)}>" if match.group(2) is not None else match.group(3)
         )
@@ -128,12 +152,16 @@ def markdown_images(markdown: str) -> list[tuple[str, str | None, int]]:
             continue
         alt = match.group(1)
         label = match.group(2).strip() or alt.strip()
-        images.append((alt, definitions.get(label.casefold()), match.end()))
+        images.append(
+            (alt, definitions.get(normalize_reference_label(label)), match.end())
+        )
     for match in SHORTCUT_IMAGE_RE.finditer(markdown):
         if is_escaped(markdown, match.start()):
             continue
         alt = match.group(1)
-        images.append((alt, definitions.get(alt.strip().casefold()), match.end()))
+        images.append(
+            (alt, definitions.get(normalize_reference_label(alt)), match.end())
+        )
     return sorted(images, key=lambda image: image[2])
 
 
