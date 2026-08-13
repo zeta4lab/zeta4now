@@ -54,6 +54,7 @@ MAX_MARKDOWN_BYTES = 1_000_000
 MAX_IMAGE_BYTES = 10_000_000
 MAX_IMAGE_PIXELS = 20_000_000
 MAX_IMAGE_DIMENSION = 8_000
+MAX_VIDEO_SCAN_BYTES = 1_000_000
 COMMONMARK = MarkdownIt("commonmark")
 
 NON_VIDEO_ISO_BMFF_BRANDS = {
@@ -208,9 +209,10 @@ def has_annex_b_video(header: bytes) -> bool:
     return False
 
 
-def has_ogg_video(candidate: Path) -> bool:
+def has_ogg_video(candidate: Path, offset: int = 0) -> bool:
     try:
         with candidate.open("rb") as stream:
+            stream.seek(offset)
             while header := stream.read(27):
                 if len(header) != 27 or not header.startswith(b"OggS"):
                     return False
@@ -227,6 +229,26 @@ def has_ogg_video(candidate: Path) -> bool:
                     return True
     except OSError:
         return False
+    return False
+
+
+def leading_id3_size(header: bytes) -> int:
+    if len(header) < 10 or not header.startswith(b"ID3"):
+        return 0
+    size_bytes = header[6:10]
+    if any(value & 0x80 for value in size_bytes):
+        return 0
+    size = sum(value << shift for value, shift in zip(size_bytes, (21, 14, 7, 0)))
+    return 10 + size + (10 if header[5] & 0x10 else 0)
+
+
+def has_mpeg_transport_stream(data: bytes) -> bool:
+    for packet_size in (188, 192, 204, 208):
+        offset = data.find(b"\x47")
+        while offset >= 0 and offset + packet_size * 2 < len(data):
+            if data[offset + packet_size] == data[offset + packet_size * 2] == 0x47:
+                return True
+            offset = data.find(b"\x47", offset + 1)
     return False
 
 
@@ -330,11 +352,14 @@ def is_video_file(candidate: Path) -> bool:
         return False
     try:
         with candidate.open("rb") as stream:
-            header = stream.read(512)
+            prefix = stream.read(10)
+            scan_offset = leading_id3_size(prefix)
+            stream.seek(scan_offset)
+            header = stream.read(MAX_VIDEO_SCAN_BYTES + 416)
     except OSError:
         return False
     if header.startswith(b"OggS"):
-        return has_ogg_video(candidate)
+        return has_ogg_video(candidate, scan_offset)
     return (
         has_video_iso_bmff_brand(header)
         or (header.startswith(b"RIFF") and header[8:12] == b"AVI ")
@@ -350,10 +375,8 @@ def is_video_file(candidate: Path) -> bool:
                 b"\x06\x0e\x2b\x34\x02\x05\x01\x01\x0d\x01\x02",
             )
         )
-        or has_annex_b_video(header)
-        or (len(header) > 376 and header[0] == header[188] == header[376] == 0x47)
-        or (len(header) > 388 and header[4] == header[196] == header[388] == 0x47)
-        or (len(header) > 408 and header[0] == header[204] == header[408] == 0x47)
+        or has_annex_b_video(header[:512])
+        or has_mpeg_transport_stream(header)
     )
 
 

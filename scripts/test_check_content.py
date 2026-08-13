@@ -708,6 +708,30 @@ summary: 요약
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
+    def test_rejects_transport_stream_beyond_large_id3_metadata(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        metadata_size = 1_100_000
+        synchsafe_size = bytes(
+            (
+                (metadata_size >> 21) & 0x7F,
+                (metadata_size >> 14) & 0x7F,
+                (metadata_size >> 7) & 0x7F,
+                metadata_size & 0x7F,
+            )
+        )
+        packet = bytearray(377)
+        packet[0] = packet[188] = packet[376] = 0x47
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(
+            b"ID3\x04\x00\x00" + synchsafe_size + bytes(metadata_size) + packet
+        )
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
     def test_rejects_disguised_ivf_video(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
