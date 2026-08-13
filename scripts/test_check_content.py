@@ -914,6 +914,48 @@ model: none
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
+    def test_reassembles_multi_packet_transport_stream_pmt(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+
+        def packet(pid: int, start: bool, counter: int, payload: bytes) -> bytes:
+            header = bytes(
+                (
+                    0x47,
+                    (0x40 if start else 0) | (pid >> 8),
+                    pid & 0xFF,
+                    0x10 | counter,
+                )
+            )
+            body = (b"\x00" if start else b"") + payload
+            return header + body + b"\xff" * (188 - len(header) - len(body))
+
+        pat = b"\x00\xb0\x0d\x00\x01\xc1\x00\x00\x00\x01\xe1\x00\x00\x00\x00\x00"
+        descriptors = bytes(180)
+        section_length = 9 + len(descriptors) + 5 + 4
+        pmt = (
+            b"\x02"
+            + bytes((0xB0 | (section_length >> 8), section_length & 0xFF))
+            + b"\x00\x01\xc1\x00\x00\xe1\x01"
+            + bytes((0xF0 | (len(descriptors) >> 8), len(descriptors) & 0xFF))
+            + descriptors
+            + b"\x1b\xe1\x01\xf0\x00"
+            + bytes(4)
+        )
+        video.write_bytes(
+            packet(0, True, 0, pat)
+            + packet(0x100, True, 0, pmt[:183])
+            + packet(0x100, False, 1, pmt[183:])
+            + packet(0x101, False, 0, b"payload")
+            + packet(0x101, False, 1, b"payload")
+        )
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
     def test_does_not_classify_three_sync_like_packets_as_transport_stream(
         self,
     ) -> None:
@@ -1296,6 +1338,23 @@ model: none
             b"\x00\x00\x00\x01\x67\x64\x00\x1f"
             b"\x00\x00\x00\x01\x68\xee\x3c\x80"
             b"\x00\x00\x00\x01\x65\x88\x84"
+        )
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
+    def test_scans_annex_b_parameter_sets_after_large_prefix(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(
+            b"\x00\x00\x00\x01\x06"
+            + bytes(600)
+            + b"\x00\x00\x00\x01\x67\x64\x00\x1f"
+            + b"\x00\x00\x00\x01\x68\xee\x3c\x80"
+            + b"\x00\x00\x00\x01\x65\x88\x84"
         )
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))

@@ -419,29 +419,25 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
         0xEA,  # VC-1
     }
 
-    def section_from_payload(packet: bytes) -> tuple[int, bytes] | None:
-        if len(packet) < 5 or packet[0] != 0x47 or packet[1] & 0x80:
-            return None
-        adaptation_control = (packet[3] >> 4) & 0x03
-        if adaptation_control not in {1, 3}:
-            return None
-        payload_offset = 4
-        if adaptation_control == 3:
-            payload_offset += 1 + packet[4]
-        if payload_offset >= 188:
-            return None
-        payload = packet[payload_offset:188]
-        if packet[1] & 0x40:
-            pointer = payload[0]
-            payload = payload[1 + pointer :]
-        if len(payload) < 3:
-            return None
-        section_length = ((payload[1] & 0x0F) << 8) | payload[2]
-        section_end = 3 + section_length
-        if section_length > 1021 or section_end > len(payload):
-            return None
-        pid = ((packet[1] & 0x1F) << 8) | packet[2]
-        return pid, payload[:section_end]
+    def drain_sections(
+        pid: int,
+        buffers: dict[int, bytearray],
+        sections: list[tuple[int, bytes]],
+    ) -> None:
+        buffer = buffers[pid]
+        while len(buffer) >= 3:
+            if buffer[0] == 0xFF:
+                buffer.clear()
+                return
+            section_length = ((buffer[1] & 0x0F) << 8) | buffer[2]
+            if section_length > 1021:
+                buffer.clear()
+                return
+            section_end = 3 + section_length
+            if len(buffer) < section_end:
+                return
+            sections.append((pid, bytes(buffer[:section_end])))
+            del buffer[:section_end]
 
     for packet_size in (188, 192, 204, 208):
         offset = data.find(b"\x47")
@@ -462,26 +458,56 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
             if valid:
                 pmt_pids: set[int] = set()
                 sections: list[tuple[int, bytes]] = []
+                buffers: dict[int, bytearray] = {}
+                continuity: dict[int, int] = {}
+
                 packet_offset = offset
                 while packet_offset + 188 <= len(data):
-                    section = section_from_payload(
-                        data[packet_offset : packet_offset + 188]
-                    )
-                    if section:
-                        sections.append(section)
-                        pid, payload = section
-                        if pid == 0 and payload[0] == 0x00 and len(payload) >= 12:
-                            entries_end = len(payload) - 4
-                            for entry in range(8, entries_end - 3, 4):
-                                program = int.from_bytes(
-                                    payload[entry : entry + 2], "big"
-                                )
-                                if program:
-                                    pmt_pids.add(
-                                        ((payload[entry + 2] & 0x1F) << 8)
-                                        | payload[entry + 3]
-                                    )
+                    packet = data[packet_offset : packet_offset + 188]
                     packet_offset += packet_size
+                    if packet[0] != 0x47 or packet[1] & 0x80:
+                        continue
+                    adaptation_control = (packet[3] >> 4) & 0x03
+                    if adaptation_control not in {1, 3}:
+                        continue
+                    payload_offset = 4
+                    if adaptation_control == 3:
+                        payload_offset += 1 + packet[4]
+                    if payload_offset >= 188:
+                        continue
+                    pid = ((packet[1] & 0x1F) << 8) | packet[2]
+                    counter = packet[3] & 0x0F
+                    if pid in continuity and counter != (continuity[pid] + 1) & 0x0F:
+                        buffers.pop(pid, None)
+                    continuity[pid] = counter
+                    payload = packet[payload_offset:188]
+                    if packet[1] & 0x40:
+                        if not payload:
+                            continue
+                        pointer = payload[0]
+                        if 1 + pointer > len(payload):
+                            buffers.pop(pid, None)
+                            continue
+                        if pid in buffers and pointer:
+                            buffers[pid].extend(payload[1 : 1 + pointer])
+                            drain_sections(pid, buffers, sections)
+                        buffers[pid] = bytearray(payload[1 + pointer :])
+                    elif pid in buffers:
+                        buffers[pid].extend(payload)
+                    else:
+                        continue
+                    drain_sections(pid, buffers, sections)
+
+                for pid, payload in sections:
+                    if pid == 0 and payload[0] == 0x00 and len(payload) >= 12:
+                        entries_end = len(payload) - 4
+                        for entry in range(8, entries_end - 3, 4):
+                            program = int.from_bytes(payload[entry : entry + 2], "big")
+                            if program:
+                                pmt_pids.add(
+                                    ((payload[entry + 2] & 0x1F) << 8)
+                                    | payload[entry + 3]
+                                )
                 for pid, payload in sections:
                     if pid not in pmt_pids or payload[0] != 0x02 or len(payload) < 16:
                         continue
@@ -740,7 +766,7 @@ def is_video_file(candidate: Path) -> bool:
                 b"\x06\x0e\x2b\x34\x02\x05\x01\x01\x0d\x01\x02",
             )
         )
-        or has_annex_b_video(header[:512])
+        or has_annex_b_video(header)
         or has_mpeg_transport_stream(header)
     )
 
