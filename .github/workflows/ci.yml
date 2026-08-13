@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  content:
+    name: Public content contract
+    runs-on: [self-hosted, z4aws]
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout pushed content
+        if: github.event_name == 'push'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: candidate
+          persist-credentials: false
+
+      - name: Checkout trusted validator
+        if: github.event_name == 'pull_request_target'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: validator
+          persist-credentials: false
+
+      # 공개 fork의 파일은 실행하지 않고 기본 브랜치의 검증기에서 데이터로만 읽는다.
+      - name: Checkout proposed content as data
+        if: github.event_name == 'pull_request_target'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: candidate
+          persist-credentials: false
+
+      - name: Validate pushed content
+        if: github.event_name == 'push'
+        run: python3 candidate/scripts/check_content.py candidate
+
+      - name: Validate proposed content with the trusted base script
+        if: github.event_name == 'pull_request_target'
+        run: python3 validator/scripts/check_content.py candidate
