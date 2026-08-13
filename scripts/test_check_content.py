@@ -1033,6 +1033,18 @@ model: none
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
+    def test_rejects_transport_stream_with_late_program_metadata(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.ts"
+        video.parent.mkdir()
+        null_packet = b"\x47\x1f\xff\x10" + bytes(184)
+        video.write_bytes(null_packet * ((1_100_000 // 188) + 1) + mpeg_ts(188))
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
     def test_does_not_trust_id3_size_beyond_end_of_file(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)

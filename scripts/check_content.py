@@ -564,9 +564,11 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
                                     ((payload[entry + 2] & 0x1F) << 8)
                                     | payload[entry + 3]
                                 )
+                found_complete_pmt = False
                 for pid, payload in sections:
                     if pid not in pmt_pids or payload[0] != 0x02 or len(payload) < 16:
                         continue
+                    found_complete_pmt = True
                     program_info_length = ((payload[10] & 0x0F) << 8) | payload[11]
                     entry = 12 + program_info_length
                     entries_end = len(payload) - 4
@@ -587,7 +589,9 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
                         ):
                             return True
                         entry += 5 + info_length
-                return False
+                # 정합한 TS인데 완전한 PMT를 찾지 못했다면 bounded 구간 뒤에
+                # 영상 program metadata가 있을 수 있으므로 보수적으로 거부한다.
+                return not found_complete_pmt
             offset = data.find(b"\x47", offset + 1)
     return False
 
