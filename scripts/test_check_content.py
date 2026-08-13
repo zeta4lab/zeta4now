@@ -45,6 +45,21 @@ summary: 요약
         )
         self.assertEqual(validate_repository(root), [])
 
+    def test_accepts_bracketed_image_path_with_parentheses(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/photo(1).png"
+        image.parent.mkdir()
+        image.write_bytes(b"image")
+        article.write_text(
+            self.article(
+                "![데이터센터 전경](<./2026-08-13-ai-daily/photo(1).png>)",
+                "*사진: 직접 제작 · 출처: https://example.com/photo · 라이선스: CC BY 4.0*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_repository(root), [])
+
     def test_rejects_external_reference_style_image(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)

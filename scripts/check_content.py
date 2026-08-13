@@ -12,7 +12,7 @@ from markdown_it.token import Token
 ARTICLE_PATH_RE = re.compile(r"^news/[^/]+/\d{4}/\d{2}/([^/]+)\.md$")
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
 SLUG_RE = re.compile(r"^slug:\s*([^\s]+)\s*$", re.MULTILINE)
-SINGLE_LINE_IMAGE_RE = re.compile(r"^!\[([^\]\r\n]*)\]\(([^)\r\n]+)\)$")
+SINGLE_LINE_IMAGE_RE = re.compile(r"^!\[(?:\\.|[^\]\\\r\n])*\]\(((?:\\.|[^\r\n])*)\)$")
 ATTRIBUTION_TEXT_RE = re.compile(
     r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$"
 )
@@ -78,12 +78,12 @@ def attribution_after(tokens: list[Token], inline_index: int) -> re.Match[str] |
     return ATTRIBUTION_TEXT_RE.fullmatch(children[1].content)
 
 
-def article_images(markdown: str) -> list[tuple[str, str, bool]]:
+def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
     tokens = COMMONMARK.parse(markdown)
     if contains_html(tokens):
         raise ValueError("원시 HTML은 허용하지 않습니다")
 
-    images: list[tuple[str, str, bool]] = []
+    images: list[tuple[str, str, str, bool]] = []
     for index, token in enumerate(tokens):
         if token.type != "inline":
             continue
@@ -108,7 +108,14 @@ def article_images(markdown: str) -> list[tuple[str, str, bool]]:
             and attribution.group(1).strip()
             and attribution.group(3).strip()
         )
-        images.append((alt, syntax.group(2).strip(), attribution_valid))
+        images.append(
+            (
+                alt,
+                (image_tokens[0].attrGet("src") or "").strip(),
+                syntax.group(1).strip(),
+                attribution_valid,
+            )
+        )
     return images
 
 
@@ -151,20 +158,17 @@ def validate_article(root: Path, article: Path) -> list[str]:
     except ValueError as error:
         return [*errors, f"{name}: {error}"]
 
-    for _alt, raw_destination, attribution_valid in images:
-        destination = raw_destination.strip()
-        bracketed = destination.startswith("<") and destination.endswith(">")
-        if bracketed:
-            destination = destination[1:-1]
+    for _alt, destination, raw_destination, attribution_valid in images:
+        bracketed = raw_destination.startswith("<") and raw_destination.endswith(">")
         if (
-            not bracketed and any(character.isspace() for character in destination)
+            not bracketed and any(character.isspace() for character in raw_destination)
         ) or any(marker in destination for marker in ("?", "#")):
             errors.append(
                 f"{name}: 사진 경로에 공백, 쿼리 또는 프래그먼트를 사용할 수 없습니다"
             )
             continue
 
-        if re.search(r"%(?![0-9A-Fa-f]{2})", destination):
+        if re.search(r"%(?![0-9A-Fa-f]{2})", raw_destination):
             errors.append(f"{name}: 사진 경로의 percent encoding이 잘못됐습니다")
             continue
         try:
