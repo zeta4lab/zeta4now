@@ -17,7 +17,9 @@ SINGLE_LINE_IMAGE_RE = re.compile(r"^!\[(?:\\.|[^\]\\\r\n])*\]\(((?:\\.|[^\r\n])
 ATTRIBUTION_TEXT_RE = re.compile(
     r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$"
 )
-BARE_EXTERNAL_URL_RE = re.compile(r"(?i)(?<![\w])(?:(?:https?|ftp):)?//[^\s<]+")
+BARE_EXTERNAL_URL_RE = re.compile(
+    r"(?i)(?<![\w])(?:(?:(?:https?|ftp):)?//[^\s<]+|www\.[^\s<]+)"
+)
 ALLOWED_IMAGE_EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png"}
 VIDEO_EXTENSIONS = {
     ".mp4",
@@ -188,6 +190,10 @@ def is_video_file(candidate: Path) -> bool:
                 b"\x30\x26\xb2\x75\x8e\x66\xcf\x11",
                 b"\x00\x00\x01\xba",
                 b"\x00\x00\x01\xb3",
+                b"\x00\x00\x00\x01\x67",
+                b"\x00\x00\x01\x67",
+                b"\x00\x00\x00\x01\x40",
+                b"\x00\x00\x01\x40",
                 b"\x06\x0e\x2b\x34\x02\x05\x01\x01\x0d\x01\x02",
             )
         )
@@ -305,7 +311,9 @@ def validate_repository(root: Path) -> list[str]:
             errors.append(f"{relative.as_posix()}: 동영상 파일은 저장할 수 없습니다")
 
     referenced_images: set[Path] = set()
-    for article in news.rglob("*.md"):
+    for article in news.rglob("*"):
+        if article.suffix.lower() != ".md":
+            continue
         if article.is_file() and not article.is_symlink():
             errors.extend(validate_article(root, article, referenced_images))
 

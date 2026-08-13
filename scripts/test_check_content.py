@@ -215,14 +215,29 @@ summary: 요약
                 finally:
                     temporary.cleanup()
 
-    def test_rejects_bare_http_url(self) -> None:
+    def test_rejects_unsafe_gfm_bare_url(self) -> None:
+        for url in ("http://example.com/video", "www.example.com/video"):
+            with self.subTest(url=url):
+                temporary, root, article = self.repository()
+                try:
+                    article.write_text(
+                        self.article(f"관련 영상은 {url} 에서 확인합니다."),
+                        encoding="utf-8",
+                    )
+                    self.assertTrue(
+                        any("HTTPS" in error for error in validate_repository(root))
+                    )
+                finally:
+                    temporary.cleanup()
+
+    def test_rejects_uppercase_markdown_extension(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
-        article.write_text(
-            self.article("관련 영상은 http://example.com/video 에서 확인합니다."),
-            encoding="utf-8",
+        uppercase = article.with_suffix(".MD")
+        uppercase.write_text(self.article(), encoding="utf-8")
+        self.assertTrue(
+            any("기사 경로" in error for error in validate_repository(root))
         )
-        self.assertTrue(any("HTTPS" in error for error in validate_repository(root)))
 
     def test_allows_document_anchor(self) -> None:
         temporary, root, article = self.repository()
@@ -556,6 +571,17 @@ summary: 요약
         video = root / "assets/movie.bin"
         video.parent.mkdir()
         video.write_bytes(packet)
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_disguised_raw_h264_stream(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(b"\x00\x00\x00\x01\x67\x64\x00\x1f")
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
         )

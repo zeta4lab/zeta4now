@@ -30,6 +30,14 @@ jobs:
           path: candidate
           persist-credentials: false
 
+      - name: Checkout previous published content
+        if: github.event_name == 'push'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.before }}
+          path: previous
+          persist-credentials: false
+
       - name: Checkout trusted validator
         if: github.event_name == 'pull_request_target'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -55,7 +63,7 @@ jobs:
 
       - name: Validate pushed content
         if: github.event_name == 'push'
-        run: uv run --with markdown-it-py==4.2.0 python candidate/scripts/check_content.py candidate
+        run: uv run --with markdown-it-py==4.2.0 python candidate/scripts/check_content.py candidate previous
 
       - name: Test trusted validator after merge
         if: github.event_name == 'push'
