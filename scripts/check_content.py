@@ -54,6 +54,9 @@ VIDEO_EXTENSIONS = {
     ".m4v",
     ".mjpeg",
     ".mjpg",
+    ".vvc",
+    ".h266",
+    ".266",
 }
 SHARED_BMFF_EXTENSIONS = {".mp4", ".mov", ".3gp", ".3g2", ".f4v"}
 SHARED_MPEG_TS_EXTENSIONS = {".ts", ".mts", ".m2ts"}

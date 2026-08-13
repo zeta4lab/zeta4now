@@ -817,12 +817,15 @@ model: none
             "movie.m4v",
             "movie.mjpeg",
             "movie.mjpg",
+            "movie.vvc",
+            "movie.h266",
+            "movie.266",
         ):
             video = root / "assets" / filename
             video.parent.mkdir(exist_ok=True)
             video.write_bytes(b"video")
         errors = validate_repository(root)
-        self.assertEqual(sum("동영상 파일" in error for error in errors), 13)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 16)
 
     def test_rejects_animated_gif_outside_news(self) -> None:
         temporary, root, article = self.repository()
