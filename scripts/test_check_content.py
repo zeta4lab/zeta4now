@@ -739,7 +739,7 @@ model: none
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
-        video = root / "assets/movie.mp4"
+        video = root / "assets/movie.mpg"
         video.parent.mkdir()
         video.write_bytes(b"video")
         self.assertTrue(
@@ -750,7 +750,7 @@ model: none
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
-        for filename in ("movie.wmv", "movie.flv", "movie.3gp", "movie.mxf"):
+        for filename in ("movie.wmv", "movie.flv", "movie.mpg", "movie.mxf"):
             video = root / "assets" / filename
             video.parent.mkdir(exist_ok=True)
             video.write_bytes(b"video")
@@ -1075,7 +1075,11 @@ model: none
             b"\x00\x00\x00\x18ftypavif\x00\x00\x00\x00avifmif1"
         )
         (assets / "generic-audio.bin").write_bytes(
-            b"\x00\x00\x00\x18ftypisom\x00\x00\x00\x00isommp42"
+            b"\x00\x00\x00\x14ftypisom\x00\x00\x00\x00isom"
+            b"\x00\x00\x00\x14hdlr\x00\x00\x00\x00\x00\x00\x00\x00soun"
+        )
+        (assets / "podcast.mp4").write_bytes(
+            b"\x00\x00\x00\x14ftypisom\x00\x00\x00\x00isom"
             b"\x00\x00\x00\x14hdlr\x00\x00\x00\x00\x00\x00\x00\x00soun"
         )
         self.assertFalse(

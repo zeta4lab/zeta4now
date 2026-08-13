@@ -30,27 +30,22 @@ BARE_EMAIL_RE = re.compile(
 )
 ALLOWED_IMAGE_EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png"}
 VIDEO_EXTENSIONS = {
-    ".mp4",
-    ".mov",
     ".mkv",
     ".avi",
-    ".m4v",
     ".mpeg",
     ".mpg",
     ".ogv",
     ".wmv",
     ".flv",
-    ".3gp",
-    ".3g2",
     ".m2ts",
     ".mts",
     ".vob",
-    ".f4v",
     ".y4m",
     ".rm",
     ".rmvb",
     ".mxf",
 }
+SHARED_BMFF_EXTENSIONS = {".mp4", ".mov", ".m4v", ".3gp", ".3g2", ".f4v"}
 MAX_MARKDOWN_BYTES = 1_000_000
 MAX_IMAGE_BYTES = 10_000_000
 MAX_IMAGE_PIXELS = 20_000_000
@@ -587,7 +582,9 @@ def is_video_file(candidate: Path) -> bool:
     media_type, _encoding = mimetypes.guess_type(candidate.name)
     suffix = candidate.suffix.lower()
     if suffix in VIDEO_EXTENSIONS or bool(
-        suffix != ".webm" and media_type and media_type.startswith("video/")
+        suffix not in SHARED_BMFF_EXTENSIONS | {".webm"}
+        and media_type
+        and media_type.startswith("video/")
     ):
         return True
     if candidate.is_symlink() or not candidate.is_file():
