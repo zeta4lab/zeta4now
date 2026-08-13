@@ -39,8 +39,6 @@ VIDEO_EXTENSIONS = {
     ".ogv",
     ".wmv",
     ".flv",
-    ".m2ts",
-    ".mts",
     ".vob",
     ".y4m",
     ".rm",
@@ -53,8 +51,11 @@ VIDEO_EXTENSIONS = {
     ".265",
     ".hevc",
     ".m4v",
+    ".mjpeg",
+    ".mjpg",
 }
 SHARED_BMFF_EXTENSIONS = {".mp4", ".mov", ".3gp", ".3g2", ".f4v"}
+SHARED_MPEG_TS_EXTENSIONS = {".ts", ".mts", ".m2ts"}
 MAX_MARKDOWN_BYTES = 1_000_000
 MAX_IMAGE_BYTES = 10_000_000
 MAX_IMAGE_PIXELS = 20_000_000
@@ -406,6 +407,42 @@ def leading_id3_size(header: bytes) -> int:
 
 
 def has_mpeg_transport_stream(data: bytes) -> bool:
+    video_stream_types = {
+        0x01,  # MPEG-1 Video
+        0x02,  # MPEG-2 Video
+        0x10,  # MPEG-4 Visual
+        0x1B,  # H.264/AVC
+        0x24,  # H.265/HEVC
+        0x25,  # HEVC temporal subset
+        0x42,  # AVS
+        0xD1,  # Dirac
+        0xEA,  # VC-1
+    }
+
+    def section_from_payload(packet: bytes) -> tuple[int, bytes] | None:
+        if len(packet) < 5 or packet[0] != 0x47 or packet[1] & 0x80:
+            return None
+        adaptation_control = (packet[3] >> 4) & 0x03
+        if adaptation_control not in {1, 3}:
+            return None
+        payload_offset = 4
+        if adaptation_control == 3:
+            payload_offset += 1 + packet[4]
+        if payload_offset >= 188:
+            return None
+        payload = packet[payload_offset:188]
+        if packet[1] & 0x40:
+            pointer = payload[0]
+            payload = payload[1 + pointer :]
+        if len(payload) < 3:
+            return None
+        section_length = ((payload[1] & 0x0F) << 8) | payload[2]
+        section_end = 3 + section_length
+        if section_length > 1021 or section_end > len(payload):
+            return None
+        pid = ((packet[1] & 0x1F) << 8) | packet[2]
+        return pid, payload[:section_end]
+
     for packet_size in (188, 192, 204, 208):
         offset = data.find(b"\x47")
         while offset >= 0 and offset + packet_size * 4 + 4 <= len(data):
@@ -423,7 +460,43 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
                     valid = False
                     break
             if valid:
-                return True
+                pmt_pids: set[int] = set()
+                sections: list[tuple[int, bytes]] = []
+                packet_offset = offset
+                while packet_offset + 188 <= len(data):
+                    section = section_from_payload(
+                        data[packet_offset : packet_offset + 188]
+                    )
+                    if section:
+                        sections.append(section)
+                        pid, payload = section
+                        if pid == 0 and payload[0] == 0x00 and len(payload) >= 12:
+                            entries_end = len(payload) - 4
+                            for entry in range(8, entries_end - 3, 4):
+                                program = int.from_bytes(
+                                    payload[entry : entry + 2], "big"
+                                )
+                                if program:
+                                    pmt_pids.add(
+                                        ((payload[entry + 2] & 0x1F) << 8)
+                                        | payload[entry + 3]
+                                    )
+                    packet_offset += packet_size
+                for pid, payload in sections:
+                    if pid not in pmt_pids or payload[0] != 0x02 or len(payload) < 16:
+                        continue
+                    program_info_length = ((payload[10] & 0x0F) << 8) | payload[11]
+                    entry = 12 + program_info_length
+                    entries_end = len(payload) - 4
+                    while entry + 5 <= entries_end:
+                        stream_type = payload[entry]
+                        if stream_type in video_stream_types:
+                            return True
+                        info_length = ((payload[entry + 3] & 0x0F) << 8) | payload[
+                            entry + 4
+                        ]
+                        entry += 5 + info_length
+                return False
             offset = data.find(b"\x47", offset + 1)
     return False
 
@@ -628,7 +701,7 @@ def is_video_file(candidate: Path) -> bool:
     media_type, _encoding = mimetypes.guess_type(candidate.name)
     suffix = candidate.suffix.lower()
     if suffix in VIDEO_EXTENSIONS or bool(
-        suffix not in SHARED_BMFF_EXTENSIONS | {".webm"}
+        suffix not in SHARED_BMFF_EXTENSIONS | SHARED_MPEG_TS_EXTENSIONS | {".webm"}
         and media_type
         and media_type.startswith("video/")
     ):

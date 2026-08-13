@@ -19,12 +19,28 @@ VIDEO_BMFF_BYTES = (
 )
 
 
-def mpeg_ts(packet_size: int) -> bytes:
-    payload = bytearray(packet_size * 5)
-    for index in range(5):
+def mpeg_ts(packet_size: int, stream_type: int = 0x1B) -> bytes:
+    packets = bytearray(b"\xff" * (packet_size * 5))
+
+    def write_packet(index: int, pid: int, payload: bytes) -> None:
         offset = packet_size * index
-        payload[offset : offset + 4] = b"\x47\x00\x00\x10"
-    return bytes(payload)
+        packets[offset : offset + 4] = bytes(
+            (0x47, 0x40 | (pid >> 8), pid & 0xFF, 0x10)
+        )
+        packets[offset + 4 : offset + 5 + len(payload)] = b"\x00" + payload
+
+    pat = b"\x00\xb0\x0d\x00\x01\xc1\x00\x00\x00\x01\xe1\x00\x00\x00\x00\x00"
+    pmt = (
+        b"\x02\xb0\x12\x00\x01\xc1\x00\x00\xe1\x01\xf0\x00"
+        + bytes((stream_type, 0xE1, 0x01, 0xF0, 0x00))
+        + b"\x00\x00\x00\x00"
+    )
+    write_packet(0, 0, pat)
+    write_packet(1, 0x100, pmt)
+    for index in range(2, 5):
+        offset = packet_size * index
+        packets[offset : offset + 4] = b"\x47\x01\x01\x10"
+    return bytes(packets)
 
 
 class ContentContractTest(unittest.TestCase):
@@ -784,12 +800,14 @@ model: none
             "movie.265",
             "movie.hevc",
             "movie.m4v",
+            "movie.mjpeg",
+            "movie.mjpg",
         ):
             video = root / "assets" / filename
             video.parent.mkdir(exist_ok=True)
             video.write_bytes(b"video")
         errors = validate_repository(root)
-        self.assertEqual(sum("동영상 파일" in error for error in errors), 11)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 13)
 
     def test_rejects_animated_gif_outside_news(self) -> None:
         temporary, root, article = self.repository()
@@ -882,6 +900,17 @@ model: none
         video.parent.mkdir()
         video.write_bytes(mpeg_ts(204))
         self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
+    def test_allows_audio_only_mpeg_transport_stream(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        audio = root / "assets/podcast.ts"
+        audio.parent.mkdir()
+        audio.write_bytes(mpeg_ts(188, stream_type=0x0F))
+        self.assertFalse(
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
