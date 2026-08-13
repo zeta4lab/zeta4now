@@ -3,6 +3,7 @@ from __future__ import annotations
 import mimetypes
 import re
 import sys
+from filecmp import cmp
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
@@ -16,6 +17,7 @@ SINGLE_LINE_IMAGE_RE = re.compile(r"^!\[(?:\\.|[^\]\\\r\n])*\]\(((?:\\.|[^\r\n])
 ATTRIBUTION_TEXT_RE = re.compile(
     r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$"
 )
+BARE_EXTERNAL_URL_RE = re.compile(r"(?i)(?<![\w])(?:(?:https?|ftp):)?//[^\s<]+")
 ALLOWED_IMAGE_EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png"}
 VIDEO_EXTENSIONS = {
     ".mp4",
@@ -73,6 +75,21 @@ def valid_article_link(value: str) -> bool:
     return value.startswith("#") or valid_https_url(value)
 
 
+def has_invalid_bare_link(tokens: list[Token]) -> bool:
+    for parent in tokens:
+        link_depth = 0
+        for token in parent.children or []:
+            if token.type == "link_open":
+                link_depth += 1
+            elif token.type == "link_close":
+                link_depth -= 1
+            elif token.type == "text" and link_depth == 0:
+                for match in BARE_EXTERNAL_URL_RE.finditer(token.content):
+                    if not valid_article_link(match.group(0).rstrip(".,;:!?)]}")):
+                        return True
+    return False
+
+
 def attribution_after(tokens: list[Token], inline_index: int) -> re.Match[str] | None:
     expected = ("paragraph_close", "paragraph_open", "inline", "paragraph_close")
     following = tokens[inline_index + 1 : inline_index + 5]
@@ -102,6 +119,8 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
         for token in (parent.children or [])
     ):
         raise ValueError("링크는 문서 내부 앵커 또는 유효한 HTTPS URL이어야 합니다")
+    if has_invalid_bare_link(tokens):
+        raise ValueError("본문의 bare 외부 URL은 HTTPS를 사용해야 합니다")
 
     images: list[tuple[str, str, str, bool]] = []
     for index, token in enumerate(tokens):
@@ -191,7 +210,9 @@ def is_valid_image_file(candidate: Path) -> bool:
     return suffix == ".webp" and header.startswith(b"RIFF") and header[8:12] == b"WEBP"
 
 
-def validate_article(root: Path, article: Path) -> list[str]:
+def validate_article(
+    root: Path, article: Path, referenced_images: set[Path] | None = None
+) -> list[str]:
     errors: list[str] = []
     name = relative_name(root, article)
     path_match = ARTICLE_PATH_RE.fullmatch(name)
@@ -250,6 +271,8 @@ def validate_article(root: Path, article: Path) -> list[str]:
             errors.append(f"{name}: 사진 경로는 ./{slug}/<file> 형식이어야 합니다")
             continue
         image = article.parent / slug / parts[-1]
+        if referenced_images is not None:
+            referenced_images.add(image)
         if image.suffix.lower() not in ALLOWED_IMAGE_EXTENSIONS:
             errors.append(f"{name}: 사진 형식은 webp, jpg, jpeg 또는 png여야 합니다")
         elif not image.is_file() or image.is_symlink():
@@ -281,6 +304,11 @@ def validate_repository(root: Path) -> list[str]:
         if is_video_file(candidate) and (candidate.is_file() or candidate.is_symlink()):
             errors.append(f"{relative.as_posix()}: 동영상 파일은 저장할 수 없습니다")
 
+    referenced_images: set[Path] = set()
+    for article in news.rglob("*.md"):
+        if article.is_file() and not article.is_symlink():
+            errors.extend(validate_article(root, article, referenced_images))
+
     for candidate in news.rglob("*"):
         if candidate.is_symlink():
             errors.append(
@@ -290,9 +318,7 @@ def validate_repository(root: Path) -> list[str]:
         if not candidate.is_file():
             continue
         suffix = candidate.suffix.lower()
-        if suffix == ".md":
-            errors.extend(validate_article(root, candidate))
-        elif is_video_file(candidate):
+        if suffix == ".md" or is_video_file(candidate):
             continue
         elif suffix in ALLOWED_IMAGE_EXTENSIONS:
             media_parts = candidate.relative_to(news).parts
@@ -310,6 +336,10 @@ def validate_repository(root: Path) -> list[str]:
                 errors.append(
                     f"{relative_name(root, candidate)}: 대응하는 기사 파일이 없습니다"
                 )
+            elif candidate not in referenced_images:
+                errors.append(
+                    f"{relative_name(root, candidate)}: 대응하는 기사에서 참조하지 않은 사진입니다"
+                )
         else:
             errors.append(
                 f"{relative_name(root, candidate)}: 기사 미디어 디렉터리에는 webp, jpg, jpeg 또는 png만 저장할 수 있습니다"
@@ -318,9 +348,35 @@ def validate_repository(root: Path) -> list[str]:
     return list(dict.fromkeys(errors))
 
 
+def validate_immutable_media(base: Path, candidate: Path) -> list[str]:
+    errors: list[str] = []
+    base_news = base / "news"
+    if not base_news.is_dir():
+        return errors
+    for existing in base_news.rglob("*"):
+        if not existing.is_file() or existing.is_symlink():
+            continue
+        if existing.suffix.lower() not in ALLOWED_IMAGE_EXTENSIONS:
+            continue
+        relative = existing.relative_to(base)
+        proposed = candidate / relative
+        if (
+            proposed.is_file()
+            and not proposed.is_symlink()
+            and not cmp(existing, proposed, shallow=False)
+        ):
+            errors.append(
+                f"{relative.as_posix()}: 발행된 사진은 같은 경로에서 덮어쓸 수 없습니다"
+            )
+    return errors
+
+
 def main() -> int:
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve(strict=True)
     errors = validate_repository(root)
+    if len(sys.argv) > 2:
+        base = Path(sys.argv[2]).resolve(strict=True)
+        errors.extend(validate_immutable_media(base, root))
     if errors:
         for error in errors:
             print(error, file=sys.stderr)

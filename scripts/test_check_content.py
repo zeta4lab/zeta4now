@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from check_content import validate_repository
+from check_content import validate_immutable_media, validate_repository
 
 PNG_BYTES = b"\x89PNG\r\n\x1a\n"
 WEBP_BYTES = b"RIFF\x04\x00\x00\x00WEBP"
@@ -122,6 +122,17 @@ summary: 요약
             any("유효한 사진" in error for error in validate_repository(root))
         )
 
+    def test_rejects_unreferenced_image(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/unused.png"
+        image.parent.mkdir()
+        image.write_bytes(PNG_BYTES)
+        article.write_text(self.article(), encoding="utf-8")
+        self.assertTrue(
+            any("참조하지 않은" in error for error in validate_repository(root))
+        )
+
     def test_rejects_external_reference_style_image(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -204,6 +215,23 @@ summary: 요약
                 finally:
                     temporary.cleanup()
 
+    def test_rejects_bare_http_url(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article("관련 영상은 http://example.com/video 에서 확인합니다."),
+            encoding="utf-8",
+        )
+        self.assertTrue(any("HTTPS" in error for error in validate_repository(root)))
+
+    def test_allows_document_anchor(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article("[현재 문서의 출처로 이동](#출처)"), encoding="utf-8"
+        )
+        self.assertEqual(validate_repository(root), [])
+
     def test_ignores_reference_definitions_inside_html_blocks(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -276,7 +304,10 @@ summary: 요약
                         encoding="utf-8",
                     )
                     self.assertTrue(
-                        any("제작자" in error for error in validate_repository(root))
+                        any(
+                            "제작자" in error or "HTTPS" in error
+                            for error in validate_repository(root)
+                        )
                     )
                 finally:
                     temporary.cleanup()
@@ -527,6 +558,27 @@ summary: 요약
         video.write_bytes(packet)
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_overwriting_published_image(self) -> None:
+        base_temporary, base, base_article = self.repository()
+        candidate_temporary, candidate, candidate_article = self.repository()
+        self.addCleanup(base_temporary.cleanup)
+        self.addCleanup(candidate_temporary.cleanup)
+        relative = Path("news/ai/2026/08/2026-08-13-ai-daily/photo.png")
+        base_image = base / relative
+        candidate_image = candidate / relative
+        base_image.parent.mkdir()
+        candidate_image.parent.mkdir()
+        base_image.write_bytes(PNG_BYTES + b"old")
+        candidate_image.write_bytes(PNG_BYTES + b"new")
+        base_article.write_text(self.article(), encoding="utf-8")
+        candidate_article.write_text(self.article(), encoding="utf-8")
+        self.assertTrue(
+            any(
+                "덮어쓸 수 없습니다" in error
+                for error in validate_immutable_media(base, candidate)
+            )
         )
 
 

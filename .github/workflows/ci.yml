@@ -63,7 +63,7 @@ jobs:
 
       - name: Validate proposed content with the trusted base script
         if: github.event_name == 'pull_request_target'
-        run: uv run --with markdown-it-py==4.2.0 python validator/scripts/check_content.py candidate
+        run: uv run --with markdown-it-py==4.2.0 python validator/scripts/check_content.py candidate validator
 
       - name: Test trusted base validator
         if: github.event_name == 'pull_request_target'
