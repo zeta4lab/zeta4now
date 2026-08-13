@@ -439,6 +439,34 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
         0xD1,  # Dirac
         0xEA,  # VC-1
     }
+    private_video_identifiers = {
+        b"AV01",
+        b"AVC1",
+        b"H264",
+        b"HEVC",
+        b"VP09",
+        b"VVC1",
+        b"EVC1",
+    }
+
+    def has_private_video_registration(descriptors: bytes) -> bool:
+        offset = 0
+        while offset + 2 <= len(descriptors):
+            tag = descriptors[offset]
+            length = descriptors[offset + 1]
+            payload_start = offset + 2
+            payload_end = payload_start + length
+            if payload_end > len(descriptors):
+                return False
+            if (
+                tag == 0x05
+                and length >= 4
+                and descriptors[payload_start : payload_start + 4]
+                in private_video_identifiers
+            ):
+                return True
+            offset = payload_end
+        return False
 
     def drain_sections(
         pid: int,
@@ -540,11 +568,20 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
                     entries_end = len(payload) - 4
                     while entry + 5 <= entries_end:
                         stream_type = payload[entry]
-                        if stream_type in video_stream_types:
-                            return True
                         info_length = ((payload[entry + 3] & 0x0F) << 8) | payload[
                             entry + 4
                         ]
+                        info_start = entry + 5
+                        info_end = info_start + info_length
+                        if info_end > entries_end:
+                            break
+                        if stream_type in video_stream_types or (
+                            stream_type == 0x06
+                            and has_private_video_registration(
+                                payload[info_start:info_end]
+                            )
+                        ):
+                            return True
                         entry += 5 + info_length
                 return False
             offset = data.find(b"\x47", offset + 1)
@@ -763,9 +800,12 @@ def is_video_file(candidate: Path) -> bool:
     ):
         return False
     try:
+        file_size = candidate.stat().st_size
         with candidate.open("rb") as stream:
             prefix = stream.read(10)
             scan_offset = leading_id3_size(prefix)
+            if scan_offset > file_size:
+                scan_offset = 10
             stream.seek(scan_offset)
             header = stream.read(MAX_VIDEO_SCAN_BYTES + 416)
     except OSError:

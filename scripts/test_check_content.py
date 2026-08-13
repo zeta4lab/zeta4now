@@ -19,7 +19,9 @@ VIDEO_BMFF_BYTES = (
 )
 
 
-def mpeg_ts(packet_size: int, stream_type: int = 0x1B) -> bytes:
+def mpeg_ts(
+    packet_size: int, stream_type: int = 0x1B, registration: bytes = b""
+) -> bytes:
     packets = bytearray(b"\xff" * (packet_size * 5))
 
     def write_packet(index: int, pid: int, payload: bytes) -> None:
@@ -30,9 +32,22 @@ def mpeg_ts(packet_size: int, stream_type: int = 0x1B) -> bytes:
         packets[offset + 4 : offset + 5 + len(payload)] = b"\x00" + payload
 
     pat = b"\x00\xb0\x0d\x00\x01\xc1\x00\x00\x00\x01\xe1\x00\x00\x00\x00\x00"
+    descriptors = b"\x05\x04" + registration if registration else b""
+    section_length = 9 + 5 + len(descriptors) + 4
     pmt = (
-        b"\x02\xb0\x12\x00\x01\xc1\x00\x00\xe1\x01\xf0\x00"
-        + bytes((stream_type, 0xE1, 0x01, 0xF0, 0x00))
+        b"\x02"
+        + bytes((0xB0 | (section_length >> 8), section_length & 0xFF))
+        + b"\x00\x01\xc1\x00\x00\xe1\x01\xf0\x00"
+        + bytes(
+            (
+                stream_type,
+                0xE1,
+                0x01,
+                0xF0 | (len(descriptors) >> 8),
+                len(descriptors) & 0xFF,
+            )
+        )
+        + descriptors
         + b"\x00\x00\x00\x00"
     )
     write_packet(0, 0, pat)
@@ -925,6 +940,17 @@ model: none
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
+    def test_rejects_private_av1_mpeg_transport_stream(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.ts"
+        video.parent.mkdir()
+        video.write_bytes(mpeg_ts(188, stream_type=0x06, registration=b"AV01"))
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
     def test_reassembles_multi_packet_transport_stream_pmt(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -1000,6 +1026,17 @@ model: none
         video.write_bytes(
             b"ID3\x04\x00\x00" + synchsafe_size + bytes(metadata_size) + mpeg_ts(188)
         )
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
+    def test_does_not_trust_id3_size_beyond_end_of_file(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(b"ID3\x04\x00\x00\x7f\x7f\x7f\x7f" + VIDEO_BMFF_BYTES)
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
         )
