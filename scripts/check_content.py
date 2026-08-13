@@ -8,9 +8,9 @@ from urllib.parse import unquote
 ARTICLE_PATH_RE = re.compile(r"^news/[^/]+/\d{4}/\d{2}/([^/]+)\.md$")
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
 SLUG_RE = re.compile(r"^slug:\s*([^\s]+)\s*$", re.MULTILINE)
-MARKDOWN_IMAGE_RE = re.compile(r"(?<!\\)!\[([^\]\r\n]*)\]\(([^)\r\n]+)\)")
-REFERENCE_IMAGE_RE = re.compile(r"(?<!\\)!\[([^\]\r\n]*)\]\[([^\]\r\n]*)\]")
-SHORTCUT_IMAGE_RE = re.compile(r"(?<![\\\]])!\[([^\]\r\n]+)\](?![\[(])")
+MARKDOWN_IMAGE_RE = re.compile(r"!\[([^\]\r\n]*)\]\(([^)\r\n]+)\)")
+REFERENCE_IMAGE_RE = re.compile(r"!\[([^\]\r\n]*)\]\[([^\]\r\n]*)\]")
+SHORTCUT_IMAGE_RE = re.compile(r"!\[([^\]\r\n]+)\](?![\[(])")
 REFERENCE_DEFINITION_RE = re.compile(
     r"^[ \t]{0,3}\[([^\]\r\n]+)\]:[ \t]*(?:<([^>\r\n]+)>|([^\s]+))"
     r'(?:[ \t]+(?:"[^"\r\n]*"|\'[^\'\r\n]*\'|\([^\)\r\n]*\)))?[ \t]*$',
@@ -39,6 +39,72 @@ VIDEO_EXTENSIONS = {
 MAX_MARKDOWN_BYTES = 1_000_000
 
 
+def mask_range(characters: list[str], start: int, end: int) -> None:
+    for index in range(start, end):
+        if characters[index] not in {"\r", "\n"}:
+            characters[index] = " "
+
+
+def without_markdown_code(markdown: str) -> str:
+    characters = list(markdown)
+    offset = 0
+    fence_character = ""
+    fence_length = 0
+    for line in markdown.splitlines(keepends=True):
+        content = line.rstrip("\r\n")
+        stripped = content.lstrip(" ")
+        indentation = len(content) - len(stripped)
+        opening = re.match(r"(`{3,}|~{3,})", stripped) if indentation <= 3 else None
+        closing = (
+            re.fullmatch(
+                rf"{re.escape(fence_character)}{{{fence_length},}}[ \t]*", stripped
+            )
+            if fence_character
+            else None
+        )
+        if fence_character:
+            mask_range(characters, offset, offset + len(line))
+            if closing:
+                fence_character = ""
+                fence_length = 0
+        elif opening:
+            fence = opening.group(1)
+            fence_character = fence[0]
+            fence_length = len(fence)
+            mask_range(characters, offset, offset + len(line))
+        elif content.startswith(("    ", "\t")):
+            mask_range(characters, offset, offset + len(line))
+        offset += len(line)
+
+    masked = "".join(characters)
+    characters = list(masked)
+    index = 0
+    while index < len(masked):
+        if masked[index] != "`":
+            index += 1
+            continue
+        end = index
+        while end < len(masked) and masked[end] == "`":
+            end += 1
+        delimiter = masked[index:end]
+        closing_index = masked.find(delimiter, end)
+        if closing_index < 0:
+            index = end
+            continue
+        mask_range(characters, index, closing_index + len(delimiter))
+        index = closing_index + len(delimiter)
+    return "".join(characters)
+
+
+def is_escaped(markdown: str, index: int) -> bool:
+    backslashes = 0
+    index -= 1
+    while index >= 0 and markdown[index] == "\\":
+        backslashes += 1
+        index -= 1
+    return backslashes % 2 == 1
+
+
 def relative_name(root: Path, candidate: Path) -> str:
     return candidate.relative_to(root).as_posix()
 
@@ -56,12 +122,17 @@ def markdown_images(markdown: str) -> list[tuple[str, str | None, int]]:
     images = [
         (match.group(1), match.group(2), match.end())
         for match in MARKDOWN_IMAGE_RE.finditer(markdown)
+        if not is_escaped(markdown, match.start())
     ]
     for match in REFERENCE_IMAGE_RE.finditer(markdown):
+        if is_escaped(markdown, match.start()):
+            continue
         alt = match.group(1)
         label = match.group(2).strip() or alt.strip()
         images.append((alt, definitions.get(label.casefold()), match.end()))
     for match in SHORTCUT_IMAGE_RE.finditer(markdown):
+        if is_escaped(markdown, match.start()):
+            continue
         alt = match.group(1)
         images.append((alt, definitions.get(alt.strip().casefold()), match.end()))
     return sorted(images, key=lambda image: image[2])
@@ -89,10 +160,11 @@ def validate_article(root: Path, article: Path) -> list[str]:
     slug = slug_match.group(1) if slug_match else ""
     if slug != path_match.group(1):
         errors.append(f"{name}: front matter slug와 파일명이 일치하지 않습니다")
-    if RAW_MEDIA_TAG_RE.search(markdown):
+    media_markdown = without_markdown_code(markdown)
+    if RAW_MEDIA_TAG_RE.search(media_markdown):
         errors.append(f"{name}: 원시 미디어 태그나 임베드는 허용하지 않습니다")
 
-    for raw_alt, raw_destination, image_end in markdown_images(markdown):
+    for raw_alt, raw_destination, image_end in markdown_images(media_markdown):
         alt = raw_alt.strip()
         destination = (raw_destination or "").strip()
         bracketed = destination.startswith("<") and destination.endswith(">")
@@ -129,7 +201,12 @@ def validate_article(root: Path, article: Path) -> list[str]:
             errors.append(
                 f"{name}: 참조한 사진 파일이 없거나 심볼릭 링크입니다: {decoded}"
             )
-        if not IMAGE_ATTRIBUTION_RE.match(markdown[image_end:]):
+        attribution = IMAGE_ATTRIBUTION_RE.match(media_markdown[image_end:])
+        if (
+            not attribution
+            or not attribution.group(1).strip()
+            or not attribution.group(3).strip()
+        ):
             errors.append(
                 f"{name}: 각 사진 바로 다음에 제작자·HTTPS 출처·라이선스를 표시해야 합니다"
             )

@@ -60,6 +60,20 @@ summary: 요약
             any("사진 경로" in error for error in validate_repository(root))
         )
 
+    def test_rejects_external_image_after_even_backslashes(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article(
+                r"\\![외부 사진](https://example.com/photo.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("사진 경로" in error for error in validate_repository(root))
+        )
+
     def test_rejects_image_without_attribution(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -71,6 +85,32 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(any("제작자" in error for error in validate_repository(root)))
+
+    def test_rejects_whitespace_only_attribution(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/data-center.webp"
+        image.parent.mkdir()
+        image.write_bytes(b"image")
+        article.write_text(
+            self.article(
+                "![데이터센터 전경](./2026-08-13-ai-daily/data-center.webp)",
+                "*사진:   · 출처: https://example.com/photo · 라이선스:   *",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(any("제작자" in error for error in validate_repository(root)))
+
+    def test_ignores_media_examples_in_code(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article(
+                '`<img src="example.png">`\n\n```html\n<video src="example.mp4"></video>\n```'
+            ),
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_repository(root), [])
 
     def test_rejects_video_outside_news(self) -> None:
         temporary, root, article = self.repository()
