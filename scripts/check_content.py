@@ -3,6 +3,7 @@ from __future__ import annotations
 import mimetypes
 import re
 import sys
+import warnings
 from filecmp import cmp
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -50,7 +51,27 @@ VIDEO_EXTENSIONS = {
     ".mxf",
 }
 MAX_MARKDOWN_BYTES = 1_000_000
+MAX_IMAGE_BYTES = 10_000_000
+MAX_IMAGE_PIXELS = 20_000_000
+MAX_IMAGE_DIMENSION = 8_000
 COMMONMARK = MarkdownIt("commonmark")
+
+NON_VIDEO_ISO_BMFF_BRANDS = {
+    b"M4A ",
+    b"M4B ",
+    b"M4P ",
+    b"M4R ",
+    b"avif",
+    b"avis",
+    b"heic",
+    b"heix",
+    b"hevc",
+    b"hevx",
+    b"heim",
+    b"heis",
+    b"mif1",
+    b"msf1",
+}
 
 
 def contains_html(tokens: list[Token]) -> bool:
@@ -187,6 +208,45 @@ def has_annex_b_video(header: bytes) -> bool:
     return False
 
 
+def has_video_iso_bmff_brand(header: bytes) -> bool:
+    if len(header) < 16 or header[4:8] != b"ftyp":
+        return False
+    box_size = int.from_bytes(header[:4], "big")
+    if box_size < 16:
+        return False
+    brands = [header[8:12]]
+    brands.extend(
+        header[offset : offset + 4]
+        for offset in range(16, min(box_size, len(header)) - 3, 4)
+    )
+    if brands[0] in NON_VIDEO_ISO_BMFF_BRANDS:
+        return False
+    return any(
+        brand.startswith((b"3gp", b"3g2"))
+        or brand
+        in {
+            b"F4V ",
+            b"M4V ",
+            b"M4VH",
+            b"M4VP",
+            b"avc1",
+            b"dash",
+            b"hev1",
+            b"hvc1",
+            b"iso2",
+            b"iso5",
+            b"iso6",
+            b"isom",
+            b"mp41",
+            b"mp42",
+            b"msdh",
+            b"msix",
+            b"qt  ",
+        }
+        for brand in brands
+    )
+
+
 def is_video_file(candidate: Path) -> bool:
     media_type, _encoding = mimetypes.guess_type(candidate.name)
     if candidate.suffix.lower() in VIDEO_EXTENSIONS or bool(
@@ -205,10 +265,11 @@ def is_video_file(candidate: Path) -> bool:
     except OSError:
         return False
     return (
-        (len(header) >= 12 and header[4:8] == b"ftyp")
+        has_video_iso_bmff_brand(header)
         or (header.startswith(b"RIFF") and header[8:12] == b"AVI ")
         or header.startswith(
             (
+                b"DKIF",
                 b"\x1a\x45\xdf\xa3",
                 b"FLV",
                 b"OggS",
@@ -233,10 +294,26 @@ def is_valid_image_file(candidate: Path) -> bool:
         ".webp": "WEBP",
     }
     try:
-        with Image.open(candidate) as image:
-            image.load()
-            return image.format == expected.get(candidate.suffix.lower())
-    except (OSError, UnidentifiedImageError):
+        if candidate.stat().st_size > MAX_IMAGE_BYTES:
+            return False
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", Image.DecompressionBombWarning)
+            with Image.open(candidate) as image:
+                width, height = image.size
+                if (
+                    width > MAX_IMAGE_DIMENSION
+                    or height > MAX_IMAGE_DIMENSION
+                    or width * height > MAX_IMAGE_PIXELS
+                ):
+                    return False
+                image.load()
+                return image.format == expected.get(candidate.suffix.lower())
+    except (
+        OSError,
+        UnidentifiedImageError,
+        Image.DecompressionBombError,
+        Image.DecompressionBombWarning,
+    ):
         return False
 
 

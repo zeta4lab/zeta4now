@@ -6,6 +6,7 @@ from base64 import b64decode
 from pathlib import Path
 
 from check_content import validate_immutable_media, validate_repository
+from PIL import Image
 
 PNG_BYTES = b64decode(
     "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
@@ -149,6 +150,23 @@ summary: 요약
         article.write_text(
             self.article(
                 "![사진](./2026-08-13-ai-daily/photo.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("유효한 사진" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_image_over_pixel_limit_before_full_decode(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/oversized.png"
+        image.parent.mkdir()
+        Image.new("1", (5_000, 5_000)).save(image)
+        article.write_text(
+            self.article(
+                "![대형 사진](./2026-08-13-ai-daily/oversized.png)",
                 "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
             ),
             encoding="utf-8",
@@ -627,6 +645,33 @@ summary: 요약
         video.parent.mkdir()
         video.write_bytes(packet)
         self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_disguised_ivf_video(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(b"DKIF" + bytes(28))
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
+    def test_allows_non_video_iso_bmff_brands_outside_news(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        assets = root / "assets"
+        assets.mkdir()
+        (assets / "audio.bin").write_bytes(
+            b"\x00\x00\x00\x18ftypM4A \x00\x00\x00\x00M4A mp42"
+        )
+        (assets / "image.bin").write_bytes(
+            b"\x00\x00\x00\x18ftypavif\x00\x00\x00\x00avifmif1"
+        )
+        self.assertFalse(
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
