@@ -1321,6 +1321,14 @@ model: none
         )
         self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
 
+    def test_rejects_setext_source_heading(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace("## 출처", "출처\n---"), encoding="utf-8"
+        )
+        self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
+
     def test_parses_ebml_tracks_beyond_bounded_signature_scan(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)

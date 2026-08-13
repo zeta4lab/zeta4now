@@ -276,6 +276,7 @@ def has_source_footer(markdown: str, require_disclosure: bool) -> bool:
         for index, token in enumerate(tokens)
         if token.type == "heading_open"
         and token.tag == "h2"
+        and token.markup == "##"
         and token.level == 0
         and index + 1 < len(tokens)
         and tokens[index + 1].type == "inline"
