@@ -14,7 +14,7 @@ news/<topic>/<YYYY>/<MM>/<slug>.md
 - `title`: 제목
 - `slug`: 저장소 전체에서 고유한 문서 식별자
 - `topic`: 검색·분류에 사용하는 영문 소문자 또는 한글 식별자
-- `published_at`: 시간대가 포함된 ISO 8601 발행 시각
+- `published_at`: 기사 경로의 연·월과 일치하며 시간대가 포함된 ISO 8601 발행 시각
 - `summary`: 목록에 표시할 요약
 - `tags`: 선택 태그 목록
 - `generated_by`: 생성 자동화 식별자

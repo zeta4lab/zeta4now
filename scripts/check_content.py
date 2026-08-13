@@ -17,7 +17,8 @@ from markdown_it.token import Token
 from PIL import Image, UnidentifiedImageError
 
 ARTICLE_PATH_RE = re.compile(
-    r"^news/([^/]+)/(?:[1-9]\d{3})/(?:0[1-9]|1[0-2])/([^/]+)\.md$"
+    r"^news/(?P<topic>[^/]+)/(?P<year>[1-9]\d{3})/"
+    r"(?P<month>0[1-9]|1[0-2])/(?P<slug>[^/]+)\.md$"
 )
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
 ATTRIBUTION_TEXT_RE = re.compile(
@@ -387,7 +388,9 @@ def has_ogg_video(candidate: Path, offset: int = 0) -> bool:
                     if segment_length == 255:
                         continue
                     if serial in identification_streams:
-                        if packet.startswith((b"\x80theora", b"OVP80", b"BBCD")):
+                        if packet.startswith(
+                            (b"\x80theora", b"OVP80", b"BBCD", b"\x01video")
+                        ):
                             return True
                         identification_streams.remove(serial)
                     packet.clear()
@@ -412,8 +415,26 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
         0x02,  # MPEG-2 Video
         0x10,  # MPEG-4 Visual
         0x1B,  # H.264/AVC
+        0x1E,  # Auxiliary video
+        0x1F,  # AVC SVC sub-bitstream
+        0x20,  # AVC MVC sub-bitstream
+        0x21,  # JPEG 2000 video
+        0x22,  # MPEG-2 additional view
+        0x23,  # AVC additional view
         0x24,  # H.265/HEVC
         0x25,  # HEVC temporal subset
+        0x26,  # AVC MVCD sub-bitstream
+        0x28,  # HEVC enhancement sub-partition
+        0x29,  # HEVC temporal enhancement sub-partition
+        0x2A,  # HEVC view enhancement sub-partition
+        0x2B,  # HEVC temporal view enhancement sub-partition
+        0x2C,  # Green access units for video
+        0x2F,  # Quality access units for video
+        0x31,  # HEVC motion-constrained tile-set substream
+        0x33,  # H.266/VVC
+        0x34,  # VVC temporal subset
+        0x35,  # EVC
+        0x36,  # LCEVC
         0x42,  # AVS
         0xD1,  # Dirac
         0xEA,  # VC-1
@@ -878,11 +899,12 @@ def validate_article(
             r"[a-z0-9가-힣][a-z0-9가-힣_-]*", topic
         ):
             errors.append(f"{name}: front matter topic 형식이 올바르지 않습니다")
-        if isinstance(topic, str) and topic != path_match.group(1):
+        if isinstance(topic, str) and topic != path_match.group("topic"):
             errors.append(
                 f"{name}: front matter topic과 news 하위 디렉터리가 일치하지 않습니다"
             )
         published_at = metadata.get("published_at")
+        published: datetime | None = None
         try:
             published = (
                 published_at
@@ -895,13 +917,20 @@ def validate_article(
             errors.append(
                 f"{name}: front matter published_at은 시간대가 있는 ISO 8601이어야 합니다"
             )
+        if published and (
+            published.year != int(path_match.group("year"))
+            or published.month != int(path_match.group("month"))
+        ):
+            errors.append(
+                f"{name}: published_at의 연월과 기사 경로의 연월이 일치하지 않습니다"
+            )
         tags = metadata.get("tags")
         if tags is not None and (
             not isinstance(tags, list)
             or any(not isinstance(tag, str) or not tag.strip() for tag in tags)
         ):
             errors.append(f"{name}: front matter tags는 문자열 목록이어야 합니다")
-    if slug != path_match.group(2):
+    if slug != path_match.group("slug"):
         errors.append(f"{name}: front matter slug와 파일명이 일치하지 않습니다")
     elif seen_slugs is not None:
         previous = seen_slugs.setdefault(slug, name)

@@ -914,6 +914,17 @@ model: none
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
+    def test_rejects_jpeg_2000_mpeg_transport_stream(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.ts"
+        video.parent.mkdir()
+        video.write_bytes(mpeg_ts(188, stream_type=0x21))
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
     def test_reassembles_multi_packet_transport_stream_pmt(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -1016,12 +1027,14 @@ model: none
 
         (assets / "podcast.ogg").write_bytes(ogg_page(b"OpusHead"))
         (assets / "movie.bin").write_bytes(ogg_page(b"\x80theora"))
+        (assets / "movie.ogm").write_bytes(ogg_page(b"\x01video"))
         (assets / "multiplexed.dat").write_bytes(
             ogg_page(b"OpusHead") + ogg_page(b"\x80theora")
         )
         errors = validate_repository(root)
-        self.assertEqual(sum("동영상 파일" in error for error in errors), 2)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 3)
         self.assertTrue(any("movie.bin" in error for error in errors))
+        self.assertTrue(any("movie.ogm" in error for error in errors))
         self.assertTrue(any("multiplexed.dat" in error for error in errors))
 
     def test_reassembles_continued_ogg_identification_packet(self) -> None:
@@ -1174,6 +1187,20 @@ model: none
                     )
                 finally:
                     temporary.cleanup()
+
+    def test_rejects_publication_month_that_differs_from_path(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace(
+                "published_at: 2026-08-13T06:00:00+09:00",
+                "published_at: 2025-07-01T00:00:00+09:00",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("published_at의 연월" in error for error in validate_repository(root))
+        )
 
     def test_rejects_missing_source_footer(self) -> None:
         temporary, root, article = self.repository()
