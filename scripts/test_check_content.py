@@ -783,12 +783,35 @@ model: none
             "movie.h265",
             "movie.265",
             "movie.hevc",
+            "movie.m4v",
         ):
             video = root / "assets" / filename
             video.parent.mkdir(exist_ok=True)
             video.write_bytes(b"video")
         errors = validate_repository(root)
-        self.assertEqual(sum("동영상 파일" in error for error in errors), 10)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 11)
+
+    def test_rejects_animated_gif_outside_news(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        image = root / "assets/animated.gif"
+        image.parent.mkdir()
+        frames = [Image.new("RGB", (1, 1), color) for color in ("red", "blue")]
+        frames[0].save(
+            image,
+            format="GIF",
+            save_all=True,
+            append_images=frames[1:],
+            duration=100,
+            loop=0,
+        )
+        self.assertTrue(
+            any(
+                "assets/animated.gif" in error and "사진 형식" in error
+                for error in validate_repository(root)
+            )
+        )
 
     def test_rejects_video_content_with_disguised_extensions(self) -> None:
         temporary, root, article = self.repository()

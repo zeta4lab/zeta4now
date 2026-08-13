@@ -52,8 +52,9 @@ VIDEO_EXTENSIONS = {
     ".h265",
     ".265",
     ".hevc",
+    ".m4v",
 }
-SHARED_BMFF_EXTENSIONS = {".mp4", ".mov", ".m4v", ".3gp", ".3g2", ".f4v"}
+SHARED_BMFF_EXTENSIONS = {".mp4", ".mov", ".3gp", ".3g2", ".f4v"}
 MAX_MARKDOWN_BYTES = 1_000_000
 MAX_IMAGE_BYTES = 10_000_000
 MAX_IMAGE_PIXELS = 20_000_000
@@ -895,8 +896,18 @@ def validate_repository(root: Path, base: Path | None = None) -> list[str]:
         if ".git" in relative.parts:
             continue
         is_stored_file = candidate.is_file() or candidate.is_symlink()
+        media_type, _encoding = mimetypes.guess_type(candidate.name)
         if is_stored_file and is_video_file(candidate):
             errors.append(f"{relative.as_posix()}: 동영상 파일은 저장할 수 없습니다")
+        if (
+            is_stored_file
+            and media_type
+            and media_type.startswith("image/")
+            and candidate.suffix.lower() not in ALLOWED_IMAGE_EXTENSIONS
+        ):
+            errors.append(
+                f"{relative.as_posix()}: 사진 형식은 webp, jpg, jpeg 또는 png여야 합니다"
+            )
         if (
             is_stored_file
             and candidate.suffix.lower() in ALLOWED_IMAGE_EXTENSIONS
