@@ -695,6 +695,19 @@ summary: 요약
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
+    def test_rejects_disguised_204_byte_mpeg_transport_stream(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        packet = bytearray(409)
+        packet[0] = packet[204] = packet[408] = 0x47
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(packet)
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
     def test_rejects_disguised_ivf_video(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)

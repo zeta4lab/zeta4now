@@ -353,6 +353,7 @@ def is_video_file(candidate: Path) -> bool:
         or has_annex_b_video(header)
         or (len(header) > 376 and header[0] == header[188] == header[376] == 0x47)
         or (len(header) > 388 and header[4] == header[196] == header[388] == 0x47)
+        or (len(header) > 408 and header[0] == header[204] == header[408] == 0x47)
     )
 
 
