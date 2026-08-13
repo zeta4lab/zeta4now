@@ -186,14 +186,23 @@ summary: 요약
             any("inline Markdown" in error for error in validate_repository(root))
         )
 
-    def test_rejects_http_video_link(self) -> None:
-        temporary, root, article = self.repository()
-        self.addCleanup(temporary.cleanup)
-        article.write_text(
-            self.article("[관련 영상](http://www.youtube.com/watch?v=example)"),
-            encoding="utf-8",
-        )
-        self.assertTrue(any("HTTPS" in error for error in validate_repository(root)))
+    def test_rejects_non_https_video_link(self) -> None:
+        for url in (
+            "http://www.youtube.com/watch?v=example",
+            "//www.youtube.com/watch?v=example",
+            "ftp://example.com/video.mp4",
+        ):
+            with self.subTest(url=url):
+                temporary, root, article = self.repository()
+                try:
+                    article.write_text(
+                        self.article(f"[관련 영상]({url})"), encoding="utf-8"
+                    )
+                    self.assertTrue(
+                        any("HTTPS" in error for error in validate_repository(root))
+                    )
+                finally:
+                    temporary.cleanup()
 
     def test_ignores_reference_definitions_inside_html_blocks(self) -> None:
         temporary, root, article = self.repository()

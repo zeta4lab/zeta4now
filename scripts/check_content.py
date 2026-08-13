@@ -69,6 +69,10 @@ def valid_https_url(value: str) -> bool:
     return parsed.scheme == "https" and bool(parsed.hostname)
 
 
+def valid_article_link(value: str) -> bool:
+    return value.startswith("#") or valid_https_url(value)
+
+
 def attribution_after(tokens: list[Token], inline_index: int) -> re.Match[str] | None:
     expected = ("paragraph_close", "paragraph_open", "inline", "paragraph_close")
     following = tokens[inline_index + 1 : inline_index + 5]
@@ -93,11 +97,11 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
         raise ValueError("원시 HTML은 허용하지 않습니다")
     if any(
         token.type == "link_open"
-        and str(token.attrGet("href") or "").lower().startswith("http://")
+        and not valid_article_link(str(token.attrGet("href") or ""))
         for parent in tokens
         for token in (parent.children or [])
     ):
-        raise ValueError("동영상을 포함한 외부 링크는 HTTPS를 사용해야 합니다")
+        raise ValueError("링크는 문서 내부 앵커 또는 유효한 HTTPS URL이어야 합니다")
 
     images: list[tuple[str, str, str, bool]] = []
     for index, token in enumerate(tokens):
