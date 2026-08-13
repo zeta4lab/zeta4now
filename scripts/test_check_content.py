@@ -3,6 +3,7 @@ from __future__ import annotations
 import tempfile
 import unittest
 from base64 import b64decode
+from io import BytesIO
 from pathlib import Path
 
 from check_content import validate_immutable_media, validate_repository
@@ -157,6 +158,37 @@ summary: 요약
         self.assertTrue(
             any("유효한 사진" in error for error in validate_repository(root))
         )
+
+    def test_rejects_valid_image_with_appended_video(self) -> None:
+        jpeg = BytesIO()
+        Image.new("RGB", (1, 1)).save(jpeg, format="JPEG")
+        video = b"\x00\x00\x00\x18ftypisom\x00\x00\x00\x00isom"
+        for extension, payload in (
+            ("png", PNG_BYTES),
+            ("jpg", jpeg.getvalue()),
+            ("webp", WEBP_BYTES),
+        ):
+            with self.subTest(extension=extension):
+                temporary, root, article = self.repository()
+                try:
+                    image = article.parent / f"2026-08-13-ai-daily/polyglot.{extension}"
+                    image.parent.mkdir()
+                    image.write_bytes(payload + video)
+                    article.write_text(
+                        self.article(
+                            f"![사진](./2026-08-13-ai-daily/polyglot.{extension})",
+                            "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+                        ),
+                        encoding="utf-8",
+                    )
+                    self.assertTrue(
+                        any(
+                            "유효한 사진" in error
+                            for error in validate_repository(root)
+                        )
+                    )
+                finally:
+                    temporary.cleanup()
 
     def test_rejects_image_over_pixel_limit_before_full_decode(self) -> None:
         temporary, root, article = self.repository()
@@ -658,6 +690,22 @@ summary: 요약
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
         )
+
+    def test_distinguishes_ogg_audio_from_disguised_ogg_video(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        assets = root / "assets"
+        assets.mkdir()
+
+        def ogg_page(packet: bytes) -> bytes:
+            return b"OggS" + bytes(22) + b"\x01" + bytes([len(packet)]) + packet
+
+        (assets / "podcast.ogg").write_bytes(ogg_page(b"OpusHead"))
+        (assets / "movie.bin").write_bytes(ogg_page(b"\x80theora"))
+        errors = validate_repository(root)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 1)
+        self.assertTrue(any("movie.bin" in error for error in errors))
 
     def test_allows_non_video_iso_bmff_brands_outside_news(self) -> None:
         temporary, root, article = self.repository()

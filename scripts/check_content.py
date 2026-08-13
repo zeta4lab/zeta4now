@@ -208,6 +208,27 @@ def has_annex_b_video(header: bytes) -> bool:
     return False
 
 
+def first_ogg_packet(header: bytes) -> bytes:
+    if len(header) < 28 or not header.startswith(b"OggS"):
+        return b""
+    segment_count = header[26]
+    table_end = 27 + segment_count
+    if len(header) < table_end:
+        return b""
+    packet_length = 0
+    for size in header[27:table_end]:
+        packet_length += size
+        if size < 255:
+            break
+    packet_end = table_end + packet_length
+    return header[table_end:packet_end] if len(header) >= packet_end else b""
+
+
+def has_ogg_video(header: bytes) -> bool:
+    packet = first_ogg_packet(header)
+    return packet.startswith((b"\x80theora", b"OVP80", b"BBCD"))
+
+
 def has_video_iso_bmff_brand(header: bytes) -> bool:
     if len(header) < 16 or header[4:8] != b"ftyp":
         return False
@@ -264,6 +285,8 @@ def is_video_file(candidate: Path) -> bool:
             header = stream.read(512)
     except OSError:
         return False
+    if header.startswith(b"OggS"):
+        return has_ogg_video(header)
     return (
         has_video_iso_bmff_brand(header)
         or (header.startswith(b"RIFF") and header[8:12] == b"AVI ")
@@ -272,7 +295,6 @@ def is_video_file(candidate: Path) -> bool:
                 b"DKIF",
                 b"\x1a\x45\xdf\xa3",
                 b"FLV",
-                b"OggS",
                 b".RMF",
                 b"\x30\x26\xb2\x75\x8e\x66\xcf\x11",
                 b"\x00\x00\x01\xba",
@@ -296,6 +318,35 @@ def is_valid_image_file(candidate: Path) -> bool:
     try:
         if candidate.stat().st_size > MAX_IMAGE_BYTES:
             return False
+        payload = candidate.read_bytes()
+        suffix = candidate.suffix.lower()
+        if suffix == ".png":
+            offset = 8
+            if not payload.startswith(b"\x89PNG\r\n\x1a\n"):
+                return False
+            while offset + 12 <= len(payload):
+                chunk_length = int.from_bytes(payload[offset : offset + 4], "big")
+                chunk_type = payload[offset + 4 : offset + 8]
+                offset += 12 + chunk_length
+                if offset > len(payload):
+                    return False
+                if chunk_type == b"IEND":
+                    if chunk_length != 0 or offset != len(payload):
+                        return False
+                    break
+            else:
+                return False
+        elif suffix in {".jpg", ".jpeg"}:
+            if not payload.startswith(b"\xff\xd8") or not payload.endswith(b"\xff\xd9"):
+                return False
+        elif suffix == ".webp":
+            if (
+                len(payload) < 12
+                or payload[:4] != b"RIFF"
+                or payload[8:12] != b"WEBP"
+                or int.from_bytes(payload[4:8], "little") + 8 != len(payload)
+            ):
+                return False
         with warnings.catch_warnings():
             warnings.simplefilter("error", Image.DecompressionBombWarning)
             with Image.open(candidate) as image:
