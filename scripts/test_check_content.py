@@ -702,13 +702,14 @@ summary: 요약
         def box(kind: bytes, payload: bytes) -> bytes:
             return (len(payload) + 8).to_bytes(4, "big") + kind + payload
 
+        leading_free = box(b"free", b"metadata")
         ftyp = box(b"ftyp", b"isom\x00\x00\x00\x00isom")
         mdat = box(b"mdat", bytes(1_100_000))
         hdlr = box(b"hdlr", bytes(8) + b"vide")
         moov = box(b"moov", box(b"trak", box(b"mdia", hdlr)))
         video = root / "assets/movie.bin"
         video.parent.mkdir()
-        video.write_bytes(ftyp + mdat + moov)
+        video.write_bytes(leading_free + ftyp + mdat + moov)
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
         )

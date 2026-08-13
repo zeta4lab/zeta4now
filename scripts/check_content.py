@@ -406,8 +406,11 @@ def has_exact_jpeg_container(payload: bytes) -> bool:
 
 def has_video_iso_bmff_track(candidate: Path, start: int = 0) -> bool:
     containers = {b"moov", b"trak", b"mdia"}
+    has_ftyp = False
+    has_video = False
 
     def scan_boxes(stream: BinaryIO, offset: int, end: int, depth: int) -> bool:
+        nonlocal has_ftyp, has_video
         while offset + 8 <= end:
             stream.seek(offset)
             header = stream.read(16)
@@ -426,25 +429,24 @@ def has_video_iso_bmff_track(candidate: Path, start: int = 0) -> bool:
             if size < header_size or offset + size > end:
                 return False
             payload_start = offset + header_size
+            if depth == 0 and box_type == b"ftyp":
+                has_ftyp = True
             if box_type == b"hdlr" and size >= header_size + 12:
                 stream.seek(payload_start + 8)
                 if stream.read(4) == b"vide":
-                    return True
+                    has_video = True
             if box_type in containers and depth < 4 and scan_boxes(
                 stream, payload_start, offset + size, depth + 1
             ):
-                return True
+                has_video = True
             offset += size
-        return False
+        return has_video
 
     try:
         file_size = candidate.stat().st_size
         with candidate.open("rb") as stream:
-            stream.seek(start)
-            first_header = stream.read(8)
-            if len(first_header) < 8 or first_header[4:8] != b"ftyp":
-                return False
-            return scan_boxes(stream, start, file_size, 0)
+            scan_boxes(stream, start, file_size, 0)
+            return has_ftyp and has_video
     except OSError:
         return False
 
