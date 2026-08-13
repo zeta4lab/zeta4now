@@ -4,7 +4,7 @@ import mimetypes
 import re
 import sys
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import unquote, urlsplit
 
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
@@ -38,6 +38,7 @@ VIDEO_EXTENSIONS = {
     ".asf",
     ".rm",
     ".rmvb",
+    ".mxf",
 }
 MAX_MARKDOWN_BYTES = 1_000_000
 COMMONMARK = MarkdownIt("commonmark")
@@ -57,6 +58,15 @@ def plain_alt(image: Token) -> str:
         for token in image.children or []
         if token.type in {"text", "text_special", "code_inline"}
     )
+
+
+def valid_https_url(value: str) -> bool:
+    try:
+        parsed = urlsplit(value)
+        _port = parsed.port
+    except ValueError:
+        return False
+    return parsed.scheme == "https" and bool(parsed.hostname)
 
 
 def attribution_after(tokens: list[Token], inline_index: int) -> re.Match[str] | None:
@@ -105,6 +115,7 @@ def article_images(markdown: str) -> list[tuple[str, str, str, bool]]:
         attribution_valid = bool(
             attribution
             and attribution.group(1).strip()
+            and valid_https_url(attribution.group(2))
             and attribution.group(3).strip()
         )
         images.append(
@@ -147,9 +158,24 @@ def is_video_file(candidate: Path) -> bool:
                 b"\x30\x26\xb2\x75\x8e\x66\xcf\x11",
                 b"\x00\x00\x01\xba",
                 b"\x00\x00\x01\xb3",
+                b"\x06\x0e\x2b\x34\x02\x05\x01\x01\x0d\x01\x02",
             )
         )
     )
+
+
+def is_valid_image_file(candidate: Path) -> bool:
+    try:
+        with candidate.open("rb") as stream:
+            header = stream.read(16)
+    except OSError:
+        return False
+    suffix = candidate.suffix.lower()
+    if suffix == ".png":
+        return header.startswith(b"\x89PNG\r\n\x1a\n")
+    if suffix in {".jpg", ".jpeg"}:
+        return header.startswith(b"\xff\xd8\xff")
+    return suffix == ".webp" and header.startswith(b"RIFF") and header[8:12] == b"WEBP"
 
 
 def validate_article(root: Path, article: Path) -> list[str]:
@@ -217,6 +243,10 @@ def validate_article(root: Path, article: Path) -> list[str]:
             errors.append(
                 f"{name}: 참조한 사진 파일이 없거나 심볼릭 링크입니다: {decoded}"
             )
+        elif not is_valid_image_file(image):
+            errors.append(
+                f"{relative_name(root, image)}: 확장자와 일치하는 유효한 사진 파일이 아닙니다"
+            )
         if not attribution_valid:
             errors.append(
                 f"{name}: 각 사진 바로 다음에 제작자·HTTPS 출처·라이선스를 표시해야 합니다"
@@ -252,6 +282,10 @@ def validate_repository(root: Path) -> list[str]:
         elif is_video_file(candidate):
             continue
         elif suffix in ALLOWED_IMAGE_EXTENSIONS:
+            if not is_valid_image_file(candidate):
+                errors.append(
+                    f"{relative_name(root, candidate)}: 확장자와 일치하는 유효한 사진 파일이 아닙니다"
+                )
             article = candidate.parent.parent / f"{candidate.parent.name}.md"
             if not article.is_file():
                 errors.append(
@@ -262,7 +296,7 @@ def validate_repository(root: Path) -> list[str]:
                 f"{relative_name(root, candidate)}: 기사 미디어 디렉터리에는 webp, jpg, jpeg 또는 png만 저장할 수 있습니다"
             )
 
-    return errors
+    return list(dict.fromkeys(errors))
 
 
 def main() -> int:

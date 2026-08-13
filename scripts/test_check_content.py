@@ -6,6 +6,9 @@ from pathlib import Path
 
 from check_content import validate_repository
 
+PNG_BYTES = b"\x89PNG\r\n\x1a\n"
+WEBP_BYTES = b"RIFF\x04\x00\x00\x00WEBP"
+
 
 class ContentContractTest(unittest.TestCase):
     def repository(self) -> tuple[tempfile.TemporaryDirectory[str], Path, Path]:
@@ -35,7 +38,7 @@ summary: 요약
         self.addCleanup(temporary.cleanup)
         image = article.parent / "2026-08-13-ai-daily/data-center.webp"
         image.parent.mkdir()
-        image.write_bytes(b"image")
+        image.write_bytes(WEBP_BYTES)
         article.write_text(
             self.article(
                 "![데이터센터 전경](./2026-08-13-ai-daily/data-center.webp)",
@@ -50,7 +53,7 @@ summary: 요약
         self.addCleanup(temporary.cleanup)
         image = article.parent / "2026-08-13-ai-daily/photo(1).png"
         image.parent.mkdir()
-        image.write_bytes(b"image")
+        image.write_bytes(PNG_BYTES)
         article.write_text(
             self.article(
                 "![데이터센터 전경](<./2026-08-13-ai-daily/photo(1).png>)",
@@ -86,6 +89,23 @@ summary: 요약
                 "webp, jpg, jpeg 또는 png" in error
                 for error in validate_repository(root)
             )
+        )
+
+    def test_rejects_non_image_bytes_with_allowed_extension(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/photo.png"
+        image.parent.mkdir()
+        image.write_bytes(b"<svg xmlns='http://www.w3.org/2000/svg'></svg>")
+        article.write_text(
+            self.article(
+                "![사진](./2026-08-13-ai-daily/photo.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("유효한 사진" in error for error in validate_repository(root))
         )
 
     def test_rejects_external_reference_style_image(self) -> None:
@@ -207,6 +227,27 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(any("제작자" in error for error in validate_repository(root)))
+
+    def test_rejects_attribution_without_valid_https_host(self) -> None:
+        for source in ("https:///", "https://?", "https://example.com:bad/"):
+            with self.subTest(source=source):
+                temporary, root, article = self.repository()
+                try:
+                    image = article.parent / "2026-08-13-ai-daily/photo.png"
+                    image.parent.mkdir()
+                    image.write_bytes(PNG_BYTES)
+                    article.write_text(
+                        self.article(
+                            "![사진](./2026-08-13-ai-daily/photo.png)",
+                            f"*사진: 제공자 · 출처: {source} · 라이선스: 허가됨*",
+                        ),
+                        encoding="utf-8",
+                    )
+                    self.assertTrue(
+                        any("제작자" in error for error in validate_repository(root))
+                    )
+                finally:
+                    temporary.cleanup()
 
     def test_rejects_semantically_empty_alt(self) -> None:
         for alt in ("&#32;", "&nbsp;"):
@@ -422,12 +463,12 @@ summary: 요약
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
-        for filename in ("movie.wmv", "movie.flv", "movie.3gp"):
+        for filename in ("movie.wmv", "movie.flv", "movie.3gp", "movie.mxf"):
             video = root / "assets" / filename
             video.parent.mkdir(exist_ok=True)
             video.write_bytes(b"video")
         errors = validate_repository(root)
-        self.assertEqual(sum("동영상 파일" in error for error in errors), 3)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 4)
 
     def test_rejects_video_content_with_disguised_extensions(self) -> None:
         temporary, root, article = self.repository()
