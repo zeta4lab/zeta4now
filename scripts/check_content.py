@@ -46,7 +46,7 @@ VIDEO_EXTENSIONS = {
     ".mts",
     ".vob",
     ".f4v",
-    ".asf",
+    ".y4m",
     ".rm",
     ".rmvb",
     ".mxf",
@@ -437,6 +437,7 @@ def is_video_file(candidate: Path) -> bool:
             (
                 b"DKIF",
                 b"FLV",
+                b"YUV4MPEG2",
                 b".RMF",
                 b"\x00\x00\x01\xba",
                 b"\x00\x00\x01\xb3",

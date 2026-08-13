@@ -831,12 +831,23 @@ summary: 요약
             ebml_file(b"\x02", b"arbitrary\x83\x81\x01metadata")
         )
         (assets / "movie.bin").write_bytes(ebml_file(b"\x00\x01"))
-        (assets / "podcast.wma").write_bytes(asf + audio_guid)
+        (assets / "podcast.asf").write_bytes(asf + audio_guid)
         (assets / "recording.dat").write_bytes(asf + video_guid)
         errors = validate_repository(root)
         self.assertEqual(sum("동영상 파일" in error for error in errors), 2)
         self.assertTrue(any("movie.bin" in error for error in errors))
         self.assertTrue(any("recording.dat" in error for error in errors))
+
+    def test_rejects_yuv4mpeg_stream(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(b"YUV4MPEG2 W1 H1 F1:1 Ip A1:1 Cmono\nFRAME\n\x00")
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
 
     def test_allows_non_video_iso_bmff_brands_outside_news(self) -> None:
         temporary, root, article = self.repository()
