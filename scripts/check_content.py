@@ -6,18 +6,15 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote
 
+from markdown_it import MarkdownIt
+from markdown_it.token import Token
+
 ARTICLE_PATH_RE = re.compile(r"^news/[^/]+/\d{4}/\d{2}/([^/]+)\.md$")
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
 SLUG_RE = re.compile(r"^slug:\s*([^\s]+)\s*$", re.MULTILINE)
-MARKDOWN_IMAGE_RE = re.compile(r"!\[([^\]\r\n]*)\]\(([^)\r\n]+)\)")
-IMAGE_OPEN_RE = re.compile(r"!\[")
-IMAGE_ATTRIBUTION_RE = re.compile(
-    r"\A[ \t]*\r?\n(?:[ \t]*\r?\n)?[ \t]*\*사진:\s*([^·\r\n]+?)\s*·\s*"
-    r"출처:\s*(https://[^\s*]+)\s*·\s*라이선스:\s*([^*\r\n]+?)\*[ \t]*(?:\r?\n|\Z)"
-)
-RAW_MEDIA_TAG_RE = re.compile(
-    r"<\s*/?\s*(?:img|iframe|video|audio|object|embed|source|svg|image|use|foreignObject)\b",
-    re.IGNORECASE,
+SINGLE_LINE_IMAGE_RE = re.compile(r"^!\[([^\]\r\n]*)\]\(([^)\r\n]+)\)$")
+ATTRIBUTION_TEXT_RE = re.compile(
+    r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$"
 )
 ALLOWED_IMAGE_EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png"}
 UNSUPPORTED_IMAGE_EXTENSIONS = {".svg", ".gif", ".avif", ".bmp", ".tif", ".tiff"}
@@ -44,164 +41,65 @@ VIDEO_EXTENSIONS = {
     ".rmvb",
 }
 MAX_MARKDOWN_BYTES = 1_000_000
-BLOCKQUOTE_PREFIX_RE = re.compile(r"^[ ]{0,3}>[ ]?")
-LIST_MARKER_RE = re.compile(r"^[ ]{0,3}(?:[-+*]|\d{1,9}[.)])([ \t]+)")
+COMMONMARK = MarkdownIt("commonmark")
 
 
-def mask_range(characters: list[str], start: int, end: int) -> None:
-    for index in range(start, end):
-        if characters[index] not in {"\r", "\n"}:
-            characters[index] = " "
+def attribution_after(tokens: list[Token], inline_index: int) -> re.Match[str] | None:
+    expected = ("paragraph_close", "paragraph_open", "inline", "paragraph_close")
+    following = tokens[inline_index + 1 : inline_index + 5]
+    if (
+        len(following) != len(expected)
+        or tuple(token.type for token in following) != expected
+    ):
+        return None
+    inline = tokens[inline_index]
+    attribution = following[2]
+    if attribution.level != inline.level:
+        return None
+    children = attribution.children or []
+    if [child.type for child in children] != ["em_open", "text", "em_close"]:
+        return None
+    return ATTRIBUTION_TEXT_RE.fullmatch(children[1].content)
 
 
-def strip_blockquote_prefixes(content: str) -> tuple[str, int]:
-    depth = 0
-    while match := BLOCKQUOTE_PREFIX_RE.match(content):
-        content = content[match.end() :]
-        depth += 1
-    return content, depth
+def article_images(markdown: str) -> list[tuple[str, str, bool]]:
+    tokens = COMMONMARK.parse(markdown)
+    if any(token.type == "html_block" for token in tokens):
+        raise ValueError("원시 HTML은 허용하지 않습니다")
 
-
-def fence_view(
-    content: str, list_indent: int, *, update_list: bool
-) -> tuple[str, int, int]:
-    view, blockquote_depth = strip_blockquote_prefixes(content)
-    if update_list:
-        marker = LIST_MARKER_RE.match(view)
-        if marker:
-            return view[marker.end() :], marker.end(), blockquote_depth
-    leading_spaces = len(view) - len(view.lstrip(" "))
-    if list_indent and leading_spaces >= list_indent:
-        return view[list_indent:], list_indent, blockquote_depth
-    if update_list and view.strip():
-        list_indent = 0
-    return view, list_indent, blockquote_depth
-
-
-def without_markdown_code(markdown: str) -> str:
-    characters = list(markdown)
-    offset = 0
-    fence_character = ""
-    fence_length = 0
-    list_indent = 0
-    fence_blockquote_depth = 0
-    fence_list_indent = 0
-    for line in markdown.splitlines(keepends=True):
-        content = line.rstrip("\r\n")
-        container_view, blockquote_depth = strip_blockquote_prefixes(content)
-        container_indentation = len(container_view) - len(container_view.lstrip(" "))
-        left_container = bool(fence_character) and (
-            blockquote_depth < fence_blockquote_depth
-            or (
-                fence_list_indent
-                and bool(container_view.strip())
-                and container_indentation < fence_list_indent
-            )
-        )
-        if left_container:
-            fence_character = ""
-            fence_length = 0
-            fence_blockquote_depth = 0
-            fence_list_indent = 0
-        view, list_indent, blockquote_depth = fence_view(
-            content, list_indent, update_list=not fence_character
-        )
-        stripped = view.lstrip(" ")
-        indentation = len(view) - len(stripped)
-        backtick_opening = (
-            re.fullmatch(r"(`{3,})[^`]*", stripped) if indentation <= 3 else None
-        )
-        tilde_opening = (
-            re.fullmatch(r"(~{3,}).*", stripped) if indentation <= 3 else None
-        )
-        opening = backtick_opening or tilde_opening
-        closing = (
-            re.fullmatch(
-                rf"{re.escape(fence_character)}{{{fence_length},}}[ \t]*", stripped
-            )
-            if fence_character and indentation <= 3
-            else None
-        )
-        if fence_character:
-            mask_range(characters, offset, offset + len(line))
-            if closing:
-                fence_character = ""
-                fence_length = 0
-                fence_blockquote_depth = 0
-                fence_list_indent = 0
-        elif opening:
-            fence = opening.group(1)
-            fence_character = fence[0]
-            fence_length = len(fence)
-            fence_blockquote_depth = blockquote_depth
-            fence_list_indent = list_indent
-            mask_range(characters, offset, offset + len(line))
-        offset += len(line)
-
-    masked = "".join(characters)
-    characters = list(masked)
-    index = 0
-    while index < len(masked):
-        if masked[index] != "`" or is_escaped(masked, index):
-            index += 1
+    images: list[tuple[str, str, bool]] = []
+    for index, token in enumerate(tokens):
+        if token.type != "inline":
             continue
-        end = index
-        while end < len(masked) and masked[end] == "`":
-            end += 1
-        delimiter_length = end - index
-        search = end
-        closing_index = -1
-        closing_end = -1
-        while search < len(masked):
-            candidate = masked.find("`", search)
-            if candidate < 0:
-                break
-            candidate_end = candidate
-            while candidate_end < len(masked) and masked[candidate_end] == "`":
-                candidate_end += 1
-            if candidate_end - candidate == delimiter_length:
-                closing_index = candidate
-                closing_end = candidate_end
-                break
-            search = candidate_end
-        if closing_index < 0:
-            index = end
+        children = token.children or []
+        if any(child.type == "html_inline" for child in children):
+            raise ValueError("원시 HTML은 허용하지 않습니다")
+        image_tokens = [child for child in children if child.type == "image"]
+        if not image_tokens:
             continue
-        mask_range(characters, index, closing_end)
-        index = closing_end
-    return "".join(characters)
-
-
-def is_escaped(markdown: str, index: int) -> bool:
-    backslashes = 0
-    index -= 1
-    while index >= 0 and markdown[index] == "\\":
-        backslashes += 1
-        index -= 1
-    return backslashes % 2 == 1
+        visible_children = [
+            child for child in children if child.type != "text" or child.content.strip()
+        ]
+        if len(image_tokens) != 1 or visible_children != image_tokens:
+            raise ValueError("사진은 문단에서 단독으로 사용해야 합니다")
+        syntax = SINGLE_LINE_IMAGE_RE.fullmatch(token.content.strip())
+        if not syntax:
+            raise ValueError("사진은 한 줄 inline Markdown 문법만 사용할 수 있습니다")
+        alt = image_tokens[0].content.strip()
+        if not alt:
+            raise ValueError("사진 대체 텍스트가 비어 있습니다")
+        attribution = attribution_after(tokens, index)
+        attribution_valid = bool(
+            attribution
+            and attribution.group(1).strip()
+            and attribution.group(3).strip()
+        )
+        images.append((alt, syntax.group(2).strip(), attribution_valid))
+    return images
 
 
 def relative_name(root: Path, candidate: Path) -> str:
     return candidate.relative_to(root).as_posix()
-
-
-def markdown_images(markdown: str) -> tuple[list[tuple[str, str, int]], list[int]]:
-    images = [
-        (match.group(1), match.group(2), match.end())
-        for match in MARKDOWN_IMAGE_RE.finditer(markdown)
-        if not is_escaped(markdown, match.start())
-    ]
-    valid_starts = {
-        match.start()
-        for match in MARKDOWN_IMAGE_RE.finditer(markdown)
-        if not is_escaped(markdown, match.start())
-    }
-    unsupported = [
-        match.start()
-        for match in IMAGE_OPEN_RE.finditer(markdown)
-        if not is_escaped(markdown, match.start()) and match.start() not in valid_starts
-    ]
-    return images, unsupported
 
 
 def is_video_file(candidate: Path) -> bool:
@@ -233,22 +131,16 @@ def validate_article(root: Path, article: Path) -> list[str]:
     slug = slug_match.group(1) if slug_match else ""
     if slug != path_match.group(1):
         errors.append(f"{name}: front matter slug와 파일명이 일치하지 않습니다")
-    media_markdown = without_markdown_code(markdown)
-    if RAW_MEDIA_TAG_RE.search(media_markdown):
-        errors.append(f"{name}: 원시 미디어 태그나 임베드는 허용하지 않습니다")
+    try:
+        images = article_images(markdown)
+    except ValueError as error:
+        return [*errors, f"{name}: {error}"]
 
-    images, unsupported_images = markdown_images(media_markdown)
-    if unsupported_images:
-        errors.append(f"{name}: 사진은 한 줄 inline Markdown 문법만 사용할 수 있습니다")
-
-    for raw_alt, raw_destination, image_end in images:
-        alt = raw_alt.strip()
+    for _alt, raw_destination, attribution_valid in images:
         destination = raw_destination.strip()
         bracketed = destination.startswith("<") and destination.endswith(">")
         if bracketed:
             destination = destination[1:-1]
-        if not alt:
-            errors.append(f"{name}: 사진 대체 텍스트가 비어 있습니다")
         if (
             not bracketed and any(character.isspace() for character in destination)
         ) or any(marker in destination for marker in ("?", "#")):
@@ -284,12 +176,7 @@ def validate_article(root: Path, article: Path) -> list[str]:
             errors.append(
                 f"{name}: 참조한 사진 파일이 없거나 심볼릭 링크입니다: {decoded}"
             )
-        attribution = IMAGE_ATTRIBUTION_RE.match(media_markdown[image_end:])
-        if (
-            not attribution
-            or not attribution.group(1).strip()
-            or not attribution.group(3).strip()
-        ):
+        if not attribution_valid:
             errors.append(
                 f"{name}: 각 사진 바로 다음에 제작자·HTTPS 출처·라이선스를 표시해야 합니다"
             )

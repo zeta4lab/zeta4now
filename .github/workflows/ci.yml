@@ -48,18 +48,23 @@ jobs:
           path: candidate
           persist-credentials: false
 
+      - name: Set up uv
+        uses: astral-sh/setup-uv@ae62891fec2bb8e7d6c99fc78c9fec3a63790f8d # v10.0.0
+        with:
+          version: "0.11.7"
+
       - name: Validate pushed content
         if: github.event_name == 'push'
-        run: python3 candidate/scripts/check_content.py candidate
+        run: uv run --with markdown-it-py==4.2.0 python candidate/scripts/check_content.py candidate
 
       - name: Test trusted validator after merge
         if: github.event_name == 'push'
-        run: python3 -m unittest discover -s candidate/scripts -p 'test_*.py'
+        run: uv run --with markdown-it-py==4.2.0 python -m unittest discover -s candidate/scripts -p 'test_*.py'
 
       - name: Validate proposed content with the trusted base script
         if: github.event_name == 'pull_request_target'
-        run: python3 validator/scripts/check_content.py candidate
+        run: uv run --with markdown-it-py==4.2.0 python validator/scripts/check_content.py candidate
 
       - name: Test trusted base validator
         if: github.event_name == 'pull_request_target'
-        run: python3 -m unittest discover -s validator/scripts -p 'test_*.py'
+        run: uv run --with markdown-it-py==4.2.0 python -m unittest discover -s validator/scripts -p 'test_*.py'

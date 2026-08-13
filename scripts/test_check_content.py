@@ -121,7 +121,7 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("inline Markdown" in error for error in validate_repository(root))
+            any("원시 HTML" in error for error in validate_repository(root))
         )
 
     def test_rejects_external_image_after_even_backslashes(self) -> None:
@@ -135,7 +135,7 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("사진 경로" in error for error in validate_repository(root))
+            any("문단에서 단독" in error for error in validate_repository(root))
         )
 
     def test_rejects_image_without_attribution(self) -> None:
@@ -184,7 +184,7 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("미디어 태그" in error for error in validate_repository(root))
+            any("원시 HTML" in error for error in validate_repository(root))
         )
 
     def test_keeps_four_space_fence_inside_code(self) -> None:
@@ -219,10 +219,7 @@ summary: 요약
                 try:
                     article.write_text(self.article(body), encoding="utf-8")
                     self.assertTrue(
-                        any(
-                            "미디어 태그" in error
-                            for error in validate_repository(root)
-                        )
+                        any("원시 HTML" in error for error in validate_repository(root))
                     )
                 finally:
                     temporary.cleanup()
@@ -235,7 +232,7 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("사진 경로" in error for error in validate_repository(root))
+            any("문단에서 단독" in error for error in validate_repository(root))
         )
 
     def test_rejects_media_after_unclosed_code_span(self) -> None:
@@ -246,7 +243,7 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("사진 경로" in error for error in validate_repository(root))
+            any("문단에서 단독" in error for error in validate_repository(root))
         )
 
     def test_checks_indented_list_image(self) -> None:
@@ -260,7 +257,7 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("사진 경로" in error for error in validate_repository(root))
+            any("문단에서 단독" in error for error in validate_repository(root))
         )
 
     def test_rejects_invalid_percent_encoding(self) -> None:
@@ -285,8 +282,51 @@ summary: 요약
             encoding="utf-8",
         )
         self.assertTrue(
-            any("미디어 태그" in error for error in validate_repository(root))
+            any("원시 HTML" in error for error in validate_repository(root))
         )
+
+    def test_ignores_indented_code_media(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article(
+                '    <img src="./photo.png">\n\n'
+                "    ![외부 사진](https://example.com/photo.png)"
+            ),
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_repository(root), [])
+
+    def test_rejects_indented_attribution(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/data-center.webp"
+        image.parent.mkdir()
+        image.write_bytes(b"image")
+        article.write_text(
+            self.article(
+                "![데이터센터 전경](./2026-08-13-ai-daily/data-center.webp)",
+                "    *사진: 직접 제작 · 출처: https://example.com/photo · 라이선스: CC BY 4.0*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(any("제작자" in error for error in validate_repository(root)))
+
+    def test_rejects_all_raw_html(self) -> None:
+        for body in (
+            '<input type="image" src="./2026-08-13-ai-daily/photo.png">',
+            '<div style="background-image: url(./photo.png)">사진</div>',
+            '<span data-label="`example`">![사진](https://example.com/photo.png)</span>',
+        ):
+            with self.subTest(body=body):
+                temporary, root, article = self.repository()
+                try:
+                    article.write_text(self.article(body), encoding="utf-8")
+                    self.assertTrue(
+                        any("원시 HTML" in error for error in validate_repository(root))
+                    )
+                finally:
+                    temporary.cleanup()
 
     def test_rejects_video_outside_news(self) -> None:
         temporary, root, article = self.repository()
