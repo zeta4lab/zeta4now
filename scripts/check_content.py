@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import ipaddress
 import mimetypes
 import re
 import sys
@@ -79,12 +80,33 @@ def plain_alt(image: Token) -> str:
 
 
 def valid_https_url(value: str) -> bool:
+    if re.search(r"%(?![0-9A-Fa-f]{2})", value) or any(
+        character.isspace() for character in value
+    ):
+        return False
     try:
         parsed = urlsplit(value)
         _port = parsed.port
-    except ValueError:
+        hostname = parsed.hostname or ""
+        if parsed.username is not None or parsed.password is not None:
+            return False
+        try:
+            ipaddress.ip_address(hostname)
+        except ValueError:
+            ascii_hostname = hostname.encode("idna").decode("ascii")
+            labels = ascii_hostname.rstrip(".").split(".")
+            if not labels or any(
+                not label
+                or len(label) > 63
+                or label.startswith("-")
+                or label.endswith("-")
+                or not re.fullmatch(r"[A-Za-z0-9-]+", label)
+                for label in labels
+            ):
+                return False
+    except (UnicodeError, ValueError):
         return False
-    return parsed.scheme == "https" and bool(parsed.hostname)
+    return parsed.scheme == "https" and bool(hostname)
 
 
 def valid_article_link(value: str) -> bool:
@@ -540,7 +562,9 @@ def is_valid_image_file(candidate: Path) -> bool:
             with Image.open(candidate) as image:
                 width, height = image.size
                 if (
-                    width > MAX_IMAGE_DIMENSION
+                    bool(getattr(image, "is_animated", False))
+                    or int(getattr(image, "n_frames", 1)) != 1
+                    or width > MAX_IMAGE_DIMENSION
                     or height > MAX_IMAGE_DIMENSION
                     or width * height > MAX_IMAGE_PIXELS
                 ):

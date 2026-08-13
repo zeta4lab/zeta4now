@@ -234,6 +234,31 @@ summary: 요약
             any("유효한 사진" in error for error in validate_repository(root))
         )
 
+    def test_rejects_animated_png(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/animated.png"
+        image.parent.mkdir()
+        frames = [Image.new("RGBA", (1, 1), color) for color in ("red", "blue")]
+        frames[0].save(
+            image,
+            format="PNG",
+            save_all=True,
+            append_images=frames[1:],
+            duration=100,
+            loop=0,
+        )
+        article.write_text(
+            self.article(
+                "![애니메이션](./2026-08-13-ai-daily/animated.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("유효한 사진" in error for error in validate_repository(root))
+        )
+
     def test_rejects_unreferenced_image(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -422,7 +447,14 @@ summary: 요약
         self.assertTrue(any("제작자" in error for error in validate_repository(root)))
 
     def test_rejects_attribution_without_valid_https_host(self) -> None:
-        for source in ("https:///", "https://?", "https://example.com:bad/"):
+        for source in (
+            "https:///",
+            "https://?",
+            "https://example.com:bad/",
+            "https://%ZZ/",
+            "https://bad_host.example/",
+            "https://user@example.com/",
+        ):
             with self.subTest(source=source):
                 temporary, root, article = self.repository()
                 try:
