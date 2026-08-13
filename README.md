@@ -14,7 +14,7 @@ news/<topic>/<YYYY>/<MM>/<slug>.md
 - `title`: 제목
 - `slug`: 저장소 전체에서 고유한 문서 식별자
 - `topic`: 검색·분류에 사용하는 영문 소문자 또는 한글 식별자
-- `published_at`: 시간대가 포함된 ISO 8601 발행 시각
+- `published_at`: 기사 경로의 연·월과 일치하며 시간대가 포함된 ISO 8601 발행 시각
 - `summary`: 목록에 표시할 요약
 - `tags`: 선택 태그 목록
 - `generated_by`: 생성 자동화 식별자
@@ -22,6 +22,22 @@ news/<topic>/<YYYY>/<MM>/<slug>.md
 
 본문 끝에는 `## 출처`와 원문 링크, AI 자동 생성 고지를 둔다. 구체적인 형식은
 [`templates/article.md`](templates/article.md)를 따른다.
+
+## 사진과 동영상
+
+사진은 기사 파일 옆의 `<slug>/` 디렉터리에 저장하고 Markdown 상대경로로 참조한다.
+
+```text
+news/ai/2026/08/2026-08-13-ai-daily.md
+news/ai/2026/08/2026-08-13-ai-daily/data-center.webp
+```
+
+```markdown
+![데이터센터 전경](./2026-08-13-ai-daily/data-center.webp)
+```
+
+동영상 파일은 저장하지 않으며 공식 원문으로 연결되는 HTTPS 링크만 사용한다. 사진의 사용 조건과
+세부 규칙은 [`MEDIA_POLICY.md`](MEDIA_POLICY.md)를 따른다.
 
 ## 발행 흐름
 
