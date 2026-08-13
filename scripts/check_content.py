@@ -57,6 +57,9 @@ MAX_IMAGE_PIXELS = 20_000_000
 MAX_IMAGE_DIMENSION = 8_000
 MAX_VIDEO_SCAN_BYTES = 1_000_000
 COMMONMARK = MarkdownIt("commonmark")
+EBML_HEADER = b"\x1a\x45\xdf\xa3"
+ASF_HEADER = b"\x30\x26\xb2\x75\x8e\x66\xcf\x11"
+ASF_VIDEO_MEDIA = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
 
 def contains_html(tokens: list[Token]) -> bool:
     return any(
@@ -248,6 +251,30 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
     return False
 
 
+def has_ebml_video_track(data: bytes) -> bool:
+    metadata = data.split(b"\x1f\x43\xb6\x75", 1)[0]
+    offset = 0
+    while (offset := metadata.find(b"\x83", offset)) >= 0:
+        size_offset = offset + 1
+        if size_offset >= len(metadata):
+            return False
+        first = metadata[size_offset]
+        marker = 0x80
+        size_length = 1
+        while size_length <= 8 and not first & marker:
+            marker >>= 1
+            size_length += 1
+        if size_length <= 8 and size_offset + size_length <= len(metadata):
+            size = first & (marker - 1)
+            for value in metadata[size_offset + 1 : size_offset + size_length]:
+                size = (size << 8) | value
+            value_offset = size_offset + size_length
+            if size == 1 and value_offset < len(metadata) and metadata[value_offset] == 1:
+                return True
+        offset += 1
+    return False
+
+
 def has_exact_jpeg_container(payload: bytes) -> bool:
     if not payload.startswith(b"\xff\xd8"):
         return False
@@ -362,16 +389,18 @@ def is_video_file(candidate: Path) -> bool:
         return False
     if header.startswith(b"OggS"):
         return has_ogg_video(candidate, scan_offset)
+    if header.startswith(EBML_HEADER):
+        return has_ebml_video_track(header)
+    if header.startswith(ASF_HEADER):
+        return ASF_VIDEO_MEDIA in header
     return (
         has_video_iso_bmff_track(candidate, scan_offset)
         or (header.startswith(b"RIFF") and header[8:12] == b"AVI ")
         or header.startswith(
             (
                 b"DKIF",
-                b"\x1a\x45\xdf\xa3",
                 b"FLV",
                 b".RMF",
-                b"\x30\x26\xb2\x75\x8e\x66\xcf\x11",
                 b"\x00\x00\x01\xba",
                 b"\x00\x00\x01\xb3",
                 b"\x06\x0e\x2b\x34\x02\x05\x01\x01\x0d\x01\x02",

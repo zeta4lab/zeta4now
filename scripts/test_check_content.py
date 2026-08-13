@@ -805,6 +805,25 @@ summary: 요약
         self.assertTrue(any("movie.bin" in error for error in errors))
         self.assertTrue(any("multiplexed.dat" in error for error in errors))
 
+    def test_distinguishes_audio_and_video_in_ebml_and_asf(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        assets = root / "assets"
+        assets.mkdir()
+        ebml = b"\x1a\x45\xdf\xa3"
+        asf = b"\x30\x26\xb2\x75\x8e\x66\xcf\x11"
+        audio_guid = b"\x40\x9e\x69\xf8\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
+        video_guid = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
+        (assets / "podcast.mka").write_bytes(ebml + b"\x83\x81\x02")
+        (assets / "movie.bin").write_bytes(ebml + b"\x83\x81\x01")
+        (assets / "podcast.wma").write_bytes(asf + audio_guid)
+        (assets / "recording.dat").write_bytes(asf + video_guid)
+        errors = validate_repository(root)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 2)
+        self.assertTrue(any("movie.bin" in error for error in errors))
+        self.assertTrue(any("recording.dat" in error for error in errors))
+
     def test_allows_non_video_iso_bmff_brands_outside_news(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
