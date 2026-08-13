@@ -57,24 +57,6 @@ MAX_IMAGE_DIMENSION = 8_000
 MAX_VIDEO_SCAN_BYTES = 1_000_000
 COMMONMARK = MarkdownIt("commonmark")
 
-NON_VIDEO_ISO_BMFF_BRANDS = {
-    b"M4A ",
-    b"M4B ",
-    b"M4P ",
-    b"M4R ",
-    b"avif",
-    b"avis",
-    b"heic",
-    b"heix",
-    b"hevc",
-    b"hevx",
-    b"heim",
-    b"heis",
-    b"mif1",
-    b"msf1",
-}
-
-
 def contains_html(tokens: list[Token]) -> bool:
     return any(
         token.type in {"html_block", "html_inline"}
@@ -245,8 +227,21 @@ def leading_id3_size(header: bytes) -> int:
 def has_mpeg_transport_stream(data: bytes) -> bool:
     for packet_size in (188, 192, 204, 208):
         offset = data.find(b"\x47")
-        while offset >= 0 and offset + packet_size * 2 < len(data):
-            if data[offset + packet_size] == data[offset + packet_size * 2] == 0x47:
+        while offset >= 0 and offset + packet_size * 4 + 4 <= len(data):
+            valid = True
+            for index in range(5):
+                packet = offset + packet_size * index
+                if data[packet] != 0x47 or data[packet + 1] & 0x80:
+                    valid = False
+                    break
+                adaptation_control = (data[packet + 3] >> 4) & 0x03
+                if adaptation_control == 0:
+                    valid = False
+                    break
+                if adaptation_control in {2, 3} and data[packet + 4] > packet_size - 5:
+                    valid = False
+                    break
+            if valid:
                 return True
             offset = data.find(b"\x47", offset + 1)
     return False
@@ -299,43 +294,19 @@ def has_exact_jpeg_container(payload: bytes) -> bool:
     return False
 
 
-def has_video_iso_bmff_brand(header: bytes) -> bool:
+def has_video_iso_bmff_track(header: bytes) -> bool:
     if len(header) < 16 or header[4:8] != b"ftyp":
         return False
-    box_size = int.from_bytes(header[:4], "big")
-    if box_size < 16:
-        return False
-    brands = [header[8:12]]
-    brands.extend(
-        header[offset : offset + 4]
-        for offset in range(16, min(box_size, len(header)) - 3, 4)
-    )
-    if brands[0] in NON_VIDEO_ISO_BMFF_BRANDS:
-        return False
-    return any(
-        brand.startswith((b"3gp", b"3g2"))
-        or brand
-        in {
-            b"F4V ",
-            b"M4V ",
-            b"M4VH",
-            b"M4VP",
-            b"avc1",
-            b"dash",
-            b"hev1",
-            b"hvc1",
-            b"iso2",
-            b"iso5",
-            b"iso6",
-            b"isom",
-            b"mp41",
-            b"mp42",
-            b"msdh",
-            b"msix",
-            b"qt  ",
-        }
-        for brand in brands
-    )
+    offset = 0
+    while (handler := header.find(b"hdlr", offset)) >= 0:
+        box_start = handler - 4
+        if box_start >= 0:
+            box_size = int.from_bytes(header[box_start:handler], "big")
+            box_end = box_start + box_size
+            if box_size >= 20 and box_end <= len(header) and header[handler + 12 : handler + 16] == b"vide":
+                return True
+        offset = handler + 4
+    return False
 
 
 def is_video_file(candidate: Path) -> bool:
@@ -361,7 +332,7 @@ def is_video_file(candidate: Path) -> bool:
     if header.startswith(b"OggS"):
         return has_ogg_video(candidate, scan_offset)
     return (
-        has_video_iso_bmff_brand(header)
+        has_video_iso_bmff_track(header)
         or (header.startswith(b"RIFF") and header[8:12] == b"AVI ")
         or header.startswith(
             (

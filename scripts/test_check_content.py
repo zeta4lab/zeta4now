@@ -13,6 +13,18 @@ PNG_BYTES = b64decode(
     "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
 )
 WEBP_BYTES = b64decode("UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA")
+VIDEO_BMFF_BYTES = (
+    b"\x00\x00\x00\x18ftypisom\x00\x00\x00\x00isom"
+    b"\x00\x00\x00\x14hdlr\x00\x00\x00\x00\x00\x00\x00\x00vide"
+)
+
+
+def mpeg_ts(packet_size: int) -> bytes:
+    payload = bytearray(packet_size * 5)
+    for index in range(5):
+        offset = packet_size * index
+        payload[offset : offset + 4] = b"\x47\x00\x00\x10"
+    return bytes(payload)
 
 
 class ContentContractTest(unittest.TestCase):
@@ -177,7 +189,7 @@ summary: 요약
     def test_rejects_valid_image_with_appended_video(self) -> None:
         jpeg = BytesIO()
         Image.new("RGB", (1, 1)).save(jpeg, format="JPEG")
-        video = b"\x00\x00\x00\x18ftypisom\x00\x00\x00\x00isom"
+        video = VIDEO_BMFF_BYTES
         for extension, payload in (
             ("png", PNG_BYTES),
             ("jpg", jpeg.getvalue() + video + b"\xff\xd9"),
@@ -672,7 +684,7 @@ summary: 요약
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
-        mp4_header = b"\x00\x00\x00\x18ftypisom\x00\x00\x00\x00isom"
+        mp4_header = VIDEO_BMFF_BYTES
         outside = root / "assets/movie.bin"
         outside.parent.mkdir()
         outside.write_bytes(mp4_header)
@@ -686,11 +698,9 @@ summary: 요약
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
-        packet = bytearray(377)
-        packet[0] = packet[188] = packet[376] = 0x47
         video = root / "assets/movie.bin"
         video.parent.mkdir()
-        video.write_bytes(packet)
+        video.write_bytes(mpeg_ts(188))
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
         )
@@ -699,12 +709,21 @@ summary: 요약
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
-        packet = bytearray(409)
-        packet[0] = packet[204] = packet[408] = 0x47
         video = root / "assets/movie.bin"
         video.parent.mkdir()
-        video.write_bytes(packet)
+        video.write_bytes(mpeg_ts(204))
         self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
+    def test_does_not_classify_three_sync_like_packets_as_transport_stream(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        binary = root / "assets/data.bin"
+        binary.parent.mkdir()
+        binary.write_bytes(mpeg_ts(188)[: 188 * 3])
+        self.assertFalse(
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
@@ -721,12 +740,10 @@ summary: 요약
                 metadata_size & 0x7F,
             )
         )
-        packet = bytearray(377)
-        packet[0] = packet[188] = packet[376] = 0x47
         video = root / "assets/movie.bin"
         video.parent.mkdir()
         video.write_bytes(
-            b"ID3\x04\x00\x00" + synchsafe_size + bytes(metadata_size) + packet
+            b"ID3\x04\x00\x00" + synchsafe_size + bytes(metadata_size) + mpeg_ts(188)
         )
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
@@ -780,6 +797,10 @@ summary: 요약
         )
         (assets / "image.bin").write_bytes(
             b"\x00\x00\x00\x18ftypavif\x00\x00\x00\x00avifmif1"
+        )
+        (assets / "generic-audio.bin").write_bytes(
+            b"\x00\x00\x00\x18ftypisom\x00\x00\x00\x00isommp42"
+            b"\x00\x00\x00\x14hdlr\x00\x00\x00\x00\x00\x00\x00\x00soun"
         )
         self.assertFalse(
             any("동영상 파일" in error for error in validate_repository(root))
