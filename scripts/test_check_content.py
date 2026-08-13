@@ -304,6 +304,28 @@ model: none
             any("유효한 사진" in error for error in validate_repository(root))
         )
 
+    def test_rejects_animated_image_outside_news(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        image = root / "assets/animated.webp"
+        image.parent.mkdir()
+        frames = [Image.new("RGBA", (1, 1), color) for color in ("red", "blue")]
+        frames[0].save(
+            image,
+            format="WEBP",
+            save_all=True,
+            append_images=frames[1:],
+            duration=100,
+            loop=0,
+        )
+        self.assertTrue(
+            any(
+                "assets/animated.webp" in error and "정적 사진" in error
+                for error in validate_repository(root)
+            )
+        )
+
     def test_rejects_unreferenced_image(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -895,6 +917,38 @@ model: none
         self.assertTrue(any("movie.bin" in error for error in errors))
         self.assertTrue(any("multiplexed.dat" in error for error in errors))
 
+    def test_reassembles_continued_ogg_identification_packet(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+
+        def ogg_page(
+            header_type: int, sequence: int, lacing: bytes, body: bytes
+        ) -> bytes:
+            return (
+                b"OggS\x00"
+                + bytes([header_type])
+                + bytes(8)
+                + (7).to_bytes(4, "little")
+                + sequence.to_bytes(4, "little")
+                + bytes(4)
+                + bytes([len(lacing)])
+                + lacing
+                + body
+            )
+
+        first = b"\x80theora" + bytes(248)
+        second = b"continued packet"
+        video.write_bytes(
+            ogg_page(0x02, 0, b"\xff", first)
+            + ogg_page(0x01, 1, bytes([len(second)]), second)
+        )
+        self.assertTrue(
+            any("movie.bin" in error for error in validate_repository(root))
+        )
+
     def test_distinguishes_audio_and_video_in_ebml_and_asf(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -1022,6 +1076,18 @@ model: none
         self.addCleanup(temporary.cleanup)
         article.write_text(
             self.article() + "\n## 뒤늦은 본문\n\n추가 내용\n", encoding="utf-8"
+        )
+        self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
+
+    def test_rejects_body_content_nested_inside_source_item(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace(
+                "- [원문](https://example.com/source)",
+                "- [원문](https://example.com/source)\n\n  ## 숨긴 본문\n\n  추가 내용",
+            ),
+            encoding="utf-8",
         )
         self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
 

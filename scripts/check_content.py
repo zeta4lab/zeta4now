@@ -280,28 +280,38 @@ def has_source_footer(markdown: str, require_disclosure: bool) -> bool:
     )
     source_block, separator, disclosure = footer.partition("\n\n---\n\n")
     source_tokens = COMMONMARK.parse(source_block.strip())
-    if (
-        not source_tokens
-        or source_tokens[0].type not in {"bullet_list_open", "ordered_list_open"}
-        or source_tokens[-1].type not in {"bullet_list_close", "ordered_list_close"}
-        or any(
-            token.level == 0
-            and token.type
-            not in {
-                "bullet_list_open",
-                "bullet_list_close",
-                "ordered_list_open",
-                "ordered_list_close",
-            }
-            for token in source_tokens
-        )
-    ):
+    list_pairs = {
+        "bullet_list_open": "bullet_list_close",
+        "ordered_list_open": "ordered_list_close",
+    }
+    if not source_tokens or source_tokens[0].type not in list_pairs:
         return False
-    has_link = any(
-        child.type == "link_open" and valid_https_url(str(child.attrGet("href") or ""))
-        for token in source_tokens
-        for child in token.children or []
-    )
+    if source_tokens[-1].type != list_pairs[source_tokens[0].type]:
+        return False
+
+    has_link = False
+    index = 1
+    while index < len(source_tokens) - 1:
+        item = source_tokens[index : index + 5]
+        if len(item) != 5 or [token.type for token in item] != [
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+        ]:
+            return False
+        if [token.level for token in item] != [1, 2, 3, 2, 1]:
+            return False
+        if any(
+            child.type == "link_open"
+            and valid_https_url(str(child.attrGet("href") or ""))
+            for child in item[2].children or []
+        ):
+            has_link = True
+        index += 5
+    if index != len(source_tokens) - 1:
+        return False
     if not has_link:
         return False
     if not separator:
@@ -327,6 +337,8 @@ def has_annex_b_video(header: bytes) -> bool:
 
 
 def has_ogg_video(candidate: Path, offset: int = 0) -> bool:
+    pending_packets: dict[int, bytearray] = {}
+    identification_streams: set[int] = set()
     try:
         with candidate.open("rb") as stream:
             stream.seek(offset)
@@ -340,10 +352,28 @@ def has_ogg_video(candidate: Path, offset: int = 0) -> bool:
                 body = stream.read(body_size)
                 if len(body) != body_size:
                     return False
-                if header[5] & 0x02 and body.startswith(
-                    (b"\x80theora", b"OVP80", b"BBCD")
-                ):
-                    return True
+                serial = int.from_bytes(header[14:18], "little")
+                continued = bool(header[5] & 0x01)
+                beginning = bool(header[5] & 0x02)
+                if beginning:
+                    pending_packets[serial] = bytearray()
+                    identification_streams.add(serial)
+                elif continued != bool(pending_packets.get(serial)):
+                    pending_packets.pop(serial, None)
+                    identification_streams.discard(serial)
+
+                packet = pending_packets.setdefault(serial, bytearray())
+                body_offset = 0
+                for segment_length in segment_table:
+                    packet.extend(body[body_offset : body_offset + segment_length])
+                    body_offset += segment_length
+                    if segment_length == 255:
+                        continue
+                    if serial in identification_streams:
+                        if packet.startswith((b"\x80theora", b"OVP80", b"BBCD")):
+                            return True
+                        identification_streams.remove(serial)
+                    packet.clear()
     except OSError:
         return False
     return False
@@ -845,8 +875,17 @@ def validate_repository(root: Path, base: Path | None = None) -> list[str]:
         relative = candidate.relative_to(root)
         if ".git" in relative.parts:
             continue
-        if is_video_file(candidate) and (candidate.is_file() or candidate.is_symlink()):
+        is_stored_file = candidate.is_file() or candidate.is_symlink()
+        if is_stored_file and is_video_file(candidate):
             errors.append(f"{relative.as_posix()}: 동영상 파일은 저장할 수 없습니다")
+        if (
+            is_stored_file
+            and candidate.suffix.lower() in ALLOWED_IMAGE_EXTENSIONS
+            and not is_valid_image_file(candidate)
+        ):
+            errors.append(
+                f"{relative.as_posix()}: 확장자와 일치하는 유효한 정적 사진 파일이 아닙니다"
+            )
 
     referenced_images: set[Path] = set()
     seen_slugs: dict[str, str] = {}
