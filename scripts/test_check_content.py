@@ -14,7 +14,7 @@ PNG_BYTES = b64decode(
 )
 WEBP_BYTES = b64decode("UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA")
 VIDEO_BMFF_BYTES = (
-    b"\x00\x00\x00\x18ftypisom\x00\x00\x00\x00isom"
+    b"\x00\x00\x00\x14ftypisom\x00\x00\x00\x00isom"
     b"\x00\x00\x00\x14hdlr\x00\x00\x00\x00\x00\x00\x00\x00vide"
 )
 
@@ -693,6 +693,25 @@ summary: 요약
         disguised_image.write_bytes(mp4_header)
         errors = validate_repository(root)
         self.assertEqual(sum("동영상 파일" in error for error in errors), 2)
+
+    def test_rejects_non_fast_start_bmff_video_after_large_media_box(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+
+        def box(kind: bytes, payload: bytes) -> bytes:
+            return (len(payload) + 8).to_bytes(4, "big") + kind + payload
+
+        ftyp = box(b"ftyp", b"isom\x00\x00\x00\x00isom")
+        mdat = box(b"mdat", bytes(1_100_000))
+        hdlr = box(b"hdlr", bytes(8) + b"vide")
+        moov = box(b"moov", box(b"trak", box(b"mdia", hdlr)))
+        video = root / "assets/movie.bin"
+        video.parent.mkdir()
+        video.write_bytes(ftyp + mdat + moov)
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
 
     def test_rejects_disguised_mpeg_transport_stream(self) -> None:
         temporary, root, article = self.repository()

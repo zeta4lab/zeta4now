@@ -6,6 +6,7 @@ import sys
 import warnings
 from filecmp import cmp
 from pathlib import Path
+from typing import BinaryIO
 from urllib.parse import unquote, urlsplit
 
 from markdown_it import MarkdownIt
@@ -294,19 +295,49 @@ def has_exact_jpeg_container(payload: bytes) -> bool:
     return False
 
 
-def has_video_iso_bmff_track(header: bytes) -> bool:
-    if len(header) < 16 or header[4:8] != b"ftyp":
-        return False
-    offset = 0
-    while (handler := header.find(b"hdlr", offset)) >= 0:
-        box_start = handler - 4
-        if box_start >= 0:
-            box_size = int.from_bytes(header[box_start:handler], "big")
-            box_end = box_start + box_size
-            if box_size >= 20 and box_end <= len(header) and header[handler + 12 : handler + 16] == b"vide":
+def has_video_iso_bmff_track(candidate: Path, start: int = 0) -> bool:
+    containers = {b"moov", b"trak", b"mdia"}
+
+    def scan_boxes(stream: BinaryIO, offset: int, end: int, depth: int) -> bool:
+        while offset + 8 <= end:
+            stream.seek(offset)
+            header = stream.read(16)
+            if len(header) < 8:
+                return False
+            size = int.from_bytes(header[:4], "big")
+            box_type = header[4:8]
+            header_size = 8
+            if size == 1:
+                if len(header) < 16:
+                    return False
+                size = int.from_bytes(header[8:16], "big")
+                header_size = 16
+            elif size == 0:
+                size = end - offset
+            if size < header_size or offset + size > end:
+                return False
+            payload_start = offset + header_size
+            if box_type == b"hdlr" and size >= header_size + 12:
+                stream.seek(payload_start + 8)
+                if stream.read(4) == b"vide":
+                    return True
+            if box_type in containers and depth < 4 and scan_boxes(
+                stream, payload_start, offset + size, depth + 1
+            ):
                 return True
-        offset = handler + 4
-    return False
+            offset += size
+        return False
+
+    try:
+        file_size = candidate.stat().st_size
+        with candidate.open("rb") as stream:
+            stream.seek(start)
+            first_header = stream.read(8)
+            if len(first_header) < 8 or first_header[4:8] != b"ftyp":
+                return False
+            return scan_boxes(stream, start, file_size, 0)
+    except OSError:
+        return False
 
 
 def is_video_file(candidate: Path) -> bool:
@@ -332,7 +363,7 @@ def is_video_file(candidate: Path) -> bool:
     if header.startswith(b"OggS"):
         return has_ogg_video(candidate, scan_offset)
     return (
-        has_video_iso_bmff_track(header)
+        has_video_iso_bmff_track(candidate, scan_offset)
         or (header.startswith(b"RIFF") and header[8:12] == b"AVI ")
         or header.startswith(
             (
