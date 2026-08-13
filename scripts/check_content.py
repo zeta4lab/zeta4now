@@ -477,8 +477,11 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
                         continue
                     pid = ((packet[1] & 0x1F) << 8) | packet[2]
                     counter = packet[3] & 0x0F
-                    if pid in continuity and counter != (continuity[pid] + 1) & 0x0F:
-                        buffers.pop(pid, None)
+                    if pid in continuity:
+                        if counter == continuity[pid]:
+                            continue
+                        if counter != (continuity[pid] + 1) & 0x0F:
+                            buffers.pop(pid, None)
                     continuity[pid] = counter
                     payload = packet[payload_offset:188]
                     if packet[1] & 0x40:

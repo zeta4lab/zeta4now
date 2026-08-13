@@ -945,9 +945,11 @@ model: none
             + b"\x1b\xe1\x01\xf0\x00"
             + bytes(4)
         )
+        first_pmt_packet = packet(0x100, True, 0, pmt[:183])
         video.write_bytes(
             packet(0, True, 0, pat)
-            + packet(0x100, True, 0, pmt[:183])
+            + first_pmt_packet
+            + first_pmt_packet
             + packet(0x100, False, 1, pmt[183:])
             + packet(0x101, False, 0, b"payload")
             + packet(0x101, False, 1, b"payload")
