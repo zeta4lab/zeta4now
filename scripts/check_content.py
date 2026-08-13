@@ -9,6 +9,7 @@ from urllib.parse import unquote, urlsplit
 
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
+from PIL import Image, UnidentifiedImageError
 
 ARTICLE_PATH_RE = re.compile(r"^news/[^/]+/\d{4}/\d{2}/([^/]+)\.md$")
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
@@ -193,6 +194,10 @@ def is_video_file(candidate: Path) -> bool:
         return True
     if candidate.is_symlink() or not candidate.is_file():
         return False
+    if candidate.suffix.lower() in ALLOWED_IMAGE_EXTENSIONS and is_valid_image_file(
+        candidate
+    ):
+        return False
     try:
         with candidate.open("rb") as stream:
             header = stream.read(512)
@@ -220,17 +225,18 @@ def is_video_file(candidate: Path) -> bool:
 
 
 def is_valid_image_file(candidate: Path) -> bool:
+    expected = {
+        ".png": "PNG",
+        ".jpg": "JPEG",
+        ".jpeg": "JPEG",
+        ".webp": "WEBP",
+    }
     try:
-        with candidate.open("rb") as stream:
-            header = stream.read(16)
-    except OSError:
+        with Image.open(candidate) as image:
+            image.load()
+            return image.format == expected.get(candidate.suffix.lower())
+    except (OSError, UnidentifiedImageError):
         return False
-    suffix = candidate.suffix.lower()
-    if suffix == ".png":
-        return header.startswith(b"\x89PNG\r\n\x1a\n")
-    if suffix in {".jpg", ".jpeg"}:
-        return header.startswith(b"\xff\xd8\xff")
-    return suffix == ".webp" and header.startswith(b"RIFF") and header[8:12] == b"WEBP"
 
 
 def validate_article(

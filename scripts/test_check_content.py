@@ -2,12 +2,15 @@ from __future__ import annotations
 
 import tempfile
 import unittest
+from base64 import b64decode
 from pathlib import Path
 
 from check_content import validate_immutable_media, validate_repository
 
-PNG_BYTES = b"\x89PNG\r\n\x1a\n"
-WEBP_BYTES = b"RIFF\x04\x00\x00\x00WEBP"
+PNG_BYTES = b64decode(
+    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+)
+WEBP_BYTES = b64decode("UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA")
 
 
 class ContentContractTest(unittest.TestCase):
@@ -111,6 +114,23 @@ summary: 요약
         image = article.parent / "2026-08-13-ai-daily/photo.png"
         image.parent.mkdir()
         image.write_bytes(b"<svg xmlns='http://www.w3.org/2000/svg'></svg>")
+        article.write_text(
+            self.article(
+                "![사진](./2026-08-13-ai-daily/photo.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("유효한 사진" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_png_prefix_followed_by_non_image_data(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/photo.png"
+        image.parent.mkdir()
+        image.write_bytes(b"\x89PNG\r\n\x1a\n" + b"\x00\x00\x00\x18ftypisom")
         article.write_text(
             self.article(
                 "![사진](./2026-08-13-ai-daily/photo.png)",
