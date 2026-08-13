@@ -63,16 +63,16 @@ jobs:
 
       - name: Validate pushed content
         if: github.event_name == 'push'
-        run: uv run --with markdown-it-py==4.2.0 --with pillow==12.1.0 python candidate/scripts/check_content.py candidate previous
+        run: uv run --with markdown-it-py==4.2.0 --with pillow==12.1.0 --with pyyaml==6.0.3 python candidate/scripts/check_content.py candidate previous
 
       - name: Test trusted validator after merge
         if: github.event_name == 'push'
-        run: uv run --with markdown-it-py==4.2.0 --with pillow==12.1.0 python -m unittest discover -s candidate/scripts -p 'test_*.py'
+        run: uv run --with markdown-it-py==4.2.0 --with pillow==12.1.0 --with pyyaml==6.0.3 python -m unittest discover -s candidate/scripts -p 'test_*.py'
 
       - name: Validate proposed content with the trusted base script
         if: github.event_name == 'pull_request_target'
-        run: uv run --with markdown-it-py==4.2.0 --with pillow==12.1.0 python validator/scripts/check_content.py candidate validator
+        run: uv run --with markdown-it-py==4.2.0 --with pillow==12.1.0 --with pyyaml==6.0.3 python validator/scripts/check_content.py candidate validator
 
       - name: Test trusted base validator
         if: github.event_name == 'pull_request_target'
-        run: uv run --with markdown-it-py==4.2.0 --with pillow==12.1.0 python -m unittest discover -s validator/scripts -p 'test_*.py'
+        run: uv run --with markdown-it-py==4.2.0 --with pillow==12.1.0 --with pyyaml==6.0.3 python -m unittest discover -s validator/scripts -p 'test_*.py'

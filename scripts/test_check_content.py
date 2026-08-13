@@ -65,6 +65,30 @@ summary: 요약
         )
         self.assertEqual(validate_repository(root), [])
 
+    def test_accepts_quoted_slug_with_yaml_comment(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace(
+                "slug: 2026-08-13-ai-daily",
+                'slug: "2026-08-13-ai-daily" # 공개 식별자',
+            ),
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_repository(root), [])
+
+    def test_rejects_duplicate_slugs_across_articles(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        duplicate = root / "news/security/2026/08/2026-08-13-ai-daily.md"
+        duplicate.parent.mkdir(parents=True)
+        duplicate.write_text(
+            self.article().replace("topic: ai", "topic: security"),
+            encoding="utf-8",
+        )
+        self.assertTrue(any("중복" in error for error in validate_repository(root)))
+
     def test_accepts_uppercase_https_image_attribution(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -768,7 +792,9 @@ summary: 요약
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
-    def test_does_not_classify_three_sync_like_packets_as_transport_stream(self) -> None:
+    def test_does_not_classify_three_sync_like_packets_as_transport_stream(
+        self,
+    ) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
@@ -820,13 +846,7 @@ summary: 요약
         assets.mkdir()
 
         def ogg_page(packet: bytes) -> bytes:
-            return (
-                b"OggS\x00\x02"
-                + bytes(20)
-                + b"\x01"
-                + bytes([len(packet)])
-                + packet
-            )
+            return b"OggS\x00\x02" + bytes(20) + b"\x01" + bytes([len(packet)]) + packet
 
         (assets / "podcast.ogg").write_bytes(ogg_page(b"OpusHead"))
         (assets / "movie.bin").write_bytes(ogg_page(b"\x80theora"))
@@ -844,6 +864,7 @@ summary: 요약
         article.write_text(self.article(), encoding="utf-8")
         assets = root / "assets"
         assets.mkdir()
+
         def ebml_element(identifier: bytes, payload: bytes) -> bytes:
             size = len(payload)
             length = 1
@@ -862,7 +883,9 @@ summary: 요약
             return ebml_element(b"\x1a\x45\xdf\xa3", b"") + segment
 
         asf = b"\x30\x26\xb2\x75\x8e\x66\xcf\x11\xa6\xd9\x00\xaa\x00\x62\xce\x6c"
-        stream_properties = b"\x91\x07\xdc\xb7\xb7\xa9\xcf\x11\x8e\xe6\x00\xc0\x0c\x20\x53\x65"
+        stream_properties = (
+            b"\x91\x07\xdc\xb7\xb7\xa9\xcf\x11\x8e\xe6\x00\xc0\x0c\x20\x53\x65"
+        )
         audio_guid = b"\x40\x9e\x69\xf8\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
         video_guid = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
 
@@ -870,7 +893,9 @@ summary: 요약
             return identifier + (len(payload) + 24).to_bytes(8, "little") + payload
 
         def asf_file(objects: list[bytes]) -> bytes:
-            payload = len(objects).to_bytes(4, "little") + b"\x01\x02" + b"".join(objects)
+            payload = (
+                len(objects).to_bytes(4, "little") + b"\x01\x02" + b"".join(objects)
+            )
             return asf + (len(payload) + 24).to_bytes(8, "little") + payload
 
         (assets / "podcast.mka").write_bytes(

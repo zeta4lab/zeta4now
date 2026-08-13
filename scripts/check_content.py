@@ -10,13 +10,13 @@ from pathlib import Path
 from typing import BinaryIO
 from urllib.parse import unquote, urlsplit
 
+import yaml
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
 from PIL import Image, UnidentifiedImageError
 
 ARTICLE_PATH_RE = re.compile(r"^news/[^/]+/\d{4}/\d{2}/([^/]+)\.md$")
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
-SLUG_RE = re.compile(r"^slug:\s*([^\s]+)\s*$", re.MULTILINE)
 SINGLE_LINE_IMAGE_RE = re.compile(r"^!\[(?:\\.|[^\]\\\r\n])*\]\(((?:\\.|[^\r\n])*)\)$")
 ATTRIBUTION_TEXT_RE = re.compile(
     r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$",
@@ -60,8 +60,11 @@ MAX_VIDEO_SCAN_BYTES = 1_000_000
 COMMONMARK = MarkdownIt("commonmark")
 EBML_HEADER = b"\x1a\x45\xdf\xa3"
 ASF_HEADER = b"\x30\x26\xb2\x75\x8e\x66\xcf\x11\xa6\xd9\x00\xaa\x00\x62\xce\x6c"
-ASF_STREAM_PROPERTIES = b"\x91\x07\xdc\xb7\xb7\xa9\xcf\x11\x8e\xe6\x00\xc0\x0c\x20\x53\x65"
+ASF_STREAM_PROPERTIES = (
+    b"\x91\x07\xdc\xb7\xb7\xa9\xcf\x11\x8e\xe6\x00\xc0\x0c\x20\x53\x65"
+)
 ASF_VIDEO_MEDIA = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
+
 
 def contains_html(tokens: list[Token]) -> bool:
     return any(
@@ -314,9 +317,7 @@ def has_ebml_video_track(candidate: Path, start: int = 0) -> bool:
             size, size_length = size_field
             payload_start = offset + id_length + size_length
             payload_end = (
-                end
-                if size == (1 << (7 * size_length)) - 1
-                else payload_start + size
+                end if size == (1 << (7 * size_length)) - 1 else payload_start + size
             )
             if payload_end > end:
                 return False
@@ -457,8 +458,10 @@ def has_video_iso_bmff_track(candidate: Path, start: int = 0) -> bool:
                 stream.seek(payload_start + 8)
                 if stream.read(4) == b"vide":
                     has_video = True
-            if box_type in containers and depth < 4 and scan_boxes(
-                stream, payload_start, offset + size, depth + 1
+            if (
+                box_type in containers
+                and depth < 4
+                and scan_boxes(stream, payload_start, offset + size, depth + 1)
             ):
                 has_video = True
             offset += size
@@ -581,7 +584,10 @@ def is_valid_image_file(candidate: Path) -> bool:
 
 
 def validate_article(
-    root: Path, article: Path, referenced_images: set[Path] | None = None
+    root: Path,
+    article: Path,
+    referenced_images: set[Path] | None = None,
+    seen_slugs: dict[str, str] | None = None,
 ) -> list[str]:
     errors: list[str] = []
     name = relative_name(root, article)
@@ -598,12 +604,21 @@ def validate_article(
     except UnicodeDecodeError:
         return [f"{name}: Markdown은 UTF-8이어야 합니다"]
     frontmatter_match = FRONTMATTER_RE.match(markdown)
-    slug_match = (
-        SLUG_RE.search(frontmatter_match.group(1)) if frontmatter_match else None
-    )
-    slug = slug_match.group(1) if slug_match else ""
+    try:
+        metadata = (
+            yaml.safe_load(frontmatter_match.group(1)) if frontmatter_match else {}
+        )
+    except yaml.YAMLError:
+        metadata = {}
+        errors.append(f"{name}: front matter YAML이 올바르지 않습니다")
+    slug_value = metadata.get("slug") if isinstance(metadata, dict) else None
+    slug = slug_value if isinstance(slug_value, str) else ""
     if slug != path_match.group(1):
         errors.append(f"{name}: front matter slug와 파일명이 일치하지 않습니다")
+    elif seen_slugs is not None:
+        previous = seen_slugs.setdefault(slug, name)
+        if previous != name:
+            errors.append(f"{name}: slug가 {previous} 문서와 중복됩니다: {slug}")
     try:
         body = markdown[frontmatter_match.end() :] if frontmatter_match else markdown
         images = article_images(body)
@@ -673,13 +688,17 @@ def validate_repository(root: Path, base: Path | None = None) -> list[str]:
     news = root / "news"
     if not news.is_dir() or news.is_symlink():
         return ["news 디렉터리가 없거나 심볼릭 링크입니다"]
-    previously_published_images = {
-        existing.relative_to(base)
-        for existing in (base / "news").rglob("*")
-        if existing.is_file()
-        and not existing.is_symlink()
-        and existing.suffix.lower() in ALLOWED_IMAGE_EXTENSIONS
-    } if base and (base / "news").is_dir() else set()
+    previously_published_images = (
+        {
+            existing.relative_to(base)
+            for existing in (base / "news").rglob("*")
+            if existing.is_file()
+            and not existing.is_symlink()
+            and existing.suffix.lower() in ALLOWED_IMAGE_EXTENSIONS
+        }
+        if base and (base / "news").is_dir()
+        else set()
+    )
 
     for candidate in root.rglob("*"):
         relative = candidate.relative_to(root)
@@ -689,11 +708,14 @@ def validate_repository(root: Path, base: Path | None = None) -> list[str]:
             errors.append(f"{relative.as_posix()}: 동영상 파일은 저장할 수 없습니다")
 
     referenced_images: set[Path] = set()
+    seen_slugs: dict[str, str] = {}
     for article in news.rglob("*"):
         if article.suffix.lower() != ".md":
             continue
         if article.is_file() and not article.is_symlink():
-            errors.extend(validate_article(root, article, referenced_images))
+            errors.extend(
+                validate_article(root, article, referenced_images, seen_slugs)
+            )
 
     for candidate in news.rglob("*"):
         if candidate.is_symlink():
