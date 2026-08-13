@@ -51,6 +51,21 @@ summary: 요약
         )
         self.assertEqual(validate_repository(root), [])
 
+    def test_accepts_uppercase_https_image_attribution(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        image = article.parent / "2026-08-13-ai-daily/data-center.webp"
+        image.parent.mkdir()
+        image.write_bytes(WEBP_BYTES)
+        article.write_text(
+            self.article(
+                "![데이터센터 전경](./2026-08-13-ai-daily/data-center.webp)",
+                "*사진: 직접 제작 · 출처: HTTPS://example.com/photo · 라이선스: CC BY 4.0*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_repository(root), [])
+
     def test_accepts_bracketed_image_path_with_parentheses(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)

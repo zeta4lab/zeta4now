@@ -16,7 +16,8 @@ FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
 SLUG_RE = re.compile(r"^slug:\s*([^\s]+)\s*$", re.MULTILINE)
 SINGLE_LINE_IMAGE_RE = re.compile(r"^!\[(?:\\.|[^\]\\\r\n])*\]\(((?:\\.|[^\r\n])*)\)$")
 ATTRIBUTION_TEXT_RE = re.compile(
-    r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$"
+    r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$",
+    re.IGNORECASE,
 )
 BARE_EXTERNAL_URL_RE = re.compile(
     r"(?i)(?<![\w])(?:(?:(?:https?|ftp):)?//[^\s<]+|www\.[^\s<]+)"
