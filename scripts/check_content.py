@@ -279,7 +279,9 @@ def validate_article(
             )
             continue
 
-        if re.search(r"%(?![0-9A-Fa-f]{2})", raw_destination):
+        if re.search(r"%(?![0-9A-Fa-f]{2})", raw_destination) or re.search(
+            r"%(?![0-9A-Fa-f]{2})", destination
+        ):
             errors.append(f"{name}: 사진 경로의 percent encoding이 잘못됐습니다")
             continue
         try:
@@ -287,6 +289,11 @@ def validate_article(
         except UnicodeDecodeError:
             errors.append(
                 f"{name}: 사진 경로는 올바른 UTF-8 percent encoding을 사용해야 합니다"
+            )
+            continue
+        if re.search(r"%(?![0-9A-Fa-f]{2})", decoded):
+            errors.append(
+                f"{name}: 정규화한 사진 경로의 percent encoding이 잘못됐습니다"
             )
             continue
         parts = decoded.split("/")

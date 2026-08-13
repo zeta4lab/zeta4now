@@ -498,6 +498,20 @@ summary: 요약
             any("percent encoding" in error for error in validate_repository(root))
         )
 
+    def test_rejects_entity_encoded_invalid_percent_encoding(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article(
+                "![사진](./2026-08-13-ai-daily/photo&#37;ZZ.png)",
+                "*사진: 제공자 · 출처: https://example.com/photo · 라이선스: 허가됨*",
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("percent encoding" in error for error in validate_repository(root))
+        )
+
     def test_rejects_raw_svg_media(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
