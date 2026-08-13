@@ -272,9 +272,12 @@ def has_source_footer(markdown: str, require_disclosure: bool) -> bool:
     ]
     if len(source_headings) != 1 or not source_headings[0].map:
         return False
-    footer = "".join(
-        markdown.splitlines(keepends=True)[source_headings[0].map[1] :]
-    ).strip()
+    footer = (
+        "".join(markdown.splitlines(keepends=True)[source_headings[0].map[1] :])
+        .strip()
+        .replace("\r\n", "\n")
+        .replace("\r", "\n")
+    )
     source_block, separator, disclosure = footer.partition("\n\n---\n\n")
     source_tokens = COMMONMARK.parse(source_block.strip())
     if (
@@ -531,11 +534,10 @@ def has_exact_jpeg_container(payload: bytes) -> bool:
 
 def has_video_iso_bmff_track(candidate: Path, start: int = 0) -> bool:
     containers = {b"moov", b"trak", b"mdia"}
-    has_ftyp = False
     has_video = False
 
     def scan_boxes(stream: BinaryIO, offset: int, end: int, depth: int) -> bool:
-        nonlocal has_ftyp, has_video
+        nonlocal has_video
         while offset + 8 <= end:
             stream.seek(offset)
             header = stream.read(16)
@@ -554,8 +556,6 @@ def has_video_iso_bmff_track(candidate: Path, start: int = 0) -> bool:
             if size < header_size or offset + size > end:
                 return False
             payload_start = offset + header_size
-            if depth == 0 and box_type == b"ftyp":
-                has_ftyp = True
             if box_type == b"hdlr" and size >= header_size + 12:
                 stream.seek(payload_start + 8)
                 if stream.read(4) == b"vide":
@@ -573,7 +573,7 @@ def has_video_iso_bmff_track(candidate: Path, start: int = 0) -> bool:
         file_size = candidate.stat().st_size
         with candidate.open("rb") as stream:
             scan_boxes(stream, start, file_size, 0)
-            return has_ftyp and has_video
+            return has_video
     except OSError:
         return False
 

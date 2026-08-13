@@ -791,6 +791,22 @@ model: none
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
+    def test_rejects_legacy_quicktime_video_without_ftyp(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+
+        def box(kind: bytes, payload: bytes) -> bytes:
+            return (len(payload) + 8).to_bytes(4, "big") + kind + payload
+
+        hdlr = box(b"hdlr", bytes(8) + b"vide")
+        video = root / "assets/movie.mov"
+        video.parent.mkdir()
+        video.write_bytes(box(b"moov", box(b"trak", box(b"mdia", hdlr))))
+        self.assertTrue(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
     def test_rejects_disguised_mpeg_transport_stream(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -987,6 +1003,19 @@ model: none
             encoding="utf-8",
         )
         self.assertTrue(any("## 출처" in error for error in validate_repository(root)))
+
+    def test_accepts_crlf_source_footer_and_ai_disclosure(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        markdown = self.article().replace(
+            "generated_by: manual", "generated_by: generator"
+        )
+        markdown += (
+            "\n---\n\n이 글은 공개 출처를 바탕으로 AI가 자동 생성했으며, "
+            "중요한 판단 전에는 연결된 원문을 확인해야 합니다.\n"
+        )
+        article.write_bytes(markdown.replace("\n", "\r\n").encode())
+        self.assertEqual(validate_repository(root), [])
 
     def test_rejects_content_after_source_footer(self) -> None:
         temporary, root, article = self.repository()
