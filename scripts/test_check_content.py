@@ -209,6 +209,24 @@ summary: 요약
                 finally:
                     temporary.cleanup()
 
+    def test_stops_fence_after_leaving_container(self) -> None:
+        for body in (
+            '> ```html\n> 코드 예제\n<img src="./photo.png">',
+            '- 기술 예제\n\n    ```html\n    코드 예제\n<img src="./photo.png">',
+        ):
+            with self.subTest(body=body):
+                temporary, root, article = self.repository()
+                try:
+                    article.write_text(self.article(body), encoding="utf-8")
+                    self.assertTrue(
+                        any(
+                            "미디어 태그" in error
+                            for error in validate_repository(root)
+                        )
+                    )
+                finally:
+                    temporary.cleanup()
+
     def test_rejects_media_after_invalid_fence_opener(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)

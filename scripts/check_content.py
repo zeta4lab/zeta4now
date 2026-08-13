@@ -54,24 +54,28 @@ def mask_range(characters: list[str], start: int, end: int) -> None:
             characters[index] = " "
 
 
-def strip_blockquote_prefixes(content: str) -> str:
+def strip_blockquote_prefixes(content: str) -> tuple[str, int]:
+    depth = 0
     while match := BLOCKQUOTE_PREFIX_RE.match(content):
         content = content[match.end() :]
-    return content
+        depth += 1
+    return content, depth
 
 
-def fence_view(content: str, list_indent: int, *, update_list: bool) -> tuple[str, int]:
-    view = strip_blockquote_prefixes(content)
+def fence_view(
+    content: str, list_indent: int, *, update_list: bool
+) -> tuple[str, int, int]:
+    view, blockquote_depth = strip_blockquote_prefixes(content)
     if update_list:
         marker = LIST_MARKER_RE.match(view)
         if marker:
-            return view[marker.end() :], marker.end()
+            return view[marker.end() :], marker.end(), blockquote_depth
     leading_spaces = len(view) - len(view.lstrip(" "))
     if list_indent and leading_spaces >= list_indent:
-        return view[list_indent:], list_indent
+        return view[list_indent:], list_indent, blockquote_depth
     if update_list and view.strip():
         list_indent = 0
-    return view, list_indent
+    return view, list_indent, blockquote_depth
 
 
 def without_markdown_code(markdown: str) -> str:
@@ -80,9 +84,26 @@ def without_markdown_code(markdown: str) -> str:
     fence_character = ""
     fence_length = 0
     list_indent = 0
+    fence_blockquote_depth = 0
+    fence_list_indent = 0
     for line in markdown.splitlines(keepends=True):
         content = line.rstrip("\r\n")
-        view, list_indent = fence_view(
+        container_view, blockquote_depth = strip_blockquote_prefixes(content)
+        container_indentation = len(container_view) - len(container_view.lstrip(" "))
+        left_container = bool(fence_character) and (
+            blockquote_depth < fence_blockquote_depth
+            or (
+                fence_list_indent
+                and bool(container_view.strip())
+                and container_indentation < fence_list_indent
+            )
+        )
+        if left_container:
+            fence_character = ""
+            fence_length = 0
+            fence_blockquote_depth = 0
+            fence_list_indent = 0
+        view, list_indent, blockquote_depth = fence_view(
             content, list_indent, update_list=not fence_character
         )
         stripped = view.lstrip(" ")
@@ -106,10 +127,14 @@ def without_markdown_code(markdown: str) -> str:
             if closing:
                 fence_character = ""
                 fence_length = 0
+                fence_blockquote_depth = 0
+                fence_list_indent = 0
         elif opening:
             fence = opening.group(1)
             fence_character = fence[0]
             fence_length = len(fence)
+            fence_blockquote_depth = blockquote_depth
+            fence_list_indent = list_indent
             mask_range(characters, offset, offset + len(line))
         offset += len(line)
 
