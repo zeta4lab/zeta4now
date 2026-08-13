@@ -16,7 +16,7 @@ from markdown_it import MarkdownIt
 from markdown_it.token import Token
 from PIL import Image, UnidentifiedImageError
 
-ARTICLE_PATH_RE = re.compile(r"^news/[^/]+/\d{4}/\d{2}/([^/]+)\.md$")
+ARTICLE_PATH_RE = re.compile(r"^news/([^/]+)/\d{4}/\d{2}/([^/]+)\.md$")
 FRONTMATTER_RE = re.compile(r"\A---\r?\n([\s\S]*?)\r?\n---\r?\n")
 ATTRIBUTION_TEXT_RE = re.compile(
     r"^사진:\s*(.*?)\s*·\s*출처:\s*(https://\S+)\s*·\s*라이선스:\s*(.*?)$",
@@ -324,16 +324,23 @@ def relative_name(root: Path, candidate: Path) -> str:
 
 
 def has_annex_b_video(header: bytes) -> bool:
-    for marker in (b"\x00\x00\x01", b"\x00\x00\x00\x01"):
-        start = 0
-        while (index := header.find(marker, start)) >= 0:
-            nal_index = index + len(marker)
-            if nal_index < len(header):
-                nal = header[nal_index]
-                if nal & 0x1F in {5, 7, 8} or (nal >> 1) & 0x3F in {19, 20, 32, 33, 34}:
-                    return True
-            start = nal_index + 1
-    return False
+    starts = list(re.finditer(b"\x00\x00\x00\x01|\x00\x00\x01", header))
+    h264_types: set[int] = set()
+    hevc_types: set[int] = set()
+    for index, match in enumerate(starts):
+        payload_start = match.end()
+        payload_end = (
+            starts[index + 1].start() if index + 1 < len(starts) else len(header)
+        )
+        payload = header[payload_start:payload_end]
+        if not payload:
+            continue
+        h264_types.add(payload[0] & 0x1F)
+        if len(payload) >= 2:
+            hevc_types.add((payload[0] >> 1) & 0x3F)
+    coherent_h264 = {7, 8} <= h264_types and bool(h264_types & {1, 2, 3, 4, 5})
+    coherent_hevc = {32, 33, 34} <= hevc_types and bool(hevc_types & set(range(32)))
+    return coherent_h264 or coherent_hevc
 
 
 def has_ogg_video(candidate: Path, offset: int = 0) -> bool:
@@ -760,6 +767,10 @@ def validate_article(
             r"[a-z0-9가-힣][a-z0-9가-힣_-]*", topic
         ):
             errors.append(f"{name}: front matter topic 형식이 올바르지 않습니다")
+        if isinstance(topic, str) and topic != path_match.group(1):
+            errors.append(
+                f"{name}: front matter topic과 news 하위 디렉터리가 일치하지 않습니다"
+            )
         published_at = metadata.get("published_at")
         try:
             published = (
@@ -779,7 +790,7 @@ def validate_article(
             or any(not isinstance(tag, str) or not tag.strip() for tag in tags)
         ):
             errors.append(f"{name}: front matter tags는 문자열 목록이어야 합니다")
-    if slug != path_match.group(1):
+    if slug != path_match.group(2):
         errors.append(f"{name}: front matter slug와 파일명이 일치하지 않습니다")
     elif seen_slugs is not None:
         previous = seen_slugs.setdefault(slug, name)

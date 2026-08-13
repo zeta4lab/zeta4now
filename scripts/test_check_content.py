@@ -1038,6 +1038,16 @@ model: none
         )
         self.assertTrue(any("topic" in error for error in validate_repository(root)))
 
+    def test_rejects_topic_that_differs_from_path(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace("topic: ai", "topic: security"), encoding="utf-8"
+        )
+        self.assertTrue(
+            any("topic과 news" in error for error in validate_repository(root))
+        )
+
     def test_rejects_missing_source_footer(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
@@ -1181,24 +1191,29 @@ model: none
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
-    def test_rejects_disguised_raw_h264_stream(self) -> None:
+    def test_allows_incidental_annex_b_parameter_set_bytes(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
-        video = root / "assets/movie.bin"
-        video.parent.mkdir()
-        video.write_bytes(b"\x00\x00\x00\x01\x67\x64\x00\x1f")
-        self.assertTrue(
+        binary = root / "assets/data.bin"
+        binary.parent.mkdir()
+        binary.write_bytes(b"metadata\x00\x00\x00\x01\x67\x64\x00\x1f")
+        self.assertFalse(
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
-    def test_rejects_raw_h264_after_access_unit_delimiter(self) -> None:
+    def test_rejects_coherent_raw_h264_stream(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         article.write_text(self.article(), encoding="utf-8")
         video = root / "assets/movie.bin"
         video.parent.mkdir()
-        video.write_bytes(b"\x00\x00\x00\x01\x09\xf0\x00\x00\x00\x01\x67\x64\x00\x1f")
+        video.write_bytes(
+            b"\x00\x00\x00\x01\x09\xf0"
+            b"\x00\x00\x00\x01\x67\x64\x00\x1f"
+            b"\x00\x00\x00\x01\x68\xee\x3c\x80"
+            b"\x00\x00\x00\x01\x65\x88\x84"
+        )
         self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
         )
