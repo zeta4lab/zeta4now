@@ -5,6 +5,7 @@ import mimetypes
 import re
 import sys
 import warnings
+from datetime import datetime
 from filecmp import cmp
 from pathlib import Path
 from typing import BinaryIO
@@ -31,7 +32,6 @@ BARE_EMAIL_RE = re.compile(
 ALLOWED_IMAGE_EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png"}
 VIDEO_EXTENSIONS = {
     ".mp4",
-    ".webm",
     ".mov",
     ".mkv",
     ".avi",
@@ -507,8 +507,9 @@ def has_video_iso_bmff_track(candidate: Path, start: int = 0) -> bool:
 
 def is_video_file(candidate: Path) -> bool:
     media_type, _encoding = mimetypes.guess_type(candidate.name)
-    if candidate.suffix.lower() in VIDEO_EXTENSIONS or bool(
-        media_type and media_type.startswith("video/")
+    suffix = candidate.suffix.lower()
+    if suffix in VIDEO_EXTENSIONS or bool(
+        suffix != ".webm" and media_type and media_type.startswith("video/")
     ):
         return True
     if candidate.is_symlink() or not candidate.is_file():
@@ -642,6 +643,37 @@ def validate_article(
         errors.append(f"{name}: front matter YAML이 올바르지 않습니다")
     slug_value = metadata.get("slug") if isinstance(metadata, dict) else None
     slug = slug_value if isinstance(slug_value, str) else ""
+    required_strings = ("title", "topic", "summary", "generated_by", "model")
+    if not isinstance(metadata, dict):
+        errors.append(f"{name}: front matter는 mapping이어야 합니다")
+    else:
+        for field in required_strings:
+            if not isinstance(metadata.get(field), str) or not metadata[field].strip():
+                errors.append(f"{name}: front matter {field} 값이 필요합니다")
+        topic = metadata.get("topic")
+        if isinstance(topic, str) and not re.fullmatch(
+            r"[a-z0-9가-힣][a-z0-9가-힣_-]*", topic, re.IGNORECASE
+        ):
+            errors.append(f"{name}: front matter topic 형식이 올바르지 않습니다")
+        published_at = metadata.get("published_at")
+        try:
+            published = (
+                published_at
+                if isinstance(published_at, datetime)
+                else datetime.fromisoformat(published_at)
+            )
+            if published.tzinfo is None:
+                raise ValueError
+        except (TypeError, ValueError):
+            errors.append(
+                f"{name}: front matter published_at은 시간대가 있는 ISO 8601이어야 합니다"
+            )
+        tags = metadata.get("tags")
+        if tags is not None and (
+            not isinstance(tags, list)
+            or any(not isinstance(tag, str) or not tag.strip() for tag in tags)
+        ):
+            errors.append(f"{name}: front matter tags는 문자열 목록이어야 합니다")
     if slug != path_match.group(1):
         errors.append(f"{name}: front matter slug와 파일명이 일치하지 않습니다")
     elif seen_slugs is not None:

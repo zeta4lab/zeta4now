@@ -42,6 +42,8 @@ slug: 2026-08-13-ai-daily
 topic: ai
 published_at: 2026-08-13T06:00:00+09:00
 summary: 요약
+generated_by: manual
+model: none
 ---
 # 오늘의 AI 소식
 
@@ -913,7 +915,7 @@ summary: 요약
             )
             return asf + (len(payload) + 24).to_bytes(8, "little") + payload
 
-        (assets / "podcast.mka").write_bytes(
+        (assets / "podcast.webm").write_bytes(
             ebml_file(b"\x02", b"arbitrary\x83\x81\x01metadata")
         )
         (assets / "movie.bin").write_bytes(ebml_file(b"\x00\x01"))
@@ -932,6 +934,27 @@ summary: 요약
         self.assertEqual(sum("동영상 파일" in error for error in errors), 2)
         self.assertTrue(any("movie.bin" in error for error in errors))
         self.assertTrue(any("recording.dat" in error for error in errors))
+
+    def test_rejects_missing_or_invalid_required_front_matter(self) -> None:
+        cases = {
+            "title": "title: 오늘의 AI 소식\n",
+            "topic": "topic: ai\n",
+            "summary": "summary: 요약\n",
+            "generated_by": "generated_by: manual\n",
+            "model": "model: none\n",
+            "published_at": "published_at: 2026-08-13T06:00:00+09:00\n",
+        }
+        source = self.article()
+        for field, line in cases.items():
+            with self.subTest(field=field):
+                temporary, root, article = self.repository()
+                try:
+                    article.write_text(source.replace(line, ""), encoding="utf-8")
+                    self.assertTrue(
+                        any(field in error for error in validate_repository(root))
+                    )
+                finally:
+                    temporary.cleanup()
 
     def test_parses_ebml_tracks_beyond_bounded_signature_scan(self) -> None:
         temporary, root, article = self.repository()
