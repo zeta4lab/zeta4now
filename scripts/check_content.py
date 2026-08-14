@@ -54,6 +54,7 @@ VIDEO_EXTENSIONS = {
     ".m4v",
     ".mjpeg",
     ".mjpg",
+    ".obu",
     ".vvc",
     ".h266",
     ".266",
@@ -564,14 +565,14 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
                                     ((payload[entry + 2] & 0x1F) << 8)
                                     | payload[entry + 3]
                                 )
-                found_complete_pmt = False
+                complete_pmt_pids: set[int] = set()
                 for pid, payload in sections:
                     if pid not in pmt_pids or payload[0] != 0x02 or len(payload) < 16:
                         continue
-                    found_complete_pmt = True
                     program_info_length = ((payload[10] & 0x0F) << 8) | payload[11]
                     entry = 12 + program_info_length
                     entries_end = len(payload) - 4
+                    pmt_is_complete = entry <= entries_end
                     while entry + 5 <= entries_end:
                         stream_type = payload[entry]
                         info_length = ((payload[entry + 3] & 0x0F) << 8) | payload[
@@ -580,6 +581,7 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
                         info_start = entry + 5
                         info_end = info_start + info_length
                         if info_end > entries_end:
+                            pmt_is_complete = False
                             break
                         if stream_type in video_stream_types or (
                             stream_type == 0x06
@@ -589,9 +591,13 @@ def has_mpeg_transport_stream(data: bytes) -> bool:
                         ):
                             return True
                         entry += 5 + info_length
-                # 정합한 TS인데 완전한 PMT를 찾지 못했다면 bounded 구간 뒤에
-                # 영상 program metadata가 있을 수 있으므로 보수적으로 거부한다.
-                return not found_complete_pmt
+                    if entry != entries_end:
+                        pmt_is_complete = False
+                    if pmt_is_complete:
+                        complete_pmt_pids.add(pid)
+                # PAT가 알린 모든 program의 PMT를 bounded 구간에서 완전히
+                # 검사하지 못했다면 영상 metadata가 뒤에 있을 수 있으므로 거부한다.
+                return not pmt_pids or not pmt_pids.issubset(complete_pmt_pids)
             offset = data.find(b"\x47", offset + 1)
     return False
 
@@ -905,6 +911,23 @@ def is_valid_image_file(candidate: Path) -> bool:
         return False
 
 
+def detected_image_format(candidate: Path) -> str | None:
+    if candidate.is_symlink() or not candidate.is_file():
+        return None
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", Image.DecompressionBombWarning)
+            with Image.open(candidate) as image:
+                return image.format
+    except (
+        OSError,
+        UnidentifiedImageError,
+        Image.DecompressionBombError,
+        Image.DecompressionBombWarning,
+    ):
+        return None
+
+
 def validate_article(
     root: Path,
     article: Path,
@@ -1076,12 +1099,12 @@ def validate_repository(root: Path, base: Path | None = None) -> list[str]:
             continue
         is_stored_file = candidate.is_file() or candidate.is_symlink()
         media_type, _encoding = mimetypes.guess_type(candidate.name)
+        image_format = detected_image_format(candidate) if is_stored_file else None
         if is_stored_file and is_video_file(candidate):
             errors.append(f"{relative.as_posix()}: 동영상 파일은 저장할 수 없습니다")
         if (
             is_stored_file
-            and media_type
-            and media_type.startswith("image/")
+            and (image_format or (media_type and media_type.startswith("image/")))
             and candidate.suffix.lower() not in ALLOWED_IMAGE_EXTENSIONS
         ):
             errors.append(
