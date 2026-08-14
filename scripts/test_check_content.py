@@ -5,6 +5,7 @@ import unittest
 from base64 import b64decode
 from io import BytesIO
 from pathlib import Path
+from zlib import crc32
 
 from check_content import validate_immutable_media, validate_repository
 from PIL import Image
@@ -853,6 +854,24 @@ model: none
         self.assertTrue(
             any(
                 "assets/photo.bin" in error and "사진 형식" in error
+                for error in validate_repository(root)
+            )
+        )
+
+    def test_rejects_disguised_decompression_bomb_image(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        payload = bytearray(PNG_BYTES)
+        payload[16:20] = (20_000).to_bytes(4, "big")
+        payload[20:24] = (20_000).to_bytes(4, "big")
+        payload[29:33] = crc32(payload[12:29]).to_bytes(4, "big")
+        image = root / "assets/photo.bin"
+        image.parent.mkdir()
+        image.write_bytes(payload)
+        self.assertTrue(
+            any(
+                "assets/photo.bin" in error and "안전 제한" in error
                 for error in validate_repository(root)
             )
         )

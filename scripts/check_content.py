@@ -911,21 +911,21 @@ def is_valid_image_file(candidate: Path) -> bool:
         return False
 
 
-def detected_image_format(candidate: Path) -> str | None:
+def inspect_image_content(candidate: Path) -> tuple[str | None, bool]:
     if candidate.is_symlink() or not candidate.is_file():
-        return None
+        return None, False
     try:
         with warnings.catch_warnings():
             warnings.simplefilter("error", Image.DecompressionBombWarning)
             with Image.open(candidate) as image:
-                return image.format
+                return image.format, False
+    except (Image.DecompressionBombError, Image.DecompressionBombWarning):
+        return None, True
     except (
         OSError,
         UnidentifiedImageError,
-        Image.DecompressionBombError,
-        Image.DecompressionBombWarning,
     ):
-        return None
+        return None, False
 
 
 def validate_article(
@@ -1099,10 +1099,16 @@ def validate_repository(root: Path, base: Path | None = None) -> list[str]:
             continue
         is_stored_file = candidate.is_file() or candidate.is_symlink()
         media_type, _encoding = mimetypes.guess_type(candidate.name)
-        image_format = detected_image_format(candidate) if is_stored_file else None
+        image_format, unsafe_image = (
+            inspect_image_content(candidate) if is_stored_file else (None, False)
+        )
         if is_stored_file and is_video_file(candidate):
             errors.append(f"{relative.as_posix()}: 동영상 파일은 저장할 수 없습니다")
-        if (
+        if unsafe_image:
+            errors.append(
+                f"{relative.as_posix()}: 안전 제한을 초과한 크기의 사진은 저장할 수 없습니다"
+            )
+        elif (
             is_stored_file
             and (image_format or (media_type and media_type.startswith("image/")))
             and candidate.suffix.lower() not in ALLOWED_IMAGE_EXTENSIONS
@@ -1112,6 +1118,7 @@ def validate_repository(root: Path, base: Path | None = None) -> list[str]:
             )
         if (
             is_stored_file
+            and not unsafe_image
             and candidate.suffix.lower() in ALLOWED_IMAGE_EXTENSIONS
             and not is_valid_image_file(candidate)
         ):
