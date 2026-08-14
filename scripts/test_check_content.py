@@ -5,6 +5,7 @@ import unittest
 from base64 import b64decode
 from io import BytesIO
 from pathlib import Path
+from zlib import crc32
 
 from check_content import validate_immutable_media, validate_repository
 from PIL import Image
@@ -20,7 +21,10 @@ VIDEO_BMFF_BYTES = (
 
 
 def mpeg_ts(
-    packet_size: int, stream_type: int = 0x1B, registration: bytes = b""
+    packet_size: int,
+    stream_type: int = 0x1B,
+    registration: bytes = b"",
+    additional_pmt_pid: int | None = None,
 ) -> bytes:
     packets = bytearray(b"\xff" * (packet_size * 5))
 
@@ -31,7 +35,19 @@ def mpeg_ts(
         )
         packets[offset + 4 : offset + 5 + len(payload)] = b"\x00" + payload
 
-    pat = b"\x00\xb0\x0d\x00\x01\xc1\x00\x00\x00\x01\xe1\x00\x00\x00\x00\x00"
+    programs = b"\x00\x01\xe1\x00"
+    if additional_pmt_pid is not None:
+        programs += b"\x00\x02" + bytes(
+            (0xE0 | (additional_pmt_pid >> 8), additional_pmt_pid & 0xFF)
+        )
+    pat_section_length = 5 + len(programs) + 4
+    pat = (
+        b"\x00"
+        + bytes((0xB0 | (pat_section_length >> 8), pat_section_length & 0xFF))
+        + b"\x00\x01\xc1\x00\x00"
+        + programs
+        + b"\x00\x00\x00\x00"
+    )
     descriptors = b"\x05\x04" + registration if registration else b""
     section_length = 9 + 5 + len(descriptors) + 4
     pmt = (
@@ -817,6 +833,7 @@ model: none
             "movie.m4v",
             "movie.mjpeg",
             "movie.mjpg",
+            "movie.obu",
             "movie.vvc",
             "movie.h266",
             "movie.266",
@@ -825,7 +842,39 @@ model: none
             video.parent.mkdir(exist_ok=True)
             video.write_bytes(b"video")
         errors = validate_repository(root)
-        self.assertEqual(sum("동영상 파일" in error for error in errors), 16)
+        self.assertEqual(sum("동영상 파일" in error for error in errors), 17)
+
+    def test_rejects_image_content_with_unrecognized_extension(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        image = root / "assets/photo.bin"
+        image.parent.mkdir()
+        image.write_bytes(PNG_BYTES)
+        self.assertTrue(
+            any(
+                "assets/photo.bin" in error and "사진 형식" in error
+                for error in validate_repository(root)
+            )
+        )
+
+    def test_rejects_disguised_decompression_bomb_image(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        payload = bytearray(PNG_BYTES)
+        payload[16:20] = (20_000).to_bytes(4, "big")
+        payload[20:24] = (20_000).to_bytes(4, "big")
+        payload[29:33] = crc32(payload[12:29]).to_bytes(4, "big")
+        image = root / "assets/photo.bin"
+        image.parent.mkdir()
+        image.write_bytes(payload)
+        self.assertTrue(
+            any(
+                "assets/photo.bin" in error and "안전 제한" in error
+                for error in validate_repository(root)
+            )
+        )
 
     def test_rejects_animated_gif_outside_news(self) -> None:
         temporary, root, article = self.repository()
@@ -929,6 +978,17 @@ model: none
         audio.parent.mkdir()
         audio.write_bytes(mpeg_ts(188, stream_type=0x0F))
         self.assertFalse(
+            any("동영상 파일" in error for error in validate_repository(root))
+        )
+
+    def test_rejects_transport_stream_with_uninspected_program(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(self.article(), encoding="utf-8")
+        video = root / "assets/movie.ts"
+        video.parent.mkdir()
+        video.write_bytes(mpeg_ts(188, stream_type=0x0F, additional_pmt_pid=0x102))
+        self.assertTrue(
             any("동영상 파일" in error for error in validate_repository(root))
         )
 
