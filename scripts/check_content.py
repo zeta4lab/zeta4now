@@ -73,10 +73,14 @@ ASF_STREAM_PROPERTIES = (
     b"\x91\x07\xdc\xb7\xb7\xa9\xcf\x11\x8e\xe6\x00\xc0\x0c\x20\x53\x65"
 )
 ASF_VIDEO_MEDIA = b"\xc0\xef\x19\xbc\x4d\x5b\xcf\x11\xa8\xfd\x00\x80\x5f\x5c\x44\x2b"
-AI_DISCLOSURES = {
-    "이 글은 공개 출처를 바탕으로 AI가 자동 생성했으며, 중요한 판단 전에는 연결된 원문을 확인해야 합니다.",
-    "이 글은 공개 출처를 바탕으로 AI가 자동 생성한 초안을 검토해 발행했으며, 중요한 판단 전에는 연결된 원문을 확인해야 합니다.",
-}
+AUTO_DISCLOSURE = "이 글은 공개 출처를 바탕으로 AI가 자동 생성했으며, 중요한 판단 전에는 연결된 원문을 확인해야 합니다."
+REVIEWED_DISCLOSURE = (
+    "이 글은 공개 출처를 바탕으로 AI가 자동 생성한 초안을 검토해 발행했으며, "
+    "중요한 판단 전에는 연결된 원문을 확인해야 합니다."
+)
+AI_DISCLOSURES = {AUTO_DISCLOSURE, REVIEWED_DISCLOSURE}
+# 사람의 검토 없이 발행할 수 있는 자동 생성기. 그 밖의 AI 작성 문서는 데스크 검토 고지를 사용한다.
+AUTO_GENERATORS = {"zeta4s", "zeta4now-mcp"}
 
 
 def contains_html(tokens: list[Token]) -> bool:
@@ -1017,6 +1021,15 @@ def validate_article(
     )
     if not has_source_footer(body, require_disclosure):
         errors.append(f"{name}: ## 출처 섹션에 최소 1개의 HTTPS 원문 링크가 필요합니다")
+    elif (
+        require_disclosure
+        and metadata.get("generated_by") not in AUTO_GENERATORS
+        and REVIEWED_DISCLOSURE not in body.replace("\r\n", "\n").replace("\r", "\n")
+    ):
+        errors.append(
+            f"{name}: 데스크 발행 문서(generated_by: {metadata.get('generated_by')})는 "
+            "검토 발행 고지를 사용해야 합니다"
+        )
 
     for _alt, destination, raw_destination, attribution_valid in images:
         bracketed = raw_destination.startswith("<") and raw_destination.endswith(">")

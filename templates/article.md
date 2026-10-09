@@ -1,23 +1,27 @@
 ---
-title: 2026년 8월 9일 AI 새뜸
-slug: 2026-08-09-ai-daily
+title: Gemini 3.7 Flash 공개, 모델 라우팅 경쟁 본격화
+slug: 2026-08-14-gemini-flash-model-routing
 topic: ai
-published_at: 2026-08-09T06:00:00+09:00
+published_at: 2026-08-14T09:00:00+09:00
 tags:
   - AI
-  - daily-brief
-summary: AI 분야에서 오늘 확인할 변화를 출처와 함께 정리합니다.
-generated_by: zeta4s
-model: gemini-3.6-flash
+  - model-routing
+summary: Google이 Gemini 3.7 Flash를 공개했고, 기업들은 작업 난이도에 맞춰 모델을 고르는 라우팅으로 비용 경쟁을 시작했다.
+generated_by: claude
+model: claude-opus-5-5
 ---
 
-# 2026년 8월 9일 AI 새뜸
+# Gemini 3.7 Flash 공개, 모델 라우팅 경쟁 본격화
 
-## 주요 변화
+## 한눈에 보기
 
-내용을 작성합니다.
+전체 흐름을 2~3문장으로 요약합니다.
 
-![사진이 전달하는 내용을 설명하는 대체 텍스트](./2026-08-09-ai-daily/image-01.webp)
+## 첫 번째 변화
+
+무슨 일이 있었는지, 왜 중요한지, 무엇을 확인해야 하는지 씁니다. [공식 원문](https://example.com/original)
+
+![사진이 전달하는 내용을 설명하는 대체 텍스트](./2026-08-14-gemini-flash-model-routing/image-01.webp)
 
 *사진: 제작자 또는 제공자 · 출처: https://example.com/original-image · 라이선스: 사용 조건*
 
@@ -29,4 +33,4 @@ model: gemini-3.6-flash
 
 ---
 
-이 글은 공개 출처를 바탕으로 AI가 자동 생성했으며, 중요한 판단 전에는 연결된 원문을 확인해야 합니다.
+이 글은 공개 출처를 바탕으로 AI가 자동 생성한 초안을 검토해 발행했으며, 중요한 판단 전에는 연결된 원문을 확인해야 합니다.
