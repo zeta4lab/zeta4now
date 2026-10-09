@@ -1338,13 +1338,50 @@ model: none
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
         markdown = self.article().replace(
-            "generated_by: manual", "generated_by: generator"
+            "generated_by: manual", "generated_by: zeta4s"
         )
         markdown += (
             "\n---\n\n이 글은 공개 출처를 바탕으로 AI가 자동 생성했으며, "
             "중요한 판단 전에는 연결된 원문을 확인해야 합니다.\n"
         )
         article.write_bytes(markdown.replace("\n", "\r\n").encode())
+        self.assertEqual(validate_repository(root), [])
+
+    def test_desk_article_requires_reviewed_disclosure(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        markdown = self.article().replace(
+            "generated_by: manual", "generated_by: claude"
+        )
+        article.write_text(
+            markdown
+            + "\n---\n\n이 글은 공개 출처를 바탕으로 AI가 자동 생성했으며, "
+            "중요한 판단 전에는 연결된 원문을 확인해야 합니다.\n",
+            encoding="utf-8",
+        )
+        self.assertTrue(
+            any("검토 발행 고지" in error for error in validate_repository(root))
+        )
+        article.write_bytes(
+            (
+                markdown
+                + "\n---\n\n이 글은 공개 출처를 바탕으로 AI가 자동 생성한 초안을 검토해 "
+                "발행했으며, 중요한 판단 전에는 연결된 원문을 확인해야 합니다.\n"
+            )
+            .replace("\n", "\r\n")
+            .encode()
+        )
+        self.assertEqual(validate_repository(root), [])
+
+    def test_auto_generator_may_use_reviewed_disclosure(self) -> None:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace("generated_by: manual", "generated_by: zeta4now-mcp")
+            + "\n---\n\n이 글은 공개 출처를 바탕으로 AI가 자동 생성한 초안을 검토해 "
+            "발행했으며, 중요한 판단 전에는 연결된 원문을 확인해야 합니다.\n",
+            encoding="utf-8",
+        )
         self.assertEqual(validate_repository(root), [])
 
     def test_rejects_content_after_source_footer(self) -> None:
