@@ -19,7 +19,8 @@ concurrency:
 jobs:
   content:
     name: Public content contract
-    runs-on: [self-hosted, z4aws]
+    # 공개 저장소는 fork PR 이 runner 에 닿을 수 있으므로 self-hosted 를 쓰지 않는다.
+    runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
