@@ -951,12 +951,56 @@ def checkpoint_date(value: object) -> date | None:
     return None
 
 
-def validate_tracking(name: str, tracking: object) -> list[str]:
+def aware_datetime(value: object) -> datetime | None:
+    """시간대가 있는 ISO 8601 값만 datetime으로 바꾼다."""
+    try:
+        parsed = value if isinstance(value, datetime) else datetime.fromisoformat(value)
+    except (TypeError, ValueError):
+        return None
+    return parsed if parsed.tzinfo is not None else None
+
+
+def validate_last_update(
+    name: str,
+    last_update: object,
+    published: datetime | None,
+    updated: datetime | None,
+) -> list[str]:
+    """추적 결과를 반영한 마지막 갱신(tracking.last_update)을 검사한다."""
+    label = f"{name}: tracking.last_update"
+    if not isinstance(last_update, dict) or set(last_update) != {"at", "note"}:
+        return [f"{label}는 at과 note만 가진 mapping이어야 합니다"]
+    errors: list[str] = []
+    at = aware_datetime(last_update["at"])
+    if at is None:
+        errors.append(f"{label}.at은 시간대가 있는 ISO 8601이어야 합니다")
+    else:
+        if published and at < published:
+            errors.append(f"{label}.at은 published_at보다 앞설 수 없습니다")
+        # 추적 갱신도 내용 갱신이므로 updated_at이 그 시각 이후여야 한다.
+        if updated is None or updated < at:
+            errors.append(
+                f"{label}.at을 쓰면 updated_at이 같은 시각이거나 그보다 뒤여야 합니다"
+            )
+    note = last_update["note"]
+    if not isinstance(note, str) or not note.strip():
+        errors.append(f"{label}.note 값이 필요합니다")
+    elif len(note) > MAX_TRACKING_NOTE_LENGTH:
+        errors.append(f"{label}.note는 {MAX_TRACKING_NOTE_LENGTH}자를 넘을 수 없습니다")
+    return errors
+
+
+def validate_tracking(
+    name: str,
+    tracking: object,
+    published: datetime | None = None,
+    updated: datetime | None = None,
+) -> list[str]:
     """추적 기사 front matter(tracking)의 상태와 확인 일정을 검사한다."""
     if not isinstance(tracking, dict):
         return [f"{name}: front matter tracking은 mapping이어야 합니다"]
     errors: list[str] = []
-    unknown = set(tracking) - {"status", "checkpoints"}
+    unknown = set(tracking) - {"status", "checkpoints", "last_update"}
     if unknown:
         errors.append(
             f"{name}: front matter tracking에 알 수 없는 키가 있습니다: "
@@ -966,6 +1010,10 @@ def validate_tracking(name: str, tracking: object) -> list[str]:
     if status not in TRACKING_STATUSES:
         errors.append(
             f"{name}: front matter tracking.status는 ongoing 또는 closed여야 합니다"
+        )
+    if "last_update" in tracking:
+        errors.extend(
+            validate_last_update(name, tracking["last_update"], published, updated)
         )
     checkpoints = tracking.get("checkpoints", [])
     if not isinstance(checkpoints, list):
@@ -1073,25 +1121,19 @@ def validate_article(
         ):
             errors.append(f"{name}: front matter tags는 문자열 목록이어야 합니다")
         updated_at = metadata.get("updated_at")
-        if updated_at is not None:
-            try:
-                updated = (
-                    updated_at
-                    if isinstance(updated_at, datetime)
-                    else datetime.fromisoformat(updated_at)
-                )
-                if updated.tzinfo is None:
-                    raise ValueError
-                if published and updated < published:
-                    errors.append(
-                        f"{name}: front matter updated_at은 published_at보다 앞설 수 없습니다"
-                    )
-            except (TypeError, ValueError):
-                errors.append(
-                    f"{name}: front matter updated_at은 시간대가 있는 ISO 8601이어야 합니다"
-                )
+        updated = aware_datetime(updated_at) if updated_at is not None else None
+        if updated_at is not None and updated is None:
+            errors.append(
+                f"{name}: front matter updated_at은 시간대가 있는 ISO 8601이어야 합니다"
+            )
+        if published and updated and updated < published:
+            errors.append(
+                f"{name}: front matter updated_at은 published_at보다 앞설 수 없습니다"
+            )
         if "tracking" in metadata:
-            errors.extend(validate_tracking(name, metadata["tracking"]))
+            errors.extend(
+                validate_tracking(name, metadata["tracking"], published, updated)
+            )
     if slug != path_match.group("slug"):
         errors.append(f"{name}: front matter slug와 파일명이 일치하지 않습니다")
     elif seen_slugs is not None:

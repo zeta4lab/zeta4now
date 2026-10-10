@@ -156,6 +156,40 @@ model: none
         )
         self.assertTrue(any("YAML이 올바르지 않습니다" in error for error in errors))
 
+    def test_accepts_tracking_last_update(self) -> None:
+        errors = self.write_with_metadata(
+            "updated_at: 2026-08-20T10:00:00+09:00\n"
+            "tracking:\n  status: closed\n  last_update:\n"
+            "    at: 2026-08-20T09:00:00+09:00\n    note: 선고 결과 반영\n"
+        )
+        self.assertEqual(errors, [])
+
+    def test_rejects_last_update_without_matching_updated_at(self) -> None:
+        errors = self.write_with_metadata(
+            "tracking:\n  status: closed\n  last_update:\n"
+            "    at: 2026-08-20T09:00:00+09:00\n    note: 선고 결과 반영\n"
+        )
+        self.assertTrue(any("updated_at이 같은 시각" in error for error in errors))
+        errors = self.write_with_metadata(
+            "updated_at: 2026-08-19T09:00:00+09:00\n"
+            "tracking:\n  status: closed\n  last_update:\n"
+            "    at: 2026-08-20T09:00:00+09:00\n    note: 선고 결과 반영\n"
+        )
+        self.assertTrue(any("updated_at이 같은 시각" in error for error in errors))
+
+    def test_rejects_malformed_last_update(self) -> None:
+        errors = self.write_with_metadata(
+            "updated_at: 2026-08-20T10:00:00+09:00\n"
+            "tracking:\n  status: closed\n  last_update:\n"
+            "    at: 2026-08-20\n    note: \"\"\n"
+        )
+        self.assertTrue(any("last_update.at은 시간대" in error for error in errors))
+        self.assertTrue(any("last_update.note 값" in error for error in errors))
+        errors = self.write_with_metadata(
+            "tracking:\n  status: closed\n  last_update: 반영\n"
+        )
+        self.assertTrue(any("at과 note만" in error for error in errors))
+
     def test_rejects_updated_at_before_published_at(self) -> None:
         errors = self.write_with_metadata("updated_at: 2026-08-12T09:00:00+09:00\n")
         self.assertTrue(any("앞설 수 없습니다" in error for error in errors))
