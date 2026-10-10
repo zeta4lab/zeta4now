@@ -9,6 +9,13 @@ tags:
 summary: Google이 Gemini 3.7 Flash를 공개했고, 기업들은 작업 난이도에 맞춰 모델을 고르는 라우팅으로 비용 경쟁을 시작했다.
 generated_by: claude
 model: claude-opus-5-5
+# 선택: 발행 뒤 결과를 확인해야 하는 기사만 쓴다.
+# updated_at: 2026-08-15T09:00:00+09:00
+# tracking:
+#   status: ongoing
+#   checkpoints:
+#     - date: 2026-08-20
+#       note: 확인할 일
 ---
 
 # Gemini 3.7 Flash 공개, 모델 라우팅 경쟁 본격화

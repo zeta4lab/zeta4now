@@ -103,6 +103,67 @@ model: none
 - [원문](https://example.com/source)
 """
 
+    def write_with_metadata(self, extra: str) -> list[str]:
+        temporary, root, article = self.repository()
+        self.addCleanup(temporary.cleanup)
+        article.write_text(
+            self.article().replace("model: none\n", f"model: none\n{extra}"),
+            encoding="utf-8",
+        )
+        return validate_repository(root)
+
+    def test_accepts_tracking_with_checkpoints_and_updated_at(self) -> None:
+        errors = self.write_with_metadata(
+            "updated_at: 2026-08-20T09:00:00+09:00\n"
+            "tracking:\n"
+            "  status: ongoing\n"
+            "  checkpoints:\n"
+            "    - date: 2026-10-14\n"
+            "      note: 항소심 선고\n"
+            "    - date: \"2026-11-18\"\n"
+            "      note: 1심 선고\n"
+        )
+        self.assertEqual(errors, [])
+
+    def test_accepts_closed_tracking_without_checkpoints(self) -> None:
+        self.assertEqual(self.write_with_metadata("tracking:\n  status: closed\n"), [])
+
+    def test_rejects_ongoing_tracking_without_checkpoints(self) -> None:
+        errors = self.write_with_metadata("tracking:\n  status: ongoing\n")
+        self.assertTrue(any("확인 일정이 하나 이상" in error for error in errors))
+
+    def test_rejects_unknown_tracking_status(self) -> None:
+        errors = self.write_with_metadata(
+            "tracking:\n  status: paused\n  checkpoints:\n"
+            "    - date: 2026-10-14\n      note: 선고\n"
+        )
+        self.assertTrue(any("tracking.status" in error for error in errors))
+
+    def test_rejects_invalid_checkpoint_date_and_extra_keys(self) -> None:
+        errors = self.write_with_metadata(
+            "tracking:\n  status: ongoing\n  owner: desk\n  checkpoints:\n"
+            "    - date: 2026-10-14T10:00:00+09:00\n      note: 선고\n"
+            "    - date: 2026-10-15\n"
+        )
+        self.assertTrue(any("알 수 없는 키" in error for error in errors))
+        self.assertTrue(any("YYYY-MM-DD" in error for error in errors))
+        self.assertTrue(any("date와 note만" in error for error in errors))
+
+    def test_reports_nonexistent_date_as_invalid_yaml(self) -> None:
+        errors = self.write_with_metadata(
+            "tracking:\n  status: ongoing\n  checkpoints:\n"
+            "    - date: 2026-13-01\n      note: 선고\n"
+        )
+        self.assertTrue(any("YAML이 올바르지 않습니다" in error for error in errors))
+
+    def test_rejects_updated_at_before_published_at(self) -> None:
+        errors = self.write_with_metadata("updated_at: 2026-08-12T09:00:00+09:00\n")
+        self.assertTrue(any("앞설 수 없습니다" in error for error in errors))
+
+    def test_rejects_updated_at_without_timezone(self) -> None:
+        errors = self.write_with_metadata("updated_at: 2026-08-20T09:00:00\n")
+        self.assertTrue(any("updated_at은 시간대" in error for error in errors))
+
     def test_accepts_local_image_with_attribution(self) -> None:
         temporary, root, article = self.repository()
         self.addCleanup(temporary.cleanup)
