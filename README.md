@@ -20,6 +20,11 @@ news/<topic>/<YYYY>/<MM>/<slug>.md
 - `generated_by`: 작성 주체(`claude`, `codex`, `gemini`, `manual` 또는 자동 생성기 `zeta4s`, `zeta4now-mcp`)
 - `model`: 사용한 모델(`manual`이면 `none`)
 
+후속 확인이 필요한 기사는 다음 선택 값을 쓴다.
+
+- `updated_at`: 발행 뒤 내용을 갱신한 시각. 시간대가 포함된 ISO 8601이며 `published_at`보다 앞설 수 없다.
+- `tracking`: 추적 기사 표시. `status`(`ongoing` 또는 `closed`)와 `checkpoints`(`date`: `YYYY-MM-DD`, `note`: 120자 이하) 목록을 둔다. `ongoing`이면 확인 일정이 하나 이상 있어야 한다.
+
 본문 끝에는 `## 출처`와 원문 링크를 둔다. AI가 작성한 문서는 그 뒤에 고지를 붙인다. 데스크 발행 문서는
 "검토해 발행" 고지를, 검토 없이 발행한 자동 생성 문서는 자동 생성 고지를 사용한다. 구체적인 형식은
 [`templates/article.md`](templates/article.md)와 [`AGENTS.md`](AGENTS.md)를 따른다.

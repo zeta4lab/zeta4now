@@ -5,7 +5,7 @@ import mimetypes
 import re
 import sys
 import warnings
-from datetime import datetime
+from datetime import date, datetime
 from filecmp import cmp
 from pathlib import Path
 from typing import BinaryIO
@@ -932,6 +932,72 @@ def inspect_image_content(candidate: Path) -> tuple[str | None, bool]:
         return None, False
 
 
+TRACKING_STATUSES = {"ongoing", "closed"}
+MAX_TRACKING_CHECKPOINTS = 20
+MAX_TRACKING_NOTE_LENGTH = 120
+
+
+def checkpoint_date(value: object) -> date | None:
+    """YAML이 날짜로 읽은 값과 YYYY-MM-DD 문자열을 모두 받는다."""
+    if isinstance(value, datetime):
+        return None
+    if isinstance(value, date):
+        return value
+    if isinstance(value, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        try:
+            return date.fromisoformat(value)
+        except ValueError:
+            return None
+    return None
+
+
+def validate_tracking(name: str, tracking: object) -> list[str]:
+    """추적 기사 front matter(tracking)의 상태와 확인 일정을 검사한다."""
+    if not isinstance(tracking, dict):
+        return [f"{name}: front matter tracking은 mapping이어야 합니다"]
+    errors: list[str] = []
+    unknown = set(tracking) - {"status", "checkpoints"}
+    if unknown:
+        errors.append(
+            f"{name}: front matter tracking에 알 수 없는 키가 있습니다: "
+            + ", ".join(sorted(map(str, unknown)))
+        )
+    status = tracking.get("status")
+    if status not in TRACKING_STATUSES:
+        errors.append(
+            f"{name}: front matter tracking.status는 ongoing 또는 closed여야 합니다"
+        )
+    checkpoints = tracking.get("checkpoints", [])
+    if not isinstance(checkpoints, list):
+        return [
+            *errors,
+            f"{name}: front matter tracking.checkpoints는 목록이어야 합니다",
+        ]
+    if status == "ongoing" and not checkpoints:
+        errors.append(
+            f"{name}: 추적 중(ongoing)인 기사에는 확인 일정이 하나 이상 필요합니다"
+        )
+    if len(checkpoints) > MAX_TRACKING_CHECKPOINTS:
+        errors.append(
+            f"{name}: front matter tracking.checkpoints는 {MAX_TRACKING_CHECKPOINTS}개를 넘을 수 없습니다"
+        )
+    for index, checkpoint in enumerate(checkpoints, start=1):
+        label = f"{name}: tracking.checkpoints {index}번째 항목"
+        if not isinstance(checkpoint, dict) or set(checkpoint) != {"date", "note"}:
+            errors.append(f"{label}은 date와 note만 가진 mapping이어야 합니다")
+            continue
+        if checkpoint_date(checkpoint["date"]) is None:
+            errors.append(f"{label}의 date는 YYYY-MM-DD 날짜여야 합니다")
+        note = checkpoint["note"]
+        if not isinstance(note, str) or not note.strip():
+            errors.append(f"{label}의 note 값이 필요합니다")
+        elif len(note) > MAX_TRACKING_NOTE_LENGTH:
+            errors.append(
+                f"{label}의 note는 {MAX_TRACKING_NOTE_LENGTH}자를 넘을 수 없습니다"
+            )
+    return errors
+
+
 def validate_article(
     root: Path,
     article: Path,
@@ -957,7 +1023,8 @@ def validate_article(
         metadata = (
             yaml.safe_load(frontmatter_match.group(1)) if frontmatter_match else {}
         )
-    except yaml.YAMLError:
+    except (yaml.YAMLError, ValueError):
+        # 2026-13-01처럼 형식은 날짜지만 존재하지 않는 값은 PyYAML이 ValueError를 낸다.
         metadata = {}
         errors.append(f"{name}: front matter YAML이 올바르지 않습니다")
     slug_value = metadata.get("slug") if isinstance(metadata, dict) else None
@@ -1005,6 +1072,26 @@ def validate_article(
             or any(not isinstance(tag, str) or not tag.strip() for tag in tags)
         ):
             errors.append(f"{name}: front matter tags는 문자열 목록이어야 합니다")
+        updated_at = metadata.get("updated_at")
+        if updated_at is not None:
+            try:
+                updated = (
+                    updated_at
+                    if isinstance(updated_at, datetime)
+                    else datetime.fromisoformat(updated_at)
+                )
+                if updated.tzinfo is None:
+                    raise ValueError
+                if published and updated < published:
+                    errors.append(
+                        f"{name}: front matter updated_at은 published_at보다 앞설 수 없습니다"
+                    )
+            except (TypeError, ValueError):
+                errors.append(
+                    f"{name}: front matter updated_at은 시간대가 있는 ISO 8601이어야 합니다"
+                )
+        if "tracking" in metadata:
+            errors.extend(validate_tracking(name, metadata["tracking"]))
     if slug != path_match.group("slug"):
         errors.append(f"{name}: front matter slug와 파일명이 일치하지 않습니다")
     elif seen_slugs is not None:
