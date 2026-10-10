@@ -12,6 +12,13 @@ tags:
 summary: 메타가 9월 Connect 2026에서 레이밴 메타 3세대와 카메라 없는 오디오 안경을 내놓았고, 3세대는 10월 12일 국내에도 나온다. 2021년 첫 모델부터 세대별 변화와 장단점을 정리하고, 이 기기가 맞는 사람과 기다려도 되는 사람을 나눠 봤다.
 generated_by: claude
 model: claude-opus-5-5
+tracking:
+  status: ongoing
+  checkpoints:
+    - date: 2026-10-12
+      note: 레이밴 메타 3세대 국내 출시와 판매 가격
+    - date: 2026-10-13
+      note: 네덜란드 소비자연맹의 메타 이행 최고장 기한
 ---
 
 # 메타 AI 안경 5년…세대별로 무엇이 달라졌고 누구에게 필요한가
