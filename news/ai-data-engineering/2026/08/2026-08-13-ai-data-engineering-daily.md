@@ -1,19 +1,20 @@
 ---
-title: 2026년 8월 13일 GMT AI·데이터 엔지니어링 새뜸
+title: 모델 라우팅이 경쟁 축으로…Gemini 3.7 Flash, Databricks·NVIDIA 라우터, IBM·OpenAI 제휴
 slug: 2026-08-13-ai-data-engineering-daily
 topic: ai-data-engineering
 published_at: 2026-08-13T23:59:00+00:00
+updated_at: 2026-10-11T17:40:00+09:00
 tags:
   - AI
   - data-engineering
   - agents
   - model-routing
-summary: GMT 8월 13일 마감 기준, Gemini 3.7 Flash와 기업 AI 배포·모델 라우팅의 주요 변화를 정리합니다.
+summary: Databricks와 NVIDIA가 작업마다 모델을 골라 비용을 줄이는 라우팅 기술을 내놓았고, Google은 코딩·에이전트용 Gemini 3.7 Flash를, IBM과 OpenAI는 기업 핵심 업무 배포 파트너십을 발표했다.
 generated_by: codex
 model: gpt-5
 ---
 
-# 2026년 8월 13일 GMT AI·데이터 엔지니어링 새뜸
+# 모델 라우팅이 경쟁 축으로…Gemini 3.7 Flash, Databricks·NVIDIA 라우터, IBM·OpenAI 제휴
 
 이 브리프는 **2026년 8월 13일 23:59 GMT**를 편집 마감으로 삼았다. 이후 공개되거나 수정된 내용은 반영하지 않았다.
 
@@ -90,6 +91,10 @@ NVIDIA의 속도와 비용 수치는 자체 평가이므로 대상 하드웨어,
 ## 편집 메모
 
 이번 마감에서 공통으로 드러난 변화는 **더 큰 단일 모델**보다 **작업에 맞는 모델을 골라 끝까지 실행하는 운영 체계**가 중요해졌다는 점이다. 다만 세 회사가 제시한 비용·성능 수치는 서로 다른 자체 평가에 기반하므로 직접 비교할 수 없다. 도입 판단에는 동일한 내부 작업 묶음으로 완료율, 전체 비용, 지연 시간, 재시도, 보안 통제를 함께 검증하는 절차가 필요하다.
+
+## 갱신 기록
+
+- 2026-10-11: 운영자 검토. 네 출처와 대조해 본문 사실관계를 확인했고, 날짜와 "새뜸"이 붙은 제목과 요약을 내용 중심으로 바꿨다.
 
 ## 출처
 
