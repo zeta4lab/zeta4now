@@ -9,23 +9,25 @@ tags:
   - 스마트 안경
   - 레이밴 메타
   - 웨어러블
-summary: 메타가 9월 Connect 2026에서 레이밴 메타 3세대와 카메라 없는 오디오 안경을 내놓았고, 3세대는 10월 12일 국내에도 나온다. 2021년 첫 모델부터 세대별 변화와 장단점을 정리하고, 이 기기가 맞는 사람과 기다려도 되는 사람을 나눠 봤다.
+summary: 메타가 9월 Connect 2026에서 레이밴 메타 3세대와 카메라 없는 오디오 안경을 내놓았고, 3세대는 10월 12일 국내에서도 74만 원부터 판매를 시작했다. 2021년 첫 모델부터 세대별 변화와 장단점을 정리하고, 이 기기가 맞는 사람과 기다려도 되는 사람을 나눠 봤다.
 generated_by: claude
 model: claude-opus-5-5
+updated_at: 2026-10-15T00:45:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-10-15T00:45:00+09:00
+    note: 3세대 국내 출시(10.12, 74만 원부터)와 메타의 네덜란드 판매 중단 거부·가처분 소송 예고 반영
   checkpoints:
-    - date: 2026-10-12
-      note: 레이밴 메타 3세대 국내 출시와 판매 가격
-    - date: 2026-10-13
-      note: 네덜란드 소비자연맹의 메타 이행 최고장 기한
+    - date: 2026-10-31
+      note: 오프리미츠·더파이어월의 메타 가처분 소송 심리 일정과 소비자연맹 소송 제기 여부
 ---
 
 # 메타 AI 안경 5년…세대별로 무엇이 달라졌고 누구에게 필요한가
 
 ## 한눈에 보기
 
-메타는 9월 23일(미국 현지) Connect 2026에서 레이밴 메타 3세대(449달러부터)를 발표하고 당일 판매를 시작했다. 카메라를 뺀 레이밴 메타 오디오(349달러)와 자체 브랜드 최저가 모델 메타 어드벤처러(249달러)도 함께 내놓았다([Meta](https://www.meta.com/blog/ray-ban-meta-audio-and-deepest-ai-glasses-lineup/)). 국내에서는 5월 정식 출시 뒤 라인업이 빠르게 늘었고, 3세대는 10월 12일 74만 원부터 판매된다([뉴스와이어](https://www.newswire.co.kr/newsRead.php?no=1043996)).
+메타는 9월 23일(미국 현지) Connect 2026에서 레이밴 메타 3세대(449달러부터)를 발표하고 당일 판매를 시작했다. 카메라를 뺀 레이밴 메타 오디오(349달러)와 자체 브랜드 최저가 모델 메타 어드벤처러(249달러)도 함께 내놓았다([Meta](https://www.meta.com/blog/ray-ban-meta-audio-and-deepest-ai-glasses-lineup/)). 국내에서는 5월 정식 출시 뒤 라인업이 빠르게 늘었고, 3세대는 10월 12일 74만 원부터 백화점과 안경원에서 판매를 시작했다([뉴스와이어](https://www.newswire.co.kr/newsRead.php?no=1043996), [위키트리](https://www.wikitree.co.kr/articles/1165505)).
 
 2021년 첫 모델 뒤 5년 동안 카메라와 배터리, AI 기능은 꾸준히 좋아졌지만 두꺼운 프레임, 실사용 배터리, 사생활 논란은 여전히 숙제다. 이 기기가 가장 쓸모 있는 사람은 시각장애인, 운동 기록을 남기는 사람, 손이 자유로워야 하는 촬영자와 여행자다.
 
@@ -35,7 +37,7 @@ Connect 2026의 발표는 '선택지 확대'로 요약된다. 레이밴 메타 3
 
 시장은 메타가 사실상 독주하고 있다. 카운터포인트리서치에 따르면 2026년 상반기 AI 안경 출하량은 1년 전보다 263% 늘었고, 디스플레이 없는 AI 안경 시장에서 메타 점유율은 94%였다([9to5Mac](https://9to5mac.com/2026/09/21/report-ai-glasses-shipments-surged-263-in-h1-2026-as-apple-prepares-to-enter-the-market/)). 생산을 맡은 에실로룩소티카는 2분기 AI 안경 매출이 전년 대비 거의 두 배가 됐다고 밝혔다([Investing.com](https://www.investing.com/news/transcripts/earnings-call-transcript-essilorluxottica-posts-solid-h1-2026-growth-93CH-4817816)). 삼성·구글은 젠틀몬스터·와비파커와 만든 안드로이드 XR 안경 4종을 "올가을" 출시한다고 밝혔지만 가격은 공개하지 않았다([Road to VR](https://roadtovr.com/samsung-google-smart-glasses-designs-gentle-monster-warby-parker-release/)).
 
-사생활 논란은 오히려 커졌다. 네덜란드 안경 체인 한스 안데르스는 10월 초 네덜란드·벨기에에서 메타 안경 판매를 무기한 중단했다. 네덜란드 소비자연맹은 촬영 표시등(LED)을 스티커로 가린 채 촬영할 수 있었다며 메타에 10월 13일을 기한으로 이행 최고장을 보냈다([VRT](https://www.vrt.be/vrtnws/nl/2026/10/02/hans-anders-schort-verkoop-van-meta-camerabril-op-ook-in-belgie/)). 메타는 최신 모델은 LED를 가리면 카메라가 꺼진다고 설명한다.
+사생활 논란은 오히려 커졌다. 네덜란드 안경 체인 한스 안데르스는 10월 초 네덜란드·벨기에에서 메타 안경 판매를 무기한 중단했다. 네덜란드 소비자연맹은 촬영 표시등(LED)을 스티커로 가린 채 촬영할 수 있었다며 메타에 10월 13일을 기한으로 이행 최고장을 보냈다([VRT](https://www.vrt.be/vrtnws/nl/2026/10/02/hans-anders-schort-verkoop-van-meta-camerabril-op-ook-in-belgie/)). 메타는 최신 모델은 LED를 가리면 카메라가 꺼진다고 설명한다. 기한인 10월 13일 메타는 네덜란드에서 판매를 중단하지 않겠다고 밝혔다. 안경 사업을 맡은 알렉스 하이멜은 기자간담회에서 이 논란을 카메라 달린 스마트폰이 처음 나왔을 때에 비유했다. 오프리미츠와 더파이어월 두 재단은 가처분 소송(kort geding)을 내기로 했고, 소비자연맹은 법적 조치를 검토한다고 했다([iBestuur](https://ibestuur.nl/data-en-ai/ethiek/meta-weigert-camerabrillen-uit-verkoop-te-halen)).
 
 ## 세대별 비교
 
@@ -84,7 +86,12 @@ Connect 2026의 발표는 '선택지 확대'로 요약된다. 레이밴 메타 3
 
 - 정식 판매처에서 사는 것이 안전하다. 정식 출시 전 수입된 제품에서는 AI 비서가 작동하지 않았다는 보도가 있다([머니투데이](https://www.mt.co.kr/tech/2026/04/29/2026042915464855007)).
 - 레이밴 메타 2세대는 69만 원부터, 오클리 메타는 90만 원이다. 신세계아이앤씨가 유통하는 신규 라인업은 48만~86만 원이다. 백화점, 안경원, 가전 매장, 이동통신 3사에서 판다([헤럴드경제](https://biz.heraldcorp.com/article/10815875), [아시아경제](https://view.asiae.co.kr/en/article/2026092815060972113)).
+- 레이밴 메타 3세대는 웨이페어러·에비에이터·제나 3종이며 권장 소비자가 74만 원부터다. 렌즈는 클리어·무도수 선·편광·변색 4종에 도수 렌즈도 지원하고, 일부 백화점과 안경원에서 판다([뉴스탭](https://www.newstap.co.kr/news/articleView.html?idxno=335257)).
 - 개인정보보호위원회는 하반기 AI 안경 개인정보 보호 원칙을 만들 방침이다([뉴시스](https://www.newsis.com/view/NISX20260803_0003734502)). 촬영 표시등 관련 기준이 바뀔 수 있다.
+
+## 갱신 기록
+
+- 2026-10-15: 레이밴 메타 3세대 국내 출시(10월 12일, 74만 원부터) 반영, 메타의 네덜란드 판매 중단 거부와 두 재단의 가처분 소송 예고 추가
 
 ## 출처
 
@@ -125,6 +132,9 @@ Connect 2026의 발표는 '선택지 확대'로 요약된다. 레이밴 메타 3
 - [몰래 촬영 수사 — 다음](https://v.daum.net/v/20260709155651701)
 - [시험장 AI 안경 부정행위 — 파이낸셜뉴스](https://www.fnnews.com/news/202610031407159838)
 - [개인정보보호위원회 AI 안경 원칙 — 뉴시스](https://www.newsis.com/view/NISX20260803_0003734502)
+- [레이밴 메타 3세대 12일 국내 출시 — 뉴스탭](https://www.newstap.co.kr/news/articleView.html?idxno=335257)
+- [레이밴 메타 3세대 국내 출시 — 위키트리](https://www.wikitree.co.kr/articles/1165505)
+- [Meta weigert camerabrillen uit verkoop te halen — iBestuur](https://ibestuur.nl/data-en-ai/ethiek/meta-weigert-camerabrillen-uit-verkoop-te-halen)
 
 ---
 
