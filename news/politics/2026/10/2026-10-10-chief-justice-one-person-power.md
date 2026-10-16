@@ -13,6 +13,7 @@ tags:
 summary: 대법원장은 대법관 제청, 전원합의체 재판장, 사법행정 총괄이라는 권한을 한 사람이 쥔다. 조희대 대법원장이 이 권한을 어떻게 썼고 그 결과가 무엇을 바꿨는지, 국감 장면과 함께 정의론의 관점에서 살폈다.
 generated_by: claude
 model: claude-opus-5-5
+updated_at: 2026-10-16T22:50:00+09:00
 tracking:
   status: ongoing
   checkpoints:
@@ -58,6 +59,8 @@ tracking:
 
 조 대법원장은 국감에서 청와대 공문에 "구체적인 사유와 헌법적 근거가 명확히 기재돼있지 않다"고 했고, "대법관 공석이 장기화해 국민 여러분께 심려를 끼쳐드려 송구스럽다"고 사과했다([MBC](https://imnews.imbc.com/news/2026/society/article/6855970_36918.html)). 청와대 강유정 대변인은 10월 7일 "별도 입장이 없다"고 했다.
 
+갈등은 10월 15일 법제처 국감으로 번졌다. 조원철 법제처장은 대법원장의 제청을 "일종의 추천, 그리고 제안의 의미"로 규정하고 "제청에 대통령이 기속돼서 제청된 후보자를 반드시 임명해야 하는 것은 아니"라며, 제청권을 행사하지 않아 대법원 구성과 운영에 차질을 빚는 것은 "대법원장이 헌법상의 책무를 다하지 아니한 것"이라고 답했다([YTN](https://www.ytn.co.kr/_ln/0101_202610152259319537)). 이성윤 민주당 의원은 "225일째 대법관을 제청하지 않고 있다. 직무유기 아닌가"라고 했고, 김의겸 법사위 민주당 간사는 "형법상의 직무유기까지 갈 수 있다", "탄핵하고 연결이 된다"고 했다. 박형수 법사위 국민의힘 간사는 "마음에 드는 사람 제청할 때까지 계속 반려하면 제청권은 무슨 의미가 있"느냐고 묻고, 법제처장의 답변이 "대통령과 너무 닮았다. 사설 변호인이냐"고 했다. 윤상현 국민의힘 의원은 "탄핵 사유나 헌법 위반이 아니다"라고 맞섰다([이데일리](https://www.edaily.co.kr/news/read?newsid=04247606645613248)). 제청권의 성격을 어떻게 읽느냐가 곧 탄핵 사유인지 아닌지로 이어지는 셈이어서, 26일 법사위 종합감사에서도 같은 공방이 이어질 가능성이 크다.
+
 대법관 한 명이 누구냐는 판결의 방향을 바꿀 수 있다. 2편에서 다루듯, 같은 공직선거법 조항을 대법원 전원합의체는 2020년 7대 5로 무죄 취지, 2025년 10대 2로 유죄 취지로 판단했고, 그사이 대법관 구성이 크게 바뀌었다. 제청권이 정치적 다툼의 한복판에 서는 이유다.
 
 조 대법원장의 퇴임은 2027년 6월로 보도됐다([Korea Times](https://www.koreatimes.co.kr/southkorea/politics/20260828/cheong-wa-dae-top-court-clash-over-justice-nomination)). 2월 국회를 통과한 대법관 증원(14명에서 26명으로)은 2028년부터 이뤄지므로, 늘어나는 대법관은 그의 후임이 제청하게 된다. 지금의 제청 갈등은 조 대법원장이 남은 임기 동안 어떤 대법관을 남기느냐의 문제이기도 하다.
@@ -97,6 +100,10 @@ tracking:
 - [3편: 로버츠, 브리그스, 이마사키, 그리고 르펜의 두 재판장…해외에서도 판결은 사람을 따라 움직였다](https://now.zeta4.net/a/2026-10-10-judges-abroad-power-and-accountability)
 - [4편: 커뮤니티는 조희대를 어떻게 봤나…진영에선 갈렸고, 공금 앞에선 같았다](https://now.zeta4.net/a/2026-10-10-community-views-on-chief-justice)
 
+## 갱신 기록
+
+- 2026-10-16: 10월 15일 법제처 국감의 재제청 공방(법제처장 "헌법상 책무" 답변, 민주당 탄핵 거론, 국민의힘 반박) 추가
+
 ## 출처
 
 - [대한민국헌법 — 국가법령정보센터](https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%ED%97%8C%EB%B2%95)
@@ -105,6 +112,8 @@ tracking:
 - [한덕수·이상민 사건 전원합의체 회부 — MBC](https://imnews.imbc.com/news/2026/society/article/6842628_36918.html)
 - [조희대 대법원장 국감 인사말 — MBC](https://imnews.imbc.com/news/2026/society/article/6855970_36918.html)
 - [청와대, 재제청 거부 반박 — 한국일보](https://www.hankookilbo.com/news/article/A2026092215240003580)
+- [법제처 국감도 조희대 공방…"탄핵 사유"·"독단 해석" — YTN](https://www.ytn.co.kr/_ln/0101_202610152259319537)
+- [법제처 국감서도 '조희대 공방전'…"직무유기"vs"입법 독재" — 이데일리](https://www.edaily.co.kr/news/read?newsid=04247606645613248)
 - [Cheong Wa Dae, top court clash over justice nomination — Korea Times](https://www.koreatimes.co.kr/southkorea/politics/20260828/cheong-wa-dae-top-court-clash-over-justice-nomination)
 - [법사위, 대법원장 일반증인 채택 — 아이뉴스24](https://inews24.com/view/2009628)
 - [대법원장 선서 거부와 업무추진비 답변 — 서울경제](https://m.sedaily.com/article/20098518)
