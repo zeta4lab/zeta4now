@@ -14,8 +14,12 @@ tags:
 summary: 이란 혁명수비대는 14일 컨테이너선 침몰, 17일 200만 배럴급 유조선 2척, 19일 유조선 1척이 기뢰에 부딪혔다고 주장했지만 로이터는 독립 확인이 없다고 했고 미 중부사령부는 발사체 공격이라고 반박했다. 10월 들어 피격 선박은 20척이 넘고(UKMTO·CNBC), 10월 12일까지 한 주 해협 통과 원유는 하루 850만 배럴로 전쟁 전보다 약 40% 적었다(Kpler). 브렌트유는 16일 110달러를 찍었고 이란은 "6일 안 재개방" 제안이 유효하다고 했다.
 generated_by: claude
 model: claude-fable-5-1
+updated_at: 2026-10-27T14:17:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-10-27T14:17:00+09:00
+    note: 22일 혁명수비대 '유조선 7척 피격' 주장과 미국 반박, 기지 공격 경고, 23일 브렌트유 117달러 안팎, 10월 공격 집계 반영
   checkpoints:
     - date: 2026-11-01
       note: OPEC+ 7개국 회의(12월 생산량 결정)와 호르무즈 상황 반영 여부
@@ -34,6 +38,8 @@ tracking:
 CNBC는 영국 해사무역기구(UKMTO) 사고 보고를 근거로 이달 들어 호르무즈 해협과 페르시아만, 오만만에서 20척이 넘는 선박이 공격받았다고 집계했고, 해운 자료업체 Kpler 자료로 10월 12일까지 한 주 해협 통과 원유 수출이 하루 평균 850만 배럴로 전쟁 전보다 약 40% 적었다고 전했다([CNBC](https://www.cnbc.com/2026/10/14/container-ship-sinks-strait-hormuz-as-iran-war-attacks.html)). 브렌트유는 16일 장중 배럴당 110달러를 5월 이후 처음 넘었다가 109.86달러에 마감했고, 같은 날 미국 기술주는 하루 1조 달러 넘는 시가총액을 잃었다([NBC News](https://www.nbcnews.com/business/energy/oil-prices-hormuz-iran-ukraine-rcna603919)).
 
 외교는 제자리다. 아바스 아락치 이란 외무장관은 바그다드 이슬람협력기구(OIC) 외교장관회의에서 미국이 조건을 받으면 6일째 되는 날 해협을 다시 열고 7일째 협상을 재개하는 "7일 계획"이 여전히 유효하다고 했고, 미국은 핵 프로그램을 협상 첫머리에 다뤄야 한다는 입장이다([IBTimes AU](https://www.ibtimes.com.au/iran-strait-hormuz-reopening-us-conditions-1876960)). 한국은 10월 도입 물량을 대체로 확보했지만 11월 이후 조달 비용과 우회로 안전이 변수이고, 한국 선사 관련 유조선도 11일 피격됐다.
+
+발행 뒤 20일 혁명수비대는 남쪽 '불법' 항로에서 유조선 2척이 기뢰로 불타 멈췄고 1척이 더 폭발했다고 주장했지만 CENTCOM은 "거짓"이라고 반박했다. 브렌트유는 21일 아시아 거래에서 다시 110달러를 넘었고, 로이터는 이란이 중간선거 전 트럼프를 약화시키려 협상을 일부러 끌고 있다는 이란 고위 관리들의 말을 전했다([IBTimes AU](https://www.ibtimes.com.au/iran-claims-mines-stopped-tankers-strait-hormuz-1877113), [Reuters(Internazionale)](https://www.internazionale.it/ultime-notizie-reuters/2026/10/20/iran-prolongs-talks-in-stalemate-to-influence-us-midterms-officials-say)).
 
 ## 배경: 2월 28일 전쟁 시작부터 9월 '7일 제안' 거부까지
 
@@ -65,6 +71,26 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 미국은 핵을 먼저 다루자는 입장이다. JD 밴스 부통령은 10월 초 로이터 인터뷰에서 이란이 "농축 능력에서 의미 있는 조치"(something meaningful on their enrichment capacity)를 해야 한다며 "핵무기를 원하지 않는다면 왜 60% 농축 연료가 필요한가"(If you don't want a nuclear weapon, then why do you need 60% enriched fuel?)라고 했다([Express Tribune(Reuters)](https://tribune.com.pk/story/2633439/vance-says-iran-must-cut-enrichment-to-end-war)). 17일 CBS 타운홀에서는 "어떤 면에서 우리는 결정적으로 이겼지만, 이란인들, 적도 한 표를 갖고 있다"(in some ways, we have won decisively, but the Iranians, the enemy gets a vote here)며 핵 프로그램을 되살리지 않겠다는 검증 가능한 장기 약속을 요구했다([RFE/RL](https://www.rferl.org/a/iran-live-blog-trump-middle-east/33803414.html)). 트럼프는 10월 8일 트루스소셜에 "11월 3일 중간선거 전에는 어느 때도 이란을 공격하지 않겠다"(We will not be attacking Iran at any time prior to the midterm elections to be held in the United States on November 3rd)고 썼고([Al Jazeera](https://www.aljazeera.com/news/2026/10/9/trump-says-us-will-not-strike-iran-before-midterm-elections)), 17일 켄터키 유세에서는 이란이 "핵무기를 가질 수 없다. 가지면 쓸 것이기 때문"(They cannot have a nuclear weapon. They can't because they'll use it)이라고 했다([Gulf News](https://gulfnews.com/world/mena/araghchi-says-7-day-plan-to-reopen-hormuz-strait-still-on-table-1.500715276)). 미 해군 주도 JMIC는 해협 상선 위협 등급을 두 번째로 높은 '심각'으로 유지하고 있다([IBTimes AU](https://www.ibtimes.com.au/iran-strait-hormuz-reopening-us-conditions-1876960)).
 
+## 발행 뒤(10월 20~21일): '기뢰로 3척' 주장과 반박, 협상은 선거 뒤로
+
+혁명수비대는 20일(화요일) 홈페이지 세파뉴스에 낸 성명에서 해군이 호르무즈 해협 남쪽 "불법 통과 지점"에 부설한 기뢰가 폭발해 규정을 어긴 유조선 2척이 불타고 멈춰 섰다고 주장했다. 이 항로를 쓰면 배에 불을 붙이겠다고 미리 경고했다며 미국의 "장난"이 계속되면 석유 회사들이 더 큰 대가를 치를 것이라고 했고, 전날 밤 해협 상공에서 미국 MQ-9 무인기를 격추했다고도 주장했다([Tasnim](https://tasnimnews.ir/en/news/2026/10/20/3727749/2-tankers-set-ablaze-halted-in-strait-of-hormuz-irgc), [Times of Israel(AFP)](https://www.timesofisrael.com/liveblog_entry/iran-guards-say-their-mines-halted-two-tankers-crossing-strait-of-hormuz/)). 혁명수비대는 같은 날 국영방송을 통해 원유 200만 배럴 넘게 실은 세 번째 유조선이 "모든 레이더와 항법 장치를 끈 채" 지나다 기뢰에 부딪혀 폭발·화재가 났다고 추가로 발표했다. 이번에도 선박 이름은 밝히지 않았고 피해는 독립적으로 확인되지 않았다([CBS News](https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/), [IBTimes AU](https://www.ibtimes.com.au/iran-claims-mines-stopped-tankers-strait-hormuz-1877113)). CENTCOM 대변인은 "유조선이 호르무즈 해협에서 기뢰에 부딪히고 있다는 이란의 주장은 거짓"(Iranian claims that tankers are hitting naval mines in the Strait of Hormuz are false)이라며 "우리는 호르무즈 해협의 국제 수로에서 기뢰를 제거했다"(We have cleared the international waterways in the Strait of Hormuz of mines), "이란은 해협에서 미사일과 드론으로 공격한다"고 말했다([Kurdistan24](https://www.kurdistan24.net/en/story/947421/iran-says-burning-tanker-found-in-hormuz-restricted-zone-centcom-rejected)).
+
+유가는 다시 올랐다. IBTimes AU에 따르면 브렌트유는 20일 108.79달러에 마감한 뒤 21일 아시아 거래 초반 1.59달러(1.5%) 오른 110.38달러, 이후 110.70달러 안팎에서 거래됐고 WTI는 99.18달러에서 100달러 가까이 올랐다. 미국석유협회(API) 자료로 16일까지 한 주 미국 원유 재고가 490만 배럴 줄어 로이터 사전 조사 예상치(약 80만 배럴 감소)를 크게 웃돈 것도 작용했다([IBTimes AU](https://www.ibtimes.com.au/oil-prices-rise-tanker-attacks-hormuz-supply-fears-1877115)). 같은 기사는 Kpler가 최근 2주간 선박 공격을 최소 18건 기록했고, LSEG 분석가들이 "유조선 공격이 호르무즈 해협 너머로 확대됐다"고 평가했다고 전했다.
+
+협상은 11월 3일 중간선거 뒤로 밀리는 모양새다. 로이터는 20일 이란 고위 관리 3명과 내부 인사 1명을 인용해 이란이 중간선거 전 트럼프를 정치적으로 약화시키려고 미국과의 협상을 의도적으로 끌어 왔다고 보도했다. 한 관리는 "이란은 미국과 전쟁을 끝낼 합의가 아니라 이스라엘과 미국의 새 공격에 대비하고 있다"(Iran is preparing for renewed Israeli and US attacks, not for a deal with America to end the war), "성직자 지도부는 트럼프에게 정치적 승리를 주지 않기로 마음먹었다"(The clerical establishment is determined not to give Trump a political victory)고 말했다([Reuters(Internazionale)](https://www.internazionale.it/ultime-notizie-reuters/2026/10/20/iran-prolongs-talks-in-stalemate-to-influence-us-midterms-officials-say)). 같은 날 테헤란을 찾은 아심 무니르 파키스탄 육군참모총장에게 마수드 페제시키안 대통령은 이란 측 발표로 "어떤 협상이든 그 전에 워싱턴이 압박과 위협, 제재를 거둬야 한다"(Washington must lift its pressures, threats and sanctions before any negotiations)고 했고, 모흐센 레자에이 안보수석은 "농축 핵물질은 아주 조금도 이란 밖으로 나가지 않을 것"(Not even a tiny bit of enriched nuclear material will leave Iran)이라고 말했다([CBS News](https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/), [The Nation](https://www.nation.com.pk/21-Oct-2026/pakistan-army-chief-iran-s-president-discuss-mediation-efforts-tehran-meeting)). 이란 외무부 대변인 에스마일 바가이는 무니르 방문이 주로 양국 관계를 다뤘지만 협상 이야기도 오갔다고 했다. 카타르 매체 알아라비 알자디드는 소식통을 인용해 카타르 은행에 동결된 이란 자금 60억 달러의 이자를 이란이 쓰게 하는 대신 국제원자력기구(IAEA)의 비공개 핵시설 방문을 허용하는 카타르·파키스탄 절충안을 무니르가 전달했다고 보도했지만, 미국·이란 정부의 확인은 없었다([CBS News](https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/)).
+
+외교전도 넓어졌다. 세르게이 라브로프 러시아 외무장관은 19일 전쟁 뒤 처음 테헤란을 찾아 아락치 장관, 페제시키안 대통령을 만나고 미국·이스라엘의 공습을 불법이라고 비판했다([CBS News](https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/), [APA](https://en.apa.az/cis-countries/russias-lavrov-discusses-us-war-and-regional-security-during-tehran-visit-530952)). 이란의 골람호세인 다르지 유엔 대사는 20일 안토니우 구테흐스 유엔 사무총장에게 서한을 보내, 중간선거 뒤 전쟁이 재개되면 미국이 GBU-43/B('모든 폭탄의 어머니')를 쓸 수 있다는 위협과 이스라엘의 이란 에너지 시설 공격 위협을 다룰 안보리 긴급회의를 요청했다고 이란 국영 ISNA가 보도했다([CBS News](https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/)).
+
+## 10월 22~24일: '하루 7척' 주장, 브렌트유 117달러
+
+혁명수비대는 22일(목) 호르무즈 해협에서 유조선 7척이 공격을 받아 손상됐다고 주장했다. 4척은 원유를 옮겨 싣다가 맞아 밤새 불탔고, 3척은 기뢰에 걸려 멈췄다는 설명이다. 주장대로라면 2월 28일 전쟁 시작 뒤 하루 최대 피해지만, 독립적으로 확인되지 않았고 선박 국적이나 사상자도 밝히지 않았다. 혁명수비대는 미국이 해협의 다른 항로로 유조선 통과를 돕는다면 "충돌이 역내 미군 기지로 번질 것"이라고 경고했다([Al Jazeera](https://www.aljazeera.com/news/2026/10/22/iran-says-seven-ships-hit-in-hormuz-strait-warns-us-of-wider-response)).
+
+미국은 반박했다. 트럼프 대통령은 "이란이 중간선거 전에 유가를 끌어올리려고 할 수 있는 모든 일을 하고 있다"며 피격 주장을 가짜라고 했고, 중부사령부(CENTCOM) 대변인은 미군이 국제 항로의 기뢰를 제거했으며 이란은 미사일과 드론을 쓰고 있다고 말했다. 중부사령부는 해협이 열려 있고 선박 95%가 통과한다고 밝혔다([Al Jazeera](https://www.aljazeera.com/news/2026/10/22/iran-says-seven-ships-hit-in-hormuz-strait-warns-us-of-wider-response)). 같은 날 영국해사무역기구(UKMTO)는 해협을 지나던 유조선 1척이 정체불명의 발사체에 맞았다고 보고했다.
+
+유가는 더 올랐다. IBTimes AU에 따르면 브렌트유는 23일(금) 하루 3% 넘게 올라 배럴당 117달러 안팎에서 마감했고, 한 달 전보다 약 17% 높았다. 미국 워싱턴근동정책연구소는 10월 선박 공격을 확인·보고된 것만 28건, 전쟁 시작 뒤 113건으로 집계하며 "10월이 기록상 가장 많은 달"이라고 했다. 국제통화기금(IMF) 포트워치 기준 18일 해협 통과는 4척으로, 전쟁 전 하루 평균 약 85척에 크게 못 미쳤다([IBTimes AU](https://www.ibtimes.com.au/strait-hormuz-ship-attacks-record-oil-traffic-1877334)).
+
+협상은 재개되지 않았다. 같은 보도에 따르면 이란은 미국이 이란 항구 해상 봉쇄를 푸는 등 조건을 받아들이면 일주일 안에 전쟁을 끝내고 해협을 완전히 다시 열겠다고 제안했고, 아락치 외무장관은 외교에 열려 있지만 방어할 준비가 됐다고 말했다. 미국은 세 번째 항공모함과 수천 명의 추가 병력을 역내에 보내고 있다.
+
 ## 한국: 10월 물량은 확보, 11월 이후 비용과 우회로가 변수
 
 한국석유공사 통계로 7월 한국의 원유 수입 9,318만 배럴 가운데 쿠웨이트·이라크 등 걸프 안쪽에서만 실을 수 있는 물량은 687만 배럴(7.4%)이었고, 사우디·UAE처럼 송유관으로 우회할 수 있는 물량이 4,499만 배럴(48.3%), 해협과 무관한 비중동·오만산이 4,132만 배럴(44.3%)이었다. 이라크산 수입은 2006년 5월 이후 처음으로 0이었다. 8월 31일 기준 정부 비축유는 1억 배럴로, 사우디·UAE 물량까지 하루 167만 배럴이 끊기면 60일, 전체 수입이 끊기면 33일을 버틸 수 있다는 단순 계산이 나온다. 이 계산은 민간 비축과 수요 감축, 대체 도입을 반영하지 않은 것이다([이포커스](https://www.e-focus.co.kr/news/articleView.html?idxno=3003095)).
@@ -89,6 +115,15 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - 6월 잠정 합의 날짜는 CFR이 6월 14일, 아락치 장관이 6월 17일 이슬라마바드 서명으로 말한다. 4월 미국 해상 봉쇄의 정확한 시작일은 1차 자료로 확인하지 못했다.
 - 산업통상부의 10월 중 공식 수급 점검 발표는 찾지 못했다. 본문의 정부 판단은 9월 14일 점검과 8월 2일 회의 보도에 근거한다. IEA의 15일 경유 방출 가속에 한국 몫이 얼마인지도 확인하지 못했다.
 - 영국 하원 도서관 브리핑, 블룸버그 7월 14일 기사, 로이터 10월 18일 기사는 접속이 막혀 직접 확인하지 못했다.
+- (갱신) 20일 혁명수비대가 주장한 유조선 3척 기뢰 피격은 선박명·위치가 없고 독립 확인이 없으며, CENTCOM은 거짓이라고 했다. MQ-9 격추 주장도 미국이 확인하지 않았다. 20일 브렌트유 마감가(108.79달러)와 21일 시세는 IBTimes AU 보도이고 거래소 자료로 직접 확인하지 못했다.
+- (갱신) 로이터의 '협상 지연' 보도는 익명 이란 관리들의 말이며 이란 정부의 공식 확인은 없다. 로이터 원문 대신 재게재본(Internazionale)으로 확인했다. 카타르·파키스탄 절충안은 알아라비 알자디드의 소식통 보도를 CBS가 전한 것이다. 이란의 안보리 긴급회의 요청 서한 원문과 유엔의 회의 소집 여부는 확인하지 못했다.
+- (갱신) 10월 공격 건수 집계는 더 엇갈린다. CBS는 UKMTO를 인용해 19일까지 한 주 10건으로 10월이 3월 이후 선박 공격이 가장 많은 달이라고 했고, IBTimes는 UKMTO 집계로 16일까지 한 주 최소 12건, Kpler 집계로 2주간 최소 18건이라고 했다. 본문의 '10월 20척 이상'(CNBC, 14일 기준)은 갱신하지 않았다.
+- (갱신) 22일 혁명수비대의 '유조선 7척 피격' 주장은 독립 확인이 없다. 23일 브렌트유 117달러 안팎 마감은 IBTimes AU 보도이고 거래소 자료로 확인하지 않았다. 10월 공격 28건은 워싱턴근동정책연구소 집계로, 앞선 UKMTO·Kpler 집계와 기준이 다르다.
+
+## 갱신 기록
+
+- 2026-10-21: 20일 혁명수비대의 '기뢰로 유조선 3척 정지·폭발' 주장과 CENTCOM 반박, 20~21일 유가, 로이터 '이란 협상 지연' 보도, 무니르 파키스탄 육군참모총장 방이, 라브로프 방이, 이란의 안보리 긴급회의 요청 반영
+- 2026-10-27: 22일 혁명수비대 '유조선 7척 피격' 주장과 미국 반박·기지 공격 경고, 23일 브렌트유, 10월 공격 집계, 이란의 '일주일 종전' 제안 반영
 
 ## 출처
 
@@ -122,6 +157,15 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - [Araghchi says 7-day plan to reopen Hormuz Strait still on table — Gulf News](https://gulfnews.com/world/mena/araghchi-says-7-day-plan-to-reopen-hormuz-strait-still-on-table-1.500715276)
 - [Vance says Iran must cut enrichment to end war — Express Tribune(Reuters)](https://tribune.com.pk/story/2633439/vance-says-iran-must-cut-enrichment-to-end-war)
 - [Trump says US will not strike Iran before midterm elections — Al Jazeera](https://www.aljazeera.com/news/2026/10/9/trump-says-us-will-not-strike-iran-before-midterm-elections)
+- [2 Tankers Set Ablaze, Halted in Strait of Hormuz: IRGC — Tasnim](https://tasnimnews.ir/en/news/2026/10/20/3727749/2-tankers-set-ablaze-halted-in-strait-of-hormuz-irgc)
+- [Iran Guards say their mines halted two tankers crossing Strait of Hormuz — Times of Israel(AFP)](https://www.timesofisrael.com/liveblog_entry/iran-guards-say-their-mines-halted-two-tankers-crossing-strait-of-hormuz/)
+- [Iran Says Mines Set Three Tankers Ablaze in Strait of Hormuz as US Military Calls Tehran's Claims False — IBTimes AU](https://www.ibtimes.com.au/iran-claims-mines-stopped-tankers-strait-hormuz-1877113)
+- [Iran Says Burning Tanker Found In Hormuz Restricted Zone, CENTCOM Rejected — Kurdistan24](https://www.kurdistan24.net/en/story/947421/iran-says-burning-tanker-found-in-hormuz-restricted-zone-centcom-rejected)
+- [Oil Prices Jump as Brent Tops $110 After Iran Says Mines Hit Tankers in Hormuz and Houthis Strike Saudi Sites — IBTimes AU](https://www.ibtimes.com.au/oil-prices-rise-tanker-attacks-hormuz-supply-fears-1877115)
+- [Iran prolongs talks in stalemate to influence US midterms, officials say — Reuters(Internazionale)](https://www.internazionale.it/ultime-notizie-reuters/2026/10/20/iran-prolongs-talks-in-stalemate-to-influence-us-midterms-officials-say)
+- [Iran lauds ties with Russia, contradicting Trump's claim of little Russian support for Tehran(라이브 업데이트) — CBS News](https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/)
+- [Pakistan Army Chief, Iran's president discuss mediation efforts in Tehran meeting — The Nation](https://www.nation.com.pk/21-Oct-2026/pakistan-army-chief-iran-s-president-discuss-mediation-efforts-tehran-meeting)
+- [Russia's Lavrov discusses US war and regional security during Tehran visit — APA](https://en.apa.az/cis-countries/russias-lavrov-discusses-us-war-and-regional-security-during-tehran-visit-530952)
 - [한국 원유 수입, 호르무즈 안쪽 선적 7.4%…우회로 막히면 비축 60일 — 이포커스](https://www.e-focus.co.kr/news/articleView.html?idxno=3003095)
 - [호르무즈 막히면 어디로 오나…한국 원유 '우회 수송망' 다시 따져보니 — 인터내셔널포커스](https://dspdaily.com/news/view.php?no=27522)
 - [산업부, 호르무즈·바브엘만데브 동시봉쇄 최악 상황 대비 긴급 점검 — 이투데이](https://www.etoday.co.kr/news/view/2610083)
@@ -130,6 +174,8 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - [정부, 유류세 인하 11월 말까지 연장한다 — 파이낸셜뉴스](https://www.fnnews.com/news/202609171806433359)
 - [초대형 유조선 하루 수익 17억…국내 선사, VLCC 선대 확장 속도 — 머니투데이](https://www.mt.co.kr/amp/industry/2026/10/08/2026100809512931721)
 - [호르무즈 선박 공격 2주간 24척…이란, 유가 압박으로 美 중간선거 겨냥했나 — 폴리뉴스](https://www.polinews.co.kr/news/articleView.html?idxno=746082)
+- [Iran says seven ships hit in Hormuz Strait, warns US of wider response — Al Jazeera](https://www.aljazeera.com/news/2026/10/22/iran-says-seven-ships-hit-in-hormuz-strait-warns-us-of-wider-response)
+- [Strait of Hormuz Status Today: Ship Attacks Hit Record High in October as Tankers Burn and War Fears Mount — IBTimes AU](https://www.ibtimes.com.au/strait-hormuz-ship-attacks-record-oil-traffic-1877334)
 
 ---
 

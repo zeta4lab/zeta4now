@@ -3,6 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
+updated_at: 2026-10-27T14:05:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -16,11 +17,12 @@ generated_by: claude
 model: claude-fable-5-1
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-10-27T14:05:00+09:00
+    note: 24일 노란조끼 '2막' 규모·체포·부상 반영
   checkpoints:
-    - date: 2026-10-20
-      note: 통행금지 적용 도시·구역 확정 여부, 2027년 예산안 하원 첫 표결, 피해 상점 100% 부분실업수당 시행
-    - date: 2026-10-24
-      note: 노란조끼 '2막' 전국 시위(토요일) 규모와 폭력 재발 여부, 경찰 증원·새 대응 방식 적용 결과
+    - date: 2026-10-27
+      note: 2027년 예산안 1부 하원 심의 재개와 표결 일정, 사회보장재정법안 표결, '파손자 부담' 법안 상원 심사 시작
     - date: 2026-10-31
       note: 노란조끼 조정위가 예고한 추가 집회일
     - date: 2026-11-05
@@ -73,9 +75,19 @@ tracking:
 
 비상사태에 관해 그는 르타이요 공화당 대표의 요구를 받아 "필요하면" 선포할 수 있지만 "무거운" 조치이고 지금은 통행금지가 "더 적합해 보인다"고 했다. 머니투데이는 AFP를 인용해 "정부가 필요하다면 비상사태를 선포할 준비가 돼 있다"는 발언을 전했다([Epoch Times(AFP)](https://www.epochtimes.fr/violences-et-pillages-sebastien-lecornu-demande-des-couvre-feux-et-annonce-une-operation-judiciaire-massive-3373616.html), [머니투데이](https://www.mt.co.kr/world/2026/10/19/2026101921174531944)). 그는 "질서를 회복하기로 절대적으로 결심했다"고 말하면서 "무질서를 조직하려는 극좌 운동"(un mouvement de l'ultra-gauche qui a envie d'organiser un désordre)이 2027년 대선 일정을 흔들려 한다고 주장했고, Atalayar는 그가 정보기관 보고를 근거로 들었다고 전했다([Atalayar](https://www.atalayar.com/en/articulo/politics/french-government-decrees-partial-curfews-following-fresh-wave-of-severe-riots/20261019135109229970.html)). 장뤼크 멜랑숑 '굴복하지않는프랑스' 대표는 그런 음모의 증거를 내놓으라고 받아쳤고, 로르 베코 파리 검사장은 가해자들이 정치적으로 극좌라고 확인할 수 없다고 말했다([France 24](https://www.france24.com/en/europe/20261019-live-france-macron-slams-unbridled-violence-protests-weekend-unrest), [Boursorama(로이터)](https://www.boursorama.com/bourse/actualites/en-direct-macron-refuse-la-demission-de-nunez-lecornu-demande-des-couvre-feux-2e2faec92c5c0c0b446dc1c561a89241)).
 
-사법·경제 대응도 함께 나왔다. 르코르뉘 총리는 "대규모 형사 대응"을 약속하며 수사관 200명이 영상 분석에 착수했고 구금자의 약 80%가 이미 기소 등 형사 처분을 받았다고 밝혔다. 약탈 피해 상점 직원에게는 20일부터 국가가 100% 부담하는 부분실업수당을 적용하고 지원 기금을 만들기로 했으며, "무엇보다 부순 사람이 돈을 내야 한다"(C'est avant tout, ceux qui ont cassé qui doivent payer)고 했다([Orange(L'Express)](https://actu.orange.fr/politique/violences-du-17-octobre-des-couvre-feux-partiels-et-tres-localises-prevus-en-france-des-ce-lundi-soir-annonce-sebastien-lecornu-l-express-via-6medias-CNT000002tapa3.html), [Epoch Times(AFP)](https://www.epochtimes.fr/violences-et-pillages-sebastien-lecornu-demande-des-couvre-feux-et-annonce-une-operation-judiciaire-massive-3373616.html)).
+사법·경제 대응도 함께 나왔다. 르코르뉘 총리는 "대규모 형사 대응"을 약속하며 수사관 200명이 영상 분석에 착수했고 구금자의 약 80%가 이미 기소 등 형사 처분을 받았다고 밝혔다. 약탈 피해 상점 직원에게는 20일부터 국가가 100% 부담하는 부분실업수당을 적용하고 지원 기금을 만들기로 했으며, "무엇보다 부순 사람이 돈을 내야 한다"(C'est avant tout, ceux qui ont cassé qui doivent payer)고 했다([Orange(L'Express)](https://actu.orange.fr/politique/violences-du-17-octobre-des-couvre-feux-partiels-et-tres-localises-prevus-en-france-des-ce-lundi-soir-annonce-sebastien-lecornu-l-express-via-6medias-CNT000002tapa3.html), [Epoch Times(AFP)](https://www.epochtimes.fr/violences-et-pillages-sebastien-lecornu-demande-des-couvre-feux-et-annonce-une-operation-judiciaire-massive-3373616.html)). LCP는 평상시 부분실업수당이 총급여의 60%라고 짚으며, 정부가 사회보험료·세금 납부 유예와 보험사 협의도 함께 내놓았다고 전했다. 시위·집회 참가자에게 피해의 민사 책임을 집단으로 지우는 '파손자 부담'(casseurs-payeurs) 법안은 27일부터 상원에서 심사된다. 다만 21일 밤(한국시각) 현재 100% 부분실업수당의 시행 지침이나 적용 조건을 담은 공식 문서는 확인하지 못했다([LCP](https://lcp.fr/actualites/commerces-ravages-et-pilles-le-17-octobre-l-etat-au-chevet-des-entreprises-le-projet-de)).
 
 같은 날 마르세유 경찰청은 시 전역에서 정오부터 저녁 8시까지(한국시각 19일 저녁 7시~20일 새벽 3시) 모든 집회와 시위를 금지했고, 뉘녜스 장관은 마르세유 방문을 미뤘다. 파리에서는 학생 시위대가 "경찰 탄압"에 항의하며 루브르 박물관 입구를 봉쇄해 개관이 늦어졌고, 시청 앞에 약 100명이 모였다. 에마뉘엘 그레구아르 파리 시장은 "위기에 대한 정치적 답이 없는 한 해결되지 않을 것"이라고 말했다. 20일 파르크 데 프랭스의 PSG-바르셀로나 챔피언스리그 경기는 경비를 강화해 예정대로 치른다([Boursorama(로이터)](https://www.boursorama.com/bourse/actualites/en-direct-macron-refuse-la-demission-de-nunez-lecornu-demande-des-couvre-feux-2e2faec92c5c0c0b446dc1c561a89241), [France 24](https://www.france24.com/en/europe/20261019-live-france-macron-slams-unbridled-violence-protests-weekend-unrest)).
+
+## 19~20일 밤: 실제 적용된 통행금지
+
+19일 저녁부터 지사와 시장들이 발동한 통행금지는 도심 일부 구역에 한정됐고, 상당수는 미성년자만 대상으로 했다. 파리 경찰청은 레퓌블리크 광장과 레알 일대에서 19일 밤 11시부터 20일 오전 6시까지 성인·미성년자 모두의 출입과 체류를 금지하고, 여러 구역의 시위를 저녁 8시부터 금지했다. 주민, 해당 구역에서 일하는 사람, 구급·구조 인력, 상인은 적용 대상에서 빠졌다. 리옹은 론 지사가 프레스킬 일부(시청에서 카르노 광장까지, 벨쿠르 광장 포함·테로 광장 제외)에 밤 9시~오전 6시 통행금지를 걸었지만, 술집·식당·영화관·공연장은 문을 열고 대중교통과 차량 통행도 유지했다. 릴·두에·와티니·드냉에서는 일부 구역에서 미성년자에게만 밤 8시~오전 6시 통행금지가 적용됐고 기간은 "당분간" 19·20일 이틀 밤으로 정해졌다. 니스는 에리크 시오티 시장이 도심·구시가·역 주변에서 미성년자 대상 밤 9시~오전 6시 통행금지를 시작했다([franceinfo](https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/des-couvre-feux-partiels-mis-en-place-a-paris-lyon-lille-et-nice_8244511.html)).
+
+20일에는 적용 범위가 넓어졌다. 라디오프랑스 계열 ICI가 21일 오전(현지시각) 갱신한 지도에 따르면 파리 레퓌블리크·레알 통행금지는 20일 밤 11시~21일 오전 6시로 한 차례 연장됐고, 리옹 프레스킬 통행금지도 20일 밤까지 이어졌다. 보르도는 생트카트린 거리 등 도심에서 미성년자에게 26일 아침까지 밤 10시~오전 7시 통행금지를 적용하고, 마르세유는 브누아 파양 시장이 상업 구역에 20일(화)~23일(금) 미성년자 통행금지를 발표했다. 니스의 미성년자 통금은 25일(일)까지이고, 툴루즈는 22일(목) 저녁부터 25일까지 카피톨 광장과 피해가 컸던 상가 거리에 밤 11시 59분~오전 5시 통행금지를 예고했다. 낭트·생나제르(루아르아틀랑티크)와 렌은 통행금지 대신 야간 집회 금지를 택했다([ICI](https://www.ici.fr/infos/societe/carte-violences-du-17-octobre-de-premiers-couvre-feux-instaures-dans-plusieurs-villes-du-pays-5563872), [franceinfo](https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/des-couvre-feux-partiels-mis-en-place-a-paris-lyon-lille-et-nice_8244511.html)).
+
+## 예산안 첫 표결은 열리지 않았다
+
+하원 일정상 20일(화)로 잡혀 있던 2027년 예산안 1부(세입) 표결은 열리지 않았다. 하원은 19일 자정 예산안 심의를 멈췄고, 세입 부분에만 2,600건 남짓한 수정안이 남은 상태에서 헌법상 심의 기한을 지키려 20일 오후부터 사회보장재정법안(PLFSS) 심의로 넘어갔다. 예산안 심의는 27일(화) 재개될 예정이며, LCP는 표결에서 부결돼 상원으로 넘어갈 가능성이 크다고 내다봤다. 다비드 아미엘 공공회계장관은 첫 주 심의에서 통과된 수정으로 재정적자가 100억 유로 악화됐다고 밝혔다([LCP](https://lcp.fr/actualites/budget-de-l-etat-apres-avoir-largement-detricote-le-projet-du-gouvernement-l-assemblee), [Entrevue](https://entrevue.fr/politique/budget-2027-apres-avoir-detricote-le-projet-de-lecornu-les-deputes/)). 20일 밤 굴복하지않는프랑스가 낸 사회보장재정법안 사전 부결 동의는 반대 259표로 부결됐고, 찬성은 사회당을 포함한 좌파의 128표뿐이었다([Boursorama(AFP)](https://www.boursorama.com/actualite-economique/actualites/sans-enthousiasme-l-assemblee-s-empare-du-budget-de-la-secu-et-ses-economies-massives-e948e36213d5bb2125c0c9b8ba23a5c6)).
 
 ## 다음 고비: 24일 노란조끼 '2막'과 11월 5일 파업
 
@@ -83,13 +95,19 @@ tracking:
 
 정치권은 대선 6개월을 앞두고 갈라졌다. 여론조사 선두인 마린 르펜 국민연합 의원은 프랑스가 "폭력과 무능 사이에 인질로 잡혔다"고 말하며 멜랑숑과 '굴복하지않는프랑스'를 폭력 조장 주체로 지목했고, 굴복하지않는프랑스는 "모든 책임은 정부에 있다"고 맞섰다. 가브리엘 아탈 전 총리는 소셜미디어 규제를 주장했다([서울경제](https://m.sedaily.com/article/20103530), [세계일보](https://www.segye.com/newsView/20261019519625)). 트럼프 미국 대통령은 소셜미디어에 프랑스가 불타고 있다며 이민자 탓을 했지만 프랑스 당국은 이민과의 연관성을 언급하지 않았다([한국일보](https://www.hankookilbo.com/news/article/A2026101914530004872)). 같은 주말 이탈리아 밀라노, 벨기에, 포르투갈 리스본, 스페인에서도 물가·주거비 항의 시위가 열렸다([서울경제](https://www.sedaily.com/article/20102998)).
 
+## 24일 '2막': 41만 명 행진, 17일보다 차분했지만 체포 약 1,000명
+
+노란조끼 조정위원회 등이 부른 24일(토) '2막' 시위에는 내무부 집계 41만 명, CGT 집계 80만 명이 참가했다. 파리는 경찰청 집계 11만 명, 노조 집계 25만 명이었다. 정부는 전국에 경찰·헌병 약 7만 명을 배치했다([ICI](https://www.ici.fr/infos/societe/direct-mobilisation-du-24-octobre-des-manifestations-partout-en-france-70-000-policiers-et-gendarmes-deployes-8725021)).
+
+뉘녜스 내무장관은 "행렬은 잘 진행됐다"(Les cortèges se sont bien passés)고 평가했고, 이날 전국 집회는 289건이었다. 그래도 저녁 7시 39분(현지시각) 기준 체포는 "약 1,000명"이었다. 마르세유·그르노블·낭트·파리에서는 상점 약탈과 파손이 있었다. 툴루즈에서는 20세 남성이 충돌 중 손에 중상을 입었고, 니스 등지에서는 극우 활동가와 시위대가 충돌했다. 파리 경찰청은 행진 끝 무렵 "500명 넘는 폭력 시위대(casseurs)"가 있었다고 밝혔다([ICI](https://www.ici.fr/infos/societe/direct-mobilisation-du-24-octobre-des-manifestations-partout-en-france-70-000-policiers-et-gendarmes-deployes-8725021)).
+
 ## 의미
 
 이번 대응의 특징은 정부가 비상사태 대신 지사 단위의 부분 통행금지와 집회 금지권이라는 '아래로부터의' 수단을 골랐다는 점이다. 르코르뉘 총리가 상황이 "매우 제각각"이라고 말한 데서 보이듯, 리모주·마르세유·릴처럼 피해가 집중된 도시와 그렇지 않은 곳을 한 틀로 묶기 어렵고, 전국 비상사태는 대선을 앞둔 정부가 치러야 할 정치적 비용이 크다. 다만 통행금지의 실효성은 24일 노란조끼 2차 시위에서 바로 시험된다. 뉘녜스 장관 스스로 "극도로 기동성이 높은 집단"에 경찰 전략이 맞지 않았다고 인정한 만큼, 고정된 구역을 지키는 통행금지가 이동하며 약탈하는 집단에 얼마나 효과를 내느냐가 관건이다.
 
 둘째, 책임 소재를 둘러싼 틀이 아직 정해지지 않았다. 대통령과 총리, 내무장관은 "극좌 소집단"을 거듭 지목했지만 파리 검사장은 체포자의 정치 성향을 확인할 수 없다고 했고, 다르마냉 법무장관이 말한 구금자 중 성인 3분의 2는 "이미 경찰에 알려진" 범죄 전력자가 많다는 설명과 함께 읽으면 조직된 정치 폭력과 기회적 약탈이 뒤섞였다는 쪽에 가깝다. 정부가 약속한 "예측·정보 실패"의 투명한 규명 결과가 이 논쟁을 가를 것이다.
 
-셋째, 시위의 밑바탕인 생활비 문제는 그대로다. 마크롱 대통령이 연료 가격의 원인으로 꼽은 걸프 분쟁은 프랑스 정부가 통제할 수 없는 변수이고, 20일 하원 표결을 앞둔 긴축 예산안은 교육·복지 지출 확대를 요구하는 시위대와 정반대 방향이다. 10년물 금리가 2002년 이후 최고치로 오른 것은 시장이 치안 불안과 재정 위험을 함께 보고 있다는 신호다.
+셋째, 시위의 밑바탕인 생활비 문제는 그대로다. 마크롱 대통령이 연료 가격의 원인으로 꼽은 걸프 분쟁은 프랑스 정부가 통제할 수 없는 변수이고, 첫 표결조차 미뤄진 긴축 예산안은 교육·복지 지출 확대를 요구하는 시위대와 정반대 방향이다. 10년물 금리가 2002년 이후 최고치로 오른 것은 시장이 치안 불안과 재정 위험을 함께 보고 있다는 신호다.
 
 ## 확인할 점
 
@@ -99,9 +117,17 @@ tracking:
 - 경찰·소방 부상자는 "약 1,000명"(내무부·AP), 977명(세계일보)로 보도됐고, 17일 밤 1차 집계는 500명 이상이었다.
 - 피해 상점은 1,500곳(17~18일 보도), 2,000곳 이상(상공회의소), 3,000곳(총리·상무장관)으로 시점마다 다르다. 르코르뉘 총리의 "아무도 죽지 않았다"는 발언과 파리 행진 중 심폐정지 사망 1명은 별개 사실이다. 세계일보는 사망 2명의 원인을 수사 중이라고 썼으나 다른 매체에서 확인하지 못했다.
 - 17일 투입 경찰 규모는 한국일보(FT 인용) 약 1만 명, 글로벌이코노믹(로이터 인용) 6만 명으로 엇갈린다.
-- 통행금지가 실제 적용된 도시·구역·시간의 확정 목록은 19일 밤(한국시각) 현재 확인하지 못했다. 드냉 야간 통금은 세계일보 보도에만 기댔다.
+- 통행금지 적용 도시·구역·시간은 파리 경찰청과 각 도청의 arrêté 원문이 아니라 franceinfo·ICI 보도로 확인했다. 마르세유·보르도·툴루즈 내용은 ICI 지도에만 기댔다. 세계일보가 전한 드냉 '오후 9시' 통금은 franceinfo의 노르 4개 도시 '밤 8시'와 다르고, 노르 통행금지 기간도 '19·20일 이틀 밤'과 '25일까지'(Le Grand Continent)로 보도가 엇갈린다.
+- 예산안 1부 표결 연기는 하원의 공식 의사일정 변경 공지가 아니라 LCP·Entrevue 보도로 확인했다.
 - 르코르뉘 총리의 "극좌 네트워크가 대선 일정을 흔들려 한다"는 주장은 정보기관 보고를 근거로 한다고 보도됐으나 공개된 증거는 없다.
+- 24일 체포 수는 ICI 생중계의 저녁 7시 39분 집계("약 1,000명")다. 이후 나온 최종 집계와 부상자 수는 원문으로 확인하지 못했다.
+- 피해 상점 직원 100% 부분실업수당이 실제로 시행됐는지는 확인하지 못했다.
 - 내무장관 이름 표기는 매체마다 누녜스·누네스·누녜즈·뉘녜스로 다르다. 이 글은 '뉘녜스'로 통일했다.
+
+## 갱신 기록
+
+- 2026-10-21: 19~20일 실제 통행금지 적용 지역과 2027년 예산안 1부 하원 표결 연기 반영, 부분실업수당 시행 확인은 22일 checkpoint로 이월
+- 2026-10-27: 24일 '2막' 시위 규모·체포·부상 반영, 지난 checkpoint(22·24일) 정리
 
 ## 출처
 
@@ -133,6 +159,13 @@ tracking:
 - [프랑스, '물가 폭동'에 통행금지 카드 꺼냈다… 총리 "필요시 비상사태 선포" — 머니투데이](https://www.mt.co.kr/world/2026/10/19/2026101921174531944)
 - [재정난에 방화·약탈 '佛타는 시위'… 마크롱은 "분노·수치심" — 세계일보](https://www.segye.com/newsView/20261019519625)
 - [대규모 시위 프랑스, 국가적 파탄 위기 경고 — 파이낸셜뉴스](https://www.fnnews.com/news/202610191046460906)
+- [Des couvre-feux partiels mis en place à Paris, Lyon, Lille et Nice après un week-end de violences et de pillages — franceinfo](https://www.franceinfo.fr/societe/mobilisation-du-17-octobre/des-couvre-feux-partiels-mis-en-place-a-paris-lyon-lille-et-nice_8244511.html)
+- [CARTE - Violences du 17 octobre : dans quelles villes y a-t-il des couvre-feux et des interdictions de manifester ? — ICI](https://www.ici.fr/infos/societe/carte-violences-du-17-octobre-de-premiers-couvre-feux-instaures-dans-plusieurs-villes-du-pays-5563872)
+- [Budget de l'État : après avoir largement détricoté le projet du gouvernement, l'Assemblée appuie sur pause pour passer au budget de la Sécu — LCP](https://lcp.fr/actualites/budget-de-l-etat-apres-avoir-largement-detricote-le-projet-du-gouvernement-l-assemblee)
+- [Budget 2027 : après avoir détricoté le projet de Lecornu, les députés suspendent les débats à l'Assemblée — Entrevue](https://entrevue.fr/politique/budget-2027-apres-avoir-detricote-le-projet-de-lecornu-les-deputes/)
+- [Sans enthousiasme, l'Assemblée s'empare du budget de la Sécu et ses économies massives — Boursorama(AFP)](https://www.boursorama.com/actualite-economique/actualites/sans-enthousiasme-l-assemblee-s-empare-du-budget-de-la-secu-et-ses-economies-massives-e948e36213d5bb2125c0c9b8ba23a5c6)
+- [Mobilisation du 24 octobre : 410.000 manifestants en France selon le gouvernement, 800.000 d'après la CGT — ICI](https://www.ici.fr/infos/societe/direct-mobilisation-du-24-octobre-des-manifestations-partout-en-france-70-000-policiers-et-gendarmes-deployes-8725021)
+- [Commerces ravagés et pillés le 17 octobre : l'État au chevet des entreprises — LCP](https://lcp.fr/actualites/commerces-ravages-et-pilles-le-17-octobre-l-etat-au-chevet-des-entreprises-le-projet-de)
 
 ---
 
