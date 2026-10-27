@@ -14,6 +14,7 @@ tags:
 summary: 오픈소스 AI 코딩 에이전트 OpenCode가 10월 17일(현지시각) 퇴역 중이던 legacy 시스템에 무단 접근이 있었고 OpenCode Console 사용자 1.4%가 워크스페이스에 저장한 Anthropic·OpenAI·Google API 키가 노출됐을 수 있다고 밝혔다. 회사는 이를 "대규모 distillation 공격"과 연결했지만 근거는 내놓지 않았고, 사용자들은 수백~1,700달러의 무단 과금을 보고했다.
 generated_by: claude
 model: claude-fable-5-1
+updated_at: 2026-10-28T01:23:00+09:00
 tracking:
   status: ongoing
   checkpoints:
@@ -51,11 +52,11 @@ OpenCode는 터미널·에디터·데스크톱에서 돌아가는 코딩 에이�
 
 한편 제공자 키를 연결한 적이 없는 Console·Go 구독자들도 17일 밤부터 자신의 OpenCode 키가 `401 api_key_expired` 오류로 막혔다고 GitHub에 보고했다. 만료일을 "Never"로 둔 키가 모두 17일을 마지막 사용일로 "Expired" 상태가 됐다는 화면도 올라왔다. 한 Go 구독자는 "내 워크스페이스에는 OpenAI, Anthropic, Google 키가 전혀 없었고 유일한 자격 증명은 내 Go 키였는데 그래도 폐기됐다"며 공식 보상 방침을 요구했다([GitHub 이슈 #56833](https://github.com/anomalyco/opencode/issues/56833), [GitHub 이슈 #56556](https://github.com/anomalyco/opencode/issues/56556)). 또 다른 사용자는 17일부터 모든 워크스페이스가 "접근 제한" 상태인데 침해 이메일은 받지 못했다고 썼다([GitHub 이슈 #56703](https://github.com/anomalyco/opencode/issues/56703)). OpenCode의 GitHub 자동 응답 봇은 이들에게 계정 문의는 `help@anoma.ly`로 보내라고 안내하고 이슈를 닫았으며, 회사는 자사 키를 일괄 폐기했는지, 그 이유가 무엇인지 설명하지 않았다.
 
-## 피해 보고와 제공자 대응: Anthropic·Google은 키 폐기, OpenAI는 침묵
+## 피해 보고와 제공자 대응: Anthropic·Google은 키 폐기, OpenAI는 크레딧 환불
 
 무단 과금 보고는 모두 사용자 개인의 주장이며 OpenCode나 제공자가 확인한 수치는 없다. Dealroom은 Colin Parsons가 OpenAI 키에서 281달러, Anthropic 키에서 168달러가 빠져나갔고, Preston Zeller는 1,700달러, Francisco Giancarelli는 키를 끄기 전까지 700달러 이상의 OpenAI 사용료가 발생했다고 X에 썼다고 전했다([Dealroom](https://dealroom.co/news/163473-opencode-breach-drains-users-ai-keys-as-platforms-holding-customer-crede/)). Notebookcheck 보도를 인용한 The Hacker News, GIGAZINE, AI매터스는 Reddit 사용자가 Anthropic에서 약 400달러, Google에서 약 200유로의 무단 사용 뒤 프로젝트가 정지됐다고 보고했다고 썼다([The Hacker News](https://thehackernews.com/2026/10/opencode-console-breach-may-have.html), [GIGAZINE](https://gigazine.net/gsc_news/en/20261019-opencode-leak/), [AI매터스](https://aimatters.co.kr/news-report/55672/)). r/ClaudeAI에는 저장해 둔 Anthropic 키로 하룻밤 사이 약 158달러가 소진됐다는 글이 올라왔고([promppy(r/ClaudeAI 게시글 요약)](https://www.promppy.com/item/2447090)), Hacker News에서는 Anthropic 월 20달러 API 크레딧을 다 썼다는 통지를 받았다는 사용자도 있었다([Hacker News](https://news.ycombinator.com/item?id=50133401)). Crypto Briefing은 "수백 달러에 이르는 청구서"가 보고됐으며 이 과금을 누가 책임질지는 불분명하다고 썼다([Crypto Briefing](https://cryptobriefing.com/opencode-distillation-attack-api-key-breach/)).
 
-제공자 쪽 대응은 두 곳이 공개됐다. Anthropic의 Claude Code 팀 Lydia Hallie는 17일 21시 04분(UTC) OpenCode 게시물을 인용해 "OpenCode와 함께 작업했고 영향을 받은 것으로 보이는 Claude API 키를 폐기했다"며 "OpenCode에 키를 저장했고 더 조심하고 싶다면 새 키를 만들라"(If you saved a key in OpenCode and want to be extra careful, please create a new one!)고 썼다([Lydia Hallie X](https://x.com/lydiahallie/status/2111563956666110287)). Google DeepMind·AI Studio의 Evan Otero는 22시 53분 "OpenCode에 저장된 Gemini API 키와 관련된 OpenCode 보안 사건을 인지하고 있다"(We are aware of the OpenCode security incident involving Gemini API keys stored in OpenCode)며 노출된 키를 차단했고, "OpenCode에 API 키를 썼다면 AI Studio에서 새 키를 만들고 옛 키를 삭제한 뒤 사용량을 검토하라", "본인이 만들지 않은 과금이 보이면 Google Cloud Billing 지원에 연락하라"고 안내했다([Evan Otero X](https://x.com/EvanOtero/status/2111591525876474100)). OpenAI의 공개 입장은 19일 밤까지 확인되지 않았다. OpenCode는 환불이나 보상 방침을 내놓지 않았고, Anthropic의 API 키 관리 안내 문서도 유출된 키로 발생한 사용료의 환불 여부는 다루지 않는다([Anthropic 지원 문서](https://support.claude.com/en/articles/9767949-api-key-best-practices-keeping-keys-safe-and-secure)).
+제공자 쪽 대응은 두 곳이 공개됐다. Anthropic의 Claude Code 팀 Lydia Hallie는 17일 21시 04분(UTC) OpenCode 게시물을 인용해 "OpenCode와 함께 작업했고 영향을 받은 것으로 보이는 Claude API 키를 폐기했다"며 "OpenCode에 키를 저장했고 더 조심하고 싶다면 새 키를 만들라"(If you saved a key in OpenCode and want to be extra careful, please create a new one!)고 썼다([Lydia Hallie X](https://x.com/lydiahallie/status/2111563956666110287)). Google DeepMind·AI Studio의 Evan Otero는 22시 53분 "OpenCode에 저장된 Gemini API 키와 관련된 OpenCode 보안 사건을 인지하고 있다"(We are aware of the OpenCode security incident involving Gemini API keys stored in OpenCode)며 노출된 키를 차단했고, "OpenCode에 API 키를 썼다면 AI Studio에서 새 키를 만들고 옛 키를 삭제한 뒤 사용량을 검토하라", "본인이 만들지 않은 과금이 보이면 Google Cloud Billing 지원에 연락하라"고 안내했다([Evan Otero X](https://x.com/EvanOtero/status/2111591525876474100)). OpenAI 쪽에서는 Codex·ChatGPT를 맡고 있는 Thibault Sottiaux가 19일 4시 12분(UTC) 개인 X 계정에 "우리 팀이 OpenCode와 함께, OpenAI API 고객이기도 한 OpenCode 사용자들이 다시 쓸 수 있게 했고 공격으로 빠져나갔을 크레딧은 모두 환불했다"(Our team worked with OpenCode to have their users who are also OpenAI API customers back in business and any credits refunded which would have been drawn in the attack)고 썼다([Thibault Sottiaux X](https://x.com/thsottiaux/status/2112034063934742720)). OpenCode 쪽에서는 Raad가 17일 22시 17분(UTC) 3천 달러 과금을 호소한 사용자에게 자세한 내용을 메일로 보내면 환불해 주겠다고 답했고([Dax Raad X](https://x.com/thdxr/status/2111591239871316094)), 다른 피해자는 소문이 나야 환불받느냐는 물음에 18일 0시 1분 "이미 모두에게 연락했고 환불이 이미 진행 중"(we already contacted everyone, refunds are already underway)이라고 답했다([Dax Raad X](https://x.com/thdxr/status/2111608620441817449)). 다만 환불 대상과 기준, 범위를 밝힌 공식 공지는 X 게시물 외에 나오지 않았고, Anthropic과 Google이 무단 과금을 환불하는지는 확인되지 않았다. Anthropic의 API 키 관리 안내 문서도 유출된 키로 발생한 사용료의 환불 여부는 다루지 않는다([Anthropic 지원 문서](https://support.claude.com/en/articles/9767949-api-key-best-practices-keeping-keys-safe-and-secure)).
 
 ## distillation이 무엇이고 훔친 키가 왜 거기에 쓰이나
 
@@ -73,7 +74,7 @@ Anthropic은 올해 2월 23일 글에서 distillation을 "덜 유능한 모델�
 
 셋째, 새 키를 쓰는 곳을 모두 바꾼다. Console 워크스페이스, CI 시크릿, `.env` 파일, LiteLLM 같은 게이트웨이, 서버의 환경 변수가 해당된다. OpenCode 자체 키가 `api_key_expired`로 막힌 경우에는 Console에서 새 키를 만들고 `opencode auth logout` 뒤 `opencode auth login`으로 다시 넣는다. 그래도 옛 키가 계속 전송되면 `OPENCODE_API_KEY` 환경 변수, `opencode.json`의 `apiKey`, `auth.json`에 남은 옛 `opencode` 항목이 새 자격 증명보다 우선 적용되는 것이 아닌지 확인한다. 한 사용자는 `auth.json`의 옛 항목을 지우고 서비스 프로세스를 재시작해 해결했다고 썼다([GitHub 이슈 #56556](https://github.com/anomalyco/opencode/issues/56556)).
 
-넷째, 사용량과 청구서를 본다. 검토 시작점은 미국 시각 10월 16일, 한국시각 17일이다. 내가 쓰지 않은 모델, 낯선 시간대의 급증, 평소보다 큰 토큰 수가 단서다. Anthropic은 Console의 usage와 logs 페이지, Google은 Cloud Billing 지원 창구를 각각 안내했다. 무단 과금의 환불 여부는 제공자별로 개별 문의해야 하며, 현재까지 공개된 환불 정책은 없다.
+넷째, 사용량과 청구서를 본다. 검토 시작점은 미국 시각 10월 16일, 한국시각 17일이다. 내가 쓰지 않은 모델, 낯선 시간대의 급증, 평소보다 큰 토큰 수가 단서다. Anthropic은 Console의 usage와 logs 페이지, Google은 Cloud Billing 지원 창구를 각각 안내했다. OpenAI는 공격으로 빠져나간 크레딧을 환불했다고 밝혔고 OpenCode 공동창업자도 환불이 진행 중이라고 했지만, 대상과 기준을 밝힌 공개 정책은 없으므로 내 과금이 환불 대상인지는 OpenCode와 각 제공자에 직접 확인해야 한다.
 
 다섯째, 같은 일을 다시 겪지 않게 구조를 바꾼다. 외부 서비스마다 전용 키를 발급해 한 곳이 뚫려도 다른 곳으로 번지지 않게 하고, 지출 상한과 사용량 알림을 켠다. Anthropic은 90일마다 키를 교체하고 Console에서 지출 한도나 자동 충전 임계값을 설정하라고 권한다. Console의 월 예산은 Console을 거친 요청만 세므로, 노출된 키가 제공자에 직접 호출되는 것을 막지 못한다는 점도 기억해야 한다([XenoSpectrum](https://xenospectrum.com/en/opencode-console-breach-api-key-management/)). 서드파티 서비스에 제공자 키를 맡기는 일 자체를 줄이는 것, 맡길 때는 그 서비스의 키 보관 방식과 사고 대응 약속을 먼저 확인하는 것이 근본 대책이다.
 
@@ -90,9 +91,13 @@ Anthropic은 올해 2월 23일 글에서 distillation을 "덜 유능한 모델�
 - StepSecurity는 공지와 이메일을 18일, 다른 매체는 17일로 적었다. X 게시물 원본 타임스탬프(17일 18시 08분 UTC)를 기준으로 하면 시간대 차이로 보이지만, 이메일 발송 시각 자체는 회사가 밝히지 않았다.
 - 1.4%의 분모가 Console 가입자 전체인지, 외부 제공자를 연결한 사용자인지 보도가 엇갈린다. 본문은 회사의 문장("Console 사용자의 1.4%", "외부 제공자를 연결한 사용자의 일부")을 그대로 옮겼다.
 - 무단 과금 금액(158·168·281·400달러, 200유로, 700달러 이상, 1,700달러 등)은 모두 X·Reddit의 개인 보고를 Dealroom, Notebookcheck, promppy 등이 전한 것이다. Notebookcheck 원문은 접근 차단으로 직접 확인하지 못해 The Hacker News, GIGAZINE, AI매터스의 인용을 따랐다. Reddit 원문도 직접 열지 못했다.
-- Anthropic(Lydia Hallie)과 Google(Evan Otero)의 입장은 각 직원의 개인 X 계정 게시물이며, 두 회사의 공식 채널 성명은 확인하지 못했다. OpenAI의 입장은 어떤 형태로도 확인되지 않았다.
+- Anthropic(Lydia Hallie)과 Google(Evan Otero)의 입장은 각 직원의 개인 X 계정 게시물이며, 두 회사의 공식 채널 성명은 확인하지 못했다. OpenAI의 크레딧 환불 언급도 Thibault Sottiaux의 개인 X 게시물이며, OpenCode의 환불 언급 역시 Raad의 X 답글이어서 환불 대상과 기준을 밝힌 공식 공지는 확인하지 못했다.
 - 제공자 키를 연결하지 않은 Console·Go 구독자의 키 일괄 폐기와 워크스페이스 접근 제한이 이번 사건의 예방 조치인지는 회사가 설명하지 않았다. 한 사용자는 상태 페이지가 16일 9시 34분(UTC)부터 Console 관련 구성 요소를 "degraded"로 표시했다고 주장했으나, 19일 현재 상태 페이지에서는 16~18일 항목을 확인하지 못했다.
 - distillation 공격과의 연관성은 OpenCode의 주장이며 독립적으로 검증되지 않았다. Anthropic 9월 보고서의 중국 7개 연구소 관련 내용도 Anthropic의 주장이고, 해당 기업들은 공개적으로 답하지 않았거나 부인했다.
+
+## 갱신 기록
+
+- 2026-10-28: 발행 전 나온 OpenAI(Thibault Sottiaux)의 크레딧 환불 언급과 OpenCode(Dax Raad)의 환불 진행 언급을 반영하지 않아 'OpenAI 입장 미확인', 'OpenCode 환불 방침 없음', '공개된 환불 정책 없음'으로 쓴 부분 정정
 
 ## 출처
 
@@ -103,6 +108,9 @@ Anthropic은 올해 2월 23일 글에서 distillation을 "덜 유능한 모델�
 - [my personal accounts are being attacked now too — Dax Raad(X)](https://x.com/thdxr/status/2111528031072461114)
 - [note this is the OpenCode Console, not OpenCode itself — Dax Raad(X)](https://x.com/thdxr/status/2111572618340188393)
 - [they've been non stop trying to attack our systems for the past 48 hours — Dax Raad(X)](https://x.com/thdxr/status/2111790511409258796)
+- [we will get you refunded — Dax Raad(X)](https://x.com/thdxr/status/2111591239871316094)
+- [refunds are already underway — Dax Raad(X)](https://x.com/thdxr/status/2111608620441817449)
+- [OpenAI API 고객의 공격 피해 크레딧을 환불했다는 게시물 — Thibault Sottiaux(X)](https://x.com/thsottiaux/status/2112034063934742720)
 - [Anthropic이 영향받은 Claude API 키를 폐기했다는 게시물 — Lydia Hallie(X)](https://x.com/lydiahallie/status/2111563956666110287)
 - [We are aware of the OpenCode security incident involving Gemini API keys — Evan Otero(X)](https://x.com/EvanOtero/status/2111591525876474100)
 - [OpenCode Hacked: User credentials leaked — Hacker News](https://news.ycombinator.com/item?id=50133401)
