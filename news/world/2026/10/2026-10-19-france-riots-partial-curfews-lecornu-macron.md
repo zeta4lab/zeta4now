@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-10-27T14:05:00+09:00
+updated_at: 2026-10-28T01:19:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,15 +18,19 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-10-27T14:05:00+09:00
-    note: 24일 노란조끼 '2막' 규모·체포·부상 반영
+    at: 2026-10-28T01:19:00+09:00
+    note: 사회보장재정법안 23일 하원 부결, 예산안 1부 표결 11월 3일로 연기, '파손자 부담' 법안 27일 상원 본회의 심사 시작 반영
   checkpoints:
-    - date: 2026-10-27
-      note: 2027년 예산안 1부 하원 심의 재개와 표결 일정, 사회보장재정법안 표결, '파손자 부담' 법안 상원 심사 시작
+    - date: 2026-10-29
+      note: 상원 본회의의 '파손자 부담' 법안 심사·표결 결과
     - date: 2026-10-31
       note: 노란조끼 조정위가 예고한 추가 집회일
+    - date: 2026-11-03
+      note: 2027년 예산안 1부(세입) 하원 표결
     - date: 2026-11-05
       note: CFDT·CGT·FO·UNSA·FSU 5개 노조 전국 파업·시위일
+    - date: 2026-11-09
+      note: 하원에서 부결된 사회보장재정법안 상원 심사 시작
 ---
 
 # 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마크롱은 "예측·정보 실패" 인정하고 "통제 상실" 시인한 뉘녜스 내무장관 사의 반려
@@ -89,6 +93,14 @@ tracking:
 
 하원 일정상 20일(화)로 잡혀 있던 2027년 예산안 1부(세입) 표결은 열리지 않았다. 하원은 19일 자정 예산안 심의를 멈췄고, 세입 부분에만 2,600건 남짓한 수정안이 남은 상태에서 헌법상 심의 기한을 지키려 20일 오후부터 사회보장재정법안(PLFSS) 심의로 넘어갔다. 예산안 심의는 27일(화) 재개될 예정이며, LCP는 표결에서 부결돼 상원으로 넘어갈 가능성이 크다고 내다봤다. 다비드 아미엘 공공회계장관은 첫 주 심의에서 통과된 수정으로 재정적자가 100억 유로 악화됐다고 밝혔다([LCP](https://lcp.fr/actualites/budget-de-l-etat-apres-avoir-largement-detricote-le-projet-du-gouvernement-l-assemblee), [Entrevue](https://entrevue.fr/politique/budget-2027-apres-avoir-detricote-le-projet-de-lecornu-les-deputes/)). 20일 밤 굴복하지않는프랑스가 낸 사회보장재정법안 사전 부결 동의는 반대 259표로 부결됐고, 찬성은 사회당을 포함한 좌파의 128표뿐이었다([Boursorama(AFP)](https://www.boursorama.com/actualite-economique/actualites/sans-enthousiasme-l-assemblee-s-empare-du-budget-de-la-secu-et-ses-economies-massives-e948e36213d5bb2125c0c9b8ba23a5c6)).
 
+## 27일 일정: 사회보장재정법안은 이미 부결, 예산안 1부 표결은 11월 3일로
+
+27일(화)로 잡혀 있던 사회보장재정법안 표결은 열리지 않았다. 하원은 23일(금) 법안의 세입 부분을 찬성 1표, 반대 115표, 기권 22표(공개표결 9097번)로 부결했고, 세입 부분이 부결되면서 지출 부분은 심의하지 못한 채 법안 전체가 부결됐다. 국민연합(60명)과 좌파 4개 그룹, 공화우파 일부가 반대했고 민주당·오리종·르네상스(EPR) 의원 다수는 기권했다. 이에 따라 27일 표결은 "더 이상 대상이 없게" 됐고, 법안은 하원 수정 없이 정부 원안으로 상원에 넘어가 11월 9일부터 심사된다([NosParlementaires](https://nosparlementaires.fr/actualites/budget-secu-2027-vote-seance-premiers-articles-supprimes)). 하원은 20일 심의 첫날에도 서문 조항과 1~3조를 삭제했다.
+
+2027년 예산안 1부(세입)는 하원 공식 일정상 27일부터 11월 2일(월)까지 심의를 이어 가고, 1부 전체에 대한 표결은 11월 3일(화) 오후로 잡혔다. 당초 20일에서 2주 미뤄진 셈이다([하원](https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/examen-de-la-premiere-partie-du-projet-de-loi-de-finances-pour-2027)). NosParlementaires는 예산안 전체 표결은 11월 17일(화)로 유지된다고 전했다([NosParlementaires](https://nosparlementaires.fr/actualites/budget-2027-calendrier-assemblee-cinq-semaines)).
+
+'파손자 부담' 법안은 21일 상원 법사위원회를 통과한 뒤 27일 오후 4시 30분(한국시각 28일 0시 30분)부터 상원 본회의에서 심사가 시작됐다. 법안은 피해를 낸 집단에 "알면서 참여한" 사람과 치안 병력의 두 차례 해산 경고 뒤에도 남은 사람에게 연대 민사 책임을 지우고, 배상액은 1인당 1만 유로로 묶었다. 배상금은 주거수당·가족수당에서 떼어 갈 수 있으며, 위원회 심사에서 최소 생계비를 남기는 조건으로 RSA(활동연대수당)가 추가됐다. 국민연합은 상한을 올리는 수정안을 냈다. 보고자인 다비드 마르그리트 상원의원(공화당)은 "프랑스인들의 기대에 단호하고 분명하며 실효적인 답"이라고 했다([Public Sénat](https://www.publicsenat.fr/actualites/parlementaire/loi-casseurs-payeurs-que-contient-le-texte-examine-au-senat)). 28일 새벽(한국시각) 현재 본회의 표결 결과는 확인하지 못했다.
+
 ## 다음 고비: 24일 노란조끼 '2막'과 11월 5일 파업
 
 17일 시위를 조직한 노란조끼 조정위원회는 19일 아침 24일(토) '2막'(acte II)을 선언했다. 조정위 사이트(17octobregiletjaune.net)에는 24일 행동 지도가 올라왔고, 31일 추가 집회도 예고됐다. 사이트 편집자 뱅자맹 발은 AFP에 "2막이 있어야 한다는 엄청난 압력이 분명히 있다"(Il y a clairement une énorme poussée pour qu'il y ait un Acte II)고 말했다. CFDT·CGT·FO·UNSA·FSU 5개 노조는 임금·공공서비스·고용을 내걸고 11월 5일 전국 파업과 시위를 예고했고, 일부는 그날부터 "무기한 총봉쇄"를 주장한다([Sud Radio](https://www.sudradio.fr/sud-radio/les-gilets-jaunes-appellent-a-une-nouvelle-journee-de-mobilisation-des-ce-samedi-24-octobre), [actu17](https://actu17.fr/societe/pillages-sebastien-lecornu-annonce-des-couvre-feux-partiels-et-une-reponse-penale-massive.html)).
@@ -118,7 +130,9 @@ tracking:
 - 피해 상점은 1,500곳(17~18일 보도), 2,000곳 이상(상공회의소), 3,000곳(총리·상무장관)으로 시점마다 다르다. 르코르뉘 총리의 "아무도 죽지 않았다"는 발언과 파리 행진 중 심폐정지 사망 1명은 별개 사실이다. 세계일보는 사망 2명의 원인을 수사 중이라고 썼으나 다른 매체에서 확인하지 못했다.
 - 17일 투입 경찰 규모는 한국일보(FT 인용) 약 1만 명, 글로벌이코노믹(로이터 인용) 6만 명으로 엇갈린다.
 - 통행금지 적용 도시·구역·시간은 파리 경찰청과 각 도청의 arrêté 원문이 아니라 franceinfo·ICI 보도로 확인했다. 마르세유·보르도·툴루즈 내용은 ICI 지도에만 기댔다. 세계일보가 전한 드냉 '오후 9시' 통금은 franceinfo의 노르 4개 도시 '밤 8시'와 다르고, 노르 통행금지 기간도 '19·20일 이틀 밤'과 '25일까지'(Le Grand Continent)로 보도가 엇갈린다.
-- 예산안 1부 표결 연기는 하원의 공식 의사일정 변경 공지가 아니라 LCP·Entrevue 보도로 확인했다.
+- 예산안 1부 표결 연기는 처음에 LCP·Entrevue 보도로 확인했고, 11월 3일 표결 일정은 하원 공식 안내로 확인했다. 27일 실제 심의 재개 여부와 진행 상황은 원문으로 확인하지 못했다.
+- 사회보장재정법안 부결 표수·그룹별 투표는 하원 공개표결 원문이 아니라 NosParlementaires 정리로 확인했다. 예산안 전체 표결 11월 17일 일정도 같은 매체에만 기댔다.
+- '파손자 부담' 법안의 상원 본회의 표결 날짜와 결과는 아직 확인하지 못했다.
 - 르코르뉘 총리의 "극좌 네트워크가 대선 일정을 흔들려 한다"는 주장은 정보기관 보고를 근거로 한다고 보도됐으나 공개된 증거는 없다.
 - 24일 체포 수는 ICI 생중계의 저녁 7시 39분 집계("약 1,000명")다. 이후 나온 최종 집계와 부상자 수는 원문으로 확인하지 못했다.
 - 피해 상점 직원 100% 부분실업수당이 실제로 시행됐는지는 확인하지 못했다.
@@ -128,6 +142,7 @@ tracking:
 
 - 2026-10-21: 19~20일 실제 통행금지 적용 지역과 2027년 예산안 1부 하원 표결 연기 반영, 부분실업수당 시행 확인은 22일 checkpoint로 이월
 - 2026-10-27: 24일 '2막' 시위 규모·체포·부상 반영, 지난 checkpoint(22·24일) 정리
+- 2026-10-28: 사회보장재정법안 23일 하원 부결(찬성 1·반대 115·기권 22), 예산안 1부 표결 11월 3일로 연기, '파손자 부담' 법안 27일 상원 본회의 심사 시작 반영. 10월 27일 확인 일정 제거
 
 ## 출처
 
@@ -166,6 +181,10 @@ tracking:
 - [Sans enthousiasme, l'Assemblée s'empare du budget de la Sécu et ses économies massives — Boursorama(AFP)](https://www.boursorama.com/actualite-economique/actualites/sans-enthousiasme-l-assemblee-s-empare-du-budget-de-la-secu-et-ses-economies-massives-e948e36213d5bb2125c0c9b8ba23a5c6)
 - [Mobilisation du 24 octobre : 410.000 manifestants en France selon le gouvernement, 800.000 d'après la CGT — ICI](https://www.ici.fr/infos/societe/direct-mobilisation-du-24-octobre-des-manifestations-partout-en-france-70-000-policiers-et-gendarmes-deployes-8725021)
 - [Commerces ravagés et pillés le 17 octobre : l'État au chevet des entreprises — LCP](https://lcp.fr/actualites/commerces-ravages-et-pilles-le-17-octobre-l-etat-au-chevet-des-entreprises-le-projet-de)
+- [Vote du PLFSS 2027 : l'Assemblée rejette le budget de la Sécu — NosParlementaires](https://nosparlementaires.fr/actualites/budget-secu-2027-vote-seance-premiers-articles-supprimes)
+- [Examen de la première partie du projet de loi de finances pour 2027 — Assemblée nationale](https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/examen-de-la-premiere-partie-du-projet-de-loi-de-finances-pour-2027)
+- [Budget 2027 : calendrier à l'Assemblée — NosParlementaires](https://nosparlementaires.fr/actualites/budget-2027-calendrier-assemblee-cinq-semaines)
+- [Loi « casseurs-payeurs » : que contient le texte examiné au Sénat ? — Public Sénat](https://www.publicsenat.fr/actualites/parlementaire/loi-casseurs-payeurs-que-contient-le-texte-examine-au-senat)
 
 ---
 
