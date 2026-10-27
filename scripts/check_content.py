@@ -61,6 +61,8 @@ VIDEO_EXTENSIONS = {
 }
 SHARED_BMFF_EXTENSIONS = {".mp4", ".mov", ".3gp", ".3g2", ".f4v"}
 SHARED_MPEG_TS_EXTENSIONS = {".ts", ".mts", ".m2ts"}
+# 음성만 담을 수도 있는 컨테이너는 확장자의 MIME 추정(운영체제 mime.types에 따라 다름) 대신 내용으로 판정한다.
+SHARED_AV_EXTENSIONS = {".webm", ".asf"}
 MAX_MARKDOWN_BYTES = 1_000_000
 MAX_IMAGE_BYTES = 10_000_000
 MAX_IMAGE_PIXELS = 20_000_000
@@ -806,7 +808,8 @@ def is_video_file(candidate: Path) -> bool:
     media_type, _encoding = mimetypes.guess_type(candidate.name)
     suffix = candidate.suffix.lower()
     if suffix in VIDEO_EXTENSIONS or bool(
-        suffix not in SHARED_BMFF_EXTENSIONS | SHARED_MPEG_TS_EXTENSIONS | {".webm"}
+        suffix
+        not in SHARED_BMFF_EXTENSIONS | SHARED_MPEG_TS_EXTENSIONS | SHARED_AV_EXTENSIONS
         and media_type
         and media_type.startswith("video/")
     ):
