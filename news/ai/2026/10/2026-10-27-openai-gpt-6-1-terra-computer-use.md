@@ -1,8 +1,9 @@
 ---
 title: OpenAI, 컴퓨터 사용 특화 GPT-6.1 Terra 출시…Astra·Sol보다 3배 빠르고 100만 토큰당 1·5달러, 사이버 '심각' 등급은 유지
-slug: 2026-10-28-openai-gpt-6-1-terra-computer-use
+slug: 2026-10-27-openai-gpt-6-1-terra-computer-use
 topic: ai
-published_at: 2026-10-28T01:20:00+09:00
+published_at: 2026-10-27T17:55:00+09:00
+updated_at: 2026-10-28T01:20:00+09:00
 tags:
   - OpenAI
   - GPT-6.1 Terra
@@ -66,6 +67,10 @@ OpenAI 준비성 프레임워크에서 Terra는 사이버 보안 '심각(Critica
 - Artificial Analysis가 지능 지수·환각률·과제당 비용의 개선은 독립적으로 확인했다. 속도와 Claude Opus 5.5 대비 비용은 아직 OpenAI 자체 주장뿐이다.
 - 일부 보도는 속도 비교 기준을 GPT-5.6 Terra로 적었지만, OpenAI 발표문의 비교 대상은 GPT-6 Astra와 GPT-6.1 Sol이다.
 - 컴퓨터 사용 에이전트가 3할 가까이 제한을 어긴 평가 결과는, 화면을 직접 조작하는 업무에 맡길 때 권한 범위를 좁혀야 한다는 뜻이다.
+
+## 갱신 기록
+
+- 2026-10-28: Artificial Analysis 독립 평가(지능 지수·Coding Agent Index·환각률·과제당 비용) 추가, GPT-5.6 Terra 요금(입력 2달러·출력 12달러) 비교를 바로잡음
 
 ## 출처
 
