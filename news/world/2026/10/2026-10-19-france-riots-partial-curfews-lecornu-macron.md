@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-10-28T01:19:00+09:00
+updated_at: 2026-10-29T19:15:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,11 +18,9 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-10-28T01:19:00+09:00
-    note: 사회보장재정법안 23일 하원 부결, 예산안 1부 표결 11월 3일로 연기, '파손자 부담' 법안 27일 상원 본회의 심사 시작 반영
+    at: 2026-10-29T19:15:00+09:00
+    note: "'파손자 부담' 법안 27~28일 밤 상원 1독회 가결(찬성 229·반대 105), 하원 이송과 내무장관의 국사원 회부 예고 반영"
   checkpoints:
-    - date: 2026-10-29
-      note: 상원 본회의의 '파손자 부담' 법안 심사·표결 결과
     - date: 2026-10-31
       note: 노란조끼 조정위가 예고한 추가 집회일
     - date: 2026-11-03
@@ -99,7 +97,11 @@ tracking:
 
 2027년 예산안 1부(세입)는 하원 공식 일정상 27일부터 11월 2일(월)까지 심의를 이어 가고, 1부 전체에 대한 표결은 11월 3일(화) 오후로 잡혔다. 당초 20일에서 2주 미뤄진 셈이다([하원](https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/examen-de-la-premiere-partie-du-projet-de-loi-de-finances-pour-2027)). NosParlementaires는 예산안 전체 표결은 11월 17일(화)로 유지된다고 전했다([NosParlementaires](https://nosparlementaires.fr/actualites/budget-2027-calendrier-assemblee-cinq-semaines)).
 
-'파손자 부담' 법안은 21일 상원 법사위원회를 통과한 뒤 27일 오후 4시 30분(한국시각 28일 0시 30분)부터 상원 본회의에서 심사가 시작됐다. 법안은 피해를 낸 집단에 "알면서 참여한" 사람과 치안 병력의 두 차례 해산 경고 뒤에도 남은 사람에게 연대 민사 책임을 지우고, 배상액은 1인당 1만 유로로 묶었다. 배상금은 주거수당·가족수당에서 떼어 갈 수 있으며, 위원회 심사에서 최소 생계비를 남기는 조건으로 RSA(활동연대수당)가 추가됐다. 국민연합은 상한을 올리는 수정안을 냈다. 보고자인 다비드 마르그리트 상원의원(공화당)은 "프랑스인들의 기대에 단호하고 분명하며 실효적인 답"이라고 했다([Public Sénat](https://www.publicsenat.fr/actualites/parlementaire/loi-casseurs-payeurs-que-contient-le-texte-examine-au-senat)). 28일 새벽(한국시각) 현재 본회의 표결 결과는 확인하지 못했다.
+'파손자 부담' 법안은 21일 상원 법사위원회를 통과한 뒤 27일 오후 4시 30분(한국시각 28일 0시 30분)부터 상원 본회의에서 심사가 시작됐다. 법안은 피해를 낸 집단에 "알면서 참여한" 사람과 치안 병력의 두 차례 해산 경고 뒤에도 남은 사람에게 연대 민사 책임을 지우고, 배상액은 1인당 1만 유로로 묶었다. 배상금은 주거수당·가족수당에서 떼어 갈 수 있으며, 위원회 심사에서 최소 생계비를 남기는 조건으로 RSA(활동연대수당)가 추가됐다. 국민연합은 상한을 올리는 수정안을 냈다. 보고자인 다비드 마르그리트 상원의원(공화당)은 "프랑스인들의 기대에 단호하고 분명하며 실효적인 답"이라고 했다([Public Sénat](https://www.publicsenat.fr/actualites/parlementaire/loi-casseurs-payeurs-que-contient-le-texte-examine-au-senat)). 상원은 6시간 넘는 토론 끝에 27~28일 밤(현지시각) 1독회에서 이 법안을 찬성 229표, 반대 105표로 가결했다. 상원은 원안보다 법안을 크게 강화했다. 배상금을 압류할 수 있는 사회수당에 가족보충수당·신학기수당·근로장려금(prime d'activité)을 더했고, 행정적 시위 금지, 외국인 입국·체류 금지형, 형량 강화, 시위 현장 드론·알고리즘 영상감시 완화, 소란을 일으킨 사람의 사회주택 퇴거 조항도 넣었다. 공공질서에 중대한 위협이 되는 온라인 콘텐츠, 특히 "봉기 선동"(appels à l'insurrection)을 행정당국이 삭제 요청하고 플랫폼이 24시간 안에 지우지 않으면 차단·검색 제외할 수 있게 한 정부 수정안은 찬성 219표, 반대 115표로 채택됐다. 정부는 1시간 긴급 삭제 절차도 넣으려 했다가 헌법·EU법 위반 우려로 막판에 뺐다([Public Sénat](https://www.publicsenat.fr/actualites/parlementaire/le-senat-adopte-le-projet-de-loi-casseurs-payeurs-apres-lavoir-largement-durci), [Le Club des Juristes](https://www.leclubdesjuristes.com/en-bref/le-senat-adopte-le-projet-de-loi-casseurs-payeurs-18070/)).
+
+franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘녜스 내무장관은 법안이 "상식"(bon sens)의 문제이고 상원이 텍스트를 "크게 보강했다"(considérablement enrichi)고 말했지만, 상원이 넓힌 수당 압류 조항은 국사원(Conseil d'État)에 회부해 "연대와 배상의 균형"(l'équilibre entre solidarité et réparation)을 확인받겠다고 했다. 좌파는 "자유를 해치는 일탈"(dérive liberticide)이라고 비판했다([franceinfo](https://www.franceinfo.fr/politique/prestations-sociales-saisies-nouvelles-interdictions-de-manifester-le-projet-de-loi-casseurs-payeurs-adopte-et-elargi-au-senat-en-plein-c-ur-de-la-contestation_8256748.html), [Le Club des Juristes](https://www.leclubdesjuristes.com/en-bref/loi-casseurs-payeurs-laurent-nunez-annonce-une-saisine-du-conseil-detat-18072/)). 법안은 하원으로 넘어갔고 아직 시행 중인 법이 아니다. 하원 심사 날짜는 정해지지 않았다.
+
+통행금지는 일부 지역에서 이어지고 있다. 노르 도청은 26일 릴·와티니·드냉·두에·마를리·발랑시엔 일부 구역의 보호자 없는 미성년자 대상 통행금지(밤 9시~오전 6시)를 29일(목)까지 사흘 밤 연장했다([France 3 Hauts-de-France](https://france3-regions.franceinfo.fr/hauts-de-france/nord-0/lille/violences-urbaines-le-couvre-feu-pour-les-mineurs-non-accompagnes-prolonge-pour-trois-nuits-3439656.html)).
 
 ## 다음 고비: 24일 노란조끼 '2막'과 11월 5일 파업
 
@@ -132,7 +134,7 @@ tracking:
 - 통행금지 적용 도시·구역·시간은 파리 경찰청과 각 도청의 arrêté 원문이 아니라 franceinfo·ICI 보도로 확인했다. 마르세유·보르도·툴루즈 내용은 ICI 지도에만 기댔다. 세계일보가 전한 드냉 '오후 9시' 통금은 franceinfo의 노르 4개 도시 '밤 8시'와 다르고, 노르 통행금지 기간도 '19·20일 이틀 밤'과 '25일까지'(Le Grand Continent)로 보도가 엇갈린다.
 - 예산안 1부 표결 연기는 처음에 LCP·Entrevue 보도로 확인했고, 11월 3일 표결 일정은 하원 공식 안내로 확인했다. 27일 실제 심의 재개 여부와 진행 상황은 원문으로 확인하지 못했다.
 - 사회보장재정법안 부결 표수·그룹별 투표는 하원 공개표결 원문이 아니라 NosParlementaires 정리로 확인했다. 예산안 전체 표결 11월 17일 일정도 같은 매체에만 기댔다.
-- '파손자 부담' 법안의 상원 본회의 표결 날짜와 결과는 아직 확인하지 못했다.
+- '파손자 부담' 법안 상원 표결 결과는 senat.fr 공식 표결 기록이 아니라 Public Sénat·Le Club des Juristes·franceinfo 보도로 교차 확인했다. 뉘녜스 장관의 국사원 회부가 실제로 이뤄졌는지와 하원 심사 일정, 신속 절차 적용 여부는 확인하지 못했다.
 - 르코르뉘 총리의 "극좌 네트워크가 대선 일정을 흔들려 한다"는 주장은 정보기관 보고를 근거로 한다고 보도됐으나 공개된 증거는 없다.
 - 24일 체포 수는 ICI 생중계의 저녁 7시 39분 집계("약 1,000명")다. 이후 나온 최종 집계와 부상자 수는 원문으로 확인하지 못했다.
 - 피해 상점 직원 100% 부분실업수당이 실제로 시행됐는지는 확인하지 못했다.
@@ -143,6 +145,7 @@ tracking:
 - 2026-10-21: 19~20일 실제 통행금지 적용 지역과 2027년 예산안 1부 하원 표결 연기 반영, 부분실업수당 시행 확인은 22일 checkpoint로 이월
 - 2026-10-27: 24일 '2막' 시위 규모·체포·부상 반영, 지난 checkpoint(22·24일) 정리
 - 2026-10-28: 사회보장재정법안 23일 하원 부결(찬성 1·반대 115·기권 22), 예산안 1부 표결 11월 3일로 연기, '파손자 부담' 법안 27일 상원 본회의 심사 시작 반영. 10월 27일 확인 일정 제거
+- 2026-10-29: '파손자 부담' 법안 상원 1독회 가결(찬성 229·반대 105)과 상원 수정 내용, 국사원 회부 예고, 노르 미성년자 통행금지 연장 반영. 10월 29일 확인 일정 제거
 
 ## 출처
 
@@ -185,6 +188,11 @@ tracking:
 - [Examen de la première partie du projet de loi de finances pour 2027 — Assemblée nationale](https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/examen-de-la-premiere-partie-du-projet-de-loi-de-finances-pour-2027)
 - [Budget 2027 : calendrier à l'Assemblée — NosParlementaires](https://nosparlementaires.fr/actualites/budget-2027-calendrier-assemblee-cinq-semaines)
 - [Loi « casseurs-payeurs » : que contient le texte examiné au Sénat ? — Public Sénat](https://www.publicsenat.fr/actualites/parlementaire/loi-casseurs-payeurs-que-contient-le-texte-examine-au-senat)
+- [Le Sénat adopte le projet de loi casseurs-payeurs après l'avoir largement durci — Public Sénat](https://www.publicsenat.fr/actualites/parlementaire/le-senat-adopte-le-projet-de-loi-casseurs-payeurs-apres-lavoir-largement-durci)
+- [Le Sénat adopte le projet de loi casseurs-payeurs — Le Club des Juristes](https://www.leclubdesjuristes.com/en-bref/le-senat-adopte-le-projet-de-loi-casseurs-payeurs-18070/)
+- [Loi casseurs-payeurs : Laurent Nuñez annonce une saisine du Conseil d'État — Le Club des Juristes](https://www.leclubdesjuristes.com/en-bref/loi-casseurs-payeurs-laurent-nunez-annonce-une-saisine-du-conseil-detat-18072/)
+- [Le projet de loi casseurs-payeurs adopté et élargi au Sénat — franceinfo](https://www.franceinfo.fr/politique/prestations-sociales-saisies-nouvelles-interdictions-de-manifester-le-projet-de-loi-casseurs-payeurs-adopte-et-elargi-au-senat-en-plein-c-ur-de-la-contestation_8256748.html)
+- [Violences urbaines : le couvre-feu pour les mineurs non accompagnés prolongé pour trois nuits — France 3 Hauts-de-France](https://france3-regions.franceinfo.fr/hauts-de-france/nord-0/lille/violences-urbaines-le-couvre-feu-pour-les-mineurs-non-accompagnes-prolonge-pour-trois-nuits-3439656.html)
 
 ---
 
