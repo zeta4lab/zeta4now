@@ -1,7 +1,7 @@
 # zeta4now 작성 지침
 
-이 저장소는 [Zeta4 Now](https://now.zeta4.net)에 공개되는 기사 Markdown의 원본이다. 원본은 운영자 맥(z4mac)의
-자체 호스팅 Forgejo 비공개 저장소 `zeta4lab/zeta4now`(`http://z4mac:3000`)에 있고, GitHub는 쓰지 않는다.
+이 저장소는 [Zeta4 Now](https://now.zeta4.net)에 공개되는 기사 Markdown의 원본이다. 원본은 공개 GitHub 저장소
+`zeta4lab/zeta4now`다.
 Claude, Codex, Gemini 등 대화형 에이전트는 이 지침을 따른다. 설명과 기사는 한국어로 쓰고, 코드 식별자와 front matter 키는 원문을 유지한다.
 
 ## 기본 발행 방식: 데스크 발행
@@ -17,11 +17,10 @@ Claude, Codex, Gemini 등 대화형 에이전트는 이 지침을 따른다. 설
 3. **초안 제시** — 파일을 만들기 전에 제목, 요약, 본문, 출처 목록 전체를 대화에 보여 준다.
 4. **데스크** — 사용자의 수정 지시를 반영해 다시 보여 준다. 사용자가 승인할 때까지 반복한다.
 5. **파일 작성과 검증** — 승인되면 아래 형식으로 파일을 쓰고 [검증](#검증)을 통과시킨다.
-6. **PR** — `desk/<slug>` 브랜치에 `content: <제목>` 메시지로 커밋하고 `origin`(Forgejo)에 push한 뒤 `main` 대상
-   PR을 연다([Forgejo PR 열기](#forgejo-pr-열기)). PR 링크(`http://z4mac:3000/zeta4lab/zeta4now/pulls/<번호>`)를
-   사용자에게 알린다. 사용자는 휴대폰(Tailscale)에서 PR을 보고 직접 고칠 수도 있다.
+6. **PR** — `desk/<slug>` 브랜치에 `content: <제목>` 메시지로 커밋하고 `origin`(GitHub)에 push한 뒤 `main` 대상
+   PR을 연다([PR 열기](#pr-열기)). PR 링크를 사용자에게 알린다. 사용자는 휴대폰에서 PR을 보고 직접 고칠 수도 있다.
 7. **머지** — 사용자가 머지를 명시적으로 승인하고 `Public content contract` 검사가 통과한 경우에만 squash merge한다.
-   `main`은 보호되어 직접 push할 수 없다. 머지 후 1~2분 안에 `https://now.zeta4.net/a/<slug>`에 반영되는지 확인한다.
+   머지 후 1~2분 안에 `https://now.zeta4.net/a/<slug>`에 반영되는지 확인한다.
    처음 발행되는 기사는 머지 즉시 Bluesky에 자동 게시되므로, 여러 건을 낼 때는 간격을 둔다.
 
 ## 기사 형식
@@ -111,12 +110,12 @@ tracking:
 1. **즉시 공개 중단**: 권리 침해가 분명해 보이면 사실 확인 전에 [관리 화면](https://now.zeta4.net/admin) 기사 목록에서 해당 기사를 숨긴다. 관리 화면은 사용자의 Google 로그인 세션이 필요하므로 사용자 브라우저로 처리하고, 세션이 없으면 사용자에게 로그인만 요청한다. 숨긴 기사는 404와 `noindex`로 응답하고 목록, 검색, 사이트맵에서 빠진다. 저장소는 바꾸지 않으므로 되돌릴 수 있다.
 2. **판단**: 문제가 된 문장만 고치거나 지워서 해결되면 정정 절차로 처리하고 숨김을 푼다. 기사 전체를 내려야 하면 사용자에게 삭제 결정을 받는다.
 3. **파일 삭제**: 기사 파일과 같은 이름의 `<slug>/` 사진 디렉터리를 지우는 PR을 열고 머지한다. 브랜치는 `desk/<slug>-remove-<YYYYMMDD>`, 커밋 메시지는 `content: <제목> 삭제`다. 머지되면 webhook이 검색 색인과 R2 사진 사본을 지우고 IndexNow로 네이버·빙에 삭제를 알린다. 구글은 Search Console의 삭제 요청을 사용자 브라우저로 넣는다.
-4. **이력 정리(사용자가 지시할 때만)**: 파일을 지워도 Forgejo의 Git 이력과 매일 백업(R2 `zeta4n-backup`, 30일 보존)에는 내용이 남는다. 사용자가 이력 삭제까지 지시하면 다음 순서로 실행한다.
-   1. Forgejo `main` 보호 규칙(저장소 설정 → 브랜치)에서 강제 push 금지를 잠시 풀고, 원래 값을 기록해 둔다.
+4. **이력 정리(사용자가 지시할 때만)**: 파일을 지워도 Git 이력과 GitHub 캐시에는 내용이 남는다. 사용자가 이력 삭제까지 지시하면 다음 순서로 실행한다.
+   1. `main` 보호 규칙이 있으면 강제 push 금지를 잠시 푼다(`gh api`로 `allow_force_pushes` 변경, 원래 값을 기록해 둔다).
    2. 새로 clone한 저장소에서 `git filter-repo --invert-paths --path <기사 경로> --path <사진 디렉터리>`로 이력에서 지우고 `main`에 강제 push한다. 남은 `desk/*` 브랜치와 PR 참조도 지운다.
    3. 보호 규칙을 바로 원래대로 되돌리고 확인한다.
    4. 로컬 clone을 원격 기준으로 다시 맞추고, zeta4n 관리 화면에서 전체 재동기화를 실행한다(D1의 `commit_sha`가 사라진 커밋을 가리킬 수 있다).
-   5. 그 내용이 든 백업 dump를 지울지, 30일 만료를 기다릴지 사용자에게 묻는다.
+   5. 남은 캐시와 PR 참조 삭제는 GitHub Support의 민감 정보 삭제 요청이 필요하다. 요청 내용을 작성해 사용자 계정으로 제출한다.
 
    권한 설정 때문에 에이전트가 강제 push나 보호 규칙 변경을 실행하지 못하면, 막힌 단계와 실행할 명령을 사용자에게 알리고 멈춘다.
 
@@ -129,19 +128,15 @@ PYTHONDONTWRITEBYTECODE=1 uv run --with markdown-it-py==4.2.0 --with pillow==12.
 
 `공개 콘텐츠 계약 검증을 통과했습니다.`가 나와야 PR을 연다.
 
-## Forgejo PR 열기
+## PR 열기
 
-`gh`는 쓰지 않는다. z4mac에서 운영자 토큰을 키체인(git credential)에서 꺼내 Forgejo API로 연다. 토큰 값은 출력하지 않는다.
+`gh`로 연다.
 
 ```bash
-T=$(printf 'protocol=http\nhost=z4mac:3000\nusername=zeta\n\n' | git credential fill | sed -n 's/^password=//p')
-curl -s -X POST -H "Authorization: token $T" -H 'Content-Type: application/json' \
-  --data '{"title":"content: <제목>","head":"desk/<slug>","base":"main","body":"<요약>"}' \
-  http://z4mac:3000/api/v1/repos/zeta4lab/zeta4now/pulls
+gh pr create --repo zeta4lab/zeta4now --base main --head desk/<slug> --title "content: <제목>" --body "<요약>"
 ```
 
-검사 상태는 `GET /api/v1/repos/zeta4lab/zeta4now/commits/<sha>/status`, 사용자가 승인한 squash merge는
-`POST /api/v1/repos/zeta4lab/zeta4now/pulls/<번호>/merge`(`{"Do":"squash"}`)로 한다.
+검사 상태는 `gh pr checks <번호>`, 사용자가 승인한 squash merge는 `gh pr merge <번호> --squash`로 한다.
 
 API 키 기반 자동 생성 경로(`zeta4now-mcp`, `zeta4s`)는 2026-10-27에 폐기했다. 이전 기사의 `generated_by` 값은 그대로 둔다.
 

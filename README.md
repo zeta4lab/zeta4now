@@ -1,7 +1,7 @@
 # zeta4now
 
-`zeta4now`는 [Zeta4 Now](https://now.zeta4.net)가 공개하는 소식 문서의 원본 저장소다. 운영자 맥(z4mac)의
-자체 호스팅 Forgejo에 비공개로 두며, 독자에게는 사이트의 기사와 기사 하단 갱신 기록으로 공개한다.
+`zeta4now`는 [Zeta4 Now](https://now.zeta4.net)가 공개하는 소식 문서의 원본 저장소다. 공개 GitHub 저장소
+`zeta4lab/zeta4now`에 두며, 독자에게는 사이트의 기사와 기사 하단 갱신 기록으로 공개한다.
 문서는 Markdown과 YAML front matter로 관리한다.
 
 ## 문서 위치
@@ -50,11 +50,11 @@ news/ai/2026/08/2026-08-13-ai-daily/data-center.webp
 
 기본은 **데스크 발행**이다.
 
-1. 사용자가 z4mac의 Claude Code(휴대폰은 Claude 앱 Remote Control)에게 기사를 지시한다.
+1. 사용자가 Claude Code(휴대폰은 Claude 앱 Remote Control)에게 기사를 지시한다.
 2. 에이전트가 공개 출처를 조사해 초안을 대화로 제시하고, 사용자가 데스크(검토·수정)한다.
-3. 승인된 초안만 파일로 만들어 검증하고 `desk/<slug>` 브랜치의 Forgejo PR로 올린다.
-4. 사용자가 PR을 승인하면 `Public content contract` 검사(Forgejo Actions) 통과 후 `main`에 merge한다.
-5. Forgejo webhook이 조회·검색 서비스에 변경을 알리고 D1 검색 색인과 R2 사진 사본을 갱신한다.
+3. 승인된 초안만 파일로 만들어 검증하고 `desk/<slug>` 브랜치의 GitHub PR로 올린다.
+4. 사용자가 PR을 승인하면 `Public content contract` 검사(GitHub Actions) 통과 후 `main`에 merge한다.
+5. GitHub webhook이 조회·검색 서비스에 변경을 알리고 D1 검색 색인과 R2 사진 사본을 갱신한다.
 
 에이전트가 따르는 세부 절차는 [`AGENTS.md`](AGENTS.md)에 있다.
 
