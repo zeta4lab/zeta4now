@@ -3,6 +3,7 @@ title: AKS 클러스터와 노드풀 만들기…시스템 풀 분리, 가용 �
 slug: 2026-10-30-aks-102-cluster-and-node-pools
 topic: cloud
 published_at: 2026-10-30T00:31:00+09:00
+updated_at: 2026-10-30T21:00:00+09:00
 tags:
   - AKS 입문
   - AKS
@@ -44,7 +45,7 @@ az aks nodepool add -g $RG --cluster-name $CLUSTER --name systempool \
 
 ## 노드 OS: 기본은 Ubuntu, 은퇴 일정을 꼭 확인
 
-`--os-sku`를 지정하지 않으면 Ubuntu 노드가 만들어진다. Kubernetes 1.35 이상에서 `Ubuntu`는 24.04를 가리킨다. 다른 선택지로 Microsoft의 Azure Linux(`AzureLinux3`)와 1.34부터 GA된 Azure Container Linux가 있다. Linux 노드 이미지는 매주, Windows 이미지는 매월 나온다([Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/node-images)).
+`--os-sku`를 지정하지 않으면 Ubuntu 노드가 만들어진다. 기본 Ubuntu 버전은 Kubernetes 버전을 따라 바뀌는데, 1.35의 기본값은 Microsoft 문서끼리 엇갈린다. OS 버전 문서는 1.35부터 24.04라고 적었지만, 같은 페이지의 다른 행과 버전 지원 문서의 구성 요소 표에는 1.35에 22.04가 적혀 있다([Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/upgrade-os-version), [Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions)). 1.35 클러스터라면 `az aks nodepool list`로 실제 노드 이미지를 확인한다. 다른 선택지로 Microsoft의 Azure Linux(`AzureLinux3`)와 1.34부터 GA된 Azure Container Linux가 있다. Linux 노드 이미지는 매주, Windows 이미지는 매월 나온다([Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/node-images)).
 
 | OS | 상태 |
 |---|---|
@@ -104,11 +105,17 @@ az aks maintenanceconfiguration add -g $RG --cluster-name $CLUSTER \
 
 다음 회에서는 pod가 어떤 IP를 받고 트래픽이 어떻게 들어오고 나가는지, AKS 네트워킹을 다룬다.
 
+## 갱신 기록
+
+- 2026-10-30: 1.35 기본 Ubuntu 버전을 24.04로 단정한 문장을 문서 간 불일치를 밝히는 내용으로 정정
+
 ## 출처
 
 - [Use system node pools in AKS — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/use-system-pools)
 - [Reliability in AKS — Microsoft Learn](https://learn.microsoft.com/en-us/azure/reliability/reliability-aks)
 - [AKS node images — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/node-images)
+- [Upgrade the OS version for AKS node pools — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/upgrade-os-version)
+- [Supported Kubernetes versions in AKS — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions)
 - [Node auto-provisioning — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/node-autoprovision)
 - [Add a spot node pool to an AKS cluster — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/spot-node-pool)
 - [Automatically upgrade an AKS cluster — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/auto-upgrade-cluster)
