@@ -12,15 +12,15 @@ tags:
 summary: 메타가 9월 Connect 2026에서 레이밴 메타 3세대와 카메라 없는 오디오 안경을 내놓았고, 3세대는 10월 12일 국내에서도 74만 원부터 판매를 시작했다. 2021년 첫 모델부터 세대별 변화와 장단점을 정리하고, 이 기기가 맞는 사람과 기다려도 되는 사람을 나눠 봤다.
 generated_by: claude
 model: claude-opus-5-5
-updated_at: 2026-10-15T00:45:00+09:00
+updated_at: 2026-10-31T12:43:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-10-15T00:45:00+09:00
-    note: 3세대 국내 출시(10.12, 74만 원부터)와 메타의 네덜란드 판매 중단 거부·가처분 소송 예고 반영
+    at: 2026-10-31T12:43:00+09:00
+    note: 두 재단의 가처분 기일 신청(10.13)과 소비자연맹 소송 제기(10.15), 암스테르담 지방법원 11월 26일 심리 반영
   checkpoints:
-    - date: 2026-10-31
-      note: 오프리미츠·더파이어월의 메타 가처분 소송 심리 일정과 소비자연맹 소송 제기 여부
+    - date: 2026-11-26
+      note: 암스테르담 지방법원의 메타 안경 소송 심리 결과와 판결 선고 일정
 ---
 
 # 메타 AI 안경 5년…세대별로 무엇이 달라졌고 누구에게 필요한가
@@ -37,7 +37,7 @@ Connect 2026의 발표는 '선택지 확대'로 요약된다. 레이밴 메타 3
 
 시장은 메타가 사실상 독주하고 있다. 카운터포인트리서치에 따르면 2026년 상반기 AI 안경 출하량은 1년 전보다 263% 늘었고, 디스플레이 없는 AI 안경 시장에서 메타 점유율은 94%였다([9to5Mac](https://9to5mac.com/2026/09/21/report-ai-glasses-shipments-surged-263-in-h1-2026-as-apple-prepares-to-enter-the-market/)). 생산을 맡은 에실로룩소티카는 2분기 AI 안경 매출이 전년 대비 거의 두 배가 됐다고 밝혔다([Investing.com](https://www.investing.com/news/transcripts/earnings-call-transcript-essilorluxottica-posts-solid-h1-2026-growth-93CH-4817816)). 삼성·구글은 젠틀몬스터·와비파커와 만든 안드로이드 XR 안경 4종을 "올가을" 출시한다고 밝혔지만 가격은 공개하지 않았다([Road to VR](https://roadtovr.com/samsung-google-smart-glasses-designs-gentle-monster-warby-parker-release/)).
 
-사생활 논란은 오히려 커졌다. 네덜란드 안경 체인 한스 안데르스는 10월 초 네덜란드·벨기에에서 메타 안경 판매를 무기한 중단했다. 네덜란드 소비자연맹은 촬영 표시등(LED)을 스티커로 가린 채 촬영할 수 있었다며 메타에 10월 13일을 기한으로 이행 최고장을 보냈다([VRT](https://www.vrt.be/vrtnws/nl/2026/10/02/hans-anders-schort-verkoop-van-meta-camerabril-op-ook-in-belgie/)). 메타는 최신 모델은 LED를 가리면 카메라가 꺼진다고 설명한다. 기한인 10월 13일 메타는 네덜란드에서 판매를 중단하지 않겠다고 밝혔다. 안경 사업을 맡은 알렉스 하이멜은 기자간담회에서 이 논란을 카메라 달린 스마트폰이 처음 나왔을 때에 비유했다. 오프리미츠와 더파이어월 두 재단은 가처분 소송(kort geding)을 내기로 했고, 소비자연맹은 법적 조치를 검토한다고 했다([iBestuur](https://ibestuur.nl/data-en-ai/ethiek/meta-weigert-camerabrillen-uit-verkoop-te-halen)).
+사생활 논란은 오히려 커졌다. 네덜란드 안경 체인 한스 안데르스는 10월 초 네덜란드·벨기에에서 메타 안경 판매를 무기한 중단했다. 네덜란드 소비자연맹은 촬영 표시등(LED)을 스티커로 가린 채 촬영할 수 있었다며 메타에 10월 13일을 기한으로 이행 최고장을 보냈다([VRT](https://www.vrt.be/vrtnws/nl/2026/10/02/hans-anders-schort-verkoop-van-meta-camerabril-op-ook-in-belgie/)). 메타는 최신 모델은 LED를 가리면 카메라가 꺼진다고 설명한다. 기한인 10월 13일 메타는 네덜란드에서 판매를 중단하지 않겠다고 밝혔다. 안경 사업을 맡은 알렉스 하이멜은 기자간담회에서 이 논란을 카메라 달린 스마트폰이 처음 나왔을 때에 비유했다. 오프리미츠와 더파이어월 두 재단은 가처분 소송(kort geding)을 내기로 했고, 소비자연맹은 법적 조치를 검토한다고 했다([iBestuur](https://ibestuur.nl/data-en-ai/ethiek/meta-weigert-camerabrillen-uit-verkoop-te-halen)). 두 재단은 13일 오후 법원에 가처분 심리 기일을 신청했고, 몰래 촬영할 수 있는 한 안경을 시장에서 빼라고 요구한다([Villamedia](https://www.villamedia.nl/artikel/consumentenbond-offlimits-en-the-firewall-stappen-naar-rechter-om-meta-bril)). 소비자연맹도 15일 메타를 상대로 소송을 낸다고 밝혔고, 심리는 11월 26일 암스테르담 지방법원에서 열린다([Consumentenbond](https://www.consumentenbond.nl/nieuws/2026/consumentenbond-start-rechtszaak-tegen-meta-om-camerabril)). 소비자연맹은 메타가 판결 뒤 2주 안에 안경과 기본 설정을 고치고 촬영물을 AI 학습에 쓰지 말라고 요구한다. 메타가 법에 맞출 수 없다고 하면 판매 금지를 청구하되, 의료상 필요한 경우는 예외로 해 달라고 했다([MIXED](https://mixed-news.com/en/consumentenbond-court-case-meta-camera-glasses-sales-ban/)). 10월 31일 현재 판결은 나오지 않았다.
 
 ## 세대별 비교
 
@@ -92,6 +92,7 @@ Connect 2026의 발표는 '선택지 확대'로 요약된다. 레이밴 메타 3
 ## 갱신 기록
 
 - 2026-10-15: 레이밴 메타 3세대 국내 출시(10월 12일, 74만 원부터) 반영, 메타의 네덜란드 판매 중단 거부와 두 재단의 가처분 소송 예고 추가
+- 2026-10-31: 오프리미츠·더파이어월의 가처분 심리 기일 신청(10월 13일), 소비자연맹 소송 제기(10월 15일)와 11월 26일 암스테르담 지방법원 심리 일정 반영
 
 ## 출처
 
@@ -135,6 +136,9 @@ Connect 2026의 발표는 '선택지 확대'로 요약된다. 레이밴 메타 3
 - [레이밴 메타 3세대 12일 국내 출시 — 뉴스탭](https://www.newstap.co.kr/news/articleView.html?idxno=335257)
 - [레이밴 메타 3세대 국내 출시 — 위키트리](https://www.wikitree.co.kr/articles/1165505)
 - [Meta weigert camerabrillen uit verkoop te halen — iBestuur](https://ibestuur.nl/data-en-ai/ethiek/meta-weigert-camerabrillen-uit-verkoop-te-halen)
+- [Consumentenbond, Offlimits en The Firewall stappen naar rechter om Meta-bril — Villamedia](https://www.villamedia.nl/artikel/consumentenbond-offlimits-en-the-firewall-stappen-naar-rechter-om-meta-bril)
+- [Consumentenbond start rechtszaak tegen Meta om camerabril — Consumentenbond](https://www.consumentenbond.nl/nieuws/2026/consumentenbond-start-rechtszaak-tegen-meta-om-camerabril)
+- [Dutch consumer group asks a court to ban Ray-Ban Meta sales if Meta says it cannot comply — MIXED](https://mixed-news.com/en/consumentenbond-court-case-meta-camera-glasses-sales-ban/)
 
 ---
 

@@ -13,18 +13,19 @@ tags:
 summary: iOS 27과 안드로이드 17이 나오면서 온디바이스 AI는 '앱 안의 기능'에서 '앱을 부리는 운영체제'로 바뀌고 있다. 애플은 Foundation Models와 App Intents 스키마로, 구글은 Gemini Nano와 MCP식 AppFunctions로 길을 냈다. 두 플랫폼의 구조와 개발 방법, 차이를 정리했다.
 generated_by: claude
 model: claude-opus-5-5
+updated_at: 2026-10-31T12:43:00+09:00
 tracking:
-  status: ongoing
-  checkpoints:
-    - date: 2026-10-31
-      note: iOS 27.2 정식 배포와 시리 AI 한국어 지원 여부
+  status: closed
+  last_update:
+    at: 2026-10-31T12:43:00+09:00
+    note: iOS 27.2 정식 배포(10.26, 미국 시각)와 시리 AI 한국어 베타 지원, 연령·사용량·EU 제한 반영
 ---
 
 # 아이폰은 '스키마', 안드로이드는 'MCP'…온디바이스 AI가 앱을 부르는 두 가지 방식
 
 ## 한눈에 보기
 
-애플은 9월 14일 iOS 27과 함께 새 시리 'Siri AI'를 영어 베타로 내놓았고, 한국어 등 5개 언어는 10월에 추가한다고 밝혔다([Apple](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/)). 구글은 6월 16일 안드로이드 17을 내놓으며 "지능형 시스템으로 전환하는 시작"이라고 했다([Android Developers](https://developer.android.com/blog/posts/android-17-is-here)).
+애플은 9월 14일 iOS 27과 함께 새 시리 'Siri AI'를 영어 베타로 내놓았고, 한국어 등 5개 언어는 10월에 추가한다고 밝혔다([Apple](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/)). 약속대로 10월 26일(미국 시각) iOS 27.2를 정식 배포하며 시리 AI에 한국어, 프랑스어, 일본어, 포르투갈어, 스페인어를 추가했고, 시리 AI는 여전히 베타다([Apple](https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/)). 구글은 6월 16일 안드로이드 17을 내놓으며 "지능형 시스템으로 전환하는 시작"이라고 했다([Android Developers](https://developer.android.com/blog/posts/android-17-is-here)).
 
 두 회사 모두 연동을 두 방향으로 나눈다. 하나는 **앱이 기기 안의 모델을 호출하는 방향**(애플 Foundation Models, 구글 ML Kit GenAI API)이고, 다른 하나는 **시스템 AI가 앱의 기능을 호출하는 방향**(애플 App Intents, 구글 AppFunctions)이다. 큰 틀은 닮았지만 설계 철학은 다르다. 애플은 시스템이 정한 '스키마'에 앱을 맞추게 하고, 구글은 앱을 기기 안의 MCP 서버처럼 만들어 자유롭게 도구를 내놓게 한다. 개발자가 지금 바로 쓸 수 있는 범위도 다르다. 애플 쪽은 정식 API지만, 구글의 AppFunctions–Gemini 연동은 아직 비공개 프리뷰다.
 
@@ -111,11 +112,15 @@ AppFunctions는 안드로이드 16 이상에서 동작하며, 호출하는 쪽�
 
 - **iOS:** 핵심 콘텐츠를 `AppEntity`로, 주요 동작을 `AppIntent`로 정의하고, 해당 도메인 스키마가 있으면 채택한다. 화면 기반 요청이 중요하면 View Annotations를 붙인다. 생성 기능은 Foundation Models로 시작하되, 모델 교체가 가능한 구조라 프롬프트 평가(Evaluations)를 함께 갖춘다.
 - **안드로이드:** 요약·교정 같은 정형 작업은 ML Kit 기능별 API를, 자유 생성은 Prompt API를 쓰고, 기기 지원과 Nano 버전 확인, 할당량 초과 시 재시도, 포그라운드 전용 제약을 반드시 처리한다. 에이전트 연동은 AppFunctions로 미리 준비하고, ADB 명령과 테스트 에이전트 앱으로 검증한다.
-- **공통:** 한국어 품질은 따로 검증해야 한다. 시리 AI 한국어는 iOS 27.2 베타에 들어갔고 애플은 10월 확대를 예고했지만, 11일 현재 정식 배포는 확인되지 않았다([MacRumors](https://www.macrumors.com/2026/09/16/siri-ai-new-languages-ios-27-2/)). 시리 AI는 EU의 iOS·아이패드OS와 중국에서는 당분간 제공되지 않는다.
+- **공통:** 한국어 품질은 따로 검증해야 한다. 시리 AI 한국어는 10월 26일(미국 시각, 한국 27일) 배포된 iOS 27.2부터 쓸 수 있지만 아직 베타다. 애플 지원 언어로 설정한 Apple Intelligence 지원 기기가 필요하고, 13세 미만은 쓸 수 없으며, 하루 사용량 제한이 있다. 애플은 이 기능들의 사용량을 늘리는 유료 옵션을 나중에 내놓겠다고 했다([Apple](https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/), [ZDNet Korea](https://zdnet.co.kr/view/?no=20261027090306)). 시리 AI는 EU의 iOS·아이패드OS·watchOS와 중국에서는 당분간 제공되지 않는다.
 
 ## 남은 변수
 
-애플이 시리와 서드파티 에이전트 사이에 MCP 같은 공개 프로토콜을 둘지는 아직 발표되지 않았다. 구글은 AppFunctions의 정식 출시 일정과 Gemini 연동을 모든 개발자에게 열 시점을 밝히지 않았다. 국내에서는 이달 말 전후 시리 AI 한국어 정식 지원이 첫 시험대가 된다.
+애플이 시리와 서드파티 에이전트 사이에 MCP 같은 공개 프로토콜을 둘지는 아직 발표되지 않았다. 구글은 AppFunctions의 정식 출시 일정과 Gemini 연동을 모든 개발자에게 열 시점을 밝히지 않았다. 국내에서는 10월 27일 iOS 27.2와 함께 시리 AI 한국어 베타가 열렸으므로, 한국어로 앱 기능을 얼마나 정확히 불러내는지가 첫 시험대가 된다.
+
+## 갱신 기록
+
+- 2026-10-31: iOS 27.2 정식 배포(10월 26일, 미국 시각)와 시리 AI 한국어 베타 지원, 13세 미만 이용 불가·하루 사용량 제한 반영
 
 ## 출처
 
@@ -131,6 +136,8 @@ AppFunctions는 안드로이드 16 이상에서 동작하며, 호출하는 쪽�
 - [Overview of the ML Kit GenAI APIs — Google for Developers](https://developers.google.com/ml-kit/genai)
 - [Gemini Intelligence Android spec requirements — 9to5Google](https://9to5google.com/2026/05/15/gemini-intelligence-android-spec-requirements/)
 - [iOS 27.2 Adds Siri AI in New Languages — MacRumors](https://www.macrumors.com/2026/09/16/siri-ai-new-languages-ios-27-2/)
+- [Siri AI is available in more languages starting today — Apple](https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/)
+- [애플 iOS 27.2 출시…시리AI 한국어 지원·아이폰 듀오 애플 펜슬 호환 — ZDNet Korea](https://zdnet.co.kr/view/?no=20261027090306)
 
 ---
 
