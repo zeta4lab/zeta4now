@@ -14,14 +14,12 @@ tags:
 summary: 오픈소스 AI 코딩 에이전트 OpenCode가 10월 17일(현지시각) 퇴역 중이던 legacy 시스템에 무단 접근이 있었고 OpenCode Console 사용자 1.4%가 워크스페이스에 저장한 Anthropic·OpenAI·Google API 키가 노출됐을 수 있다고 밝혔다. 회사는 이를 "대규모 distillation 공격"과 연결했지만 근거는 내놓지 않았고, 사용자들은 수백~1,700달러의 무단 과금을 보고했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-10-28T01:23:00+09:00
+updated_at: 2026-10-31T12:43:00+09:00
 tracking:
-  status: ongoing
-  checkpoints:
-    - date: 2026-10-24
-      note: OpenCode의 사후 분석(post-mortem) 공개 여부와 진입 경로·피해 계정 수·보상 방침 발표 여부
-    - date: 2026-10-31
-      note: OpenAI의 공식 입장 표명 여부, 무단 과금 환불 처리 사례, GitHub 이슈 #56833 보상 요구 결과
+  status: closed
+  last_update:
+    at: 2026-10-31T12:43:00+09:00
+    note: 10월 31일까지 사후 분석·공식 보상 방침 미공개, 보상 요구 이슈는 봇이 '계획 없음'으로 닫음, OpenAI 회사 공식 입장 없음
 ---
 
 # OpenCode 콘솔 침해로 사용자 1.4%의 Anthropic·OpenAI·Google 키 노출…회사는 "대규모 증류 공격", 개발자는 키부터 바꿔야
@@ -84,9 +82,15 @@ Anthropic은 올해 2월 23일 글에서 distillation을 "덜 유능한 모델�
 
 두 번째 의미는 distillation 경제가 바뀌고 있다는 점이다. Anthropic이 2월과 9월, 10월에 연이어 공개한 대로 가짜 계정은 빠르게 막히고 비싸졌다. 정당한 고객의 키는 그 비용을 피해자에게 떠넘기면서 탐지도 피하는 수단이 된다. 이번 사건에서 실제로 키가 distillation에 쓰였는지는 입증되지 않았지만, 9월 보고서가 "정당한 기업이나 개인의 훔친 API 자격 증명"을 공격 인프라로 명시한 이상 개발자 키는 이제 자원이자 표적이다. 지출 상한 없는 키를 외부 서비스에 맡기는 관행은 이 사건 이후에도 그대로 둘 이유가 없다.
 
+## 2주 뒤: 사후 분석도 보상 방침도 없다
+
+공개 2주가 지난 10월 31일까지 OpenCode는 사후 분석을 내놓지 않았다. opencode.ai에는 블로그 페이지가 없고, 10월 30일 v2.2.5까지 이어진 공식 변경 기록에도 이번 사고를 다룬 항목은 없다. 그 사이 보안 관련 항목은 22일 v2.1.3의 런타임 Bun 1.4.4 보안 수정뿐이다([OpenCode 변경 기록](https://opencode.ai/changelog)). 31일 확인한 상태 페이지에도 보안 사건 항목은 없다([OpenCode 상태 페이지](https://status.opencode.ai/)). TechCrunch는 19일 기사에서 "OpenCode는 공격자가 옛 시스템에 어떻게 접근했는지, 키가 어떻게 저장돼 있었는지, 오용이 어디까지였는지 자세히 밝히지 않았다"(OpenCode has not detailed how attackers gained access to the older system, how keys were stored, or the full extent of any misuse)고 썼고, 회사는 사건이 진행 중이라고 했다([TechCrunch](https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/)).
+
+제공자 키 없이 Go 키만 폐기당한 구독자가 공식 보상 방침을 요구한 GitHub 이슈 #56833은 19일 OpenCode의 자동 응답 봇이 "결제와 계정 지원은 GitHub 이슈가 아니라 이메일로 처리한다"(Billing and account support is handled by email, not in GitHub issues)며 '계획 없음'(not planned)으로 닫았다. 사람 직원의 답변은 달리지 않았다([GitHub 이슈 #56833](https://github.com/anomalyco/opencode/issues/56833)). 환불에 관한 공개 언급은 여전히 Raad의 X 답글과 OpenAI 직원 Thibault Sottiaux의 개인 X 게시물뿐이고, OpenAI가 회사 공식 채널로 낸 입장이나 Anthropic·Google의 무단 과금 환불 언급은 찾지 못했다. 피해자가 환불을 받으려면 OpenCode(`help@anoma.ly`)와 각 제공자에 개별로 요청해야 하는 상황이 바뀌지 않았다.
+
 ## 확인할 점
 
-- OpenCode는 X 게시물과 이메일 외에 블로그, GitHub, 상태 페이지에 공식 공지를 올리지 않았다. 침입 경로, 접근 기간, 피해 계정 수, 키 저장·암호화 방식, 사후 분석 공개 일정은 모두 미공개다.
+- OpenCode는 X 게시물과 이메일 외에 블로그, GitHub, 상태 페이지에 공식 공지를 올리지 않았고, 10월 31일까지도 마찬가지다. 침입 경로, 접근 기간, 피해 계정 수, 키 저장·암호화 방식, 사후 분석 공개 일정은 모두 미공개다. 사후 분석 공개를 약속한 일정도 없어 추적은 여기서 마친다.
 - 침해 시각은 "지난밤"(미국 시각 16~17일 밤)으로만 확인됐다. 한 사용자 통지에 적힌 "17일 0시 30분(UTC)"은 XenoSpectrum 보도에 기댄 것으로, 회사가 공식으로 밝힌 시각은 아니다.
 - StepSecurity는 공지와 이메일을 18일, 다른 매체는 17일로 적었다. X 게시물 원본 타임스탬프(17일 18시 08분 UTC)를 기준으로 하면 시간대 차이로 보이지만, 이메일 발송 시각 자체는 회사가 밝히지 않았다.
 - 1.4%의 분모가 Console 가입자 전체인지, 외부 제공자를 연결한 사용자인지 보도가 엇갈린다. 본문은 회사의 문장("Console 사용자의 1.4%", "외부 제공자를 연결한 사용자의 일부")을 그대로 옮겼다.
@@ -98,6 +102,7 @@ Anthropic은 올해 2월 23일 글에서 distillation을 "덜 유능한 모델�
 ## 갱신 기록
 
 - 2026-10-28: 발행 전 나온 OpenAI(Thibault Sottiaux)의 크레딧 환불 언급과 OpenCode(Dax Raad)의 환불 진행 언급을 반영하지 않아 'OpenAI 입장 미확인', 'OpenCode 환불 방침 없음', '공개된 환불 정책 없음'으로 쓴 부분 정정
+- 2026-10-31: 10월 31일까지 사후 분석·공식 보상 방침이 나오지 않은 점, GitHub 이슈 #56833 종료, OpenAI 회사 공식 입장 부재 반영하고 추적 종료
 
 ## 출처
 
@@ -119,6 +124,8 @@ Anthropic은 올해 2월 23일 글에서 distillation을 "덜 유능한 모델�
 - [Console: all workspaces restricted since Oct 17, no breach email received — GitHub 이슈 #56703](https://github.com/anomalyco/opencode/issues/56703)
 - [Inconsistent provider naming across CLI, GUI, docs and site — GitHub 이슈 #56754](https://github.com/anomalyco/opencode/issues/56754)
 - [OpenCode 상태 페이지 — OpenCode](https://status.opencode.ai/)
+- [Changelog — OpenCode](https://opencode.ai/changelog)
+- [Hackers hit AI coding tool OpenCode, running up charges on users' AI accounts — TechCrunch](https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/)
 - [There are reports of a potential API key leak involving the AI programming tool 'OpenCode' — GIGAZINE](https://gigazine.net/gsc_news/en/20261019-opencode-leak/)
 - [Providers — OpenCode 문서](https://opencode.ai/docs/providers/)
 - [Console — OpenCode 문서](https://opencode.ai/docs/zen/)

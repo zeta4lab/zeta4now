@@ -11,16 +11,18 @@ tags:
   - RTX 5090
   - 메모리 부족
   - AI 하드웨어
-summary: 개인이 책상 위에서 AI 모델을 돌리고 미세조정하는 기기는 2026년 10월 기준 네 갈래다. NVIDIA DGX Spark 128GB는 출시가 3,999달러에서 6,950달러로 올랐고 10월 23일 64GB 모델이 4,999달러에 나온다. AMD Ryzen AI Halo는 3,999달러, 애플 M5 울트라 맥 스튜디오는 949만 원부터이며 512GB 구성은 10월 말에 나온다. RTX PRO 6000은 1만 6,000달러까지 올랐다. 메모리 부족이 2028년까지 간다는 마이크론 전망이 가격을 좌우한다.
+summary: 개인이 책상 위에서 AI 모델을 돌리고 미세조정하는 기기는 2026년 10월 기준 네 갈래다. NVIDIA DGX Spark 128GB는 출시가 3,999달러에서 6,950달러로 올랐고 10월 23일 파트너 판매를 시작한 64GB 모델은 4,999달러부터다. AMD Ryzen AI Halo는 3,999달러, 애플 M5 울트라 맥 스튜디오는 949만 원부터이며 512GB 구성은 10월 28일 미국에서 2만 2,299달러로 주문을 받기 시작했다. RTX PRO 6000은 1만 6,000달러까지 올랐다. 메모리 부족이 2028년까지 간다는 마이크론 전망이 가격을 좌우한다.
 generated_by: claude
 model: claude-fable-5-1
+updated_at: 2026-10-31T12:43:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-10-31T12:43:00+09:00
+    note: 맥 스튜디오 512GB 미국 가격(2만 2,299달러)과 배송 일정, NVIDIA Sync Model Launcher 베타 공개, DGX Spark 64GB 판매 일정 반영
   checkpoints:
-    - date: 2026-10-23
-      note: DGX Spark 64GB 파트너 6사 판매 시작과 실제 판매가, 국내 유통 여부
-    - date: 2026-10-31
-      note: M5 울트라 맥 스튜디오 512GB 구성 출시와 가격, NVIDIA Sync Model Launcher 공개 여부
+    - date: 2026-11-30
+      note: DGX Spark 64GB 국내 유통가, 맥 스튜디오 512GB 원화 가격과 배송, NVIDIA Sync 8대 클러스터 지원 공개 여부
     - date: 2026-12-31
       note: 메모리 가격 추이에 따른 기기 가격 변동, AMD 192GB Ryzen AI Halo 출시 여부
 ---
@@ -31,7 +33,7 @@ tracking:
 
 개인이 집이나 사무실 책상에서 오픈 가중치 모델을 돌리고, LoRA로 미세조정하고, 에이전트를 밤새 띄워 두는 기기는 2026년 10월 기준 크게 네 갈래다. NVIDIA GB10 칩을 쓴 DGX Spark 계열, AMD Ryzen AI Max+ 395(스트릭스 헤일로) 미니 PC, 애플 M5 맥스·울트라 맥 스튜디오, 그리고 RTX 그래픽카드를 꽂은 조립 PC다. 이 네 갈래를 가르는 기준은 CPU 속도가 아니라 메모리 용량과 메모리 대역폭이다.
 
-이달 들어 가격표가 크게 움직였다. NVIDIA는 10월 2일 메모리를 절반으로 줄인 DGX Spark 64GB를 4,999달러에 발표했고 10월 23일부터 에이서·에이수스·델·기가바이트·HP·MSI가 판다([NVIDIA](https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/)). 2025년 10월 3,999달러에 나온 128GB 모델은 2월 4,699달러를 거쳐 NVIDIA 직판 페이지에서 6,950달러로 올랐고 품절 상태다([테크노엣지](https://www.techno-edge.net/article/2026/10/08/5565.html), [Spheron](https://www.spheron.network/blog/dgx-spark-alternatives-dell-asus-hp-lenovo-gb10-compared-2026/)). 애플은 8월 25일 발표한 M5 울트라 맥 스튜디오를 9월 22일부터 팔기 시작했고, 최대 512GB 통합 메모리 구성은 10월 말에 나온다([Apple](https://www.apple.com/kr/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/)).
+이달 들어 가격표가 크게 움직였다. NVIDIA는 10월 2일 메모리를 절반으로 줄인 DGX Spark 64GB를 4,999달러에 발표했고 10월 23일부터 에이서·에이수스·델·기가바이트·HP·MSI가 판다([NVIDIA](https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/)). 2025년 10월 3,999달러에 나온 128GB 모델은 2월 4,699달러를 거쳐 NVIDIA 직판 페이지에서 6,950달러로 올랐고 품절 상태다([테크노엣지](https://www.techno-edge.net/article/2026/10/08/5565.html), [Spheron](https://www.spheron.network/blog/dgx-spark-alternatives-dell-asus-hp-lenovo-gb10-compared-2026/)). 애플은 8월 25일 발표한 M5 울트라 맥 스튜디오를 9월 22일부터 팔기 시작했고, 최대 512GB 통합 메모리 구성은 10월 28일 미국에서 2만 2,299달러로 주문을 받기 시작했다([Apple](https://www.apple.com/kr/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/), [9to5Mac](https://9to5mac.com/2026/10/28/apple-reveals-pricing-for-mac-studio-with-512gb-of-ram/)).
 
 배경은 메모리 부족이다. 마이크론은 9월 30일 실적 발표에서 2027년과 2028년의 메모리 수급이 2026년보다 훨씬 빠듯할 것이라고 했고, 2027 회계연도 생산량의 75% 이상이 이미 계약됐다고 밝혔다([코리아헤럴드](https://www.koreaherald.com/article/10890616)). AI 데이터센터용 HBM에 생산 능력이 쏠리면서 PC용 DRAM이 모자라고, 그 값이 개인용 AI 기기 가격에 그대로 얹히고 있다.
 
@@ -48,11 +50,11 @@ tracking:
 | 기기 | 메모리 | 대역폭 | 미국 가격 | 국내 가격 | 비고 |
 |---|---|---|---|---|---|
 | NVIDIA DGX Spark 128GB | 128GB 통합 | 273GB/s | 6,950달러(직판, 품절) | 정식 유통가 미확인 | 출시가 3,999달러, 2월 4,699달러 |
-| NVIDIA DGX Spark 64GB | 64GB 통합 | 273GB/s | 4,999달러부터 | 미정 | 10월 23일 파트너 6사 판매 |
+| NVIDIA DGX Spark 64GB | 64GB 통합 | 273GB/s | 4,999달러부터 | 미정 | 10월 23일부터 파트너 6사 판매, 제품별 판매가 미확인 |
 | AMD Ryzen AI Halo | 128GB 통합 | 256GB/s | 3,999달러 | 미출시 | 7월 미국 마이크로센터 판매 |
 | Framework Desktop 128GB | 128GB 통합 | 256GB/s | 3,449달러(품절) | 직구만 가능 | 1월 1,999달러→2,459달러 인상 |
 | Mac Studio M5 Max | 최대 128GB 통합 | 614GB/s | 2,499달러부터 | 429만 원부터 | 9월 22일 출시 |
-| Mac Studio M5 Ultra | 최대 512GB 통합 | 1.2TB/s | 5,499달러부터 | 949만 원부터 | 512GB는 10월 말, 가격 미정 |
+| Mac Studio M5 Ultra | 최대 512GB 통합 | 1.2TB/s | 5,499달러부터 | 949만 원부터 | 512GB는 2만 2,299달러부터(10월 28일 주문 시작), 원화 가격 미확인 |
 | GeForce RTX 5090 | 32GB GDDR7 | 1,792GB/s | 정가 1,999달러, 신품 최저 약 5,000달러 | 시세 변동 | 카드 1장 기준 |
 | RTX PRO 6000 Blackwell | 96GB GDDR7 ECC | 약 1.8TB/s | 1만 6,000달러(품절) | 시세 변동 | 2025년 3월 출시가 약 8,565달러 |
 
@@ -64,7 +66,7 @@ DGX Spark는 NVIDIA가 2025년 10월 15일 3,999달러에 내놓은 손바닥 �
 
 가격은 1년 사이 거의 두 배가 됐다. NVIDIA는 2월 메모리 수급을 이유로 파운더스 에디션을 4,699달러로 18% 올렸고, 10월 초 직판 페이지에는 6,950달러로 표시된 채 품절이다. 파트너 제품도 마찬가지여서 에이수스 미국 스토어의 GX10은 9월 6,999달러로 올라갔고, 리눅스 전문 매체 Phoronix는 7월 델 Pro Max GB10의 가격을 6,332달러로 적었다([OpenClaw DC](https://openclawdc.com/blog/dgx-spark-price-every-gb10-box/), [Phoronix](https://www.phoronix.com/review/amd-ryzen-ai-halo/9)). 일본에서는 HP ZGX Nano가 2025년 12월 75만 9,000엔에 나왔다가 지금은 128GB·4TB 구성이 212만 5,200엔이다([테크노엣지](https://www.techno-edge.net/article/2026/10/08/5565.html)).
 
-10월 2일 발표한 64GB 모델은 이 가격을 끌어내리려는 제품이다. 칩, DGX OS, 소프트웨어 스택은 128GB와 같고 메모리만 절반이다. 한 대로 1,000억 파라미터까지, QSFP 케이블로 두 대를 직결하면 128GB로 묶여 2,000억 파라미터까지 올릴 수 있다고 NVIDIA는 설명한다. 두 대 묶음은 Qwen3.8 27B 기준 한 대보다 최대 1.7배 빠르다는데, 이 모델은 한 대에도 들어가므로 큰 모델을 나눠 돌린 결과는 아니다. 연결을 자동으로 잡아 주는 NVIDIA Sync Cluster Assistant는 바로 쓸 수 있고, 모델을 받아 띄우고 OpenCode 코딩 환경까지 잡아 주는 Sync Model Launcher는 10월 말에 나온다([NVIDIA](https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/)).
+10월 2일 발표한 64GB 모델은 이 가격을 끌어내리려는 제품이다. 칩, DGX OS, 소프트웨어 스택은 128GB와 같고 메모리만 절반이다. 한 대로 1,000억 파라미터까지, QSFP 케이블로 두 대를 직결하면 128GB로 묶여 2,000억 파라미터까지 올릴 수 있다고 NVIDIA는 설명한다. 두 대 묶음은 Qwen3.8 27B 기준 한 대보다 최대 1.7배 빠르다는데, 이 모델은 한 대에도 들어가므로 큰 모델을 나눠 돌린 결과는 아니다. 연결을 자동으로 잡아 주는 NVIDIA Sync Cluster Assistant는 바로 쓸 수 있고, 모델을 받아 띄우고 OpenCode 코딩 환경까지 잡아 주는 Sync Model Launcher는 10월 말에 나온다([NVIDIA](https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/)). Model Launcher는 예고대로 NVIDIA Sync 0.148.0 릴리스 노트에 베타 기능으로 올라왔다. 64GB와 128GB Spark를 모두 지원하고 한 대나 2~4대 클러스터에서 미리 고른 모델을 띄운다([NVIDIA Sync 릴리스 노트](https://docs.nvidia.com/sync/latest/release-notes.html), [NVIDIA Sync 문서 - Models](https://docs.nvidia.com/sync/latest/models.html)). NVIDIA는 10월 21일 GTC 베를린에서 Sync가 이달 안에 DGX Spark 8대 묶음도 지원한다고 했지만([NVIDIA](https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/)), 31일 현재 Cluster Assistant 문서는 2~4대 지원에 머물고 8대는 다음 릴리스로 적혀 있다([NVIDIA Sync 문서 - Cluster Assistant](https://docs.nvidia.com/sync/latest/cluster-assistant.html)).
 
 성능은 CUDA가 필요한 작업에서 강하고 순수 토큰 생성에서는 평범하다. LMSYS가 모은 공개 측정치에서 DGX Spark는 gpt-oss-20b 모델을 초당 60.9토큰으로 생성했고, 같은 조건의 RTX 5090은 205.5토큰, RTX PRO 6000은 215.2토큰이었다. 대신 프롬프트 처리는 초당 2,054토큰으로 통합 메모리 기기 중 가장 빠른 편이다. gpt-oss-120b는 문맥이 없을 때 초당 58.7토큰, 3만 2,768토큰 문맥이 쌓이면 42.8토큰으로 27% 느려진다([AIMultiple](https://aimultiple.com/dgx-spark-alternatives)). 미세조정 비교에서는 Llama 3.1 70B QLoRA가 약 20분으로 스트릭스 헤일로의 50분 이상보다 빨랐다([Starry Hope](https://www.starryhope.com/ai/dgx-spark-local-ai-hardware-landscape/)).
 
@@ -80,7 +82,7 @@ AMD는 1월 CES에서 자사 이름을 단 첫 개발자용 미니 PC Ryzen AI H
 
 ## 애플 맥 스튜디오 M5 맥스·울트라
 
-애플은 8월 25일 M5 맥스와 M5 울트라를 얹은 맥 스튜디오를 발표했고 한국에서는 8월 27일 사전 주문, 9월 22일 판매를 시작했다. M5 맥스는 18코어 CPU, 최대 40코어 GPU, 최대 128GB 통합 메모리, 대역폭 614GB/s이고 429만 원부터다. M5 울트라는 애플의 첫 4다이 칩으로 최대 36코어 CPU, 80코어 GPU, 최대 512GB 통합 메모리, 대역폭 1.2TB/s이며 949만 원부터다. 기본 구성은 30코어 CPU, 64코어 GPU, 96GB 메모리, 1TB 저장장치다. 512GB 구성은 10월 말에 나오고 가격은 아직 없다([Apple](https://www.apple.com/kr/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/)).
+애플은 8월 25일 M5 맥스와 M5 울트라를 얹은 맥 스튜디오를 발표했고 한국에서는 8월 27일 사전 주문, 9월 22일 판매를 시작했다. M5 맥스는 18코어 CPU, 최대 40코어 GPU, 최대 128GB 통합 메모리, 대역폭 614GB/s이고 429만 원부터다. M5 울트라는 애플의 첫 4다이 칩으로 최대 36코어 CPU, 80코어 GPU, 최대 512GB 통합 메모리, 대역폭 1.2TB/s이며 949만 원부터다. 기본 구성은 30코어 CPU, 64코어 GPU, 96GB 메모리, 1TB 저장장치다([Apple](https://www.apple.com/kr/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/)). 512GB 구성은 10월 28일 미국에서 주문을 받기 시작했다. 36코어 CPU·80코어 GPU 칩에서만 고를 수 있고, 1TB 저장장치 기준 2만 2,299달러로 같은 칩의 96GB 구성보다 1만 5,500달러 비싸다. 저장장치를 16TB까지 올리면 2만 9,799달러이며, 지금 주문하면 11월 말에서 12월 초에 받는다([9to5Mac](https://9to5mac.com/2026/10/28/apple-reveals-pricing-for-mac-studio-with-512gb-of-ram/)).
 
 애플은 M5 울트라의 최대 AI 연산 성능이 M3 울트라의 4.3배, LM Studio 프롬프트 처리가 4배라고 주장하고, 썬더볼트 5와 RDMA로 맥 스튜디오 4대를 묶으면 메모리를 하나로 합쳐 한 대보다 최대 3배 빠른 추론을 한다고 설명한다. 오픈소스 프레임워크 MLX로 모델을 돌리고 학습하고 미세조정할 수 있다. ITWorld 코리아가 36코어 CPU, 80코어 GPU, 256GB, 4TB 구성(1만 2,299달러)을 시험했을 때 LM Studio 응답은 빨랐고 최대 전력은 약 480W였다([ITWorld](https://www.itworld.co.kr/article/4225331/)).
 
@@ -110,7 +112,7 @@ AMD는 1월 CES에서 자사 이름을 단 첫 개발자용 미니 PC Ryzen AI H
 
 ## 국내에서 살 때 확인할 점
 
-- 애플만 공식 원화 가격이 있다. M5 맥스 맥 스튜디오 429만 원, M5 울트라 949만 원부터이며 교육 할인은 각각 394만 9,000원, 879만 9,000원부터다. 512GB 구성은 10월 말 가격이 나온다.
+- 애플만 공식 원화 가격이 있다. M5 맥스 맥 스튜디오 429만 원, M5 울트라 949만 원부터이며 교육 할인은 각각 394만 9,000원, 879만 9,000원부터다. 512GB 구성은 미국에서 2만 2,299달러부터이며, 원화 가격은 31일 현재 확인하지 못했다.
 - DGX Spark와 GB10 파트너 제품은 국내 정식 유통가를 확인하지 못했다. 미국 직판가 6,950달러를 환율과 부가세로 환산하면 1,000만 원을 넘기므로, 국내 총판이나 공식 판매처 견적을 받아야 한다.
 - AMD Ryzen AI Halo는 미국 마이크로센터에서만 팔리고 국내 출시 계획은 없다. 같은 칩을 쓴 Framework Desktop, GMKtec, Beelink 미니 PC는 직구가 가능하지만 품절과 재입고가 반복된다.
 - RTX 5090과 RTX PRO 6000은 국내 시세가 미국보다 높을 수 있고 주 단위로 바뀐다. 구매 직전 가격 비교 사이트를 확인하는 편이 낫다.
@@ -121,12 +123,21 @@ AMD는 1월 CES에서 자사 이름을 단 첫 개발자용 미니 PC Ryzen AI H
 - 토큰 생성 속도는 모델, 양자화, 추론 엔진, 문맥 길이에 따라 두 배 이상 달라진다. 이 글의 수치는 각 출처의 조건에서 나온 것이며 같은 조건의 통합 비교는 없다.
 - DGX Spark 128GB의 6,950달러는 10월 초 NVIDIA 미국 직판 페이지 기준이며, 파운더스 에디션 품절 상태에서 파트너 제품 가격은 5,400~8,200달러로 유통사마다 다르다.
 - AMD의 Ryzen AI Halo 성능 비교(4~14% 우위)는 AMD 자체 측정이고, M5 울트라의 4.3배 역시 애플 자체 측정이다.
-- Ryzen AI Halo 192GB 모델과 M5 울트라 512GB 구성의 가격은 공개되지 않았다.
+- Ryzen AI Halo 192GB 모델의 가격은 공개되지 않았다. M5 울트라 512GB 구성의 원화 가격과 DGX Spark 64GB의 파트너사별 실제 판매가도 확인하지 못했다.
 - 국내 가격 가운데 애플 이외 제품은 정식 유통가를 확인하지 못했다.
+
+## 갱신 기록
+
+- 2026-10-31: 맥 스튜디오 M5 울트라 512GB 구성의 미국 가격(2만 2,299달러)과 배송 일정, NVIDIA Sync Model Launcher 베타 공개와 8대 클러스터 지원 지연, DGX Spark 64GB 파트너 판매 시작 반영
 
 ## 출처
 
 - [NVIDIA DGX Spark 64GB Gives Developers More Ways to Build and Scale Local AI — NVIDIA](https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/)
+- [Bringing the Spark to Europe: Local Intelligence Powers Next Wave of Agents — NVIDIA](https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/)
+- [Release Notes — NVIDIA Sync 문서](https://docs.nvidia.com/sync/latest/release-notes.html)
+- [Models — NVIDIA Sync 문서](https://docs.nvidia.com/sync/latest/models.html)
+- [Cluster Assistant — NVIDIA Sync 문서](https://docs.nvidia.com/sync/latest/cluster-assistant.html)
+- [Apple reveals pricing for Mac Studio with 512GB of RAM — 9to5Mac](https://9to5mac.com/2026/10/28/apple-reveals-pricing-for-mac-studio-with-512gb-of-ram/)
 - [NVIDIA DGX Sparkが1.5倍の6950ドルに値上げ、64GBモデルを4999ドルで追加 — 테크노엣지](https://www.techno-edge.net/article/2026/10/08/5565.html)
 - [DGX Spark alternatives: Dell, ASUS, HP, Lenovo GB10 compared — Spheron](https://www.spheron.network/blog/dgx-spark-alternatives-dell-asus-hp-lenovo-gb10-compared-2026/)
 - [DGX Spark price: every GB10 box — OpenClaw DC](https://openclawdc.com/blog/dgx-spark-price-every-gb10-box/)
