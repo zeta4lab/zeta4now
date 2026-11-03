@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-10-29T19:15:00+09:00
+updated_at: 2026-11-03T09:23:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,15 +18,15 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-10-29T19:15:00+09:00
-    note: "'파손자 부담' 법안 27~28일 밤 상원 1독회 가결(찬성 229·반대 105), 하원 이송과 내무장관의 국사원 회부 예고 반영"
+    at: 2026-11-03T09:23:00+09:00
+    note: "31일 '3막' 시위(내무부 32만·주최 측 50만, 체포 779명, 경찰 부상 116명)와 파리 행진 금지의 국사원 승인 반영"
   checkpoints:
-    - date: 2026-10-31
-      note: 노란조끼 조정위가 예고한 추가 집회일
     - date: 2026-11-03
       note: 2027년 예산안 1부(세입) 하원 표결
     - date: 2026-11-05
       note: CFDT·CGT·FO·UNSA·FSU 5개 노조 전국 파업·시위일
+    - date: 2026-11-07
+      note: 노란조끼 6~7일 행동 규모와 충돌 여부
     - date: 2026-11-09
       note: 하원에서 부결된 사회보장재정법안 상원 심사 시작
 ---
@@ -115,6 +115,14 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 
 뉘녜스 내무장관은 "행렬은 잘 진행됐다"(Les cortèges se sont bien passés)고 평가했고, 이날 전국 집회는 289건이었다. 그래도 저녁 7시 39분(현지시각) 기준 체포는 "약 1,000명"이었다. 마르세유·그르노블·낭트·파리에서는 상점 약탈과 파손이 있었다. 툴루즈에서는 20세 남성이 충돌 중 손에 중상을 입었고, 니스 등지에서는 극우 활동가와 시위대가 충돌했다. 파리 경찰청은 행진 끝 무렵 "500명 넘는 폭력 시위대(casseurs)"가 있었다고 밝혔다([ICI](https://www.ici.fr/infos/societe/direct-mobilisation-du-24-octobre-des-manifestations-partout-en-france-70-000-policiers-et-gendarmes-deployes-8725021)).
 
+## 31일 '3막': 32만 명으로 줄고 체포 779명
+
+노란조끼 조정위원회와 고교생·대학생 단체가 부른 31일(토) '3막' 시위에는 내무부 집계 32만 명, 주최 측 집계 약 50만 명이 참가했다. 내무부는 24일보다 22% 줄었다고 밝혔다. 내무부 최종 집계로 체포는 779명, 화재 대응은 515건, 피해 상점은 36곳(약탈 3곳 포함)이고, 경찰·헌병 116명이 다쳤다([Orange(L'Express)](https://actu.orange.fr/france/mobilisation-du-31-octobre-le-ministere-de-l-interieur-dresse-un-bilan-definitif-779-interpellations-partout-en-france-l-express-via-6medias-CNT000002tuVL9.html), [franceinfo](https://www.franceinfo.fr/economie/greve/direct-mobilisation-sociale-la-jeunesse-ne-lache-pas-declare-la-porte-parole-de-l-union-etudiante-au-lendemain-des-manifestations-du-31-octobre_8262449.html)).
+
+파리 경찰청은 바스티유~나시옹 행진을 금지하고 포르트 드 바뇰레~포르트 드 샤랑통 경로를 제시했으며, 국사원은 이 금지를 유지했다. 경찰청은 레퓌블리크와 샤틀레-레알 일대에 31일부터 11월 2일까지 밤 11시~오전 6시 통행금지도 걸었다([Public Sénat](https://www.publicsenat.fr/actualites/politique/mobilisation-du-31-octobre-a-quoi-faut-il-sattendre)). 행진은 대체로 차분했지만 여러 도시에서 끝 무렵 충돌이 있었다. 포르트 드 샤랑통 부근에서는 기동헌병 1명이 화염병에 맞아 다리에 화상을 입었고, 파리 검찰이 살인미수 혐의로 수사를 시작했다. 용의자 3명을 특정했지만 보도 시점까지 체포하지 못했다.
+
+다음 일정도 이어진다. 5개 노조는 5일(목) 파업과 시위를 예고했고, 대학생 단체 유니옹 에튀디앙트는 3일과 5일 봉쇄를 호소했다. 노란조끼는 6~7일 행동을 준비 중이다.
+
 ## 의미
 
 이번 대응의 특징은 정부가 비상사태 대신 지사 단위의 부분 통행금지와 집회 금지권이라는 '아래로부터의' 수단을 골랐다는 점이다. 르코르뉘 총리가 상황이 "매우 제각각"이라고 말한 데서 보이듯, 리모주·마르세유·릴처럼 피해가 집중된 도시와 그렇지 않은 곳을 한 틀로 묶기 어렵고, 전국 비상사태는 대선을 앞둔 정부가 치러야 할 정치적 비용이 크다. 다만 통행금지의 실효성은 24일 노란조끼 2차 시위에서 바로 시험된다. 뉘녜스 장관 스스로 "극도로 기동성이 높은 집단"에 경찰 전략이 맞지 않았다고 인정한 만큼, 고정된 구역을 지키는 통행금지가 이동하며 약탈하는 집단에 얼마나 효과를 내느냐가 관건이다.
@@ -139,6 +147,9 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 24일 체포 수는 ICI 생중계의 저녁 7시 39분 집계("약 1,000명")다. 이후 나온 최종 집계와 부상자 수는 원문으로 확인하지 못했다.
 - 피해 상점 직원 100% 부분실업수당이 실제로 시행됐는지는 확인하지 못했다.
 - 내무장관 이름 표기는 매체마다 누녜스·누네스·누녜즈·뉘녜스로 다르다. 이 글은 '뉘녜스'로 통일했다.
+- (갱신) 31일 참가 인원의 17일 대비 감소율은 L'Express가 24%, franceinfo가 42%로 다르게 전했다. 내무부 집계(55만 명→32만 명)로 계산하면 약 42%다.
+- (갱신) L'Express는 앞선 두 시위일의 체포를 2,628명과 1,436명으로 적었지만 날짜를 명시하지 않았다. 본문의 17일 2,397명, 24일 약 1,000명과 달라 본문 수치를 바꾸지 않았다.
+- (갱신) 파리 통행금지는 시행 전 보도(Public Sénat, 10월 30일)로 확인했다. 노조 측이 예고한 행정법원 제소의 결과와 실제 집행 상황, 31일 파리 참가 인원은 확인하지 못했다.
 
 ## 갱신 기록
 
@@ -146,6 +157,7 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 2026-10-27: 24일 '2막' 시위 규모·체포·부상 반영, 지난 checkpoint(22·24일) 정리
 - 2026-10-28: 사회보장재정법안 23일 하원 부결(찬성 1·반대 115·기권 22), 예산안 1부 표결 11월 3일로 연기, '파손자 부담' 법안 27일 상원 본회의 심사 시작 반영. 10월 27일 확인 일정 제거
 - 2026-10-29: '파손자 부담' 법안 상원 1독회 가결(찬성 229·반대 105)과 상원 수정 내용, 국사원 회부 예고, 노르 미성년자 통행금지 연장 반영. 10월 29일 확인 일정 제거
+- 2026-11-03: 31일 '3막' 시위 규모·체포·부상과 파리 행진 금지·통행금지, 후속 일정 반영. 10월 31일 확인 일정 제거
 
 ## 출처
 
@@ -193,6 +205,9 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - [Loi casseurs-payeurs : Laurent Nuñez annonce une saisine du Conseil d'État — Le Club des Juristes](https://www.leclubdesjuristes.com/en-bref/loi-casseurs-payeurs-laurent-nunez-annonce-une-saisine-du-conseil-detat-18072/)
 - [Le projet de loi casseurs-payeurs adopté et élargi au Sénat — franceinfo](https://www.franceinfo.fr/politique/prestations-sociales-saisies-nouvelles-interdictions-de-manifester-le-projet-de-loi-casseurs-payeurs-adopte-et-elargi-au-senat-en-plein-c-ur-de-la-contestation_8256748.html)
 - [Violences urbaines : le couvre-feu pour les mineurs non accompagnés prolongé pour trois nuits — France 3 Hauts-de-France](https://france3-regions.franceinfo.fr/hauts-de-france/nord-0/lille/violences-urbaines-le-couvre-feu-pour-les-mineurs-non-accompagnes-prolonge-pour-trois-nuits-3439656.html)
+- [Mobilisation du 31 octobre : à quoi faut-il s'attendre ? — Public Sénat](https://www.publicsenat.fr/actualites/politique/mobilisation-du-31-octobre-a-quoi-faut-il-sattendre)
+- [Mobilisation du 31 octobre : 779 interpellations partout en France — Orange(L'Express)](https://actu.orange.fr/france/mobilisation-du-31-octobre-le-ministere-de-l-interieur-dresse-un-bilan-definitif-779-interpellations-partout-en-france-l-express-via-6medias-CNT000002tuVL9.html)
+- [Manifestations du 31 octobre : 779 personnes interpellées — franceinfo](https://www.franceinfo.fr/economie/greve/direct-mobilisation-sociale-la-jeunesse-ne-lache-pas-declare-la-porte-parole-de-l-union-etudiante-au-lendemain-des-manifestations-du-31-octobre_8262449.html)
 
 ---
 

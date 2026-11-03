@@ -14,17 +14,17 @@ tags:
 summary: 이란 혁명수비대는 14일 컨테이너선 침몰, 17일 200만 배럴급 유조선 2척, 19일 유조선 1척이 기뢰에 부딪혔다고 주장했지만 로이터는 독립 확인이 없다고 했고 미 중부사령부는 발사체 공격이라고 반박했다. 10월 들어 피격 선박은 20척이 넘고(UKMTO·CNBC), 10월 12일까지 한 주 해협 통과 원유는 하루 850만 배럴로 전쟁 전보다 약 40% 적었다(Kpler). 브렌트유는 16일 110달러를 찍었고 이란은 "6일 안 재개방" 제안이 유효하다고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-10-27T14:17:00+09:00
+updated_at: 2026-11-03T09:23:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-10-27T14:17:00+09:00
-    note: 22일 혁명수비대 '유조선 7척 피격' 주장과 미국 반박, 기지 공격 경고, 23일 브렌트유 117달러 안팎, 10월 공격 집계 반영
+    at: 2026-11-03T09:23:00+09:00
+    note: 11월 1일 OPEC+ 7개국 12월 생산량 동결(9월 수준 유지, 합계 약 3,101만 배럴)과 다음 회의 11월 29일 반영
   checkpoints:
-    - date: 2026-11-01
-      note: OPEC+ 7개국 회의(12월 생산량 결정)와 호르무즈 상황 반영 여부
     - date: 2026-11-03
       note: 미국 중간선거. 트럼프가 선거 전 이란 공격 배제 발언을 한 시한이자 이란 7일 제안·미국 조건 협상의 분기점
+    - date: 2026-11-29
+      note: OPEC+ 7개국 다음 회의 결과
     - date: 2026-11-30
       note: 유류세 인하(휘발유 15%·경유 25%) 종료 예정일. 재연장 여부
 ---
@@ -63,7 +63,7 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 유가는 16일(금요일) 이 긴장을 그대로 반영했다. CNBC에 따르면 브렌트유 선물은 장중 배럴당 110달러를 5월 이후 처음 찍은 뒤 3.7% 오른 109.86달러에 마감했고, 서부텍사스원유(WTI)는 3.5% 오른 101.41달러로 9월 이후 처음 100달러를 넘겼다. 주간으로 WTI는 10% 넘게, 브렌트유는 5% 가까이 올랐다. 호르무즈 외에 후티의 사우디 공격(얀부 수출 터미널로 향하던 미사일 요격 포함), 우크라이나의 러시아 정유소 공격 재개, 허리케인으로 인한 미국 상업 원유 재고 800만 배럴 이상 감소가 겹쳤다([CNBC](https://www.cnbc.com/2026/10/16/oil-price-today-iran-strait-hormuz-ukraine-russia.html)). 블룸버그는 109.86달러가 5월 19일 이후 최고 종가라며 유라시아그룹이 분쟁 격화 확률을 35%에서 65%로 올렸다고 전했고([Bloomberg(Rigzone)](https://www.rigzone.com/news/wire/brent_oil_hits_110_as_supply_risks_mount-16-oct-2026-184870-article/)), 이데일리 뉴욕특파원도 같은 종가를 보도했다([이데일리](https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01380886645613904)). 19일 아시아·유럽 거래에서는 트럼프의 러시아 제재 유예 서명이 작용해 브렌트유가 1.8% 내린 107.86달러로 밀렸다([FXStreet](https://www.fxstreet.com/analysis/brent-slips-after-trump-waives-graham-act-tariffs-on-russian-oil-buyers-202610190949)).
 
-같은 16일 미국 기술주는 하루 1조 달러 넘는 시가총액을 잃었다. NBC는 나스닥100이 2.5% 떨어져 전주 사상 최고치보다 약 7% 낮아졌고 필라델피아 반도체지수는 3.8% 내려 2008년 이후 가장 긴 8거래일 연속 하락을 기록했다고 전했다. 다만 NBC는 1조 달러의 산출 방식을 밝히지 않았고, 유가와 함께 AI 부채 우려와 금리 상승을 원인으로 들었다([NBC News](https://www.nbcnews.com/business/energy/oil-prices-hormuz-iran-ukraine-rcna603919)). 국제에너지기구(IEA)는 15일 이사회에서 3월 결정한 4억 배럴 공동 방출 중 남은 약 1억 배럴을 앞당겨 풀고 경유 2,000만 배럴 이상을 가능한 한 빨리 공급하기로 했지만, 시장은 새 물량이 아니라는 점에서 기대에 못 미친다고 봤다([헤럴드경제](https://biz.heraldcorp.com/article/10904366), [gCaptain](https://gcaptain.com/iea-moves-to-accelerate-oil-reserve-releases-as-hormuz-crisis-drags-on/)). OPEC+ 7개국은 10월 4일 11월 생산량을 9월 수준으로 동결했고 다음 회의는 11월 1일이다([OPEC](https://www.opec.org/pr-detail/616-4-october-2026.html)).
+같은 16일 미국 기술주는 하루 1조 달러 넘는 시가총액을 잃었다. NBC는 나스닥100이 2.5% 떨어져 전주 사상 최고치보다 약 7% 낮아졌고 필라델피아 반도체지수는 3.8% 내려 2008년 이후 가장 긴 8거래일 연속 하락을 기록했다고 전했다. 다만 NBC는 1조 달러의 산출 방식을 밝히지 않았고, 유가와 함께 AI 부채 우려와 금리 상승을 원인으로 들었다([NBC News](https://www.nbcnews.com/business/energy/oil-prices-hormuz-iran-ukraine-rcna603919)). 국제에너지기구(IEA)는 15일 이사회에서 3월 결정한 4억 배럴 공동 방출 중 남은 약 1억 배럴을 앞당겨 풀고 경유 2,000만 배럴 이상을 가능한 한 빨리 공급하기로 했지만, 시장은 새 물량이 아니라는 점에서 기대에 못 미친다고 봤다([헤럴드경제](https://biz.heraldcorp.com/article/10904366), [gCaptain](https://gcaptain.com/iea-moves-to-accelerate-oil-reserve-releases-as-hormuz-crisis-drags-on/)). OPEC+ 7개국은 10월 4일 11월 생산량을 9월 수준으로 동결했고 다음 회의는 11월 1일로 잡혔다([OPEC](https://www.opec.org/pr-detail/616-4-october-2026.html)).
 
 ## 협상: 이란 "7일 계획 유효" vs 미국 "핵부터"
 
@@ -91,6 +91,10 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 협상은 재개되지 않았다. 같은 보도에 따르면 이란은 미국이 이란 항구 해상 봉쇄를 푸는 등 조건을 받아들이면 일주일 안에 전쟁을 끝내고 해협을 완전히 다시 열겠다고 제안했고, 아락치 외무장관은 외교에 열려 있지만 방어할 준비가 됐다고 말했다. 미국은 세 번째 항공모함과 수천 명의 추가 병력을 역내에 보내고 있다.
 
+## 11월 1일: OPEC+ 7개국, 12월 생산량도 동결
+
+사우디·러시아·이라크·쿠웨이트·카자흐스탄·알제리·오만 7개국은 1일(일) 화상 회의에서 12월 요구 생산량을 9월 수준으로 유지하기로 했다. 합계는 하루 약 3,101만 배럴이고 사우디는 1,047만 8,000배럴이다. 다음 회의는 11월 29일이다([Xinhua](https://english.news.cn/europe/20261102/f96df7a657a740ecb48628e90ca2f4d8/c.html), [Gulf Insider](https://www.gulf-insider.com/opec-holds-december-oil-output-targets-unchanged/)). Xinhua와 Gulf Insider가 전한 성명 내용에는 호르무즈나 이란 언급이 없다. 더내셔널은 성명이 추가 조정이나 증산 일정을 내놓지 않았고, 회원국 대부분이 전쟁 탓에 목표보다 적게 생산하고 있으며, OPEC+가 2027년 쿼터를 정하려고 회원국 생산 능력을 점검 중이라고 전했다. 같은 기사에 따르면 브렌트유는 금요일 2.4% 오른 배럴당 117.64달러였다([The National](https://www.thenationalnews.com/business/energy/2026/11/01/opec-holds-december-oil-output-targets-steady-as-iran-war-disrupts-supply/)).
+
 ## 한국: 10월 물량은 확보, 11월 이후 비용과 우회로가 변수
 
 한국석유공사 통계로 7월 한국의 원유 수입 9,318만 배럴 가운데 쿠웨이트·이라크 등 걸프 안쪽에서만 실을 수 있는 물량은 687만 배럴(7.4%)이었고, 사우디·UAE처럼 송유관으로 우회할 수 있는 물량이 4,499만 배럴(48.3%), 해협과 무관한 비중동·오만산이 4,132만 배럴(44.3%)이었다. 이라크산 수입은 2006년 5월 이후 처음으로 0이었다. 8월 31일 기준 정부 비축유는 1억 배럴로, 사우디·UAE 물량까지 하루 167만 배럴이 끊기면 60일, 전체 수입이 끊기면 33일을 버틸 수 있다는 단순 계산이 나온다. 이 계산은 민간 비축과 수요 감축, 대체 도입을 반영하지 않은 것이다([이포커스](https://www.e-focus.co.kr/news/articleView.html?idxno=3003095)).
@@ -103,7 +107,7 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 이번 주의 핵심은 '기뢰'라는 단어다. 발사체 공격은 미군이 요격하거나 호위로 줄일 수 있지만, 기뢰는 있다는 주장만으로도 보험료와 운임을 올리고 선주를 멈춰 세운다. 혁명수비대가 사흘 연속 기뢰 피격을 발표하면서 선박명도 위치도 밝히지 않는 것, 미군과 해상보안업체가 이를 발사체 공격 또는 심리전으로 규정하는 것은 같은 사건을 두고 벌어지는 정보전이다. 어느 쪽이 맞든 Kpler의 통과량 수치는 해협을 지나는 선박이 10월 둘째 주에 크게 줄었음을 보여 주고, CENTCOM의 "400척·1억 배럴" 수치와는 집계 기준이 달라 직접 비교하기 어렵다.
 
-유가는 호르무즈 하나로 움직이지 않는다. 16일 110달러에는 후티의 얀부 공격 시도, 러시아 정유소 피격, 미국 재고 감소가 함께 들어 있었고, 19일 하락은 러시아 제재 유예 때문이었다. 그래서 해협이 열려도 경유 중심의 공급 부족은 바로 풀리지 않는다는 IEA의 경고가 더 무겁다. 한국은 수입 구조상 해협 안쪽에만 의존하는 물량이 10%에 못 미치지만, 사우디 동서 송유관과 얀부가 공격 대상이 된 지금 우회로가 안전하다는 전제가 흔들리고 있다. 11월 1일 OPEC+ 회의, 11월 3일 미국 중간선거, 11월 말 유류세 인하 종료가 잇따라 오는 다음 6주가 분기점이다. 이는 해석이다.
+유가는 호르무즈 하나로 움직이지 않는다. 16일 110달러에는 후티의 얀부 공격 시도, 러시아 정유소 피격, 미국 재고 감소가 함께 들어 있었고, 19일 하락은 러시아 제재 유예 때문이었다. 그래서 해협이 열려도 경유 중심의 공급 부족은 바로 풀리지 않는다는 IEA의 경고가 더 무겁다. 한국은 수입 구조상 해협 안쪽에만 의존하는 물량이 10%에 못 미치지만, 사우디 동서 송유관과 얀부가 공격 대상이 된 지금 우회로가 안전하다는 전제가 흔들리고 있다. 11월 1일 OPEC+ 회의는 동결로 끝났고, 11월 3일 미국 중간선거와 11월 말 유류세 인하 종료가 남아 있다. 이는 해석이다.
 
 ## 확인할 점
 
@@ -119,11 +123,13 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - (갱신) 로이터의 '협상 지연' 보도는 익명 이란 관리들의 말이며 이란 정부의 공식 확인은 없다. 로이터 원문 대신 재게재본(Internazionale)으로 확인했다. 카타르·파키스탄 절충안은 알아라비 알자디드의 소식통 보도를 CBS가 전한 것이다. 이란의 안보리 긴급회의 요청 서한 원문과 유엔의 회의 소집 여부는 확인하지 못했다.
 - (갱신) 10월 공격 건수 집계는 더 엇갈린다. CBS는 UKMTO를 인용해 19일까지 한 주 10건으로 10월이 3월 이후 선박 공격이 가장 많은 달이라고 했고, IBTimes는 UKMTO 집계로 16일까지 한 주 최소 12건, Kpler 집계로 2주간 최소 18건이라고 했다. 본문의 '10월 20척 이상'(CNBC, 14일 기준)은 갱신하지 않았다.
 - (갱신) 22일 혁명수비대의 '유조선 7척 피격' 주장은 독립 확인이 없다. 23일 브렌트유 117달러 안팎 마감은 IBTimes AU 보도이고 거래소 자료로 확인하지 않았다. 10월 공격 28건은 워싱턴근동정책연구소 집계로, 앞선 UKMTO·Kpler 집계와 기준이 다르다.
+- (갱신) OPEC 보도자료 목록에 접속하지 못해 11월 1일 성명 원문을 직접 확인하지 못했고, Xinhua와 Gulf Insider의 인용으로 대신했다. 117.64달러는 더내셔널 보도이며 거래소 자료로 확인하지 않았다. 기사에 적힌 '금요일'은 기사 날짜로 볼 때 10월 30일로 추정된다. 회원국별 실제 생산량 수치는 찾지 못했다.
 
 ## 갱신 기록
 
 - 2026-10-21: 20일 혁명수비대의 '기뢰로 유조선 3척 정지·폭발' 주장과 CENTCOM 반박, 20~21일 유가, 로이터 '이란 협상 지연' 보도, 무니르 파키스탄 육군참모총장 방이, 라브로프 방이, 이란의 안보리 긴급회의 요청 반영
 - 2026-10-27: 22일 혁명수비대 '유조선 7척 피격' 주장과 미국 반박·기지 공격 경고, 23일 브렌트유, 10월 공격 집계, 이란의 '일주일 종전' 제안 반영
+- 2026-11-03: 11월 1일 OPEC+ 7개국의 12월 생산량 동결과 다음 회의 일정(11월 29일) 반영
 
 ## 출처
 
@@ -176,6 +182,9 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - [호르무즈 선박 공격 2주간 24척…이란, 유가 압박으로 美 중간선거 겨냥했나 — 폴리뉴스](https://www.polinews.co.kr/news/articleView.html?idxno=746082)
 - [Iran says seven ships hit in Hormuz Strait, warns US of wider response — Al Jazeera](https://www.aljazeera.com/news/2026/10/22/iran-says-seven-ships-hit-in-hormuz-strait-warns-us-of-wider-response)
 - [Strait of Hormuz Status Today: Ship Attacks Hit Record High in October as Tankers Burn and War Fears Mount — IBTimes AU](https://www.ibtimes.com.au/strait-hormuz-ship-attacks-record-oil-traffic-1877334)
+- [Opec+ holds December oil output targets steady as Iran war disrupts supply — The National](https://www.thenationalnews.com/business/energy/2026/11/01/opec-holds-december-oil-output-targets-steady-as-iran-war-disrupts-supply/)
+- [OPEC+ to maintain oil output for 3rd consecutive month in December — Xinhua](https://english.news.cn/europe/20261102/f96df7a657a740ecb48628e90ca2f4d8/c.html)
+- [OPEC+ holds December oil output targets unchanged — Gulf Insider](https://www.gulf-insider.com/opec-holds-december-oil-output-targets-unchanged/)
 
 ---
 
