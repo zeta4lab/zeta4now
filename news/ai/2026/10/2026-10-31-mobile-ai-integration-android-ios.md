@@ -14,11 +14,15 @@ tags:
 summary: 2026년 가을 기준 Android와 iOS 앱이 AI를 붙이는 방법은 기기 안 모델, 클라우드 모델, 둘을 섞는 하이브리드, 운영체제 에이전트에게 앱 기능을 여는 방식의 네 갈래다. 두 플랫폼의 공식 문서로 각 방식의 현재 상태와 제약을 정리한다.
 generated_by: claude
 model: unspecified
+updated_at: 2026-11-03T09:23:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-03T09:23:00+09:00
+    note: Firebase AI Logic App Check 자동 적용일(11월 2일) 경과와 2027년 1월 21일까지의 유예 방법 반영, 실제 시행은 공식 확인 못 함
   checkpoints:
-    - date: 2026-11-02
-      note: Firebase AI Logic의 App Check 적용 의무화 시행 확인
+    - date: 2027-01-21
+      note: Firebase AI Logic App Check 자동 적용 유예 마지막 날
 ---
 
 # 모바일 앱에 AI 붙이는 네 갈래 길…iOS 27과 Android의 기기 내 모델, 클라우드, 하이브리드, 에이전트 연결
@@ -50,7 +54,7 @@ iOS 27의 가장 큰 변화는 Foundation Models가 Apple 모델 전용이 아�
 - **Claude**: Anthropic은 6월 8일 Swift 패키지 'Claude for Foundation Models'를 발표했다([Anthropic](https://claude.com/blog/claude-for-foundation-models)). 문서상 아직 베타이며, 인증은 App Attest로 설치본마다 1시간짜리 토큰을 받는 방식, 자체 중계 서버가 키를 붙이는 방식, 개발용 API 키 세 가지다. 앱에 API 키를 넣으면 배포된 바이너리에서 추출될 수 있다고 문서가 경고한다([Claude 문서](https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)).
 - **Gemini**: Google은 Firebase AI Logic 라이브러리(firebase-ios-sdk 12.19.0 이상)로 Foundation Models에서 Gemini를 부르는 기능을 프리뷰로 내놨다. 첫 지원 대상은 iOS와 macOS다([Firebase](https://firebase.google.com/docs/ai-logic/apple-foundation-models-framework/get-started)).
 
-Android와 그 밖의 플랫폼에서는 Firebase AI Logic이 표준 경로다. Swift, Kotlin·Java, JavaScript, Flutter, Unity용 클라이언트 SDK가 있고, Firebase 프록시가 중간에서 Gemini API 키를 서버에만 두게 해 준다([Firebase](https://firebase.google.com/docs/ai-logic)). 앱에 키를 심지 않는 것이 핵심이다. Firebase는 **2026년 11월 2일부터 Firebase AI Logic을 쓰려면 App Check 적용이 필수**라고 공지했으므로, 이미 앱을 낸 개발자는 운영용 기기 인증(Android는 Play Integrity, iOS는 App Attest 등) 등록 여부를 바로 확인해야 한다.
+Android와 그 밖의 플랫폼에서는 Firebase AI Logic이 표준 경로다. Swift, Kotlin·Java, JavaScript, Flutter, Unity용 클라이언트 SDK가 있고, Firebase 프록시가 중간에서 Gemini API 키를 서버에만 두게 해 준다([Firebase](https://firebase.google.com/docs/ai-logic)). 앱에 키를 심지 않는 것이 핵심이다. Firebase는 **2026년 11월 2일부터 Firebase AI Logic에 App Check를 자동 적용한다**고 공지했다. 적용되면 유효한 토큰이 없는 요청은 막히며, 운영용 기기 인증(Android는 Play Integrity, iOS는 App Attest 등)을 넣지 않고 이미 배포한 앱 버전도 포함된다. Firebase는 10월 27일 릴리스 노트에서 자동 적용을 잠시 늦추는 기능을 공지했다. 콘솔의 Security > App Check > APIs 탭에서 날짜를 정하며 마지막 날짜는 2027년 1월 21일이다([Firebase](https://firebase.google.com/docs/ai-logic/app-check), [릴리스 노트](https://firebase.google.com/support/releases)). 11월 3일 현재 문서 표현은 여전히 미래형이고 시행을 알리는 별도 공지도 찾지 못했으므로, 개발자는 콘솔에서 프로젝트의 적용 날짜를 직접 확인해야 한다.
 
 ## 3. 하이브리드: 되면 기기에서, 안 되면 클라우드에서
 
@@ -75,6 +79,10 @@ Android의 대응물은 AppFunctions다. Google은 이를 "앱을 기기 안 MCP
 - 두 플랫폼을 한 코드 구조로 다루려면 Firebase AI Logic의 하이브리드 모드가 가장 가깝지만, 아직 실험 단계다.
 - Siri와 Gemini에서 앱이 쓰이길 원하면 iOS는 App Intents 스키마를 채우고, Android는 AppFunctions 프리뷰를 준비해 둔다.
 
+## 갱신 기록
+
+- 2026-11-03: App Check 자동 적용일 경과, 2027년 1월 21일까지의 유예 방법, 미적용 앱 버전 요청 차단 안내 반영
+
 ## 출처
 
 - [What's New - iOS (Apple Developer)](https://developer.apple.com/ios/whats-new/)
@@ -91,6 +99,8 @@ Android의 대응물은 AppFunctions다. Google은 이를 "앱을 기기 안 MCP
 - [Build intelligent Android apps: Cloud and hybrid inference (2026-07-21)](https://android-developers.googleblog.com/2026/07/build-intelligent-android-apps-cloud-hybrid-inference.html)
 - [Overview of AppFunctions (Android Developers)](https://developer.android.com/ai/appfunctions)
 - [The Intelligent OS: Making AI agents more helpful for Android apps (2026-02-25)](https://android-developers.googleblog.com/2026/02/the-intelligent-os-making-ai-agents.html)
+- [Implement Firebase App Check for Firebase AI Logic (Firebase)](https://firebase.google.com/docs/ai-logic/app-check)
+- [Firebase release notes](https://firebase.google.com/support/releases)
 
 ---
 
