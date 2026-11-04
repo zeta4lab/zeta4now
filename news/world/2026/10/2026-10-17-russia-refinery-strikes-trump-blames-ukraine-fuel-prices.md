@@ -13,11 +13,13 @@ tags:
 summary: 우크라이나가 10월 15일 러시아 랴잔 정유소를 드론·순항미사일로 타격하며 트럼프가 선언한 '에너지 휴전'을 나흘 만에 끝냈다. 러시아는 처음으로 국영TV에 피해 영상을 내보냈고, 트럼프는 "젤렌스키가 세계 유가를 올린다"며 비난했다. 미국 경유 가격은 10월 16일 갤런당 6.33달러로 1년 전의 1.7배다.
 generated_by: claude
 model: claude-fable-5-1
+updated_at: 2026-11-04T13:31:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-04T13:31:00+09:00
+    note: 중간선거 추정 결과와 출구조사(연료비 우려 87%, 트럼프 정책이 경제 악화 65%) 반영
   checkpoints:
-    - date: 2026-11-03
-      note: 미국 중간선거. 트럼프가 경유 가격 책임을 우크라이나에 돌린 선거 전 논리가 결과에 어떻게 작용했는지 확인
     - date: 2026-11-30
       note: 러시아가 트럼프 합의대로 11월 경유 50만 톤을 수출했는지, 랴잔 정유소 가동 재개 여부 확인
 ---
@@ -72,6 +74,12 @@ AP는 이 주장을 독립적으로 검증할 수 없다고 전하면서, 국제
 
 한국도 영향권에 있다. 한국석유공사 페트로넷 기준 자동차용 경유 국제가격은 이란 전쟁이 절정이던 3월 배럴당 195.52달러에서 6월 126달러로 내렸다가 9월 177달러, 10월 171달러로 다시 올랐고, 정부는 정유사의 월별 석유제품 수출량을 전년 동월의 100% 이내로 제한하고 있다([세계일보](https://www.segye.com/newsView/20261015519589)). 싱가포르 경유 크랙마진은 전쟁 전 배럴당 22달러에서 9월 중순 87달러를 넘었고, 국내 경유 최고가격(10차)은 정유사 공급가 기준 리터당 1,773원으로 유지되고 있다([브릿지경제](https://www.viva100.com/article/20261015500863)). 유진투자증권은 러시아가 약속한 공급량 480만 톤이 미국 경유 소비의 약 10일치에 그친다고 분석했다([이투데이](https://www.etoday.co.kr/news/view/2634905)).
 
+## 선거 결과: 유권자는 연료비를 걱정했고, 책임은 트럼프 쪽으로 기울었다
+
+11월 3일 중간선거에서 민주당이 하원을 장악한 것으로 NBC, ABC, CBS, CNBC 등이 추정했다. 한국시각 4일 오후 1시 15~26분께 각 매체 집계 기준이며, 언론 추정이지 인증 결과가 아니다. NBC 출구조사 초기치에서 휘발유·경유 비용이 걱정된다는 응답은 87%, 경제가 나쁘다는 응답은 75%, 트럼프 정책이 경제를 악화시켰다는 응답은 65%였다([NBC 출구조사](https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045)). CNBC 유권자 조사에서는 인플레이션이 트럼프 정책 탓이라는 응답이 62%였다([CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html)).
+
+'유가를 올리는 건 젤렌스키'라는 논리를 직접 물은 조사는 찾지 못했으므로, 그 논리가 결과에 얼마나 작용했는지 단정할 수는 없다. 다만 수치만 보면 유권자의 불만을 우크라이나로 돌리는 데 성공했다는 신호는 없다. 이는 해석이다.
+
 ## 의미
 
 세 당사자가 같은 공격을 다른 목적으로 쓰고 있다. 러시아는 피해를 축소하면서도 영상을 공개해 "우크라이나가 트럼프의 휴전을 깼다"는 서사를 세웠고, 트럼프는 선거를 앞두고 연료 가격의 책임을 키이우에 돌릴 근거로 삼았다. 우크라이나는 정유소 공격이 러시아를 압박하는 거의 유일한 지렛대임을 재확인했다.
@@ -87,10 +95,17 @@ AP는 이 주장을 독립적으로 검증할 수 없다고 전하면서, 국제
 - 15일 밤 러시아 드론 수는 젤렌스키(850대 이상)와 우크라이나 공군(580대, 536대 격추)의 발표가 다르다.
 - 트럼프의 "damn well better stop" 발언은 로이터만 짧게 전했고 발언 장소와 전체 맥락은 확인하지 못했다.
 - 16일 브렌트유·WTI 종가는 기사 작성 시점에 아직 나오지 않았다.
-- 남은 일정: 11월 3일 미국 중간선거, 러시아의 11월 경유 50만 톤 공급 이행 여부.
+- 남은 일정: 러시아의 11월 경유 50만 톤 공급 이행 여부.
+- (갱신) 출구조사는 초기치여서 바뀔 수 있다. 10월 15일 공격 이후 랴잔 정유소의 가동 상태는 보도에서 확인하지 못했다.
+
+## 갱신 기록
+
+- 2026-11-04: 중간선거 추정 결과와 출구조사 반영. 11월 3일 확인 일정 제거
 
 ## 출처
 
+- [Exit poll: voters, economy and Trump — NBC News](https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045)
+- [Midterm elections 2026 live updates — CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html)
 - [Russia talks up refinery attack as Trump blames Ukraine for expensive fuel — Reuters(Global Banking & Finance)](https://www.globalbankingandfinance.com/russia-talks-up-refinery-attack-trump-blames-ukraine/)
 - [Ukraine Renews Oil Blitz on Russia, Strikes Ryazan Refinery as Zelensky Ends Pause — Kyiv Post](https://www.kyivpost.com/post/87156)
 - [Ukrainian Drones Spark Fire at Ryazan Refinery as Zelensky Vows to Resume Attacks — The Moscow Times](https://www.themoscowtimes.com/2026/10/15/ukrainian-drones-spark-fire-at-ryazan-refinery-as-zelensky-vows-to-resume-attacks-a93981)
