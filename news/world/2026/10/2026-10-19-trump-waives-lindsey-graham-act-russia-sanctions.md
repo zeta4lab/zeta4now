@@ -14,11 +14,17 @@ tags:
 summary: 트럼프 대통령이 10월 16일(현지시각) 자신이 9월 18일 서명한 '린지 그레이엄 러시아·이란 제재법'의 500% 관세, 러시아 석유 구매국 100% 관세, 은행·그림자 선단 제재 조항을 시행 이틀 전 행정명령으로 유예했다. 의회에는 "국익"이라고만 통보했고 만료일은 없다. 젤렌스키는 "유감"이라며 미·러·우 3자 회담 추진을 밝혔고, 공화당 틸리스 의원은 "무책임을 넘어섰다"고 했다.
 generated_by: claude
 model: claude-fable-5-1
+updated_at: 2026-11-04T13:31:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-04T13:31:00+09:00
+    note: 중간선거 추정 결과(민주당 하원 장악, 달린 그레이엄 패배 추정)와 11월 10~11일 아부다비 평화회담 발표 반영
   checkpoints:
-    - date: 2026-11-03
-      note: 미국 중간선거. 휴회 중인 의회가 복귀한 뒤 유예 철회 요구나 믹스 의원의 경유 거래 차단 법안이 처리되는지 확인
+    - date: 2026-11-11
+      note: 아부다비 미·러·우 평화회담(10~11일) 결과
+    - date: 2026-11-20
+      note: 복귀한 의회의 유예 철회 요구와 믹스 의원의 러시아 석유 거래 금지 법안 진행 여부
     - date: 2026-11-18
       note: 선전 APEC(18~19일) 계기로 푸틴이 제안했다는 트럼프·시진핑과의 3자 회담 성사 여부(WSJ 보도)
     - date: 2026-12-15
@@ -87,6 +93,14 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 
 국민일보는 이번 조치를 "고유가에 발목 잡힌 트럼프"로 요약하면서, 쿠슈너와 스티브 윗코프 특사단이 유럽 동맹국들에 러시아산 천연가스 수입 재개를 제안했다는 보도를 함께 전했다([국민일보](https://www.kmib.co.kr/article/view.asp?arcid=9000023547)). 전문가 평가는 효과에 회의적이다. 브라운대의 제프 콜건은 "우크라이나 민주주의를 경유와 맞바꾸는 격"이라며 세계 시장이 커서 가격은 크게 움직이지 않겠지만 러시아에는 상당한 추가 수입이 될 수 있다고 했고, 컬럼비아대의 타티아나 미트로바는 "미국 소비자에게 돌아갈 경제적 이익은 꽤 제한적"이라며 "유럽은 제재를 조이는데 워싱턴은 반대 방향으로 가고 있다"고 했다. 시카고대의 콘스탄틴 소닌은 "미국이 유럽의 능동적 행위자에서 물러나는 또 하나의 걸음"이라고 평가했다([Time](https://time.com/article/2026/10/17/what-trump-s-waiver-of-new-russia-sanctions-means-for-ukraine/)).
 
+## 선거 뒤: 의회 지형은 바뀌었지만 유예 철회 움직임은 아직
+
+11월 3일 중간선거에서 민주당이 하원을 장악한 것으로 NBC, ABC, CBS, CNBC 등이 추정했다. NBC는 상원도 민주당이 이겼다고 추정했지만 CBS와 CNBC는 같은 시각 호출하지 않았다. 제재법 수정안을 낸 달린 그레이엄 의원은 사우스캐롤라이나에서 민주당 애니 앤드루스 후보에게 진 것으로 AP와 CBS가 추정했고, 패배를 인정했다. 한국시각 4일 오후 1시 15~26분께 각 매체 집계 기준이며, 언론 추정이지 인증 결과가 아니다.([NBC 라이브](https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763), [CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html), [CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/))
+
+믹스 의원은 선거 전 트럼프가 일방적으로 러시아 에너지를 수입하지 못하게 법을 고치겠다고 했다([Kyiv Independent](https://kyivindependent.com/what-the-us-midterms-could-mean-for-ukraine)). 16일 발의한 법안(Prohibit Corrupt Russia Oil Deals Act)은 재무부 일반허가 취소와 에너지 부문 제재 의무화를 담았다([Kyiv Post](https://www.kyivpost.com/post/87355)). 다만 선거 뒤 유예 철회를 요구했다거나 법안이 진전됐다는 보도는 찾지 못했다. 새 의회가 들어서기 전까지 믹스 의원이 위원장으로서 법안을 움직일 수 있는 것도 아니다. 이 부분은 일반적인 의회 일정에 따른 해석이다.
+
+협상 쪽은 움직였다. 위트코프 특사는 2일 미·러·우 회담을 11월 10~11일 아부다비에서 연다고 발표했다. 미국이 중재한 마지막 회담은 2월이었다([RFE/RL](https://www.rferl.org/a/us-russia-ukraine-peace-talks-abu-dhabi-ceasefire/33889451.html)). 같은 날 러시아 공습으로 자포리자 코미슈바하의 구호품 배포 장소였던 학교에서 최소 31명이 숨졌다([Al Jazeera](https://www.aljazeera.com/news/2026/11/2/russian-bombing-of-ukrainian-aid-centre-kills-24-people-zelenskyy)). 트럼프에게 제재 유예는 이제 하원 민주당의 표적이자 아부다비 협상 카드라는 두 얼굴을 갖게 됐다. 이는 해석이다.
+
 ## 의미
 
 이 법은 애초 의회가 대통령의 재량을 좁히려고 만든 것이었다. 기존 행정명령 제재를 법률로 굳히고, 500% 관세와 2차 관세를 '해야 한다'는 의무 조항으로 적고, 제재를 끝내려면 평화협정 서명을 인증하고 의회 심사를 거치게 했다. 그러나 같은 법의 115조는 "국익" 인증서 한 장으로 어떤 조항이든 유예할 수 있게 했고, 트럼프는 서명 28일 만에 그 조항으로 나머지를 모두 비워 냈다. 바이든 정부 당국자였던 존 파이너가 법 통과 전에 "대통령이 갖지 못한 새 제재 권한을 더하지 않으면서 유예 조항과 광범위한 관세 권한을 준다"고 지적했던 구조가 그대로 드러난 셈이다([Wikipedia](https://en.wikipedia.org/wiki/Sanctioning_Russia_Act)).
@@ -103,10 +117,21 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 - 젤렌스키가 말한 3자 정상회담은 러시아와 미국 어느 쪽도 확인하지 않았다. WSJ가 보도한 푸틴의 미·중·러 회담 제안도 미 고위 당국자가 "트럼프가 아직 동의하지 않았다"고 한 단계다.
 - 트럼프의 "매우 좋은 결정" 발언은 폭스비즈니스 보도에 기댔으며 발언 장소와 전체 맥락은 확인하지 못했다.
 - 워싱턴포스트·더힐·CNBC 원문은 접근이 막혀 다른 매체의 같은 내용으로 대체했다.
-- 남은 일정: 11월 3일 미국 중간선거, 11월 18~19일 선전 APEC, 12월 중순 60일 검토 기한, 12월 마이애미 G20.
+- 남은 일정: 11월 10~11일 아부다비 회담, 11월 18~19일 선전 APEC, 12월 중순 60일 검토 기한, 12월 마이애미 G20.
+
+## 갱신 기록
+
+- 2026-11-04: 중간선거 추정 결과와 믹스 의원 법안 상황, 11월 10~11일 아부다비 평화회담 발표와 자포리자 공습 반영. 11월 3일 확인 일정을 11월 11일·20일로 변경
 
 ## 출처
 
+- [Midterm election results live — NBC News](https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763)
+- [Midterm elections 2026 live updates — CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html)
+- [Senate election results 2026 — CBS News](https://www.cbsnews.com/live-updates/senate-election-results-2026/)
+- [What the US midterms could mean for Ukraine — Kyiv Independent](https://kyivindependent.com/what-the-us-midterms-could-mean-for-ukraine)
+- [Prohibit Corrupt Russia Oil Deals Act — Kyiv Post](https://www.kyivpost.com/post/87355)
+- [US, Russia, Ukraine peace talks in Abu Dhabi — RFE/RL](https://www.rferl.org/a/us-russia-ukraine-peace-talks-abu-dhabi-ceasefire/33889451.html)
+- [Russian bombing of Ukrainian aid centre — Al Jazeera](https://www.aljazeera.com/news/2026/11/2/russian-bombing-of-ukrainian-aid-centre-kills-24-people-zelenskyy)
 - [Implementing the Lindsey O. Graham Sanctioning Russia and Iran Act of 2026 — The White House](https://www.whitehouse.gov/presidential-actions/2026/10/implementing-the-lindsey-o-graham-sanctioning-russia-and-iran-act-of-2026/)
 - [President Signs Bipartisan Russia and Iran Sanctions Bill Into Law: Key Provisions — Paul, Weiss](https://www.paulweiss.com/insights/client-memos/president-signs-bipartisan-russia-and-iran-sanctions-bill-into-law-key-provisions-of-the-lindsey-o-graham-sanctioning-russia-and-iran-act-of-2026)
 - [Sanctioning Russia Act — Wikipedia](https://en.wikipedia.org/wiki/Sanctioning_Russia_Act)
