@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-11-03T09:23:00+09:00
+updated_at: 2026-11-04T13:31:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,11 +18,11 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-03T09:23:00+09:00
-    note: "31일 '3막' 시위(내무부 32만·주최 측 50만, 체포 779명, 경찰 부상 116명)와 파리 행진 금지의 국사원 승인 반영"
+    at: 2026-11-04T13:31:00+09:00
+    note: 2027년 예산안 1부 하원 표결 두 번째 연기(11월 3일 불발, 이번 주 후반 예정)와 5일 파업 준비 상황 반영
   checkpoints:
-    - date: 2026-11-03
-      note: 2027년 예산안 1부(세입) 하원 표결
+    - date: 2026-11-06
+      note: 이번 주 후반으로 미뤄진 2027년 예산안 1부(세입) 하원 표결 개최 여부와 결과
     - date: 2026-11-05
       note: CFDT·CGT·FO·UNSA·FSU 5개 노조 전국 파업·시위일
     - date: 2026-11-07
@@ -123,6 +123,12 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 
 다음 일정도 이어진다. 5개 노조는 5일(목) 파업과 시위를 예고했고, 대학생 단체 유니옹 에튀디앙트는 3일과 5일 봉쇄를 호소했다. 노란조끼는 6~7일 행동을 준비 중이다.
 
+## 11월 3일: 예산안 1부 표결, 두 번째로 미뤄졌다
+
+3일 오후로 잡혔던 2027년 예산안 1부(세입) 표결은 열리지 않았다. 10월 20일에 이어 두 번째 연기다. 3일 0시 3분 기준 수정안 758건이 남아 있었다([LCP](https://lcp.fr/actualites/budget-2027-le-marathon-de-la-partie-recettes-n-etant-pas-termine-le-vote-solennel-prevu)). Public Sénat는 표결이 이번 주 후반으로 밀렸으며 확정 날짜는 없다고 전했고, 하원의 전체 심의 시한은 11월 17일 자정이다([Public Sénat](https://www.publicsenat.fr/actualites/politique/budget-2027-calendrier-49-3-ordonnancesquelles-sont-les-echeances-a-venir-et-les-scenarios-possibles)). 하원 안내는 1부 심의 기간을 11월 6일까지로 적었다([하원](https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/examen-de-la-premiere-partie-du-projet-de-loi-de-finances-pour-2027)).
+
+5일 전국 파업은 예정대로 준비 중이다. 처음 호소한 CFDT·CGT·FO·UNSA·FSU에 CFE-CGC와 CFTC가 합류했다([France 24](https://www.france24.com/fr/info-en-continu/20261102-mobilisation-du-5-novembre-en-france-au-tour-du-monde-du-travail-de-descendre-dans-la-rue)). 표결이 이번 주 후반에 열리면 긴축 예산안의 첫 관문이 5일 파업, 6~7일 노란조끼 행동과 같은 주에 겹친다. 정부로서는 가장 나쁜 시점에 표결을 치르게 되는 셈이다. 이는 해석이다.
+
 ## 의미
 
 이번 대응의 특징은 정부가 비상사태 대신 지사 단위의 부분 통행금지와 집회 금지권이라는 '아래로부터의' 수단을 골랐다는 점이다. 르코르뉘 총리가 상황이 "매우 제각각"이라고 말한 데서 보이듯, 리모주·마르세유·릴처럼 피해가 집중된 도시와 그렇지 않은 곳을 한 틀로 묶기 어렵고, 전국 비상사태는 대선을 앞둔 정부가 치러야 할 정치적 비용이 크다. 다만 통행금지의 실효성은 24일 노란조끼 2차 시위에서 바로 시험된다. 뉘녜스 장관 스스로 "극도로 기동성이 높은 집단"에 경찰 전략이 맞지 않았다고 인정한 만큼, 고정된 구역을 지키는 통행금지가 이동하며 약탈하는 집단에 얼마나 효과를 내느냐가 관건이다.
@@ -141,6 +147,7 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 17일 투입 경찰 규모는 한국일보(FT 인용) 약 1만 명, 글로벌이코노믹(로이터 인용) 6만 명으로 엇갈린다.
 - 통행금지 적용 도시·구역·시간은 파리 경찰청과 각 도청의 arrêté 원문이 아니라 franceinfo·ICI 보도로 확인했다. 마르세유·보르도·툴루즈 내용은 ICI 지도에만 기댔다. 세계일보가 전한 드냉 '오후 9시' 통금은 franceinfo의 노르 4개 도시 '밤 8시'와 다르고, 노르 통행금지 기간도 '19·20일 이틀 밤'과 '25일까지'(Le Grand Continent)로 보도가 엇갈린다.
 - 예산안 1부 표결 연기는 처음에 LCP·Entrevue 보도로 확인했고, 11월 3일 표결 일정은 하원 공식 안내로 확인했다. 27일 실제 심의 재개 여부와 진행 상황은 원문으로 확인하지 못했다.
+- (갱신) 11월 3일 표결 불발은 LCP와 Public Sénat 보도로 확인했다. 새 표결 날짜와 5일 파업 참가 예상 규모는 확인하지 못했다.
 - 사회보장재정법안 부결 표수·그룹별 투표는 하원 공개표결 원문이 아니라 NosParlementaires 정리로 확인했다. 예산안 전체 표결 11월 17일 일정도 같은 매체에만 기댔다.
 - '파손자 부담' 법안 상원 표결 결과는 senat.fr 공식 표결 기록이 아니라 Public Sénat·Le Club des Juristes·franceinfo 보도로 교차 확인했다. 뉘녜스 장관의 국사원 회부가 실제로 이뤄졌는지와 하원 심사 일정, 신속 절차 적용 여부는 확인하지 못했다.
 - 르코르뉘 총리의 "극좌 네트워크가 대선 일정을 흔들려 한다"는 주장은 정보기관 보고를 근거로 한다고 보도됐으나 공개된 증거는 없다.
@@ -158,9 +165,13 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 2026-10-28: 사회보장재정법안 23일 하원 부결(찬성 1·반대 115·기권 22), 예산안 1부 표결 11월 3일로 연기, '파손자 부담' 법안 27일 상원 본회의 심사 시작 반영. 10월 27일 확인 일정 제거
 - 2026-10-29: '파손자 부담' 법안 상원 1독회 가결(찬성 229·반대 105)과 상원 수정 내용, 국사원 회부 예고, 노르 미성년자 통행금지 연장 반영. 10월 29일 확인 일정 제거
 - 2026-11-03: 31일 '3막' 시위 규모·체포·부상과 파리 행진 금지·통행금지, 후속 일정 반영. 10월 31일 확인 일정 제거
+- 2026-11-04: 예산안 1부 표결 두 번째 연기와 5일 파업 준비 상황 반영. 11월 3일 확인 일정을 11월 6일로 변경
 
 ## 출처
 
+- [Budget 2027 : le vote solennel prévu reporté — LCP](https://lcp.fr/actualites/budget-2027-le-marathon-de-la-partie-recettes-n-etant-pas-termine-le-vote-solennel-prevu)
+- [Budget 2027 : calendrier, 49.3, ordonnances — Public Sénat](https://www.publicsenat.fr/actualites/politique/budget-2027-calendrier-49-3-ordonnancesquelles-sont-les-echeances-a-venir-et-les-scenarios-possibles)
+- [Mobilisation du 5 novembre — France 24](https://www.france24.com/fr/info-en-continu/20261102-mobilisation-du-5-novembre-en-france-au-tour-du-monde-du-travail-de-descendre-dans-la-rue)
 - [France moves to impose curfews as it reels from worst violence in years — NBC News](https://www.nbcnews.com/world/europe/france-violence-riots-looting-paris-limoges-curfews-macron-protests-rcna604292)
 - [France protests live: PM wants some cities to impose 'curfews' after unrest — Al Jazeera](https://www.aljazeera.com/news/liveblog/2026/10/19/france-protests-live-macron-admits-failures-after-days-of-violent-unrest)
 - [Live: French PM Lecornu calls for 'partial curfews' in cities hit by riots and looting — France 24](https://www.france24.com/en/europe/20261019-live-france-macron-slams-unbridled-violence-protests-weekend-unrest)
