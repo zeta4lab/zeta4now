@@ -19,7 +19,7 @@ Claude, Codex, Gemini 등 대화형 에이전트는 이 지침을 따른다. 설
 5. **파일 작성과 검증** — 승인되면 아래 형식으로 파일을 쓰고 [검증](#검증)을 통과시킨다.
 6. **PR** — `desk/<slug>` 브랜치에 `content: <제목>` 메시지로 커밋하고 `origin`(GitHub)에 push한 뒤 `main` 대상
    PR을 연다([PR 열기](#pr-열기)). PR 링크를 사용자에게 알린다. 사용자는 휴대폰에서 PR을 보고 직접 고칠 수도 있다.
-7. **머지** — 사용자가 머지를 명시적으로 승인하고 `Public content contract` 검사가 통과한 경우에만 squash merge한다.
+7. **머지** — 사용자가 머지를 명시적으로 승인하고 머지 직전 [로컬 검증](#검증)을 통과한 경우에만 squash merge한다.
    머지 후 1~2분 안에 `https://now.zeta4.net/a/<slug>`에 반영되는지 확인한다.
    처음 발행되는 기사는 머지 즉시 Bluesky에 자동 게시되므로, 여러 건을 낼 때는 간격을 둔다.
 
@@ -105,7 +105,7 @@ tracking:
 
 1. 요청이 지적한 문장과 근거를 공식 발표, 1차 자료, 기사 원문과 대조한다.
 2. 틀린 것이 확인되면 일반 갱신 절차로 같은 파일을 고친다. `updated_at`을 갱신하고, `## 갱신 기록`에 `- 2026-10-20: 독자 요청으로 ○○ 수치 정정(기존 12% → 1.2%)`처럼 무엇을 어떻게 바꿨는지 남긴다. `tracking.last_update`는 건드리지 않는다.
-3. 수정안을 보여 주고 사용자가 승인하면 `desk/<slug>-fix-<YYYYMMDD>` 브랜치로 PR을 열고, 검사가 통과하면 머지한다. 커밋 메시지는 `content: <제목> 정정`이다. 머지 후 1~2분 안에 사이트 반영을 확인한다.
+3. 수정안을 보여 주고 사용자가 승인하면 `desk/<slug>-fix-<YYYYMMDD>` 브랜치로 PR을 열고, 로컬 검증을 통과하면 머지한다. 커밋 메시지는 `content: <제목> 정정`이다. 머지 후 1~2분 안에 사이트 반영을 확인한다.
 4. 확인 결과 기사가 맞으면 고치지 않고, 대조한 자료와 판단을 보고하고 회신 초안을 쓴다.
 
 ### 반론
@@ -137,7 +137,7 @@ PYTHONDONTWRITEBYTECODE=1 uv run --with markdown-it-py==4.2.0 --with pillow==12.
   python scripts/check_content.py .
 ```
 
-`공개 콘텐츠 계약 검증을 통과했습니다.`가 나와야 PR을 연다.
+`공개 콘텐츠 계약 검증을 통과했습니다.`가 나와야 PR을 열고, 머지 직전에도 `main`과 합친 상태에서 다시 실행한다. GitHub Actions CI는 쓰지 않으므로 이 로컬 검증이 머지 전 유일한 검사다.
 
 ## PR 열기
 
@@ -147,7 +147,7 @@ PYTHONDONTWRITEBYTECODE=1 uv run --with markdown-it-py==4.2.0 --with pillow==12.
 gh pr create --repo zeta4lab/zeta4now --base main --head desk/<slug> --title "content: <제목>" --body "<요약>"
 ```
 
-검사 상태는 `gh pr checks <번호>`, 사용자가 승인한 squash merge는 `gh pr merge <번호> --squash`로 한다.
+사용자가 승인한 squash merge는 `gh pr merge <번호> --squash`로 한다.
 
 API 키 기반 자동 생성 경로(`zeta4now-mcp`, `zeta4s`)는 2026-10-27에 폐기했다. 이전 기사의 `generated_by` 값은 그대로 둔다.
 
