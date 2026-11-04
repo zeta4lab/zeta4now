@@ -13,7 +13,7 @@ tags:
 summary: 공군 1호기 명단, 바이낸스, 더존비즈온 사고는 주체도 규모도 다르지만 뚫린 곳은 모두 금고 밖의 믿었던 통로다. 이번에 드러난 공백은 보관 규제로 메워지지 않는다. 누가 어떤 경로로 데이터를 내보낼 수 있는지를 따지고, 그 책임자를 정해야 한다.
 generated_by: claude
 model: claude-opus-5-5
-updated_at: 2026-11-03T18:54:00+09:00
+updated_at: 2026-11-04T13:31:00+09:00
 tracking:
   status: ongoing
   checkpoints:
@@ -40,7 +40,7 @@ flowchart TD
     A2 --> A3["유료 회원이 내려받을 수 있는 상태로 약 5개월"]
   end
   subgraph B["바이낸스"]
-    B1["엔지니어 노트북 침해 가능성"] --> B2["내부 시스템이 거래에 서명(Elliptic 분석)"]
+    B1["변조 설치본과 가짜 면접으로 엔지니어 단말 침해(바이낸스 발표)"] --> B2["컨테이너 배포 뒤 내부 시스템이 거래에 서명"]
     B2 --> B3["핫월렛에서 약 63억 달러 유출"]
   end
   subgraph C["더존비즈온"]
@@ -67,7 +67,7 @@ VirusTotal의 공식 문서는 숨기지 않는다. "제출된 파일의 내용�
 
 ## 바이낸스: 키를 훔치지 않아도 돈은 나갔다
 
-[이미 전한 대로](https://now.zeta4.net/a/2026-11-03-binance-hack-fbi-north-korea) 10월 29일(UTC) 바이낸스에서 약 63억 달러가 빠져나갔다. Elliptic은 공격자가 개인 키를 훔친 것이 아니라 "바이낸스 자체 시스템이 거래에 서명하게 만들었다"고 분석했고, 바이낸스는 개발·운영 엔지니어의 노트북 침해 가능성을 초기 원인으로 들었다([Elliptic](https://www.elliptic.co/insights/binance-largest-hack-in-history/), [CNBC](https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html)).
+[이미 전한 대로](https://now.zeta4.net/a/2026-11-03-binance-hack-fbi-north-korea) 10월 29일(UTC) 바이낸스에서 약 63억 달러가 빠져나갔다. Elliptic은 공격자가 개인 키를 훔친 것이 아니라 "바이낸스 자체 시스템이 거래에 서명하게 만들었다"고 분석했고, 바이낸스는 3일 공개한 초기 조사 결과에서 변조된 AI 코딩 도구 설치본과 가짜 채용 면접으로 엔지니어들의 컴퓨터가 뚫렸고, 공격자가 그 자격증명으로 컨테이너를 배포해 악성 스크립트를 실행했다고 밝혔다([Elliptic](https://www.elliptic.co/insights/binance-largest-hack-in-history/), [바이낸스](https://www.binance.com/en/blog/community/3229153443759566763)).
 
 이 분석이 맞다면 공격자는 금고를 부수지 않았다. 금고 문을 여는 정상 절차를 움직였다. 한국 규제의 대표 수단인 '이용자 자산 80% 이상 콜드월렛 보관'은 여전히 필요하지만, 온라인에 남은 자산이 그 절차로 빠져나가는 일까지 막아 주지는 않는다. 금융위가 2일 점검회의에서 콜드월렛 비중 상향과 함께 핫월렛 승인·서명 체계와 관리자 권한을 살핀 것은 맞는 방향이다([뉴시스](https://newsis.com/view/NISX20261102_0003851302)). 다만 점검과 당부로 끝나면 안 된다. 서명 경로를 독립적으로 검증하도록 의무화해야 한다.
 
@@ -103,7 +103,7 @@ VirusTotal의 공식 문서는 숨기지 않는다. "제출된 파일의 내용�
 
 ## 확인할 점
 
-- 세 사고 모두 조사 중이며 원인이 확정되지 않았다. 바이낸스 공격 경로는 초기 설명과 Elliptic 분석에, 1호기 업로드 경위는 추정 보도에 기댄다. 외교부의 고의 유출 여부 내부 조사는 코리아중앙데일리 보도로 확인했고 원 발표문은 보지 못했다.
+- 세 사고 모두 조사 중이며 원인이 확정되지 않았다. 바이낸스 공격 경로는 회사의 초기 조사 결과와 Elliptic 분석에, 1호기 업로드 경위는 추정 보도에 기댄다. 외교부의 고의 유출 여부 내부 조사는 코리아중앙데일리 보도로 확인했고 원 발표문은 보지 못했다.
 - 국내 보도 다수는 사이트 이름을 밝히지 않았다. VirusTotal이라는 이름은 정부 발표를 전한 코리아중앙데일리와 뉴스1 요약문에서 확인했다. 파일 이름은 보도마다 다르다('1호기 탑승자 명단', '탑승객 명단(대한민국-벨기에)').
 - 더존비즈온의 급여·가족 정보는 제품에 담길 수 있는 항목이지 유출이 확인된 항목이 아니다. '고객사 15만 곳'도 피해 규모가 아니다.
 - '다른 문서도 나갔을 수 있다', '위드유 사례는 범위가 더 넓다는 신호다', '한 담당자의 실수로 정리될 것이다'는 이 글의 판단이며 확인된 사실이 아니다.
@@ -111,9 +111,11 @@ VirusTotal의 공식 문서는 숨기지 않는다. "제출된 파일의 내용�
 ## 갱신 기록
 
 - 2026-11-03: 세 사고의 경로를 보여 주는 도표 추가
+- 2026-11-04: 바이낸스 초기 조사 결과에 맞춰 공격 경로 설명과 도표 수정
 
 ## 출처
 
+- [29 October 2026 Binance Security Incident: Initial Findings and Response Update — 바이낸스](https://www.binance.com/en/blog/community/3229153443759566763)
 - [Presidential data breach may have been internal leak, Foreign Ministry says — 코리아중앙데일리](https://koreajoongangdaily.com/korea/presidential-data-breach-may-have-been-internal-leak-foreign-ministry-says/12952457)
 - [경찰, 공군 1호기 탑승자 정보 유출 내사 착수 — 아시아경제](https://view.asiae.co.kr/article/2026110311023260764)
 - [경찰, 168명 개인정보 유출 내사 착수…외교부 수사의뢰 — 서울경제](https://m.sedaily.com/article/20109551)
