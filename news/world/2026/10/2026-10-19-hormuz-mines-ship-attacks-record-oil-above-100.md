@@ -14,15 +14,15 @@ tags:
 summary: 이란 혁명수비대는 14일 컨테이너선 침몰, 17일 200만 배럴급 유조선 2척, 19일 유조선 1척이 기뢰에 부딪혔다고 주장했지만 로이터는 독립 확인이 없다고 했고 미 중부사령부는 발사체 공격이라고 반박했다. 10월 들어 피격 선박은 20척이 넘고(UKMTO·CNBC), 10월 12일까지 한 주 해협 통과 원유는 하루 850만 배럴로 전쟁 전보다 약 40% 적었다(Kpler). 브렌트유는 16일 110달러를 찍었고 이란은 "6일 안 재개방" 제안이 유효하다고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-03T09:23:00+09:00
+updated_at: 2026-11-04T13:31:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-03T09:23:00+09:00
-    note: 11월 1일 OPEC+ 7개국 12월 생산량 동결(9월 수준 유지, 합계 약 3,101만 배럴)과 다음 회의 11월 29일 반영
+    at: 2026-11-04T13:31:00+09:00
+    note: 이란의 이틀 재개방 제안, 선거 전날 미군 케심섬 타격, 브렌트유 103.60달러, 중간선거 출구조사 반영
   checkpoints:
-    - date: 2026-11-03
-      note: 미국 중간선거. 트럼프가 선거 전 이란 공격 배제 발언을 한 시한이자 이란 7일 제안·미국 조건 협상의 분기점
+    - date: 2026-11-15
+      note: 이란의 이틀 재개방 제안에 대한 미국의 공식 답변과 선거 뒤 협상·공습 재개 여부
     - date: 2026-11-29
       note: OPEC+ 7개국 다음 회의 결과
     - date: 2026-11-30
@@ -95,6 +95,16 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 사우디·러시아·이라크·쿠웨이트·카자흐스탄·알제리·오만 7개국은 1일(일) 화상 회의에서 12월 요구 생산량을 9월 수준으로 유지하기로 했다. 합계는 하루 약 3,101만 배럴이고 사우디는 1,047만 8,000배럴이다. 다음 회의는 11월 29일이다([Xinhua](https://english.news.cn/europe/20261102/f96df7a657a740ecb48628e90ca2f4d8/c.html), [Gulf Insider](https://www.gulf-insider.com/opec-holds-december-oil-output-targets-unchanged/)). Xinhua와 Gulf Insider가 전한 성명 내용에는 호르무즈나 이란 언급이 없다. 더내셔널은 성명이 추가 조정이나 증산 일정을 내놓지 않았고, 회원국 대부분이 전쟁 탓에 목표보다 적게 생산하고 있으며, OPEC+가 2027년 쿼터를 정하려고 회원국 생산 능력을 점검 중이라고 전했다. 같은 기사에 따르면 브렌트유는 금요일 2.4% 오른 배럴당 117.64달러였다([The National](https://www.thenationalnews.com/business/energy/2026/11/01/opec-holds-december-oil-output-targets-steady-as-iran-war-disrupts-supply/)).
 
+## 11월 1~3일: 이란 '이틀 재개방' 제안, 선거 전날 미군 타격, 유가는 4주 만의 저점
+
+이란은 1일 기존 7일 안을 이틀로 줄인 재개방안을 내놨다. 미국이 첫날 조치하면 둘째 날 운항을 재개한다는 순서다. 조건은 오만과 지정한 항로 인정, 제재 완화, 동결 자금 해제, 원유 면제 복원, 미군 축소, 레바논 공격 중단이다([Investing.com](https://www.investing.com/news/economy-news/iran-offers-48hour-hormuz-reopening-plan-as-trump-signals-progress-in-talks-4989413)). 미국의 공식 수락이나 거부는 찾지 못했다. 바가이 이란 외무부 대변인은 직접 협상 단계가 아니라고 했고([Townhall](https://townhall.com/news/jeff-charles/2026/11/03/iran-says-its-ready-to-reopen-the-strait-of-hormuz-if-this-happens-n2685767)), 이란 고위 관리는 로이터에 아직 합의와 거리가 멀다(still far from a deal)고 말했다([The Star(로이터)](https://www.thestar.com.my/business/2026/11/04/oil-eases-to-four-week-low-on-peace-hopes)).
+
+트럼프 대통령은 10월 8일 중간선거 전에는 이란을 공격하지 않겠다고 했지만([Fox Carolina](https://www.foxcarolina.com/2026/10/08/trump-says-us-will-not-resume-military-strikes-iran-before-midterm-elections/)), 미군은 선거 전날인 2일 호르무즈의 케심섬을 타격했다. 미 당국자는 지대공 미사일 운용 인력을 겨냥했다고 했고, 트럼프는 "작은 공격이었고 전쟁은 아니었다"(minor attack, it wasn't a war)고 했다([Stripes](https://stripes.com/theaters/middle_east/2026-11-03/us-strikes-iran-qeshm-island-hormuz-23348317.html), [PBS](https://www.pbs.org/newshour/world/u-s-strikes-strait-of-hormuz-hours-before-tuesday-midterms)).
+
+브렌트유는 3일 배럴당 103.60달러로 1% 내려 약 4주 만의 최저로 마감했고 WTI는 96.09달러였다([The Star(로이터)](https://www.thestar.com.my/business/2026/11/04/oil-eases-to-four-week-low-on-peace-hopes)). 시장은 합의 기대를 먼저 가격에 넣었지만 양측의 공식 입장은 그만큼 가까워지지 않았다. 기대가 꺾이면 되돌림이 나올 수 있고, 유류세 인하 종료를 앞둔 한국에 이 하락을 추세로 읽을 근거는 아직 없다. 이는 해석이다.
+
+선거에서는 민주당이 하원을 장악한 것으로 NBC, ABC, CBS, CNBC 등이 추정했다. NBC는 상원도 민주당이 이겼다고 추정했지만 CBS와 CNBC는 같은 시각 호출하지 않았다. 한국시각 4일 오후 1시 15~26분께 각 매체 집계 기준이며, 언론 추정이지 인증 결과가 아니다. NBC 출구조사 초기치에서 대이란 군사행동이 잘못이라는 응답은 62%, 휘발유·경유 비용이 걱정된다는 응답은 87%였다([NBC 라이브](https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763), [NBC 출구조사](https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045), [CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/)).
+
 ## 한국: 10월 물량은 확보, 11월 이후 비용과 우회로가 변수
 
 한국석유공사 통계로 7월 한국의 원유 수입 9,318만 배럴 가운데 쿠웨이트·이라크 등 걸프 안쪽에서만 실을 수 있는 물량은 687만 배럴(7.4%)이었고, 사우디·UAE처럼 송유관으로 우회할 수 있는 물량이 4,499만 배럴(48.3%), 해협과 무관한 비중동·오만산이 4,132만 배럴(44.3%)이었다. 이라크산 수입은 2006년 5월 이후 처음으로 0이었다. 8월 31일 기준 정부 비축유는 1억 배럴로, 사우디·UAE 물량까지 하루 167만 배럴이 끊기면 60일, 전체 수입이 끊기면 33일을 버틸 수 있다는 단순 계산이 나온다. 이 계산은 민간 비축과 수요 감축, 대체 도입을 반영하지 않은 것이다([이포커스](https://www.e-focus.co.kr/news/articleView.html?idxno=3003095)).
@@ -130,9 +140,19 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - 2026-10-21: 20일 혁명수비대의 '기뢰로 유조선 3척 정지·폭발' 주장과 CENTCOM 반박, 20~21일 유가, 로이터 '이란 협상 지연' 보도, 무니르 파키스탄 육군참모총장 방이, 라브로프 방이, 이란의 안보리 긴급회의 요청 반영
 - 2026-10-27: 22일 혁명수비대 '유조선 7척 피격' 주장과 미국 반박·기지 공격 경고, 23일 브렌트유, 10월 공격 집계, 이란의 '일주일 종전' 제안 반영
 - 2026-11-03: 11월 1일 OPEC+ 7개국의 12월 생산량 동결과 다음 회의 일정(11월 29일) 반영
+- 2026-11-04: 이란의 이틀 재개방 제안, 2일 미군 케심섬 타격, 3일 브렌트유, 중간선거 추정 결과와 출구조사 반영. 11월 3일 확인 일정을 11월 15일로 변경
 
 ## 출처
 
+- [Iran offers 48-hour Hormuz reopening plan — Investing.com](https://www.investing.com/news/economy-news/iran-offers-48hour-hormuz-reopening-plan-as-trump-signals-progress-in-talks-4989413)
+- [Iran says it's ready to reopen the Strait of Hormuz — Townhall](https://townhall.com/news/jeff-charles/2026/11/03/iran-says-its-ready-to-reopen-the-strait-of-hormuz-if-this-happens-n2685767)
+- [Oil eases to four-week low on peace hopes — The Star(로이터)](https://www.thestar.com.my/business/2026/11/04/oil-eases-to-four-week-low-on-peace-hopes)
+- [Trump says US will not resume strikes on Iran before midterms — Fox Carolina](https://www.foxcarolina.com/2026/10/08/trump-says-us-will-not-resume-military-strikes-iran-before-midterm-elections/)
+- [US strikes Iran's Qeshm Island — Stripes](https://stripes.com/theaters/middle_east/2026-11-03/us-strikes-iran-qeshm-island-hormuz-23348317.html)
+- [U.S. strikes Strait of Hormuz hours before midterms — PBS](https://www.pbs.org/newshour/world/u-s-strikes-strait-of-hormuz-hours-before-tuesday-midterms)
+- [Midterm election results live — NBC News](https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763)
+- [Exit poll: voters, economy and Trump — NBC News](https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045)
+- [Senate election results 2026 — CBS News](https://www.cbsnews.com/live-updates/senate-election-results-2026/)
 - [Two tankers catch fire in Strait of Hormuz mine blasts, Iran says — Reuters(Baird Maritime)](https://www.bairdmaritime.com/security/incidents/acts-of-war/two-tankers-catch-fire-in-strait-of-hormuz-mine-blasts-iran-says)
 - [US military disputes Iran's Hormuz claims, ship sinking account — Gulf News](https://gulfnews.com/world/mena/us-military-disputes-irans-hormuz-claims-ship-sinking-account-1.500712504)
 - [Container ship sinks in Strait of Hormuz as Iran steps up attacks — CNBC](https://www.cnbc.com/2026/10/14/container-ship-sinks-strait-hormuz-as-iran-war-attacks.html)
