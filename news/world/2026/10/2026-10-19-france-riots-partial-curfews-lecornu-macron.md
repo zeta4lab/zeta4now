@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-11-04T13:31:00+09:00
+updated_at: 2026-11-05T09:14:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,17 +18,17 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-04T13:31:00+09:00
-    note: 2027년 예산안 1부 하원 표결 두 번째 연기(11월 3일 불발, 이번 주 후반 예정)와 5일 파업 준비 상황 반영
+    at: 2026-11-05T09:14:00+09:00
+    note: 2027년 예산안 1부 하원 부결(반대 458, 찬성 0)과 정부안 상원 이송, 5일 파업 사전 전망 반영
   checkpoints:
-    - date: 2026-11-06
-      note: 이번 주 후반으로 미뤄진 2027년 예산안 1부(세입) 하원 표결 개최 여부와 결과
     - date: 2026-11-05
       note: CFDT·CGT·FO·UNSA·FSU 5개 노조 전국 파업·시위일
     - date: 2026-11-07
       note: 노란조끼 6~7일 행동 규모와 충돌 여부
     - date: 2026-11-09
       note: 하원에서 부결된 사회보장재정법안 상원 심사 시작
+    - date: 2026-11-20
+      note: 하원에서 세입이 부결된 2027년 예산안의 상원 본회의 심의 시작
 ---
 
 # 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마크롱은 "예측·정보 실패" 인정하고 "통제 상실" 시인한 뉘녜스 내무장관 사의 반려
@@ -127,7 +127,15 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 
 3일 오후로 잡혔던 2027년 예산안 1부(세입) 표결은 열리지 않았다. 10월 20일에 이어 두 번째 연기다. 3일 0시 3분 기준 수정안 758건이 남아 있었다([LCP](https://lcp.fr/actualites/budget-2027-le-marathon-de-la-partie-recettes-n-etant-pas-termine-le-vote-solennel-prevu)). Public Sénat는 표결이 이번 주 후반으로 밀렸으며 확정 날짜는 없다고 전했고, 하원의 전체 심의 시한은 11월 17일 자정이다([Public Sénat](https://www.publicsenat.fr/actualites/politique/budget-2027-calendrier-49-3-ordonnancesquelles-sont-les-echeances-a-venir-et-les-scenarios-possibles)). 하원 안내는 1부 심의 기간을 11월 6일까지로 적었다([하원](https://www.assemblee-nationale.fr/dyn/actualites-accueil-hub/examen-de-la-premiere-partie-du-projet-de-loi-de-finances-pour-2027)).
 
-5일 전국 파업은 예정대로 준비 중이다. 처음 호소한 CFDT·CGT·FO·UNSA·FSU에 CFE-CGC와 CFTC가 합류했다([France 24](https://www.france24.com/fr/info-en-continu/20261102-mobilisation-du-5-novembre-en-france-au-tour-du-monde-du-travail-de-descendre-dans-la-rue)). 표결이 이번 주 후반에 열리면 긴축 예산안의 첫 관문이 5일 파업, 6~7일 노란조끼 행동과 같은 주에 겹친다. 정부로서는 가장 나쁜 시점에 표결을 치르게 되는 셈이다. 이는 해석이다.
+5일 전국 파업은 예정대로 준비 중이다. 처음 호소한 CFDT·CGT·FO·UNSA·FSU에 CFE-CGC와 CFTC가 합류했다([France 24](https://www.france24.com/fr/info-en-continu/20261102-mobilisation-du-5-novembre-en-france-au-tour-du-monde-du-travail-de-descendre-dans-la-rue)).
+
+## 11월 4일: 예산안 1부, 반대 458 찬성 0으로 부결
+
+표결은 예상보다 빨리 4일 저녁 열렸고, 하원은 세입 부분을 반대 458표, 찬성 0표로 부결했다. 세입이 부결되면서 하원은 지출 편을 심의하지 않고, 정부 원안이 상원으로 넘어간다([LCP](https://lcp.fr/actualites/budget-2027-l-assemblee-rejette-a-l-unanimite-la-partie-recettes-le-projet-de-loi-de)). 상원 본회의는 11월 20일부터 12월 8일까지로 잡혀 있다([Public Sénat](https://www.publicsenat.fr/actualites/politique/budget-2027-calendrier-49-3-ordonnancesquelles-sont-les-echeances-a-venir-et-les-scenarios-possibles)).
+
+찬성이 한 표도 없었다는 것은 이 예산안을 하원에서 지키려는 세력이 없었다는 뜻이다. 다만 부결이 곧 예산 폐기는 아니다. 무대가 상원으로 옮겨졌을 뿐이고, 하원의 수정 작업이 사라지면서 거리에서 싸우는 쪽은 의회에서 낼 목소리를 더 잃었다. 그 다음 날이 5일 파업이다. 이는 해석이다.
+
+5일 파업에서는 교육부가 초등 교사 파업률을 17.54%로 추정했고, 프랑스 정보당국은 파리권 밖 50만~70만 명, 파리 4만~8만 명을 전망한 것으로 보도됐다. SNCF는 TGV는 약간, 지역 열차는 차질을 예상했고 RATP는 대체로 정상 운행을 예상했다([franceinfo](https://www.franceinfo.fr/societe/manifestations/le-ministere-de-l-education-nationale-estime-a-17-54-le-taux-de-grevistes-dans-le-premier-degre-public-pour-la-mobilisation-du-5-novembre_8267255.html), [franceinfo](https://www.franceinfo.fr/economie/greve/greve-du-5-novembre-la-sncf-prevoit-quelques-perturbations-jeudi-la-ratp-table-sur-un-trafic-normal-en-ile-de-france_8266229.html)). 실제 참가 규모는 아직 나오지 않았다.
 
 ## 의미
 
@@ -147,7 +155,7 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 17일 투입 경찰 규모는 한국일보(FT 인용) 약 1만 명, 글로벌이코노믹(로이터 인용) 6만 명으로 엇갈린다.
 - 통행금지 적용 도시·구역·시간은 파리 경찰청과 각 도청의 arrêté 원문이 아니라 franceinfo·ICI 보도로 확인했다. 마르세유·보르도·툴루즈 내용은 ICI 지도에만 기댔다. 세계일보가 전한 드냉 '오후 9시' 통금은 franceinfo의 노르 4개 도시 '밤 8시'와 다르고, 노르 통행금지 기간도 '19·20일 이틀 밤'과 '25일까지'(Le Grand Continent)로 보도가 엇갈린다.
 - 예산안 1부 표결 연기는 처음에 LCP·Entrevue 보도로 확인했고, 11월 3일 표결 일정은 하원 공식 안내로 확인했다. 27일 실제 심의 재개 여부와 진행 상황은 원문으로 확인하지 못했다.
-- (갱신) 11월 3일 표결 불발은 LCP와 Public Sénat 보도로 확인했다. 새 표결 날짜와 5일 파업 참가 예상 규모는 확인하지 못했다.
+- (갱신) 11월 3일 표결 불발과 4일 부결은 LCP 보도로 확인했다. 표결 시각과 그룹별 투표 내역은 확인하지 못했다. 5일 파업 수치는 사전 전망이다.
 - 사회보장재정법안 부결 표수·그룹별 투표는 하원 공개표결 원문이 아니라 NosParlementaires 정리로 확인했다. 예산안 전체 표결 11월 17일 일정도 같은 매체에만 기댔다.
 - '파손자 부담' 법안 상원 표결 결과는 senat.fr 공식 표결 기록이 아니라 Public Sénat·Le Club des Juristes·franceinfo 보도로 교차 확인했다. 뉘녜스 장관의 국사원 회부가 실제로 이뤄졌는지와 하원 심사 일정, 신속 절차 적용 여부는 확인하지 못했다.
 - 르코르뉘 총리의 "극좌 네트워크가 대선 일정을 흔들려 한다"는 주장은 정보기관 보고를 근거로 한다고 보도됐으나 공개된 증거는 없다.
@@ -166,9 +174,13 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 2026-10-29: '파손자 부담' 법안 상원 1독회 가결(찬성 229·반대 105)과 상원 수정 내용, 국사원 회부 예고, 노르 미성년자 통행금지 연장 반영. 10월 29일 확인 일정 제거
 - 2026-11-03: 31일 '3막' 시위 규모·체포·부상과 파리 행진 금지·통행금지, 후속 일정 반영. 10월 31일 확인 일정 제거
 - 2026-11-04: 예산안 1부 표결 두 번째 연기와 5일 파업 준비 상황 반영. 11월 3일 확인 일정을 11월 6일로 변경
+- 2026-11-05: 예산안 1부 하원 부결(반대 458, 찬성 0)과 상원 이송, 파업 사전 전망 반영, 11월 6일 확인 일정을 11월 20일로 변경
 
 ## 출처
 
+- [Budget 2027 : l'Assemblée rejette à l'unanimité la partie recettes — LCP](https://lcp.fr/actualites/budget-2027-l-assemblee-rejette-a-l-unanimite-la-partie-recettes-le-projet-de-loi-de)
+- [Grève du 5 novembre : taux de grévistes — franceinfo](https://www.franceinfo.fr/societe/manifestations/le-ministere-de-l-education-nationale-estime-a-17-54-le-taux-de-grevistes-dans-le-premier-degre-public-pour-la-mobilisation-du-5-novembre_8267255.html)
+- [Grève du 5 novembre : SNCF et RATP — franceinfo](https://www.franceinfo.fr/economie/greve/greve-du-5-novembre-la-sncf-prevoit-quelques-perturbations-jeudi-la-ratp-table-sur-un-trafic-normal-en-ile-de-france_8266229.html)
 - [Budget 2027 : le vote solennel prévu reporté — LCP](https://lcp.fr/actualites/budget-2027-le-marathon-de-la-partie-recettes-n-etant-pas-termine-le-vote-solennel-prevu)
 - [Budget 2027 : calendrier, 49.3, ordonnances — Public Sénat](https://www.publicsenat.fr/actualites/politique/budget-2027-calendrier-49-3-ordonnancesquelles-sont-les-echeances-a-venir-et-les-scenarios-possibles)
 - [Mobilisation du 5 novembre — France 24](https://www.france24.com/fr/info-en-continu/20261102-mobilisation-du-5-novembre-en-france-au-tour-du-monde-du-travail-de-descendre-dans-la-rue)

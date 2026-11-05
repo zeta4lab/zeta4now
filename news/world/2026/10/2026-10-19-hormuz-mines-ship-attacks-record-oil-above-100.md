@@ -14,12 +14,12 @@ tags:
 summary: 이란 혁명수비대는 14일 컨테이너선 침몰, 17일 200만 배럴급 유조선 2척, 19일 유조선 1척이 기뢰에 부딪혔다고 주장했지만 로이터는 독립 확인이 없다고 했고 미 중부사령부는 발사체 공격이라고 반박했다. 10월 들어 피격 선박은 20척이 넘고(UKMTO·CNBC), 10월 12일까지 한 주 해협 통과 원유는 하루 850만 배럴로 전쟁 전보다 약 40% 적었다(Kpler). 브렌트유는 16일 110달러를 찍었고 이란은 "6일 안 재개방" 제안이 유효하다고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-04T13:31:00+09:00
+updated_at: 2026-11-05T09:14:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-04T13:31:00+09:00
-    note: 이란의 이틀 재개방 제안, 선거 전날 미군 케심섬 타격, 브렌트유 103.60달러, 중간선거 출구조사 반영
+    at: 2026-11-05T09:14:00+09:00
+    note: 브렌트유 94.62달러(8.67% 하락), 중간선거 민주당 상·하원 장악 확정 보도, 이란전 패인에 대한 트럼프 발언 반영
   checkpoints:
     - date: 2026-11-15
       note: 이란의 이틀 재개방 제안에 대한 미국의 공식 답변과 선거 뒤 협상·공습 재개 여부
@@ -103,7 +103,11 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 브렌트유는 3일 배럴당 103.60달러로 1% 내려 약 4주 만의 최저로 마감했고 WTI는 96.09달러였다([The Star(로이터)](https://www.thestar.com.my/business/2026/11/04/oil-eases-to-four-week-low-on-peace-hopes)). 시장은 합의 기대를 먼저 가격에 넣었지만 양측의 공식 입장은 그만큼 가까워지지 않았다. 기대가 꺾이면 되돌림이 나올 수 있고, 유류세 인하 종료를 앞둔 한국에 이 하락을 추세로 읽을 근거는 아직 없다. 이는 해석이다.
 
-선거에서는 민주당이 하원을 장악한 것으로 NBC, ABC, CBS, CNBC 등이 추정했다. NBC는 상원도 민주당이 이겼다고 추정했지만 CBS와 CNBC는 같은 시각 호출하지 않았다. 한국시각 4일 오후 1시 15~26분께 각 매체 집계 기준이며, 언론 추정이지 인증 결과가 아니다. NBC 출구조사 초기치에서 대이란 군사행동이 잘못이라는 응답은 62%, 휘발유·경유 비용이 걱정된다는 응답은 87%였다([NBC 라이브](https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763), [NBC 출구조사](https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045), [CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/)).
+11월 3일 중간선거에서 민주당이 상·하원을 모두 장악했다. CBS와 AP가 상원과 하원의 민주당 승리를 판정했고, 상원은 4일 낮(미 동부시각) 기준 민주당 54석, 공화당 44석에 미시시피와 알래스카 2석이 미정이다([CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/), [PBS](https://www.pbs.org/newshour/politics/democrats-take-control-of-the-senate-after-winning-key-midterm-races)). 최종 의석수는 인증 전까지 바뀔 수 있다. NBC 출구조사 초기치에서 대이란 군사행동이 잘못이라는 응답은 62%, 휘발유·경유 비용이 걱정된다는 응답은 87%였다([NBC 라이브](https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763), [NBC 출구조사](https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045), [CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/)).
+
+유가는 선거 뒤 더 크게 움직였다. 4일 브렌트유 1월물은 94.62달러로 8.98달러(8.67%), WTI 12월물은 88.12달러로 7.97달러(8.29%) 내렸다([블루밍비트](https://en.bloomingbit.io/feed/news/123682)). 로이터는 트럼프의 선거 패배가 평화 기대를 높였다고 전했다([BusinessDay(로이터)](https://www.businessday.co.za/markets/2026-11-04-oil-prices-plunge-as-trumps-midterm-defeat-raises-hopes-of-peace/)). 트럼프는 4일 이란전이 패인이라는 지적에 "largely true"라고 답했다([CBS](https://www.cbsnews.com/live-updates/election-day-2026-midterms/)). 반면 그는 FT에는 "필요하면 갈 준비가 돼 있다"(locked and loaded)고 했고, 이란 측은 미국 답변이 설득력 없다(not convincing)고 했으며, 혁명수비대는 유조선 4척의 기뢰 피격을 주장했다([이란인터내셔널](https://www.iranintl.com/en/202611032572), [CBS](https://cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz)). 미국의 이틀 제안 공식 수락·거부는 여전히 확인되지 않는다.
+
+하루 8.67% 하락은 합의가 아니라 트럼프의 전쟁 부담이 커졌다는 판단을 반영한 값으로 읽힌다. 해협의 실제 통행이나 협상 결과가 바뀌었다는 근거는 아직 없다. 한국 입장에서는 원유 도입 비용에 숨통이 트일 수 있지만, 경유 공급 부족과 11월 30일 유류세 인하 종료 결정까지 이 가격이 유지될지는 별개다. 이는 해석이다.
 
 ## 한국: 10월 물량은 확보, 11월 이후 비용과 우회로가 변수
 
@@ -141,9 +145,17 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - 2026-10-27: 22일 혁명수비대 '유조선 7척 피격' 주장과 미국 반박·기지 공격 경고, 23일 브렌트유, 10월 공격 집계, 이란의 '일주일 종전' 제안 반영
 - 2026-11-03: 11월 1일 OPEC+ 7개국의 12월 생산량 동결과 다음 회의 일정(11월 29일) 반영
 - 2026-11-04: 이란의 이틀 재개방 제안, 2일 미군 케심섬 타격, 3일 브렌트유, 중간선거 추정 결과와 출구조사 반영. 11월 3일 확인 일정을 11월 15일로 변경
+- 2026-11-05: 4일 유가 급락, 트럼프의 선거 평가 발언, 민주당 상·하원 장악 판정과 의석수로 어제 추정치 수정
 
 ## 출처
 
+- [Brent settlement Nov. 4 — 블루밍비트](https://en.bloomingbit.io/feed/news/123682)
+- [Oil prices plunge as Trump's midterm defeat raises hopes of peace — BusinessDay(로이터)](https://www.businessday.co.za/markets/2026-11-04-oil-prices-plunge-as-trumps-midterm-defeat-raises-hopes-of-peace/)
+- [Trump: locked and loaded — 이란인터내셔널](https://www.iranintl.com/en/202611032572)
+- [Iran war live updates — CBS News](https://cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz)
+- [Election Day 2026 live updates — CBS News](https://www.cbsnews.com/live-updates/election-day-2026-midterms/)
+- [2026 Senate midterm election results — CBS News](https://www.cbsnews.com/live-updates/senate-election-results-2026/)
+- [Democrats take control of the Senate — PBS](https://www.pbs.org/newshour/politics/democrats-take-control-of-the-senate-after-winning-key-midterm-races)
 - [Iran offers 48-hour Hormuz reopening plan — Investing.com](https://www.investing.com/news/economy-news/iran-offers-48hour-hormuz-reopening-plan-as-trump-signals-progress-in-talks-4989413)
 - [Iran says it's ready to reopen the Strait of Hormuz — Townhall](https://townhall.com/news/jeff-charles/2026/11/03/iran-says-its-ready-to-reopen-the-strait-of-hormuz-if-this-happens-n2685767)
 - [Oil eases to four-week low on peace hopes — The Star(로이터)](https://www.thestar.com.my/business/2026/11/04/oil-eases-to-four-week-low-on-peace-hopes)
