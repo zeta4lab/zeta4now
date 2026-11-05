@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-11-05T09:14:00+09:00
+updated_at: 2026-11-05T22:25:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,11 +18,11 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-05T09:14:00+09:00
-    note: 2027년 예산안 1부 하원 부결(반대 458, 찬성 0)과 정부안 상원 이송, 5일 파업 사전 전망 반영
+    at: 2026-11-05T22:25:00+09:00
+    note: 5일 파업 낮 1시 잠정 집계(내무부 27만 명, 파리 제외), 리옹 등 충돌과 정부 강경 대응 발언 반영
   checkpoints:
-    - date: 2026-11-05
-      note: CFDT·CGT·FO·UNSA·FSU 5개 노조 전국 파업·시위일
+    - date: 2026-11-06
+      note: 5일 파업 최종 참가 규모와 체포·부상 집계
     - date: 2026-11-07
       note: 노란조끼 6~7일 행동 규모와 충돌 여부
     - date: 2026-11-09
@@ -135,7 +135,9 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 
 찬성이 한 표도 없었다는 것은 이 예산안을 하원에서 지키려는 세력이 없었다는 뜻이다. 다만 부결이 곧 예산 폐기는 아니다. 무대가 상원으로 옮겨졌을 뿐이고, 하원의 수정 작업이 사라지면서 거리에서 싸우는 쪽은 의회에서 낼 목소리를 더 잃었다. 그 다음 날이 5일 파업이다. 이는 해석이다.
 
-5일 파업에서는 교육부가 초등 교사 파업률을 17.54%로 추정했고, 프랑스 정보당국은 파리권 밖 50만~70만 명, 파리 4만~8만 명을 전망한 것으로 보도됐다. SNCF는 TGV는 약간, 지역 열차는 차질을 예상했고 RATP는 대체로 정상 운행을 예상했다([franceinfo](https://www.franceinfo.fr/societe/manifestations/le-ministere-de-l-education-nationale-estime-a-17-54-le-taux-de-grevistes-dans-le-premier-degre-public-pour-la-mobilisation-du-5-novembre_8267255.html), [franceinfo](https://www.franceinfo.fr/economie/greve/greve-du-5-novembre-la-sncf-prevoit-quelques-perturbations-jeudi-la-ratp-table-sur-un-trafic-normal-en-ile-de-france_8266229.html)). 실제 참가 규모는 아직 나오지 않았다.
+5일 파업에서는 교육부가 초등 교사 파업률을 17.54%로 추정했고, 프랑스 정보당국은 파리권 밖 50만~70만 명, 파리 4만~8만 명을 전망한 것으로 보도됐다. SNCF는 TGV는 약간, 지역 열차는 차질을 예상했고 RATP는 대체로 정상 운행을 예상했다([franceinfo](https://www.franceinfo.fr/societe/manifestations/le-ministere-de-l-education-nationale-estime-a-17-54-le-taux-de-grevistes-dans-le-premier-degre-public-pour-la-mobilisation-du-5-novembre_8267255.html), [franceinfo](https://www.franceinfo.fr/economie/greve/greve-du-5-novembre-la-sncf-prevoit-quelques-perturbations-jeudi-la-ratp-table-sur-un-trafic-normal-en-ile-de-france_8266229.html)). 
+
+5일 낮 1시 기준 내무부는 파리를 뺀 전국 180개 행렬에 27만 명으로 집계했다. CGT는 73개 도시에서 25만 명 이상이라고 했다. 리옹에서는 수백 명 규모의 블랙블록이 나타났고 낭트, 렌, 포, 오를레앙에서도 충돌과 투척이 있었다. 경찰·헌병 7만 명이 배치됐고 뉘녜스 내무장관은 "극도로 단호한 대응"을 말했다. 비네 CGT 위원장은 요구에 답하기 전에는 멈추지 않겠다고 했다([franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-greve-du-5-novembre-plus-de-250-actions-annoncees-dans-toute-la-france-selon-une-carte-de-la-ggt_8268827.html)). 이 수치는 파리 행진이 시작되기 전의 잠정치여서 10월 시위 규모와 직접 비교하기는 이르다.
 
 ## 의미
 
@@ -175,9 +177,11 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 2026-11-03: 31일 '3막' 시위 규모·체포·부상과 파리 행진 금지·통행금지, 후속 일정 반영. 10월 31일 확인 일정 제거
 - 2026-11-04: 예산안 1부 표결 두 번째 연기와 5일 파업 준비 상황 반영. 11월 3일 확인 일정을 11월 6일로 변경
 - 2026-11-05: 예산안 1부 하원 부결(반대 458, 찬성 0)과 상원 이송, 파업 사전 전망 반영, 11월 6일 확인 일정을 11월 20일로 변경
+- 2026-11-05: 5일 파업 잠정 집계와 충돌, 정부·노조 발언 반영. 최종 집계 확인을 11월 6일 일정으로 변경
 
 ## 출처
 
+- [Grève du 5 novembre en direct — franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-greve-du-5-novembre-plus-de-250-actions-annoncees-dans-toute-la-france-selon-une-carte-de-la-ggt_8268827.html)
 - [Budget 2027 : l'Assemblée rejette à l'unanimité la partie recettes — LCP](https://lcp.fr/actualites/budget-2027-l-assemblee-rejette-a-l-unanimite-la-partie-recettes-le-projet-de-loi-de)
 - [Grève du 5 novembre : taux de grévistes — franceinfo](https://www.franceinfo.fr/societe/manifestations/le-ministere-de-l-education-nationale-estime-a-17-54-le-taux-de-grevistes-dans-le-premier-degre-public-pour-la-mobilisation-du-5-novembre_8267255.html)
 - [Grève du 5 novembre : SNCF et RATP — franceinfo](https://www.franceinfo.fr/economie/greve/greve-du-5-novembre-la-sncf-prevoit-quelques-perturbations-jeudi-la-ratp-table-sur-un-trafic-normal-en-ile-de-france_8266229.html)

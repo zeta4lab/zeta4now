@@ -13,9 +13,15 @@ tags:
 summary: 구글, 오픈AI, 앤트로픽, MS가 robots.txt 토큰 하나로 AI 학습 거부를 받기로 했다. 이는 권리가 아니라 의사표시이고 공식 표준도 아니다. 그래도 한국 사이트 운영자는 거부 기록을 남기는 수단으로 지금 적어 두는 편이 낫다.
 generated_by: claude
 model: unspecified
+updated_at: 2026-11-05T22:25:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-05T22:25:00+09:00
+    note: 지상파·네이버 8차 변론 공방과 12월 1일 9차 변론 종결 예정 반영
   checkpoints:
+    - date: 2026-12-01
+      note: 지상파·네이버 9차 변론 종결 여부와 선고 일정
     - date: 2026-12-15
       note: Bing 임시 그라운딩 설정 개시 여부
     - date: 2027-02-01
@@ -67,7 +73,7 @@ IETF 안에서는 절차 비판도 나온다. Alissa Cooper는 초안이 "IETF�
 
 **언론사.** 기자협회보 6월 조사에서 10개 주요 매체의 대응은 제각각이었고, 구글 '뉴스 AI 랩' 참여 조건에는 `Google-Extended` 허용이 들어 있었다([기자협회보](https://journalist.or.kr/news/article.html?no=61015)). 토큰을 적기 전에 이 계약부터 확인해야 한다. 초안은 사적 계약이 신호보다 우선할 수 있다고 한다.
 
-**소송.** 지상파 3사와 네이버의 소송은 진행 중이고 8차 변론이 5일 오전 11시 10분으로 잡혀 있었다. 재판부는 구체적 침해를 개별 저작물로 판단해야 한다고 했다([기자협회보](https://journalist.or.kr/news/article.html?no=61621)). 국내에는 AI 학습 적법성을 직접 판단한 판례가 없다([세계일보](https://www.segye.com/newsView/20261018513255)). 문체부 안내서는 공정이용 판단에서 "저작권자가 AI 학습을 명확히 거부한 경우"를 예시로 들었다([김앤장](https://www.kimchang.com/ko/insights/detail.kc?sch_section=4&idx=34407)). **토큰이 '명확한 거부'로 인정된다는 근거는 아직 없지만, 기계가 읽을 수 있고 날짜가 남는 거부 기록은 다툼에서 없는 것보다 낫다.** 이는 법률 자문이 아니라 해석이다.
+**소송.** 지상파 3사와 네이버의 소송은 5일 8차 변론을 거쳐 12월 1일 9차에서 변론을 끝낼 예정이다. 네이버는 언급된 기사 대부분이 시사보도로 저작권 보호를 받을 수 없다고 했고, 지상파는 AI 학습이 기사의 표현을 반복 학습하는 무단 이용이라고 맞섰다([뉴스임팩트](https://www.newsimpact.co.kr/news/articleView.html?idxno=4002330), [디지털데일리](https://www.ddaily.co.kr/page/view/2026110516552569126)). 재판부는 구체적 침해를 개별 저작물로 판단해야 한다고 했다([기자협회보](https://journalist.or.kr/news/article.html?no=61621)). 국내에는 AI 학습 적법성을 직접 판단한 판례가 없다([세계일보](https://www.segye.com/newsView/20261018513255)). 문체부 안내서는 공정이용 판단에서 "저작권자가 AI 학습을 명확히 거부한 경우"를 예시로 들었다([김앤장](https://www.kimchang.com/ko/insights/detail.kc?sch_section=4&idx=34407)). **토큰이 '명확한 거부'로 인정된다는 근거는 아직 없지만, 기계가 읽을 수 있고 날짜가 남는 거부 기록은 다툼에서 없는 것보다 낫다.** 이는 법률 자문이 아니라 해석이다.
 
 **정부.** 국가AI전략위는 공개 게시물에 옵트아웃 제도가 핵심이라고 밝혔다([엠에스투데이](https://www.mstoday.co.kr/news/articleView.html?idxno=100288)). 해외 회사들이 사실상의 양식을 정하면 한국 입법도 이를 따라갈 압력을 받는다. 네이버와 독자 AI 모델 사업자들이 이 신호를 존중하는지는 확인되지 않았다. 정부는 이 토큰을 그대로 받아들일지, 그리고 국내 사업자에게 어떤 수준의 준수와 공개를 요구할지 먼저 정해야 한다.
 
@@ -89,10 +95,16 @@ IETF 안에서는 절차 비판도 나온다. Alissa Cooper는 초안이 "IETF�
 - 구글 `Google-Extended` 허용과 토큰 차단을 함께 쓸 때 학습까지 허용되는지는 구글 확인이 필요하다.
 - 토큰에 대한 한국 언론사, 협회, 정부, 네이버의 입장은 찾지 못했다. 저작권법 개정안의 제출 여부와 옵트아웃 조문도 확인하지 못했다.
 - 한국어 데이터 비중과 독자 모델에 미칠 영향의 수치는 찾지 못해 다루지 않았다. 비준수율은 집계 기관과 기간에 따라 차이가 크다.
-- 지상파·네이버 8차 변론 결과는 이 글을 쓰는 시점까지 확인하지 못했다.
+- 지상파·네이버 8차 변론에서 재판부가 한 발언은 보도에서 확인하지 못했다.
+
+## 갱신 기록
+
+- 2026-11-05: 지상파·네이버 8차 변론 공방과 9차 일정 반영
 
 ## 출처
 
+- [지상파·네이버 8차 변론 — 뉴스임팩트](https://www.newsimpact.co.kr/news/articleView.html?idxno=4002330)
+- [지상파·네이버 8차 변론 — 디지털데일리](https://www.ddaily.co.kr/page/view/2026110516552569126)
 - [Machine-Readable Training Preference Signal — IETF 초안](https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/)
 - [AI Preferences 작업반 — IETF](https://datatracker.ietf.org/wg/aipref/about/)
 - [AI training control — Google Search Central](https://developers.google.com/search/blog/2026/10/ai-training-control)

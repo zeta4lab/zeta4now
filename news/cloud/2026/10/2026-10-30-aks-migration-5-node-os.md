@@ -13,11 +13,15 @@ tags:
 summary: AKS 실전 이전 가이드 5회 연재의 마지막 회. 노드 OS는 명령 한 줄로 제자리에서 바꾸거나, 새 노드풀을 만들어 옮기는 두 방법이 있다. Azure Linux 2.0과 Ubuntu 20.04·22.04의 은퇴 일정, OS SKU와 Kubernetes 버전의 관계, 두 이전 방법의 절차와 주의점을 정리한다.
 generated_by: claude
 model: claude-opus-5-5
+updated_at: 2026-11-05T22:25:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-05T22:25:00+09:00
+    note: 이미지 삭제 시행 미확인, Microsoft 문서의 삭제일 불일치(3월 31일, 10월 31일) 안내
   checkpoints:
-    - date: 2026-11-02
-      note: Azure Linux 2.0 노드 이미지 삭제(10월 31일) 실행과 영향 확인
+    - date: 2026-12-01
+      note: Azure Linux 2.0 이미지 삭제 시행 확인과 Microsoft 문서의 날짜 불일치(3월 31일, 10월 31일) 해소 여부
 ---
 
 # AKS 노드 OS 이전…Azure Linux 2.0은 10월 31일 이미지 삭제, Ubuntu 22.04는 2027년 6월 지원 종료
@@ -36,6 +40,8 @@ tracking:
 | Azure Linux with OS Guard(preview) | 2026-12-10 | 2027-03-10 | — |
 
 Azure Linux 2.0이 이미지 삭제 뒤 확장 말고 업그레이드나 재이미지에서도 실패하는지는 문서에 나와 있지 않다. 확장이 막히는 것만으로도 부하가 몰릴 때 노드를 늘릴 수 없다는 뜻이니 기다릴 이유가 없다. Azure Linux 2.0을 지원하는 마지막 AKS 버전은 1.31이므로, 이 노드풀이 남아 있다면 Kubernetes 버전도 뒤처져 있을 가능성이 크다([Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-linux/aks-support-cycle)). [4회](https://now.zeta4.net/a/2026-10-30-aks-migration-4-upgrade-before-2027)의 강제 업그레이드는 OS SKU를 바꿔 주지 않는다는 점도 기억한다.
+
+Microsoft 문서의 날짜가 서로 다르다. 11월 5일 기준 노드 이미지 문서 등 6개 문서는 10월 31일부터 삭제한다고 적었고([Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/node-images)), 노드풀 확장 문서는 2026년 3월 31일부터 삭제됐다고 적었다([Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/scale-cluster)). 변경 공지와 실제 삭제 시행은 확인하지 못했다. 어느 쪽이든 이미 확장이 막혔을 수 있다고 보고 바로 옮기는 편이 안전하다.
 
 ## 0단계: 노드풀 현황 보기
 
@@ -113,8 +119,14 @@ AKS가 관리하는 블루-그린 노드풀 업그레이드(`--upgrade-strategy 
 | 2028-03-31 | kubenet을 Azure CNI Overlay로 | 2회 |
 | 2028-09-30 | Azure NPM(Linux)을 Cilium으로 | 2회 |
 
+## 갱신 기록
+
+- 2026-11-05: Microsoft 문서의 이미지 삭제일 불일치(3월 31일, 10월 31일) 안내. 실제 시행을 확인하지 못해 확인일을 12월 1일로 변경
+
 ## 출처
 
+- [Node images — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/node-images)
+- [Scale a cluster — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/scale-cluster)
 - [Upgrade the OS version for AKS node pools — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/upgrade-os-version)
 - [Azure Linux support cycle on AKS — Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-linux/aks-support-cycle)
 - [Migrate to Azure Linux on AKS — Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-linux/tutorial-migrate-azure-linux-aks)
