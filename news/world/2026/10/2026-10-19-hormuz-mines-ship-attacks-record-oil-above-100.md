@@ -14,12 +14,12 @@ tags:
 summary: 이란 혁명수비대는 14일 컨테이너선 침몰, 17일 200만 배럴급 유조선 2척, 19일 유조선 1척이 기뢰에 부딪혔다고 주장했지만 로이터는 독립 확인이 없다고 했고 미 중부사령부는 발사체 공격이라고 반박했다. 10월 들어 피격 선박은 20척이 넘고(UKMTO·CNBC), 10월 12일까지 한 주 해협 통과 원유는 하루 850만 배럴로 전쟁 전보다 약 40% 적었다(Kpler). 브렌트유는 16일 110달러를 찍었고 이란은 "6일 안 재개방" 제안이 유효하다고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-05T09:14:00+09:00
+updated_at: 2026-11-06T06:41:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-05T09:14:00+09:00
-    note: 브렌트유 94.62달러(8.67% 하락), 중간선거 민주당 상·하원 장악 확정 보도, 이란전 패인에 대한 트럼프 발언 반영
+    at: 2026-11-06T06:41:00+09:00
+    note: 5일 걸프 유조선 피격 주장과 UKMTO 보고, 브렌트유 98.29달러(3.88% 반등) 반영
   checkpoints:
     - date: 2026-11-15
       note: 이란의 이틀 재개방 제안에 대한 미국의 공식 답변과 선거 뒤 협상·공습 재개 여부
@@ -109,6 +109,8 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 하루 8.67% 하락은 합의가 아니라 트럼프의 전쟁 부담이 커졌다는 판단을 반영한 값으로 읽힌다. 해협의 실제 통행이나 협상 결과가 바뀌었다는 근거는 아직 없다. 한국 입장에서는 원유 도입 비용에 숨통이 트일 수 있지만, 경유 공급 부족과 11월 30일 유류세 인하 종료 결정까지 이 가격이 유지될지는 별개다. 이는 해석이다.
 
+되돌림은 하루 만에 왔다. 5일 혁명수비대는 걸프에서 유조선 2척과 예인선 1척에 불이 났다고 주장했고, 영국 해사무역기구(UKMTO)는 카타르 북쪽 50해리에서 유조선 피격을 보고했다([CBS](https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/)). 브렌트유 1월물은 98.29달러로 3.67달러(3.88%) 올라 마감했고 WTI는 90.52달러였다([로이터(Lufkin Daily News)](https://lufkindailynews.com/news_reuters/business/brent-crude-jumps-settles-up-over-3-after-tanker-attacks/article_061e302b-1abf-5f1f-8ab0-318bc6f4fbd3.html)). 전날의 8.67% 하락이 합의를 가격에 넣은 것이었다면, 이날 반등은 해협이 아직 열리지 않았다는 사실을 다시 넣은 것이다. 카타르가 중재한 36시간 회신 시한 뒤 진전 보도는 없다. 이는 해석이다.
+
 ## 한국: 10월 물량은 확보, 11월 이후 비용과 우회로가 변수
 
 한국석유공사 통계로 7월 한국의 원유 수입 9,318만 배럴 가운데 쿠웨이트·이라크 등 걸프 안쪽에서만 실을 수 있는 물량은 687만 배럴(7.4%)이었고, 사우디·UAE처럼 송유관으로 우회할 수 있는 물량이 4,499만 배럴(48.3%), 해협과 무관한 비중동·오만산이 4,132만 배럴(44.3%)이었다. 이라크산 수입은 2006년 5월 이후 처음으로 0이었다. 8월 31일 기준 정부 비축유는 1억 배럴로, 사우디·UAE 물량까지 하루 167만 배럴이 끊기면 60일, 전체 수입이 끊기면 33일을 버틸 수 있다는 단순 계산이 나온다. 이 계산은 민간 비축과 수요 감축, 대체 도입을 반영하지 않은 것이다([이포커스](https://www.e-focus.co.kr/news/articleView.html?idxno=3003095)).
@@ -146,9 +148,11 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - 2026-11-03: 11월 1일 OPEC+ 7개국의 12월 생산량 동결과 다음 회의 일정(11월 29일) 반영
 - 2026-11-04: 이란의 이틀 재개방 제안, 2일 미군 케심섬 타격, 3일 브렌트유, 중간선거 추정 결과와 출구조사 반영. 11월 3일 확인 일정을 11월 15일로 변경
 - 2026-11-05: 4일 유가 급락, 트럼프의 선거 평가 발언, 민주당 상·하원 장악 판정과 의석수로 어제 추정치 수정
+- 2026-11-05: 5일 걸프 선박 피격과 브렌트유 반등 반영
 
 ## 출처
 
+- [Brent crude jumps, settles up over 3% after tanker attacks — 로이터(Lufkin Daily News)](https://lufkindailynews.com/news_reuters/business/brent-crude-jumps-settles-up-over-3-after-tanker-attacks/article_061e302b-1abf-5f1f-8ab0-318bc6f4fbd3.html)
 - [Brent settlement Nov. 4 — 블루밍비트](https://en.bloomingbit.io/feed/news/123682)
 - [Oil prices plunge as Trump's midterm defeat raises hopes of peace — BusinessDay(로이터)](https://www.businessday.co.za/markets/2026-11-04-oil-prices-plunge-as-trumps-midterm-defeat-raises-hopes-of-peace/)
 - [Trump: locked and loaded — 이란인터내셔널](https://www.iranintl.com/en/202611032572)

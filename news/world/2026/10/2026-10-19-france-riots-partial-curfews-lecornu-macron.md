@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-11-05T22:25:00+09:00
+updated_at: 2026-11-06T06:41:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,15 +18,13 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-05T22:25:00+09:00
-    note: 5일 파업 낮 1시 잠정 집계(내무부 27만 명, 파리 제외), 리옹 등 충돌과 정부 강경 대응 발언 반영
+    at: 2026-11-06T06:41:00+09:00
+    note: 5일 파업 확정 집계(내무부 57만 5,000명, CGT 160만 명), 체포 448명, 경찰 부상 53명, 르코르뉘의 9일 사회협의회 소집 반영
   checkpoints:
-    - date: 2026-11-06
-      note: 5일 파업 최종 참가 규모와 체포·부상 집계
     - date: 2026-11-07
       note: 노란조끼 6~7일 행동 규모와 충돌 여부
     - date: 2026-11-09
-      note: 하원에서 부결된 사회보장재정법안 상원 심사 시작
+      note: 르코르뉘 총리가 소집한 노사 사회협의회(구매력·임금)의 결과와 하원에서 부결된 사회보장재정법안 상원 심사 시작
     - date: 2026-11-20
       note: 하원에서 세입이 부결된 2027년 예산안의 상원 본회의 심의 시작
 ---
@@ -137,7 +135,11 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 
 5일 파업에서는 교육부가 초등 교사 파업률을 17.54%로 추정했고, 프랑스 정보당국은 파리권 밖 50만~70만 명, 파리 4만~8만 명을 전망한 것으로 보도됐다. SNCF는 TGV는 약간, 지역 열차는 차질을 예상했고 RATP는 대체로 정상 운행을 예상했다([franceinfo](https://www.franceinfo.fr/societe/manifestations/le-ministere-de-l-education-nationale-estime-a-17-54-le-taux-de-grevistes-dans-le-premier-degre-public-pour-la-mobilisation-du-5-novembre_8267255.html), [franceinfo](https://www.franceinfo.fr/economie/greve/greve-du-5-novembre-la-sncf-prevoit-quelques-perturbations-jeudi-la-ratp-table-sur-un-trafic-normal-en-ile-de-france_8266229.html)). 
 
-5일 낮 1시 기준 내무부는 파리를 뺀 전국 180개 행렬에 27만 명으로 집계했다. CGT는 73개 도시에서 25만 명 이상이라고 했다. 리옹에서는 수백 명 규모의 블랙블록이 나타났고 낭트, 렌, 포, 오를레앙에서도 충돌과 투척이 있었다. 경찰·헌병 7만 명이 배치됐고 뉘녜스 내무장관은 "극도로 단호한 대응"을 말했다. 비네 CGT 위원장은 요구에 답하기 전에는 멈추지 않겠다고 했다([franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-greve-du-5-novembre-plus-de-250-actions-annoncees-dans-toute-la-france-selon-une-carte-de-la-ggt_8268827.html)). 이 수치는 파리 행진이 시작되기 전의 잠정치여서 10월 시위 규모와 직접 비교하기는 이르다.
+5일 낮 1시 기준 내무부는 파리를 뺀 전국 180개 행렬에 27만 명으로 집계했다. CGT는 73개 도시에서 25만 명 이상이라고 했다. 리옹에서는 수백 명 규모의 블랙블록이 나타났고 낭트, 렌, 포, 오를레앙에서도 충돌과 투척이 있었다. 경찰·헌병 7만 명이 배치됐고 뉘녜스 내무장관은 "극도로 단호한 대응"을 말했다. 비네 CGT 위원장은 요구에 답하기 전에는 멈추지 않겠다고 했다([franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-greve-du-5-novembre-plus-de-250-actions-annoncees-dans-toute-la-france-selon-une-carte-de-la-ggt_8268827.html)). 이 수치는 파리 행진이 시작되기 전의 잠정치였다.
+
+내무부의 저녁 7시 30분 확정 집계는 전국 193개 행렬에 57만 5,000명이고, 파리는 6만 5,000명이다. CGT는 전국 160만 명, 파리 35만 명이라고 했다. 내무부 기준으로는 10월 17일(55만 명)을 넘어 이번 가을 가장 큰 규모다. 오후 6시 잠정치로 체포 448명, 경찰 부상 53명이었고, 내무부는 렌·마르세유·낭트·리옹·보르도·스트라스부르에서 수백 명 규모의 극좌 집단이 움직였다고 했다. 툴루즈에서는 복면 집단이 고교에 들어가 기물을 부쉈고, 스트라스부르에서는 기동경찰 인형을 불태워 도지사가 고발했다([franceinfo](https://www.franceinfo.fr/economie/greve/greve/pres-de-1-6-million-de-personnes-ont-defile-en-france-lors-de-la-mobilisation-du-5-novembre-selon-la-cgt-575-000-selon-le-ministere-de-l-interieur_8269868.html)). 마티뇽은 이날 저녁 구매력과 임금 문제에 답하겠다며 9일(월) 노사를 부르는 사회협의회를 발표했다([Public Sénat](https://www.publicsenat.fr/actualites/politique/manifestation-du-5-novembre-sebastien-lecornu-annonce-une-conference-sociale-avec-les-syndicats-et-le-patronat-lundi)).
+
+10월 17일이 약탈과 방화로 번진 데 비하면 이날은 노조가 조직한 행진이어서 폭력 규모는 작았다. 그러나 참가자는 늘었고 정부는 처음으로 임금 협의라는 답을 내놨다. 시위가 거리에서 협상 테이블로 옮겨 갈 수 있는지가 9일에 걸려 있다. 이는 해석이다.
 
 ## 의미
 
@@ -157,7 +159,7 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 17일 투입 경찰 규모는 한국일보(FT 인용) 약 1만 명, 글로벌이코노믹(로이터 인용) 6만 명으로 엇갈린다.
 - 통행금지 적용 도시·구역·시간은 파리 경찰청과 각 도청의 arrêté 원문이 아니라 franceinfo·ICI 보도로 확인했다. 마르세유·보르도·툴루즈 내용은 ICI 지도에만 기댔다. 세계일보가 전한 드냉 '오후 9시' 통금은 franceinfo의 노르 4개 도시 '밤 8시'와 다르고, 노르 통행금지 기간도 '19·20일 이틀 밤'과 '25일까지'(Le Grand Continent)로 보도가 엇갈린다.
 - 예산안 1부 표결 연기는 처음에 LCP·Entrevue 보도로 확인했고, 11월 3일 표결 일정은 하원 공식 안내로 확인했다. 27일 실제 심의 재개 여부와 진행 상황은 원문으로 확인하지 못했다.
-- (갱신) 11월 3일 표결 불발과 4일 부결은 LCP 보도로 확인했다. 표결 시각과 그룹별 투표 내역은 확인하지 못했다. 5일 파업 수치는 사전 전망이다.
+- (갱신) 11월 3일 표결 불발과 4일 부결은 LCP 보도로 확인했다. 표결 시각과 그룹별 투표 내역은 확인하지 못했다. 5일 체포·부상 수치는 오후 6시 잠정치이며, 구금 수와 마크롱 대통령의 반응, 노조의 다음 행동일은 확인하지 못했다.
 - 사회보장재정법안 부결 표수·그룹별 투표는 하원 공개표결 원문이 아니라 NosParlementaires 정리로 확인했다. 예산안 전체 표결 11월 17일 일정도 같은 매체에만 기댔다.
 - '파손자 부담' 법안 상원 표결 결과는 senat.fr 공식 표결 기록이 아니라 Public Sénat·Le Club des Juristes·franceinfo 보도로 교차 확인했다. 뉘녜스 장관의 국사원 회부가 실제로 이뤄졌는지와 하원 심사 일정, 신속 절차 적용 여부는 확인하지 못했다.
 - 르코르뉘 총리의 "극좌 네트워크가 대선 일정을 흔들려 한다"는 주장은 정보기관 보고를 근거로 한다고 보도됐으나 공개된 증거는 없다.
@@ -178,9 +180,12 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 2026-11-04: 예산안 1부 표결 두 번째 연기와 5일 파업 준비 상황 반영. 11월 3일 확인 일정을 11월 6일로 변경
 - 2026-11-05: 예산안 1부 하원 부결(반대 458, 찬성 0)과 상원 이송, 파업 사전 전망 반영, 11월 6일 확인 일정을 11월 20일로 변경
 - 2026-11-05: 5일 파업 잠정 집계와 충돌, 정부·노조 발언 반영. 최종 집계 확인을 11월 6일 일정으로 변경
+- 2026-11-05: 5일 파업 확정 집계와 충돌, 르코르뉘의 9일 사회협의회 소집 반영. 11월 6일 확인 일정 제거, 9일 일정에 사회협의회 추가
 
 ## 출처
 
+- [Près de 1,6 million de personnes selon la CGT, 575 000 selon l'Intérieur — franceinfo](https://www.franceinfo.fr/economie/greve/greve/pres-de-1-6-million-de-personnes-ont-defile-en-france-lors-de-la-mobilisation-du-5-novembre-selon-la-cgt-575-000-selon-le-ministere-de-l-interieur_8269868.html)
+- [Lecornu annonce une conférence sociale lundi — Public Sénat](https://www.publicsenat.fr/actualites/politique/manifestation-du-5-novembre-sebastien-lecornu-annonce-une-conference-sociale-avec-les-syndicats-et-le-patronat-lundi)
 - [Grève du 5 novembre en direct — franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-greve-du-5-novembre-plus-de-250-actions-annoncees-dans-toute-la-france-selon-une-carte-de-la-ggt_8268827.html)
 - [Budget 2027 : l'Assemblée rejette à l'unanimité la partie recettes — LCP](https://lcp.fr/actualites/budget-2027-l-assemblee-rejette-a-l-unanimite-la-partie-recettes-le-projet-de-loi-de)
 - [Grève du 5 novembre : taux de grévistes — franceinfo](https://www.franceinfo.fr/societe/manifestations/le-ministere-de-l-education-nationale-estime-a-17-54-le-taux-de-grevistes-dans-le-premier-degre-public-pour-la-mobilisation-du-5-novembre_8267255.html)
