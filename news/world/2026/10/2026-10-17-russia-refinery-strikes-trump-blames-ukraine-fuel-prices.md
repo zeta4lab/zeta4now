@@ -13,12 +13,12 @@ tags:
 summary: 우크라이나가 10월 15일 러시아 랴잔 정유소를 드론·순항미사일로 타격하며 트럼프가 선언한 '에너지 휴전'을 나흘 만에 끝냈다. 러시아는 처음으로 국영TV에 피해 영상을 내보냈고, 트럼프는 "젤렌스키가 세계 유가를 올린다"며 비난했다. 미국 경유 가격은 10월 16일 갤런당 6.33달러로 1년 전의 1.7배다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-04T13:31:00+09:00
+updated_at: 2026-11-05T09:14:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-04T13:31:00+09:00
-    note: 중간선거 추정 결과와 출구조사(연료비 우려 87%, 트럼프 정책이 경제 악화 65%) 반영
+    at: 2026-11-05T09:14:00+09:00
+    note: 민주당 상·하원 장악 판정과 의석수 수정, 트럼프의 이란전 패인 인정 발언 반영
   checkpoints:
     - date: 2026-11-30
       note: 러시아가 트럼프 합의대로 11월 경유 50만 톤을 수출했는지, 랴잔 정유소 가동 재개 여부 확인
@@ -76,9 +76,9 @@ AP는 이 주장을 독립적으로 검증할 수 없다고 전하면서, 국제
 
 ## 선거 결과: 유권자는 연료비를 걱정했고, 책임은 트럼프 쪽으로 기울었다
 
-11월 3일 중간선거에서 민주당이 하원을 장악한 것으로 NBC, ABC, CBS, CNBC 등이 추정했다. 한국시각 4일 오후 1시 15~26분께 각 매체 집계 기준이며, 언론 추정이지 인증 결과가 아니다. NBC 출구조사 초기치에서 휘발유·경유 비용이 걱정된다는 응답은 87%, 경제가 나쁘다는 응답은 75%, 트럼프 정책이 경제를 악화시켰다는 응답은 65%였다([NBC 출구조사](https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045)). CNBC 유권자 조사에서는 인플레이션이 트럼프 정책 탓이라는 응답이 62%였다([CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html)).
+11월 3일 중간선거에서 민주당이 상·하원을 모두 장악했다. CBS와 AP가 상원과 하원의 민주당 승리를 판정했고, 상원은 4일 낮(미 동부시각) 기준 민주당 54석, 공화당 44석에 미시시피와 알래스카 2석이 미정이다([CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/), [PBS](https://www.pbs.org/newshour/politics/democrats-take-control-of-the-senate-after-winning-key-midterm-races)). 최종 의석수는 인증 전까지 바뀔 수 있다. NBC 출구조사 초기치에서 휘발유·경유 비용이 걱정된다는 응답은 87%, 경제가 나쁘다는 응답은 75%, 트럼프 정책이 경제를 악화시켰다는 응답은 65%였다([NBC 출구조사](https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045)). CNBC 유권자 조사에서는 인플레이션이 트럼프 정책 탓이라는 응답이 62%였다([CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html)).
 
-'유가를 올리는 건 젤렌스키'라는 논리를 직접 물은 조사는 찾지 못했으므로, 그 논리가 결과에 얼마나 작용했는지 단정할 수는 없다. 다만 수치만 보면 유권자의 불만을 우크라이나로 돌리는 데 성공했다는 신호는 없다. 이는 해석이다.
+'유가를 올리는 건 젤렌스키'라는 논리를 직접 물은 조사는 찾지 못했으므로, 그 논리가 결과에 얼마나 작용했는지 단정할 수는 없다. 다만 수치만 보면 유권자의 불만을 우크라이나로 돌리는 데 성공했다는 신호는 없다. 트럼프 자신도 4일 이란전이 패인이라는 지적에 "largely true"라고 답했다([CBS](https://www.cbsnews.com/live-updates/election-day-2026-midterms/)). 이는 해석이다.
 
 ## 의미
 
@@ -101,9 +101,13 @@ AP는 이 주장을 독립적으로 검증할 수 없다고 전하면서, 국제
 ## 갱신 기록
 
 - 2026-11-04: 중간선거 추정 결과와 출구조사 반영. 11월 3일 확인 일정 제거
+- 2026-11-05: 민주당 상·하원 장악 판정과 의석수로 어제 추정치 수정, 트럼프 발언 반영
 
 ## 출처
 
+- [Election Day 2026 live updates — CBS News](https://www.cbsnews.com/live-updates/election-day-2026-midterms/)
+- [2026 Senate midterm election results — CBS News](https://www.cbsnews.com/live-updates/senate-election-results-2026/)
+- [Democrats take control of the Senate — PBS](https://www.pbs.org/newshour/politics/democrats-take-control-of-the-senate-after-winning-key-midterm-races)
 - [Exit poll: voters, economy and Trump — NBC News](https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045)
 - [Midterm elections 2026 live updates — CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html)
 - [Russia talks up refinery attack as Trump blames Ukraine for expensive fuel — Reuters(Global Banking & Finance)](https://www.globalbankingandfinance.com/russia-talks-up-refinery-attack-trump-blames-ukraine/)

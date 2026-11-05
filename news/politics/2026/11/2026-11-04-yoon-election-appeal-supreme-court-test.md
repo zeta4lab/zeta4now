@@ -13,11 +13,15 @@ tags:
 summary: 서울고법이 윤석열 전 대통령의 공직선거법 사건에서 항소를 기각하고 징역 1년 6개월, 집행유예 3년을 유지했다. 상고하면 사건은 여당이 국정조사를 벼르는 조희대 대법원으로 간다. 대법원은 이재명 대통령 사건에서 스스로 보여 준 기준과 속도를 이 사건에서도 설명해야 한다.
 generated_by: claude
 model: claude-opus-5-5
+updated_at: 2026-11-05T09:14:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-05T09:14:00+09:00
+    note: 윤 전 대통령 측 '최대한 빨리 상고' 입장과 국민의힘의 공식 대응 없이 최종심을 지켜본다는 입장 반영
   checkpoints:
     - date: 2026-11-11
-      note: 윤 전 대통령 측과 특검의 상고 여부, 국민의힘의 공식 입장
+      note: 윤 전 대통령 측 상고장 제출과 특검의 상고 여부
     - date: 2026-11-19
       note: 민주당의 조희대 대법원장 국정조사 요구서 보고 일정
     - date: 2027-02-04
@@ -36,13 +40,13 @@ tracking:
 
 재판부는 "국정 최고 책임자를 뽑는 대선에서, 정당 추천 후보자로서 올바른 자료를 제출해야 할 의무가 있는데도 이를 저버렸다"며 "대의민주주의를 보장하는 선거 제도가 침해됐고 절차의 적법성이 훼손됐다"고 밝혔다. 1심의 사실 판단과 법리 판단에도 잘못이 없다고 했다([경향신문](https://www.khan.co.kr/article/202611041443001/)).
 
-윤 전 대통령 측은 항소심에서 "2∼3초 '그건 아니고요'라고 답변한 것을 갖고 허위사실 공표라고 하면 현실적으로 선거운동이 가능한지 의문"이라고 했고([주간경향](https://weekly.khan.co.kr/article/202609081831001)), 결심에서는 "선거는 왜 하느냐"고 했다([시사저널](https://www.sisajournal.com/news/articleView.html?idxno=392765)). 1심은 허위 여부를 발언 일부가 아니라 일반 유권자가 받는 전체적인 인상으로 가려야 한다는 대법원 판례를 근거로 들었고([위키트리](https://www.wikitree.co.kr/articles/1171666)), 2심은 그 판단을 유지했다. 변호인은 이번 판결을 법치주의 위반이라고 비판한 것으로 전해졌다([코리아중앙데일리](https://www.koreajoongangdaily.com/korea/live-yoon-suk-yeol-awaits-election-law-appeals-ruling-that-could-cost-people-power-party-397-billion-won/12955056)).
+윤 전 대통령 측은 항소심에서 "2∼3초 '그건 아니고요'라고 답변한 것을 갖고 허위사실 공표라고 하면 현실적으로 선거운동이 가능한지 의문"이라고 했고([주간경향](https://weekly.khan.co.kr/article/202609081831001)), 결심에서는 "선거는 왜 하느냐"고 했다([시사저널](https://www.sisajournal.com/news/articleView.html?idxno=392765)). 1심은 허위 여부를 발언 일부가 아니라 일반 유권자가 받는 전체적인 인상으로 가려야 한다는 대법원 판례를 근거로 들었고([위키트리](https://www.wikitree.co.kr/articles/1171666)), 2심은 그 판단을 유지했다. 변호인단은 "정치적 공방에 대한 해명을 형사처벌의 대상으로 삼은 판결"이라며([서울신문](https://www.seoul.co.kr/news/society/law/2026/11/05/20261105001006)) "최대한 빨리 상고를 할 예정"이라고 했다([오마이뉴스](https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003281558&PAGE_CD=N0002&CMPT_CD=M0112)). 상고장 제출과 특검의 상고 여부는 아직 확인되지 않았다.
 
 ## 당선무효의 실제 무게는 397억 원이다
 
 이미 파면된 대통령에게 당선무효형은 자리를 빼앗는 형벌이 아니다. 실제 무게는 국민의힘의 돈에 있다. 벌금 100만 원 이상이 확정되면 국민의힘은 선거비용 보전금 394억 5,600만 원과 기탁금 3억 원, 합계 397억 5,600만 원을 고지 후 30일 안에 돌려줘야 한다. 시사저널에 따르면 2월 기준 당 자산은 약 1,315억 원이지만 대부분 부동산이어서 현금성 자산만으로는 충당하기 어렵다고 전해졌다([시사저널](https://www.sisajournal.com/news/articleView.html?idxno=392765)).
 
-박성준 민주당 수석대변인은 선고 뒤 "지난 대선 때 거짓말로 국민의 선택을 농락한 선거범죄에 대한 당연한 판단"이라며 "397억 원을 당장 국민에게 반환해야 한다"고 했다([허프포스트코리아](https://www.huffingtonpost.kr/article/261797)). 다만 법적 반환 의무는 대법원에서 형이 확정돼야 생긴다. 국민의힘은 선고 당일 오전 "지금까지 개별 재판에 대해서 일일이 다 논평을 내지 않았다"며 논평을 내지 않는 쪽으로 가닥을 잡았다고 했다([오마이뉴스](https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003281558)).
+박성준 민주당 수석대변인은 선고 뒤 "지난 대선 때 거짓말로 국민의 선택을 농락한 선거범죄에 대한 당연한 판단"이라며 "397억 원을 당장 국민에게 반환해야 한다"고 했다([허프포스트코리아](https://www.huffingtonpost.kr/article/261797)). 다만 법적 반환 의무는 대법원에서 형이 확정돼야 생긴다. 국민의힘은 공식 논평 없이 최종심을 지켜보겠다는 입장이다([TV서울](https://www.tvseoul.kr/news/article.html?no=79816)). 정점식 원내대표는 "말 그대로 2심이고, 아직까지 대법원이 남아 있다"고 했다([MBC](https://imnews.imbc.com/news/2026/politics/article/6863201_36911.html)).
 
 국민의힘은 7월 1심 직후 이재명 대통령이 유죄로 확정되면 민주당도 434억 원을 반환해야 한다고 맞섰다([위키트리](https://www.wikitree.co.kr/articles/1148735)). 그러나 그 사건은 대통령 당선으로 재판이 중지돼 있다. 같은 죄명의 두 사건에서 한쪽만 돈을 물게 될 수 있다는 점은 판결과 별개로 국민의힘의 정치적 반격 소재가 될 것이다.
 
@@ -67,20 +71,26 @@ tracking:
 - 판결은 확정되지 않았다. 판결문 전문을 보지 못해 보도로 확인했다.
 - 1·2심이 2025년 전원합의체 판결을 직접 인용했는지는 확인하지 못했다. 보도에는 '대법원 판례'로만 나온다. 두 판단을 잇는 것은 이 글의 해석이다.
 - 2심이 '2~3초' 항변에 어떻게 답했는지도 확인하지 못했다.
-- 윤 전 대통령 측의 상고 여부와 국민의힘의 선고 후 공식 입장은 이 글을 쓰는 시점까지 확인하지 못했다. 변호인 반응은 영문 실시간 보도의 요약 문장으로 확인했다.
+- 윤 전 대통령 측의 상고는 의사 표명까지 확인했고 상고장 제출은 확인하지 못했다.
 - 3개월 기한은 공직선거법 제270조를 인용한 칼럼으로 확인했고, 법제처 원문과 기한을 넘겼을 때의 법적 효과는 확인하지 못했다.
 - 개정안은 9월 보도 기준 본회의에 계류 중이었고 그 뒤의 처리 상태는 확인하지 못했다. 개정 시 면소 여부는 법원이 판단할 문제이며, 위 전망은 제안자의 주장과 보도에 기댄 것이다.
 
+## 갱신 기록
+
+- 2026-11-05: 윤 전 대통령 측 상고 입장과 국민의힘 입장 반영
+
 ## 출처
 
+- [윤석열 선거법 2심 후속 — 서울신문](https://www.seoul.co.kr/news/society/law/2026/11/05/20261105001006)
+- [국민의힘 '397억' 반응 — MBC](https://imnews.imbc.com/news/2026/politics/article/6863201_36911.html)
+- [국민의힘 공식 대응 — TV서울](https://www.tvseoul.kr/news/article.html?no=79816)
 - [윤석열, 2심도 '당선무효형'…野 선거비용 397억 반환 기로 — 아시아경제](https://view.asiae.co.kr/article/2026110414503036131)
 - [법원, '윤석열 허위사실 공표' 2심도 징역형 집유 선고 — 경향신문](https://www.khan.co.kr/article/202611041443001/)
 - [윤석열 선거법 2심도 당선무효형 — 위키트리](https://www.wikitree.co.kr/articles/1171666)
 - [윤석열, 선거법 위반 2심도 당선무효형 유지 — 허프포스트코리아](https://www.huffingtonpost.kr/article/261797)
 - [尹 2심 '당선무효형'에…與 "397억원 당장 반환해야" — 헤럴드경제](https://biz.heraldcorp.com/article/10925886)
 - [與 "尹 2심에서도 당선무효 판결…국민의힘 이제 대가 치러야" — 아시아경제](https://view.asiae.co.kr/article/2026110415141815178)
-- [윤석열 선거법 2심 선고 — 오마이뉴스](https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003281558)
-- [LIVE: Yoon Suk Yeol awaits election law appeals ruling — 코리아중앙데일리](https://www.koreajoongangdaily.com/korea/live-yoon-suk-yeol-awaits-election-law-appeals-ruling-that-could-cost-people-power-party-397-billion-won/12955056)
+- [윤석열 선거법 2심 선고 — 오마이뉴스](https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003281558&PAGE_CD=N0002&CMPT_CD=M0112)
 - [국힘 운명 윤석열 손에? 397억 걸린 선거법 항소심 오늘 선고 — 시사저널](https://www.sisajournal.com/news/articleView.html?idxno=392765)
 - [국민의힘 397억 걸린 재판서 윤석열 "2~3초 답변한 것 갖고···" — 주간경향](https://weekly.khan.co.kr/article/202609081831001)
 - [조국 "대통령 사건, 공소취소 아닌 선거법 개정 '면소'로 가야" — 주간경향](https://weekly.khan.co.kr/article/202609061037001)

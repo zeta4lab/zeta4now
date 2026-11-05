@@ -14,12 +14,12 @@ tags:
 summary: 트럼프 대통령이 10월 16일(현지시각) 자신이 9월 18일 서명한 '린지 그레이엄 러시아·이란 제재법'의 500% 관세, 러시아 석유 구매국 100% 관세, 은행·그림자 선단 제재 조항을 시행 이틀 전 행정명령으로 유예했다. 의회에는 "국익"이라고만 통보했고 만료일은 없다. 젤렌스키는 "유감"이라며 미·러·우 3자 회담 추진을 밝혔고, 공화당 틸리스 의원은 "무책임을 넘어섰다"고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-04T13:31:00+09:00
+updated_at: 2026-11-05T09:14:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-04T13:31:00+09:00
-    note: 중간선거 추정 결과(민주당 하원 장악, 달린 그레이엄 패배 추정)와 11월 10~11일 아부다비 평화회담 발표 반영
+    at: 2026-11-05T09:14:00+09:00
+    note: 민주당 상·하원 장악 판정과 의석수 수정, 슈머 '입법 철조망' 발언, 레임덕 회기에는 변화 없다는 전망 반영
   checkpoints:
     - date: 2026-11-11
       note: 아부다비 미·러·우 평화회담(10~11일) 결과
@@ -95,9 +95,9 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 
 ## 선거 뒤: 의회 지형은 바뀌었지만 유예 철회 움직임은 아직
 
-11월 3일 중간선거에서 민주당이 하원을 장악한 것으로 NBC, ABC, CBS, CNBC 등이 추정했다. NBC는 상원도 민주당이 이겼다고 추정했지만 CBS와 CNBC는 같은 시각 호출하지 않았다. 제재법 수정안을 낸 달린 그레이엄 의원은 사우스캐롤라이나에서 민주당 애니 앤드루스 후보에게 진 것으로 AP와 CBS가 추정했고, 패배를 인정했다. 한국시각 4일 오후 1시 15~26분께 각 매체 집계 기준이며, 언론 추정이지 인증 결과가 아니다.([NBC 라이브](https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763), [CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html), [CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/))
+11월 3일 중간선거에서 민주당이 상·하원을 모두 장악했다. CBS와 AP가 상원과 하원의 민주당 승리를 판정했고, 상원은 4일 낮(미 동부시각) 기준 민주당 54석, 공화당 44석에 미시시피와 알래스카 2석이 미정이다([CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/), [PBS](https://www.pbs.org/newshour/politics/democrats-take-control-of-the-senate-after-winning-key-midterm-races)). 최종 의석수는 인증 전까지 바뀔 수 있다. 제재법 수정안을 낸 달린 그레이엄 의원은 사우스캐롤라이나에서 민주당 애니 앤드루스 후보에게 진 것으로 AP와 CBS가 추정했고, 패배를 인정했다([NBC 라이브](https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763), [CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html), [CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/))
 
-믹스 의원은 선거 전 트럼프가 일방적으로 러시아 에너지를 수입하지 못하게 법을 고치겠다고 했다([Kyiv Independent](https://kyivindependent.com/what-the-us-midterms-could-mean-for-ukraine)). 16일 발의한 법안(Prohibit Corrupt Russia Oil Deals Act)은 재무부 일반허가 취소와 에너지 부문 제재 의무화를 담았다([Kyiv Post](https://www.kyivpost.com/post/87355)). 다만 선거 뒤 유예 철회를 요구했다거나 법안이 진전됐다는 보도는 찾지 못했다. 새 의회가 들어서기 전까지 믹스 의원이 위원장으로서 법안을 움직일 수 있는 것도 아니다. 이 부분은 일반적인 의회 일정에 따른 해석이다.
+믹스 의원은 선거 전 트럼프가 일방적으로 러시아 에너지를 수입하지 못하게 법을 고치겠다고 했다([Kyiv Independent](https://kyivindependent.com/what-the-us-midterms-could-mean-for-ukraine)). 16일 발의한 법안(Prohibit Corrupt Russia Oil Deals Act)은 재무부 일반허가 취소와 에너지 부문 제재 의무화를 담았다([Kyiv Post](https://www.kyivpost.com/post/87355)). 다만 선거 뒤 유예 철회를 요구했다거나 법안이 진전됐다는 보도는 찾지 못했다. 새 의회가 들어서기 전까지 믹스 의원이 위원장으로서 법안을 움직일 수 있는 것도 아니다. 이 부분은 일반적인 의회 일정에 따른 해석이다. 이보 달더 전 NATO 대사도 "레임덕 회기에는 아무것도 바뀌지 않을 것"(Nothing will change in the lame-duck session)이라고 했다([Euromaidan Press](https://euromaidanpress.com/2026/11/04/democrats-took-congress-overnight-but-ukraine-isnt-their-top-three-priority-what-midterm-win-really-means-for-kyiv)). 슈머 민주당 상원 원내대표는 트럼프가 법을 거스르면 조사와 소송에 나서고 "입법의 철조망"(legislative razor wire)으로 얽어매겠다고 했지만([CBS](https://www.cbsnews.com/live-updates/election-day-2026-midterms/)), 제재 유예를 콕 집어 말한 것은 아니다.
 
 협상 쪽은 움직였다. 위트코프 특사는 2일 미·러·우 회담을 11월 10~11일 아부다비에서 연다고 발표했다. 미국이 중재한 마지막 회담은 2월이었다([RFE/RL](https://www.rferl.org/a/us-russia-ukraine-peace-talks-abu-dhabi-ceasefire/33889451.html)). 같은 날 러시아 공습으로 자포리자 코미슈바하의 구호품 배포 장소였던 학교에서 최소 31명이 숨졌다([Al Jazeera](https://www.aljazeera.com/news/2026/11/2/russian-bombing-of-ukrainian-aid-centre-kills-24-people-zelenskyy)). 트럼프에게 제재 유예는 이제 하원 민주당의 표적이자 아부다비 협상 카드라는 두 얼굴을 갖게 됐다. 이는 해석이다.
 
@@ -122,9 +122,14 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 ## 갱신 기록
 
 - 2026-11-04: 중간선거 추정 결과와 믹스 의원 법안 상황, 11월 10~11일 아부다비 평화회담 발표와 자포리자 공습 반영. 11월 3일 확인 일정을 11월 11일·20일로 변경
+- 2026-11-05: 민주당 상·하원 장악 판정과 의석수로 어제 추정치 수정, 슈머·달더 발언 반영
 
 ## 출처
 
+- [What midterm win really means for Kyiv — Euromaidan Press](https://euromaidanpress.com/2026/11/04/democrats-took-congress-overnight-but-ukraine-isnt-their-top-three-priority-what-midterm-win-really-means-for-kyiv)
+- [Election Day 2026 live updates — CBS News](https://www.cbsnews.com/live-updates/election-day-2026-midterms/)
+- [2026 Senate midterm election results — CBS News](https://www.cbsnews.com/live-updates/senate-election-results-2026/)
+- [Democrats take control of the Senate — PBS](https://www.pbs.org/newshour/politics/democrats-take-control-of-the-senate-after-winning-key-midterm-races)
 - [Midterm election results live — NBC News](https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763)
 - [Midterm elections 2026 live updates — CNBC](https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html)
 - [Senate election results 2026 — CBS News](https://www.cbsnews.com/live-updates/senate-election-results-2026/)
