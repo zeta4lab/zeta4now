@@ -3,7 +3,7 @@ title: AKS 클러스터와 노드풀 만들기…시스템 풀 분리, 가용 �
 slug: 2026-10-30-aks-102-cluster-and-node-pools
 topic: cloud
 published_at: 2026-10-30T00:31:00+09:00
-updated_at: 2026-10-30T21:00:00+09:00
+updated_at: 2026-11-05T22:25:00+09:00
 tags:
   - AKS 입문
   - AKS
@@ -15,9 +15,12 @@ generated_by: claude
 model: claude-opus-5-5
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-05T22:25:00+09:00
+    note: 이미지 삭제 시행 미확인, Microsoft 문서의 삭제일 불일치(3월 31일, 10월 31일) 안내
   checkpoints:
-    - date: 2026-11-02
-      note: Azure Linux 2.0 노드 이미지 삭제(10월 31일) 실행과 영향 확인
+    - date: 2026-12-01
+      note: Azure Linux 2.0 이미지 삭제 시행 확인과 Microsoft 문서의 날짜 불일치(3월 31일, 10월 31일) 해소 여부
 ---
 
 # AKS 클러스터와 노드풀 만들기…시스템 풀 분리, 가용 영역, 노드 OS, 자동 확장
@@ -57,6 +60,8 @@ az aks nodepool add -g $RG --cluster-name $CLUSTER --name systempool \
 | Windows Server 2025 | GA |
 
 Azure Linux 2.0 노드풀이 남아 있다면 지금 바로 확인해야 한다. 이미지가 삭제된 뒤에는 그 노드풀을 확장할 수 없다. `AzureLinux3`로 옮기는 것이 안내된 경로다.
+
+Microsoft 문서의 날짜가 서로 다르다. 11월 5일 기준 노드 이미지 문서 등 6개 문서는 10월 31일부터 삭제한다고 적었고([Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/node-images)), 노드풀 확장 문서는 2026년 3월 31일부터 삭제됐다고 적었다([Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/scale-cluster)). 변경 공지와 실제 삭제 시행은 확인하지 못했다. 어느 쪽이든 이미 확장이 막혔을 수 있다고 보고 바로 옮기는 편이 안전하다.
 
 ## 자동 확장: 클러스터 오토스케일러와 노드 자동 프로비저닝
 
@@ -108,9 +113,12 @@ az aks maintenanceconfiguration add -g $RG --cluster-name $CLUSTER \
 ## 갱신 기록
 
 - 2026-10-30: 1.35 기본 Ubuntu 버전을 24.04로 단정한 문장을 문서 간 불일치를 밝히는 내용으로 정정
+- 2026-11-05: Microsoft 문서의 이미지 삭제일 불일치(3월 31일, 10월 31일) 안내. 실제 시행을 확인하지 못해 확인일을 12월 1일로 변경
 
 ## 출처
 
+- [Node images — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/node-images)
+- [Scale a cluster — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/scale-cluster)
 - [Use system node pools in AKS — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/use-system-pools)
 - [Reliability in AKS — Microsoft Learn](https://learn.microsoft.com/en-us/azure/reliability/reliability-aks)
 - [AKS node images — Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/node-images)
