@@ -13,8 +13,12 @@ tags:
 summary: 11월 2일부터 5일까지 유럽에서 여객기 30편 넘게 폭탄 위협을 받았고 5일 하루에만 최소 27편이 수색·회항·전투기 호위를 겪었다. 폭발물은 한 건도 없었다. 위협 메일은 러시아의 극단주의 단체 이름으로 서명됐지만 귀속은 확인되지 않았다. 이 글은 이 사건을 테러가 아니라 유럽 항공 보안 대응의 비용과 한계를 재는 시험으로 본다.
 generated_by: claude
 model: unspecified
+updated_at: 2026-11-08T20:43:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-08T20:43:00+09:00
+    note: 6일 방송사 대상 위협 확산, 스페인·이탈리아·아일랜드의 '하이브리드' 규정, 파리 검찰의 외세 연계 조사, 체포 0명 유지 반영
   checkpoints:
     - date: 2026-11-13
       note: 이탈리아·체코·프랑스 수사의 체포·귀속 여부와 EU 항공보안 정보공유 메커니즘의 결과
@@ -60,6 +64,12 @@ tracking:
 
 **셋째, 유럽 차원의 집계가 없다.** 5일 피해 편수는 CNN 14편, CBS 20~27편, 로이터 27편으로 갈렸고, 유로컨트롤의 자체 성명은 찾지 못했다. 승객 피해 총계나 결항 통계를 낸 기관도 없다. 공격자는 유럽 전체를 한 표적으로 삼았는데 대응은 나라별로 쪼개져 있다.
 
+## 11월 6~8일: 표적이 항공기에서 방송사로 번졌다
+
+6일에는 스카이뉴스, 불가리아 노바TV, 아일랜드 RTÉ 등 방송사가 이메일 위협을 받아 대피했고, 7~8일 항공편 위협은 보도되지 않았다. 체포는 여전히 없다. 귀속 발언은 세졌다. 스페인 알바레스 외무장관은 "하이브리드 공격이자 심리전 시도"라 했고, 멜로니 이탈리아 총리는 "공격받는 것은 민간 인프라"라고 했으며, 아일랜드 정부는 "조율된 교란 캠페인일 가능성이 크다"고 했다. 파리 검찰은 "외국 세력과의 연계 가능성"을 조사한다고 밝혔고, '남성 국가' 창설자 포즈드냐코프는 단체가 "2021년 이후 존재하지 않는다"고 했다([TIME](https://time.com/article/2026/11/07/europe-bomb-threats-raise-fear-new-warfare/)). 에브뢰 검찰은 에어링구스 기장 조사를 마치고 출국을 허용했으며 에어링구스는 기장이 "흠잡을 데 없이 행동했다"고 했다([Irish Times](https://www.irishtimes.com/ireland/2026/11/06/aer-lingus-pilot-under-investigation-for-initially-refusing-to-land-during-bomb-threat/)).
+
+방송사로 번진 것은 이 글의 판단을 강화한다. 항공기든 방송국이든 공통점은 '위협을 무시할 수 없는 조직'이라는 점이고, 공격자는 대응 비용이 보장되는 표적을 고르고 있다. 정부들이 '하이브리드'라는 말을 쓰기 시작한 것도 보낸 쪽이 바라던 반응일 수 있다. 이는 해석이다.
+
 ## 인도의 2024년이 보여 준 것
 
 이런 물결은 처음이 아니다. 인도는 허위 폭탄 위협이 2023년 71건에서 2024년 728건으로 늘었고, 그해 13명을 체포했다([트리뷴](https://www.tribuneindia.com/news/india/hoax-bomb-threats-to-airlines-see-massive-increase-from-71-in-2023-to-728-in-2024-parliament-told)). 건당 비용은 6만 달러 이상으로 추정됐다. 인도의 교훈은 체포가 늦을수록 모방이 는다는 것이다. 유럽은 6일 아침 기준 체포 0명, 공식 귀속 0건이다.
@@ -76,8 +86,14 @@ tracking:
 - 회항 비용 25만 달러는 전문가 추정이다. 전투기 출격 비용은 최신 공식 수치가 없어 적지 않았다.
 - 한국 항공사의 유럽 노선 수는 위키백과와 스케줄 사이트로 확인했고 회사 공식 자료는 보지 못했다. '표적은 대응 체계'라는 판단과 한국 제안은 이 글의 해석이다.
 
+## 갱신 기록
+
+- 2026-11-08: 6일 방송사 위협 확산과 각국 귀속 발언, 기장 수사 경과 반영
+
 ## 출처
 
+- [Europe bomb threats raise fear of new warfare — TIME](https://time.com/article/2026/11/07/europe-bomb-threats-raise-fear-new-warfare/)
+- [Aer Lingus pilot under investigation — Irish Times](https://www.irishtimes.com/ireland/2026/11/06/aer-lingus-pilot-under-investigation-for-initially-refusing-to-land-during-bomb-threat/)
 - [Europe flights hit by bomb threats — 로이터(글로브앤메일)](https://www.theglobeandmail.com/world/article-europe-flights-bomb-threats/)
 - [Multiple flights in Europe diverted over bomb threats — AP(NBC워싱턴)](https://www.nbcwashington.com/news/national-international/multiple-flights-europe-diverted-over-bomb-threats/4178347/)
 - [Malicious hoaxes: over a dozen flights get bomb threats — AP(1News)](https://www.1news.co.nz/2026/11/06/malicious-hoaxes-over-a-dozen-flights-across-europe-get-bomb-threats/)

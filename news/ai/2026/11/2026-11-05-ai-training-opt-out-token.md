@@ -13,12 +13,12 @@ tags:
 summary: 구글, 오픈AI, 앤트로픽, MS가 robots.txt 토큰 하나로 AI 학습 거부를 받기로 했다. 이는 권리가 아니라 의사표시이고 공식 표준도 아니다. 그래도 한국 사이트 운영자는 거부 기록을 남기는 수단으로 지금 적어 두는 편이 낫다.
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-05T22:25:00+09:00
+updated_at: 2026-11-08T20:43:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-05T22:25:00+09:00
-    note: 지상파·네이버 8차 변론 공방과 12월 1일 9차 변론 종결 예정 반영
+    at: 2026-11-08T20:43:00+09:00
+    note: 오픈AI 공식 글 확인, 메타의 생성형 AI 상업 약관 시행 보류(11월 20일 미시행) 반영
   checkpoints:
     - date: 2026-12-01
       note: 지상파·네이버 9차 변론 종결 여부와 선고 일정
@@ -54,8 +54,8 @@ Disallow: /
 | Anthropic | 인식 시작, 전 서비스 적용은 진행 중 | `ClaudeBot`을 따로 적으면 그 규칙이 우선한다 |
 | 구글 | 2027년 초 | `Google-Extended` 차단으로 해석한다. 이 설정은 Gemini 학습과 그라운딩을 모두 관장한다 |
 | MS | 2027년 2월 1일 | 학습과 그라운딩을 분리. "대가나 노출을 보장하지 않는다" |
-| 오픈AI | "수개월 내", 날짜 없음 | 공식 글은 읽지 못해 보도로 확인했다 |
-| 메타, 애플, 아마존, 커먼크롤 | 약속 확인 안 됨 | 메타는 공통 신호가 중요하다고만 했다 |
+| 오픈AI | "수개월 내", 날짜 없음 | 10월 30일 공식 글을 냈다. 날짜는 없다 |
+| 메타, 애플, 아마존, 커먼크롤 | 약속 확인 안 됨 | 메타는 공통 신호가 중요하다고만 했고, 사업자 웹사이트 수집을 허용하는 약관 개정은 보류했다 |
 
 **다들 놓친 함정은 구글이다.** 구글은 토큰을 `Google-Extended` 차단으로 해석한다. 구글은 이 설정을 명시적으로 허용한 사이트가 Gemini 앱의 그라운딩 응답에 나오고 클릭을 받을 수 있다고 안내한다([구글](https://developers.google.com/search/blog/2026/10/ai-training-control), [구글 크롤러 문서](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers)). 학습은 거부하고 답변 노출은 유지하려는 사이트에는 곤란한 구조다. 구글 검색 순위와는 별개라고 안내하지만, AI 답변이 트래픽 입구가 되는 시대에 이는 작은 비용이 아닐 수 있다. 반면 MS는 학습과 그라운딩을 나눴다([Bing](https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/)). 같은 토큰이어도 회사별 값이 다르다.
 
@@ -68,6 +68,8 @@ Disallow: /
 - **검색·RAG·사용자 주도 조회.** 대가도 포함되지 않는다. Courtney Radsch는 "이는 통제가 아니라 선호"라고 했다([Radsch](https://courtneyradsch.substack.com/p/big-ai-firms-coalesce-around-a-new)).
 
 IETF 안에서는 절차 비판도 나온다. Alissa Cooper는 초안이 "IETF에서 공식 지위가 없다"고 지적했고, Laurent Le Meur는 기정사실화라고 했다([Tech Policy Press](https://www.techpolicy.press/what-the-new-ai-training-optout-really-means), [IETF 메일](https://mailarchive.ietf.org/arch/msg/ai-control/fb32reD933_7PHlogKWCaLAVtD8/)). **규칙의 대상이 될 쪽이 아니라 규칙을 지킬 쪽이 먼저 문구를 정했다**는 점이 이 논란의 핵심이다. 비판의 절반은 옳다. 다만 작업반 표준을 무작정 기다리는 동안 수집은 계속되므로, 임시로라도 쓸 수 있는 신호가 생긴 것 자체는 사이트 운영자에게 이득이다. 이는 해석이다.
+
+오픈AI는 10월 30일 "웹사이트가 AI 학습 선호를 표현하도록 돕는다"는 공식 글에서 "수개월 내" 지원을 밝혔다([Unite.AI](https://www.unite.ai/openai-to-honor-shared-robots-txt-signal-for-ai-training-preferences/)). 메타는 사업자 계정과 연결된 웹사이트 수집을 허용하려던 약관 개정을 보류해 "11월 20일에 발효되지 않는다"고 했다([404 Media](https://www.404media.co/meta-generative-ai-commercial-terms-on-pause/)). 토큰 지원 약속은 아니지만, 노르웨이 법원의 시행 금지에 이어 수집 범위를 넓히려던 시도가 멈춘 것이다.
 
 ## 한국에 주는 영향
 
@@ -100,9 +102,12 @@ IETF 안에서는 절차 비판도 나온다. Alissa Cooper는 초안이 "IETF�
 ## 갱신 기록
 
 - 2026-11-05: 지상파·네이버 8차 변론 공방과 9차 일정 반영
+- 2026-11-08: 오픈AI 공식 글 확인과 메타 약관 보류 반영
 
 ## 출처
 
+- [OpenAI to honor shared robots.txt signal — Unite.AI](https://www.unite.ai/openai-to-honor-shared-robots-txt-signal-for-ai-training-preferences/)
+- [Meta generative AI commercial terms on pause — 404 Media](https://www.404media.co/meta-generative-ai-commercial-terms-on-pause/)
 - [지상파·네이버 8차 변론 — 뉴스임팩트](https://www.newsimpact.co.kr/news/articleView.html?idxno=4002330)
 - [지상파·네이버 8차 변론 — 디지털데일리](https://www.ddaily.co.kr/page/view/2026110516552569126)
 - [Machine-Readable Training Preference Signal — IETF 초안](https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/)

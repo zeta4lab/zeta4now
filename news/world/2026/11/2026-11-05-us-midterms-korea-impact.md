@@ -13,8 +13,12 @@ tags:
 summary: 민주당의 양원 장악으로 트럼프 관세가 풀릴 것이라는 기대는 접어야 한다. 대신 의회의 예산이 걸린 조선과 전작권은 트럼프와의 약속만으로 움직이지 않게 됐다. 핵잠은 정권 교체로 취소된 전례를 찾지 못했지만, 진짜 위험은 약속이 아직 법적 협정이 아니라는 점이다.
 generated_by: claude
 model: unspecified
+updated_at: 2026-11-08T20:43:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-08T20:43:00+09:00
+    note: 미시시피(2,574표 차)·알래스카(637표 차) 미판정과 인증 일정, 하원 민주 252석, 백악관 비서실장 교체(밀러) 반영
   checkpoints:
     - date: 2026-12-31
       note: NDAA 처리와 반도체 세액공제 연장 여부, 한미 핵잠 2차 협의 개최 여부
@@ -28,7 +32,7 @@ tracking:
 
 ## 판단: 질문을 잘못 잡으면 대응도 틀린다
 
-민주당은 11월 3일 선거에서 상·하원을 모두 장악했다. 상원은 4일 기준 54 대 44에 2석이 미정이다([CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/)). 국내 논의는 "관세가 내려가느냐"에 몰려 있다. 이 글은 그 질문이 틀렸다고 본다.
+민주당은 11월 3일 선거에서 상·하원을 모두 장악했다. 상원은 54 대 44에 2석이 미정이다([CBS](https://www.cbsnews.com/live-updates/senate-election-results-2026/)). 국내 논의는 "관세가 내려가느냐"에 몰려 있다. 이 글은 그 질문이 틀렸다고 본다.
 
 **관세는 대통령의 영역으로 남고, 달라지는 것은 한국이 의회를 건너뛰고 트럼프와 맺은 약속들이다.** 지난 2년의 대미 전략은 백악관과의 담판이었다. 이제 그 방식만으로는 약속을 이행할 수 없는 영역이 생긴다.
 
@@ -80,6 +84,12 @@ KEI의 분석처럼 이 MOU는 조약이 아니라 "관세 위협으로 집행"�
 
 **이 글의 전망은 이렇다. 민주당 의회가 핵잠을 곧바로 막기보다, 협정 문턱에서 비확산 조건을 높이고 일정을 늦출 가능성이 크다.** 더 큰 위험은 트럼프 임기 안에 협정을 만들지 못하는 것이다. 그렇게 되면 선거 결과와 상관없이 정상 간 약속으로만 남는다. 1번함 진수 목표는 2030년대 중반이다([파이낸셜뉴스](https://www.fnnews.com/news/202610071502167931)). 앞으로 한미 양쪽 모두 여러 번 정부가 바뀌는 시간이다.
 
+## 11월 6~8일: 의석은 그대로, 백악관 인사가 먼저 바뀌었다
+
+미시시피는 콜럼이 하이드스미스에 2,574표 앞선 채 11월 13일 카운티 인증을 기다리고, 공화당은 임시투표 보존을 요구하며 "모든 합법 표를 세우기 위해 끝까지 싸우겠다"고 했다([Democracy Docket](https://www.democracydocket.com/news-alerts/live-mississippi-senate-ballot-fight-heats-up/)). 알래스카는 펠톨라가 637표 앞서고 선호투표 집계와 인증은 11월 18일과 25일이다([Anchorage Daily News](https://www.adn.com/politics/2026/11/06/like-in-past-elections-alaska-is-still-counting-ballots-when-will-we-know-who-won/)). 하원은 NBC 기준 민주 252석, 공화 162석에 21석이 미정이다([NBC](https://www.nbcnews.com/politics/2026-elections/house-results)). 의석보다 먼저 움직인 것은 백악관이다. 트럼프는 6일 수지 와일스 비서실장을 교체하고 스티븐 밀러 부비서실장을 9일부터 비서실장에 앉힌다고 밝혔다. 트럼프는 "변화를 원했을 뿐"이라 했고 ABC 소식통은 중간선거 패배 책임론을 전했다([ABC7](https://abc7.com/story/trump-says-chief-staff-susie-wiles-miller-will-replace/20020569/)).
+
+한국에 이 인사는 의석수보다 가까운 변수다. 밀러는 이민과 대중국 강경론의 설계자로 알려져 있고, 조지아 구금 사태처럼 한국 기업 인력이 걸린 사안이 그의 손에 들어간다. 민주당 의회가 감독을 강화하는 동안 백악관은 더 단단해지는 셈이다. 이는 해석이다.
+
 ## 조선·전작권: 가장 먼저 부딪힐 곳
 
 **조선.** 공화당 다수 의회에서도 하원 NDAA와 세출안이 해외 건조를 제한했고, 상원 초안도 비전투 지원함 2척까지만 예외를 뒀다([서울경제](https://en.sedaily.com/international/2026/10/18/us-congress-shipbuilders-push-back-on-trumps-overseas)). 코트라는 SHIPS Act 등 초당적 분야의 기회를 말한다([아주경제](https://www.ajunews.com/view/20261105075610664)). 그러나 기회의 성격이 다르다. **미국 조선소 투자로 가는 돈은 환영받아도 한국 조선소에서 군함을 짓는 구상은 민주당에서도 표를 얻기 어렵다.** 마스가의 무게 중심을 현지 투자와 비전투함으로 현실화해야 한다. 이는 해석이다.
@@ -106,8 +116,16 @@ KEI의 분석처럼 이 MOU는 조약이 아니라 "관세 위협으로 집행"�
 - 마키 의원 서한 원문은 접속이 막혀 보도로 확인했다. 한국 협정이 면제 대상인지와 AUKUS 협정의 표결 처리 방식도 확인하지 못했다.
 - 위험도 표와 권고, 핵잠 전망은 이 글의 판단이다.
 
+## 갱신 기록
+
+- 2026-11-08: 상원 미판정 2석 집계와 인증 일정, 하원 집계, 백악관 비서실장 교체 반영
+
 ## 출처
 
+- [Mississippi Senate ballot fight — Democracy Docket](https://www.democracydocket.com/news-alerts/live-mississippi-senate-ballot-fight-heats-up/)
+- [Alaska is still counting ballots — Anchorage Daily News](https://www.adn.com/politics/2026/11/06/like-in-past-elections-alaska-is-still-counting-ballots-when-will-we-know-who-won/)
+- [House results — NBC News](https://www.nbcnews.com/politics/2026-elections/house-results)
+- [Trump says Miller will replace Wiles — ABC7](https://abc7.com/story/trump-says-chief-staff-susie-wiles-miller-will-replace/20020569/)
 - [2026 Senate midterm election results — CBS News](https://www.cbsnews.com/live-updates/senate-election-results-2026/)
 - [U.S.-South Korea trade — CRS](https://www.congress.gov/crs_external_products/IF/HTML/IF10733.web.html)
 - [Section 301 options for Congress — CRS](https://www.everycrsreport.com/reports/LSB11460.html)
