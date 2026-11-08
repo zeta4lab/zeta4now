@@ -14,15 +14,15 @@ tags:
 summary: 11월 3일 미국 지방 주민투표 41건 가운데 40건이 데이터센터를 막거나 제한했고, 이틀 뒤 나스닥은 5.52% 떨어져 조정장에 들어갔다. 코스피는 하루 먼저 5.28% 내렸고, 6일에는 개장 3분 만에 서킷브레이커가 발동됐다. AI 건설의 한계는 연방 규제가 아니라 전기요금을 내는 유권자에게서 왔고, 반도체 비중이 큰 한국은 미국보다 먼저 값을 치렀다.
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-06T17:21:00+09:00
+updated_at: 2026-11-08T20:43:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-06T17:21:00+09:00
-    note: 6일 코스피 마감(5,059.69, 6.02% 하락, 외국인 2조 7,692억 원 순매도)과 SK하이닉스 외국인 순매도 1조 9,240억 원 반영
+    at: 2026-11-08T20:43:00+09:00
+    note: 6일 삼성전자·SK하이닉스 종가, 6일 미국 증시 반등(나스닥 1.09%, 반도체지수 4.2%), 바클리스·IDCA 분석 반영
   checkpoints:
     - date: 2026-11-09
-      note: 6일(미국 시각) 미국 증시 반응과 주말 뒤 한국 증시 추가 하락 여부
+      note: 9일 한국 증시가 미국 6일 반등을 따라가는지, 외국인 순매도 지속 여부
     - date: 2026-11-30
       note: SK하이닉스 다롄 공장 장비 수출허가 결정과 뉴욕 공장 착수 여부
     - date: 2026-12-15
@@ -77,6 +77,10 @@ flowchart LR
 
 **셋째는 역설이다.** 미국은 반도체를 자국에서 만들라고 하지만, SK하이닉스의 뉴욕 450억 달러 낸드 공장은 다롄 공장 장비 반입 허가를 상무부가 내주지 않아 멈춰 있다([코리아중앙데일리(로이터)](https://www.koreajoongangdaily.com/business/sk-hynixs-45-billion-new-york-chip-plan-stalls-over-washingtons-china-restrictions/12954442)). 데이터센터는 주민이 막고 공장은 연방이 막는 셈이다. 어느 쪽도 민주당 의회가 풀 수 있는 일이 아니다.
 
+삼성전자는 18만 8,700원(6.35% 하락), SK하이닉스는 113만 2,000원(10.44% 하락)으로 마감했다([뉴스웨이](https://newsway.co.kr/news/view?ud=2026110616334377544)). 같은 날 밤 미국은 되돌렸다. 나스닥은 1.09% 올랐고 필라델피아반도체지수는 4.2% 반등했다. AMD는 11% 뛰었다([Fox Business](https://www.foxbusiness.com/markets/stocks-11-6-2026)). 한 주로 보면 S&P500은 2.68%, 나스닥은 3.37% 내렸고 엔비디아는 10.7% 떨어졌다.
+
+되돌림이 급락의 논리를 지운 것은 아니다. 바클리스의 도미니크 투블랑은 "AI 경쟁이 죄수의 딜레마에서 소모전으로 바뀐다. 전력이 부족하면 가장 큰 대차대조표가 유리하다"고 했고, IDCA는 2024년 1월부터 2026년 5월까지 20개 주에서 1,700억 달러가 넘는 46개 프로젝트가 막히거나 보류됐다고 집계했다([CNBC](https://www.cnbc.com/2026/11/06/ai-data-center-midterms-selloff.html)). 텍사스 주지사 당선자 이노호사는 7일 "데이터센터가 주로 농촌 지역에 들어왔는데 텍사스 주민을 보호할 규칙과 법이 없다"고 했다. 한국 시장이 9일 미국의 반등을 따라갈지는 외국인이 반도체를 계속 파는지에 달렸다. 이는 해석이다.
+
 ## 무엇을 봐야 하나
 
 | 대상 | 영향 | 판단 |
@@ -101,9 +105,14 @@ OpenAI는 2일 조지아 3.2GW 캠퍼스에서 피크 때 최대 1,000MW를 줄�
 
 - 2026-11-06: 발행 직후 6일 장중 서킷브레이커 발동과 지수·종목 수치 추가, 제목 보완, 발행 시각을 실제 시각(10:10)으로 정정
 - 2026-11-05: 6일 코스피 마감과 외국인 순매도 반영. 11월 6일 확인 일정을 11월 9일로 변경
+- 2026-11-08: 6일 종목 종가와 미국 반등, 애널리스트 분석 반영. 11월 9일 확인 일정 문구 변경
 
 ## 출처
 
+- [6일 삼성전자·SK하이닉스 종가 — 뉴스웨이](https://newsway.co.kr/news/view?ud=2026110616334377544)
+- [Stocks Nov. 6 — Fox Business](https://www.foxbusiness.com/markets/stocks-11-6-2026)
+- [AI data center selloff after midterms — CNBC](https://www.cnbc.com/2026/11/06/ai-data-center-midterms-selloff.html)
+- [Hinojosa vows data center rules — ABC13](https://abc13.com/post/governor-elect-gina-hinojosa-vows-ban-future-data-centers-texas/20021143/)
 - [국내증시 마감: 코스피 6.02% 폭락 — 톱스타뉴스](https://www.topstarnews.net/news/articleView.html?idxno=16270053)
 - [외국인, SK하이닉스 1조 9,240억 원 순매도 — 재경일보](https://news.jkn.co.kr/post/1074797)
 - [AI meltdown: chip stocks and neoclouds plunge — CNBC](https://www.cnbc.com/2026/11/05/qualcomm-earnings-chip-stocks-election.html)

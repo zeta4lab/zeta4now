@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-11-06T06:41:00+09:00
+updated_at: 2026-11-08T20:43:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,11 +18,11 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-06T06:41:00+09:00
-    note: 5일 파업 확정 집계(내무부 57만 5,000명, CGT 160만 명), 체포 448명, 경찰 부상 53명, 르코르뉘의 9일 사회협의회 소집 반영
+    at: 2026-11-08T20:43:00+09:00
+    note: 7일 시위 내무부 14만 6,000명(파리 4만 6,000명), 체포 360명 잠정, 노란조끼 콩코르드 연좌 10여 명과 주최자 체포, 8개 노조의 9일 후속 결정 방침 반영
   checkpoints:
-    - date: 2026-11-07
-      note: 노란조끼 6~7일 행동 규모와 충돌 여부
+    - date: 2026-11-10
+      note: 교육 부문 인터생디칼 파업과 8개 노조의 9일 사회협의회 뒤 후속 행동 결정
     - date: 2026-11-09
       note: 르코르뉘 총리가 소집한 노사 사회협의회(구매력·임금)의 결과와 하원에서 부결된 사회보장재정법안 상원 심사 시작
     - date: 2026-11-20
@@ -141,6 +141,12 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 
 10월 17일이 약탈과 방화로 번진 데 비하면 이날은 노조가 조직한 행진이어서 폭력 규모는 작았다. 그러나 참가자는 늘었고 정부는 처음으로 임금 협의라는 답을 내놨다. 시위가 거리에서 협상 테이블로 옮겨 갈 수 있는지가 9일에 걸려 있다. 이는 해석이다.
 
+## 11월 7일: 거리의 주도권은 노란조끼에서 노조로 넘어갔다
+
+토요일인 7일 집회는 내무부 집계로 전국 14만 6,000명, 파리 4만 6,000명이었다. 청년 인터생디칼은 전국 25만 명, 파리 7만 5,000명이라고 했다. 체포는 오후 7시 기준 잠정 360명이고, 파리 나시옹 광장과 리옹, 보르도에서 최루탄이 쓰였다([France 24](https://www.france24.com/fr/france/20261107-en-direct-nouvelle-journ%C3%A9e-de-mobilisation-en-france-pour-faire-pression-sur-le-gouvernement)). 노란조끼가 예고한 콩코르드 광장 연좌에는 10여 명만 모였고, 조정 사이트 운영자 벤자맹 발과 작가 아젤마 시고가 체포돼 구금됐다([France 3](https://france3-regions.franceinfo.fr/paris-ile-de-france/paris/manifestation-du-7-novembre-a-paris-interpellation-de-gilets-jaunes-a-concorde-defile-dans-le-calme-entre-republique-et-nation-60-000-personnes-attendues-3446016.html)). 5일 노조 파업의 57만 5,000명에 견주면 이틀 뒤 주말 동원은 4분의 1 수준이다.
+
+10월 17일 거리를 채운 쪽은 노란조끼였지만 11월의 숫자는 노조가 만들고 있다. 정부가 대화 상대로 고른 것도 노조다. 8개 노조는 9일 마티뇽 사회협의회가 끝난 뒤 다시 모여 후속 행동을 정하기로 했고([Echos Plus](https://echosplus.com/2026/11/06/conference-sociale-a-matignon-lintersyndicale-decidera-lundi-de-la-suite-de-la-mobilisation/)), 교육 부문은 10일 파업을 예고했다. 노란조끼 쪽은 조직자가 구금된 채 동원이 꺾였다. 협의회에서 최저임금 인상 폭이 나오면 거리의 압력은 협상장으로 옮겨 가고, 나오지 않으면 노조가 다음 날짜를 잡는다. 이는 해석이다.
+
 ## 의미
 
 이번 대응의 특징은 정부가 비상사태 대신 지사 단위의 부분 통행금지와 집회 금지권이라는 '아래로부터의' 수단을 골랐다는 점이다. 르코르뉘 총리가 상황이 "매우 제각각"이라고 말한 데서 보이듯, 리모주·마르세유·릴처럼 피해가 집중된 도시와 그렇지 않은 곳을 한 틀로 묶기 어렵고, 전국 비상사태는 대선을 앞둔 정부가 치러야 할 정치적 비용이 크다. 다만 통행금지의 실효성은 24일 노란조끼 2차 시위에서 바로 시험된다. 뉘녜스 장관 스스로 "극도로 기동성이 높은 집단"에 경찰 전략이 맞지 않았다고 인정한 만큼, 고정된 구역을 지키는 통행금지가 이동하며 약탈하는 집단에 얼마나 효과를 내느냐가 관건이다.
@@ -181,9 +187,13 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 2026-11-05: 예산안 1부 하원 부결(반대 458, 찬성 0)과 상원 이송, 파업 사전 전망 반영, 11월 6일 확인 일정을 11월 20일로 변경
 - 2026-11-05: 5일 파업 잠정 집계와 충돌, 정부·노조 발언 반영. 최종 집계 확인을 11월 6일 일정으로 변경
 - 2026-11-05: 5일 파업 확정 집계와 충돌, 르코르뉘의 9일 사회협의회 소집 반영. 11월 6일 확인 일정 제거, 9일 일정에 사회협의회 추가
+- 2026-11-08: 7일 시위 규모와 체포, 노란조끼 콩코르드 연좌 상황, 노조의 9일 후속 결정 방침 반영. 11월 7일 확인 일정을 11월 10일로 변경
 
 ## 출처
 
+- [En direct: nouvelle journée de mobilisation — France 24](https://www.france24.com/fr/france/20261107-en-direct-nouvelle-journ%C3%A9e-de-mobilisation-en-france-pour-faire-pression-sur-le-gouvernement)
+- [Manifestation du 7 novembre à Paris — France 3](https://france3-regions.franceinfo.fr/paris-ile-de-france/paris/manifestation-du-7-novembre-a-paris-interpellation-de-gilets-jaunes-a-concorde-defile-dans-le-calme-entre-republique-et-nation-60-000-personnes-attendues-3446016.html)
+- [L'intersyndicale décidera lundi de la suite — Echos Plus](https://echosplus.com/2026/11/06/conference-sociale-a-matignon-lintersyndicale-decidera-lundi-de-la-suite-de-la-mobilisation/)
 - [Près de 1,6 million de personnes selon la CGT, 575 000 selon l'Intérieur — franceinfo](https://www.franceinfo.fr/economie/greve/greve/pres-de-1-6-million-de-personnes-ont-defile-en-france-lors-de-la-mobilisation-du-5-novembre-selon-la-cgt-575-000-selon-le-ministere-de-l-interieur_8269868.html)
 - [Lecornu annonce une conférence sociale lundi — Public Sénat](https://www.publicsenat.fr/actualites/politique/manifestation-du-5-novembre-sebastien-lecornu-annonce-une-conference-sociale-avec-les-syndicats-et-le-patronat-lundi)
 - [Grève du 5 novembre en direct — franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-greve-du-5-novembre-plus-de-250-actions-annoncees-dans-toute-la-france-selon-une-carte-de-la-ggt_8268827.html)
