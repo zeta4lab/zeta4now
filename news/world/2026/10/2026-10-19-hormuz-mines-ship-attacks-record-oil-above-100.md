@@ -14,12 +14,12 @@ tags:
 summary: 이란 혁명수비대는 14일 컨테이너선 침몰, 17일 200만 배럴급 유조선 2척, 19일 유조선 1척이 기뢰에 부딪혔다고 주장했지만 로이터는 독립 확인이 없다고 했고 미 중부사령부는 발사체 공격이라고 반박했다. 10월 들어 피격 선박은 20척이 넘고(UKMTO·CNBC), 10월 12일까지 한 주 해협 통과 원유는 하루 850만 배럴로 전쟁 전보다 약 40% 적었다(Kpler). 브렌트유는 16일 110달러를 찍었고 이란은 "6일 안 재개방" 제안이 유효하다고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-08T20:43:00+09:00
+updated_at: 2026-11-09T09:44:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-08T20:43:00+09:00
-    note: 5~7일 선박 피격(선원 1명 사망)과 미군의 화물선 무력화, 6일 케심섬 재공습, 브렌트유 98.32달러, 카타르 중재 지속 반영
+    at: 2026-11-09T09:44:00+09:00
+    note: 8일 리야드 아람코 건물 파편 피해와 후티 공격 주장, 7일 사나 공습 사망자, 루비오 '돌파구 아니다', 중재 중단, 9일 개장 브렌트유 97.57달러 반영
   checkpoints:
     - date: 2026-11-15
       note: 이란의 이틀 재개방 제안에 대한 미국의 공식 답변과 선거 뒤 협상·공습 재개 여부
@@ -117,6 +117,14 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 브렌트유는 6일 98.32달러로 거의 보합 마감해 한 주 동안 16% 넘게 내렸다([Gulf News(로이터)](https://gulfnews.com/uae/middle-east-war-5-things-uae-residents-need-to-know-today-nov-7-2026-1.500739193)). 가격은 합의 쪽을, 해협은 교전 쪽을 가리킨다. 이 글은 둘 중 해협 쪽 신호를 더 무겁게 본다. 선원이 숨지고 미군이 상선을 무력화하는 봉쇄 상태에서 보험료와 우회 비용은 유가가 내려도 줄지 않는다. 이는 해석이다.
 
+## 11월 8~9일: 두 번째 전선이 열렸고, 협상은 선거 뒤 멈춰 섰다
+
+8일 새벽 사우디 주도 연합군은 리야드와 남부를 겨냥한 탄도미사일 2발과 순항미사일 2발을 요격했고, 파편이 리야드 금융지구의 아람코 행정 건물에 떨어졌다. 사우디 에너지부는 "경미한 피해"와 "사상자 없음"이라고 했지만 목격자들은 여러 층의 유리창이 깨졌다고 전했다([The National](https://www.thenationalnews.com/news/gulf/2026/11/08/saudi-led-coalition-intercepts-two-houthi-missiles-fired-towards-riyadh/), [AP(ABC)](https://abcnews.com/International/wireStory/saudi-arabia-intercepts-missiles-aramco-building-riyadh-damaged-137951443)). 후티 대변인은 킹칼리드 공항, 석유 저장시설, 쿠라이스 아람코 시설 등을 겨냥한 "여섯 작전"을 주장했다. 전날 사우디의 사나 인근 공습으로 후티 보건부는 33명이 숨졌다고 했고 AP는 27명으로 전했다([마닐라타임스(AFP)](https://www.manilatimes.net/2026/11/09/world/33-killed-in-saudi-arabia-strikes-on-yemen/2464735)). 2월 전쟁 이후 호르무즈에 묶여 있던 시선이 아라비아반도 남쪽으로 다시 갈라졌다.
+
+협상은 멈췄다. 루비오 국무장관은 8일 "돌파구 직전이라고 말하지는 않겠다"며 이란의 요구가 "일부는 터무니없고 비현실적"이라고 했고([타임스오브이스라엘](https://timesofisrael.com/liveblog_entry/rubio-says-iranians-making-outrageous-and-ridiculous-demands-during-negotiations)), 아라그치 이란 외무장관은 중재자들이 미국 중간선거 뒤 이동을 멈췄으며 재개까지 "시간이 걸릴 것"이라고 했다. 트럼프는 CNN에 합의가 되면 공습은 "필요하지 않을 가능성이 매우 크다"면서도 "한 시간 안에 무너뜨릴 수 있는 다리 38개"를 말했다([CBS](https://www.cbsnews.com/live-updates/iran-war-trump-us-strait-hormuz-persian-gulf/)). 9일 아시아 개장 직후 브렌트유는 97.57달러로 0.8% 내렸다. 지난주 하락률 17%는 코로나 이후 가장 큰 주간 낙폭이었다([ABC 오스트레일리아](https://abc.net.au/news/2026-11-09/asx-markets-business-live-news/107361534)).
+
+이 글이 10월에 쓴 대로 유가는 호르무즈 하나로 움직이지 않는다. 리야드 피격이 유가를 올리지 못한 것은 시장이 아직 사우디 생산 차질을 가격에 넣지 않았다는 뜻이지, 위험이 없다는 뜻이 아니다. 2019년 아브카이크 피격 때 유가가 하루 15% 뛴 기억은 시장에도 있다. 이는 해석이다.
+
 ## 한국: 10월 물량은 확보, 11월 이후 비용과 우회로가 변수
 
 한국석유공사 통계로 7월 한국의 원유 수입 9,318만 배럴 가운데 쿠웨이트·이라크 등 걸프 안쪽에서만 실을 수 있는 물량은 687만 배럴(7.4%)이었고, 사우디·UAE처럼 송유관으로 우회할 수 있는 물량이 4,499만 배럴(48.3%), 해협과 무관한 비중동·오만산이 4,132만 배럴(44.3%)이었다. 이라크산 수입은 2006년 5월 이후 처음으로 0이었다. 8월 31일 기준 정부 비축유는 1억 배럴로, 사우디·UAE 물량까지 하루 167만 배럴이 끊기면 60일, 전체 수입이 끊기면 33일을 버틸 수 있다는 단순 계산이 나온다. 이 계산은 민간 비축과 수요 감축, 대체 도입을 반영하지 않은 것이다([이포커스](https://www.e-focus.co.kr/news/articleView.html?idxno=3003095)).
@@ -156,9 +164,16 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - 2026-11-05: 4일 유가 급락, 트럼프의 선거 평가 발언, 민주당 상·하원 장악 판정과 의석수로 어제 추정치 수정
 - 2026-11-05: 5일 걸프 선박 피격과 브렌트유 반등 반영
 - 2026-11-08: 5~8일 선박 피격과 미군 작전, 유가, 중재 상황 반영
+- 2026-11-09: 8일 리야드 피격과 사나 공습, 미·이란 협상 중단 발언, 9일 개장 유가 반영
 
 ## 출처
 
+- [Saudi-led coalition intercepts missiles fired towards Riyadh — The National](https://www.thenationalnews.com/news/gulf/2026/11/08/saudi-led-coalition-intercepts-two-houthi-missiles-fired-towards-riyadh/)
+- [Aramco building in Riyadh damaged — AP(ABC News)](https://abcnews.com/International/wireStory/saudi-arabia-intercepts-missiles-aramco-building-riyadh-damaged-137951443)
+- [33 killed in Saudi strikes on Yemen — Manila Times(AFP)](https://www.manilatimes.net/2026/11/09/world/33-killed-in-saudi-arabia-strikes-on-yemen/2464735)
+- [Iran war live updates — CBS News](https://www.cbsnews.com/live-updates/iran-war-trump-us-strait-hormuz-persian-gulf/)
+- [Rubio: Iranians making outrageous demands — Times of Israel](https://timesofisrael.com/liveblog_entry/rubio-says-iranians-making-outrageous-and-ridiculous-demands-during-negotiations)
+- [ASX markets live Nov 9 — ABC Australia](https://abc.net.au/news/2026-11-09/asx-markets-business-live-news/107361534)
 - [UAE rescues 22 crew as US tightens Iran blockade — Gulf News](https://gulfnews.com/world/mena/uae-rescues-22-crew-in-gulf-of-oman-as-us-tightens-iran-blockade-and-tehran-lifts-missile-limits-1.500739993)
 - [US launches new targeted strikes on Iran — Euronews](https://www.euronews.com/2026/11/07/us-launches-new-targeted-strikes-on-iran-as-trump-claims-progress-in-talks-with-tehran)
 - [Middle East war: 5 things to know Nov 7 — Gulf News](https://gulfnews.com/uae/middle-east-war-5-things-uae-residents-need-to-know-today-nov-7-2026-1.500739193)
