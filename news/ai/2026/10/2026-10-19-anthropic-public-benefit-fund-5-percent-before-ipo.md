@@ -3,7 +3,7 @@ title: 앤트로픽, 상장 앞두고 지분 5%를 '공익기금'에…기업가
 slug: 2026-10-19-anthropic-public-benefit-fund-5-percent-before-ipo
 topic: ai
 published_at: 2026-10-19T23:41:00+09:00
-updated_at: 2026-10-28T01:18:00+09:00
+updated_at: 2026-11-09T09:44:00+09:00
 tags:
   - 앤트로픽
   - Anthropic Public Benefit Fund
@@ -17,11 +17,11 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-10-28T01:18:00+09:00
-    note: 10월 26일 공개된 S-1의 공익기금 내용(Class N 8.47억 주 출연, 공모가 기준선, 초기 운용자) 반영
+    at: 2026-11-09T09:44:00+09:00
+    note: 11월 2일 S-1 수정본에도 공모가 범위 없음, 로드쇼는 '9일 주간' 보도만 있고 회사 확인 없음, Class N 8.47억 주 5% 재확인
   checkpoints:
-    - date: 2026-11-09
-      note: 블룸버그·IFR이 보도한 IPO 로드쇼 시작 예정일. 공모 규모·희망 가치 범위와 기금 구조 추가 공개 여부 확인
+    - date: 2026-11-16
+      note: 공모가 범위가 담긴 S-1 수정본 제출과 로드쇼 공식 시작 여부
     - date: 2026-11-20
       note: IFR 보도 기준 공모가 확정·상장 예정 주간. 실제 상장일과 공모 기업가치, 기금 지분의 기준선 공개 여부 확인
 ---
@@ -91,6 +91,12 @@ IPO 자문사 클래스 V 그룹의 리즈 바이어 파트너는 CNBC에 이번
 
 경쟁사와의 비교도 따라붙었다. 디지털투데이는 오픈AI가 2025년 공익사업 지원을 위해 수십억 달러 규모 지분을 보유한 비영리 재단을 세운 사례를 들었고, 더나은미래는 오픈AI가 2025년 10월 생명과학과 AI 위험 대응에 250억 달러, 2026년 5월 노동시장 대응에 초기 2억 5,000만 달러를 약속했으며 마이크로소프트가 '엘리베이트' 프로그램에 5년간 40억 달러 이상을 지원하기로 했다고 전했다([디지털투데이](https://www.digitaltoday.co.kr/news/articleView.html?idxno=707997), [더나은미래](https://futurechosun.com/archives/163622)). 알자지라는 맥킨지가 지난달 보고서에서 AI 자동화로 향후 10년간 최대 1,100만 명의 미국 노동자가 직업을 바꿔야 할 수 있다고 추정했다고 덧붙였다([Al Jazeera](https://www.aljazeera.com/economy/2026/10/19/anthropic-says-it-will-commit-5-of-shares-to-public-benefit-fund)). 서울경제와 머니투데이는 크리스탈리나 게오르기에바 IMF 총재가 지난주 AI가 전 세계 일자리의 약 40%, 선진국에서는 최대 60%에 영향을 줄 수 있다고 경고한 점을 배경으로 들었다([서울경제](https://www.sedaily.com/article/20103275), [머니투데이](https://www.mt.co.kr/world/2026/10/19/2026101909025586367)).
 
+## 11월 9일: 로드쇼 주간이라는데 가격표는 아직 없다
+
+앤트로픽은 11월 2일 S-1 수정본을 냈지만 공모가 범위와 공모 주식 수는 여전히 공란이다. 수정본은 Class N 보통주 846,840,960주가 "2026년 6월 30일 기준 완전희석 주식의 5%"라는 출연 내용을 그대로 담았고, 찰스슈왑·피델리티·로빈후드·소파이 등 개인투자자 배정 창구를 적었다([SEC](https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm)). 11월 3일부터 9일까지 추가 제출은 없다. CNBC는 로드쇼가 "11월 9일 주간"에 시작될 것으로 보도했고 회사는 논평을 거부했다([CNBC](https://www.cnbc.com/2026/11/06/investors-brace-for-anthropic-valuation-1point5-trillion-a-stretch.html)). 언론이 전하는 기업가치는 1조 2,500억~1조 7,500억 달러, 조달 규모는 800억~1,000억 달러까지 벌어져 있다([Seeking Alpha](https://seekingalpha.com/article/4964841-wall-street-brunch-anthropic-ipo-goes-on-the-road)). CNBC가 인용한 투자자들은 1조 5,000억 달러를 "무리"로 보고 1조~1조 2,500억 달러를 더 가능성 있는 범위로 봤다.
+
+기금의 값은 이 범위에 따라 600억 달러대에서 900억 달러 가까이까지 달라진다. 가격 범위가 S-1에 적히는 순간 기금의 가치와 다음 2% 추가 출연의 기준선이 함께 정해진다. 이는 계산이며, 회사가 제시한 수치는 아니다.
+
 ## 의미
 
 이번 발표의 실체는 '5%'라는 숫자보다 그 뒤에 붙은 조건들에 있다. 주주 승인이 전제이고, 추가 2%는 자동이 아니라 이사회 재량이며, 기준선·평가 방법·운영 주체·수혜 대상이 모두 미정이고, LLC는 회사가 100% 소유한다. 즉 지금 시점에서 확정된 것은 회사가 상장 전에 공익 배정 의사를 공개 약속했다는 사실이고, 그 약속이 어떤 돈이 되어 누구에게 가는지는 수개월 뒤 발표와 상장 결과에 달려 있다. 발표문이 "규모"와 "유연성"을 강조하면서 세제 혜택이 따르는 501(c)(3)을 택하지 않은 것은 기부처와 방식을 회사가 계속 조정하겠다는 뜻으로 읽힌다.
@@ -111,9 +117,13 @@ IPO 자문사 클래스 V 그룹의 리즈 바이어 파트너는 CNBC에 이번
 ## 갱신 기록
 
 - 2026-10-28: 10월 26일 공개된 S-1의 공익기금 내용(Class N 보통주 846,840,960주 출연, 공모가 기준 추가 2% 출연 틀, 초기 운용자, 희석 위험)과 상장 신청 사실 반영. 2026-10-26 확인 일정 제거
+- 2026-11-09: 11월 2일 S-1 수정본 내용과 로드쇼·밸류에이션 보도 반영. 11월 9일 확인 일정을 11월 16일로 변경
 
 ## 출처
 
+- [Form S-1/A (November 2, 2026) — SEC](https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm)
+- [Investors brace for Anthropic valuation — CNBC](https://www.cnbc.com/2026/11/06/investors-brace-for-anthropic-valuation-1point5-trillion-a-stretch.html)
+- [Anthropic IPO goes on the road — Seeking Alpha](https://seekingalpha.com/article/4964841-wall-street-brunch-anthropic-ipo-goes-on-the-road)
 - [Investing in the public benefit — Anthropic](https://www.anthropic.com/news/public-benefit-fund)
 - [Anthropic, PBC Form S-1(2026년 10월 26일 제출) — 미국 증권거래위원회(SEC)](https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm)
 - [Anthropic files for Nasdaq IPO as half-year revenue hits $16.3bn — The Next Web](https://thenextweb.com/news/anthropic-ipo-filing-nasdaq-ant-s-1)
