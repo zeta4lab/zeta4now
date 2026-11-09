@@ -14,8 +14,12 @@ tags:
 summary: 엔비디아 이사회는 8일 젠슨 황 CEO가 외국 정보기관의 표적이 됐다는 보도에 따라 독립 조사를 열었고, 황은 직원들에게 "아내에게 부정했다"고 인정했다. 미 하원 3개 위원회는 18일 비공개 브리핑을 요구한다. 같은 주말 젠슨 황의 딸 매디슨 황은 배경훈 부총리 면담을 포함한 방한 일정을 취소했다. 이 글은 스파이 의혹의 진위보다, 한국의 AI 인프라 계획이 한 회사와 한 사람과의 관계 위에 세워져 있다는 점을 문제로 본다.
 generated_by: claude
 model: unspecified
+updated_at: 2026-11-09T18:46:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-09T18:46:00+09:00
+    note: AI 데이 서울의 엔비디아·SKT·리벨리온 NVLink Fusion MOU, 매디슨 황 관련 추가 설명 없음, NVDA 프리마켓 5.2% 하락 반영
   checkpoints:
     - date: 2026-11-11
       note: 젠슨 황의 하원 3개 위원회 브리핑(11월 18일) 수락 여부 회신 기한
@@ -64,6 +68,12 @@ tracking:
 
 그러나 위험은 있다. 엔비디아는 연차보고서에서 통제 품목의 전용(diversion) 보도는 "근거가 없고 사실이 아니더라도 사업에 부정적 영향을 줄 수 있다"고 적었고, 수출통제가 "파트너, 공급업체, 고객에게 복잡하고 부담스러운 준수 의무"를 지운다고 썼다([엔비디아 10-K](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm)). 그 고객과 공급업체에 한국 기업이 있다. 의회가 18일 브리핑에서 메가스피드 경로를 파고들면 다음 단계는 아시아 데이터센터와 재판매 경로에 대한 더 촘촘한 통제다. 한국 기업은 그 통제의 대상이 아니라 준수 비용을 떠안는 쪽이 된다. 이는 해석이다.
 
+## 9일 서울: 행사는 열렸고, 질문엔 답이 없었다
+
+'AI 데이 서울'은 매디슨 황 없이 열렸다. 엔비디아, SK텔레콤, 리벨리온은 과기정통부 지원 아래 NVLink Fusion으로 엔비디아 GPU와 리벨리온 NPU를 한 시스템에 묶는 MOU를 맺었다. 프리필은 GPU가, 디코드는 NPU가 맡는 구조로 SKT AI 데이터센터에 2028년 도입이 목표다. 이도규 과기정통부 정보통신정책실장은 "오늘의 MOU가 선언에 그치지 않고 글로벌 시장 진출이라는 가시적인 성과로 이어지는 것이 중요하다"고 했다([파이낸셜뉴스](https://www.fnnews.com/news/202611091444371881)). 과기정통부는 다른 국산 NPU 기업으로도 넓히겠다고 했다. 엔비디아는 매디슨 황의 불참 사유와 의혹 관련성에 답하지 않았고, GPU·HBM 영향 질문에는 "행사와 무관하다"고 했다([재경일보](https://news.jkn.co.kr/post/1080731)). 엔비디아 주가는 9일 프리마켓에서 5.2% 내렸고 중국 외교부는 "이른바 중국 스파이 서사"에 근거가 없다고 했다([CNBC](https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html)).
+
+이 MOU는 이 글이 말한 방향과 겹친다. 엔비디아 플랫폼 안에서 국산 NPU에 자리를 만드는 것은 의존을 끊는 일이 아니라 의존의 조건을 바꾸는 일이다. 2028년이라는 시점과 '확대 방침'이 계약으로 이어지는지가 다음 확인 지점이다. 이는 해석이다.
+
 ## 영향 평가
 
 | 대상 | 영향 | 판단 |
@@ -89,8 +99,15 @@ tracking:
 - 26만 장 GPU 가운데 계약으로 확정된 물량은 공개 자료에서 확인하지 못했다. 삼성·SK하이닉스의 엔비디아 매출 의존도 수치는 넣지 않았다.
 - 의존 구조에 대한 판단, 수출통제 강화 전망, 영향 평가와 제안은 이 글의 해석이다.
 
+## 갱신 기록
+
+- 2026-11-09: 9일 AI 데이 서울 MOU와 엔비디아의 무응답, 프리마켓 주가 반영
+
 ## 출처
 
+- [엔비디아·SKT·리벨리온 NVLink Fusion MOU — 파이낸셜뉴스](https://www.fnnews.com/news/202611091444371881)
+- [AI 데이 서울, 매디슨 황 불참 질문에 답 없어 — 재경일보](https://news.jkn.co.kr/post/1080731)
+- [Nvidia shares fall premarket after Huang admission — CNBC](https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html)
 - [Nvidia board opens investigation; Huang email — CNBC](https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-email-board-of-directors-statement.html)
 - [Nvidia CEO Jensen Huang says he had affair, board investigates — CNBC](https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html)
 - [Jensen Huang asked to brief Congress — CNBC](https://www.cnbc.com/2026/11/08/jensen-huang-nvidia-china-spy-congress.html)
