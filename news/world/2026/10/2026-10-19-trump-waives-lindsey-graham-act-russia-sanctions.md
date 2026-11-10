@@ -14,15 +14,15 @@ tags:
 summary: 트럼프 대통령이 10월 16일(현지시각) 자신이 9월 18일 서명한 '린지 그레이엄 러시아·이란 제재법'의 500% 관세, 러시아 석유 구매국 100% 관세, 은행·그림자 선단 제재 조항을 시행 이틀 전 행정명령으로 유예했다. 의회에는 "국익"이라고만 통보했고 만료일은 없다. 젤렌스키는 "유감"이라며 미·러·우 3자 회담 추진을 밝혔고, 공화당 틸리스 의원은 "무책임을 넘어섰다"고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-05T09:14:00+09:00
+updated_at: 2026-11-11T08:48:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-05T09:14:00+09:00
-    note: 민주당 상·하원 장악 판정과 의석수 수정, 슈머 '입법 철조망' 발언, 레임덕 회기에는 변화 없다는 전망 반영
+    at: 2026-11-11T08:48:00+09:00
+    note: 아부다비 미·러·우 3자 회담 1일차(10일) 약 4시간 진행, 공동 발표 없이 11일 재개. 포로 대규모 교환 합의설은 미확인
   checkpoints:
-    - date: 2026-11-11
-      note: 아부다비 미·러·우 평화회담(10~11일) 결과
+    - date: 2026-11-12
+      note: 아부다비 미·러·우 회담 2일차(11일) 결과와 후속 회담 일정, 포로 교환 합의 공식 확인 여부
     - date: 2026-11-20
       note: 복귀한 의회의 유예 철회 요구와 믹스 의원의 러시아 석유 거래 금지 법안 진행 여부
     - date: 2026-11-18
@@ -101,6 +101,8 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 
 협상 쪽은 움직였다. 위트코프 특사는 2일 미·러·우 회담을 11월 10~11일 아부다비에서 연다고 발표했다. 미국이 중재한 마지막 회담은 2월이었다([RFE/RL](https://www.rferl.org/a/us-russia-ukraine-peace-talks-abu-dhabi-ceasefire/33889451.html)). 같은 날 러시아 공습으로 자포리자 코미슈바하의 구호품 배포 장소였던 학교에서 최소 31명이 숨졌다([Al Jazeera](https://www.aljazeera.com/news/2026/11/2/russian-bombing-of-ukrainian-aid-centre-kills-24-people-zelenskyy)). 트럼프에게 제재 유예는 이제 하원 민주당의 표적이자 아부다비 협상 카드라는 두 얼굴을 갖게 됐다. 이는 해석이다.
 
+회담은 10일 아부다비에서 2월 이후 9개월 만에 열렸다. 미국은 위트코프 특사와 쿠슈너, 러시아는 메딘스키 대통령 보좌관, 우크라이나는 우메로우 대표가 이끌었고, 유럽 각국 안보보좌관과 NATO·EU는 별도 형식으로 참여했다. 1일차는 휴식을 포함해 약 4시간 30분 만에 끝났고 공동 발표는 없었으며 11일 재개한다([Kyiv Independent](https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/), [TASS](https://tass.com/politics/2215555)). 미국 대표단 인사는 "차이가 좁혀졌다"고 했고, 우크라이나 매체는 대표단과 가까운 인사를 인용해 가까운 시일 안의 대규모 포로 교환에 합의했다고 전했지만 공식 확인은 없다([VOA](https://www.voakorea.com/a/us-russia-ukraine-111026/8221086.html)). 러시아 외무부 자하로바 대변인은 "3자 형식은 러시아, 우크라이나, 미국 대표 외에는 누구의 참여도 허용하지 않는다"고 했고, 젤렌스키 대통령은 유럽 안보 문제는 유럽 국가가 참여한 가운데 논의해야 한다고 맞섰다. 유예의 명분인 '진행 중인 협상'이 실제로 열렸지만, 첫날 성과는 대화 재개 그 자체에 머물렀다. 이는 해석이다.
+
 ## 의미
 
 이 법은 애초 의회가 대통령의 재량을 좁히려고 만든 것이었다. 기존 행정명령 제재를 법률로 굳히고, 500% 관세와 2차 관세를 '해야 한다'는 의무 조항으로 적고, 제재를 끝내려면 평화협정 서명을 인증하고 의회 심사를 거치게 했다. 그러나 같은 법의 115조는 "국익" 인증서 한 장으로 어떤 조항이든 유예할 수 있게 했고, 트럼프는 서명 28일 만에 그 조항으로 나머지를 모두 비워 냈다. 바이든 정부 당국자였던 존 파이너가 법 통과 전에 "대통령이 갖지 못한 새 제재 권한을 더하지 않으면서 유예 조항과 광범위한 관세 권한을 준다"고 지적했던 구조가 그대로 드러난 셈이다([Wikipedia](https://en.wikipedia.org/wiki/Sanctioning_Russia_Act)).
@@ -117,15 +119,19 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 - 젤렌스키가 말한 3자 정상회담은 러시아와 미국 어느 쪽도 확인하지 않았다. WSJ가 보도한 푸틴의 미·중·러 회담 제안도 미 고위 당국자가 "트럼프가 아직 동의하지 않았다"고 한 단계다.
 - 트럼프의 "매우 좋은 결정" 발언은 폭스비즈니스 보도에 기댔으며 발언 장소와 전체 맥락은 확인하지 못했다.
 - 워싱턴포스트·더힐·CNBC 원문은 접근이 막혀 다른 매체의 같은 내용으로 대체했다.
-- 남은 일정: 11월 10~11일 아부다비 회담, 11월 18~19일 선전 APEC, 12월 중순 60일 검토 기한, 12월 마이애미 G20.
+- 남은 일정: 11월 11일 아부다비 회담 2일차, 11월 18~19일 선전 APEC, 12월 중순 60일 검토 기한, 12월 마이애미 G20.
 
 ## 갱신 기록
 
 - 2026-11-04: 중간선거 추정 결과와 믹스 의원 법안 상황, 11월 10~11일 아부다비 평화회담 발표와 자포리자 공습 반영. 11월 3일 확인 일정을 11월 11일·20일로 변경
 - 2026-11-05: 민주당 상·하원 장악 판정과 의석수로 어제 추정치 수정, 슈머·달더 발언 반영
+- 2026-11-11: 아부다비 미·러·우 회담 1일차 결과 반영, 확인 일정을 11월 12일로 변경
 
 ## 출처
 
+- [Kyiv Independent, Ukraine, Russia, US resume trilateral peace talks in Abu Dhabi (2026-11-10)](https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/)
+- [TASS, 아부다비 회담 1일차 종료 (2026-11-10)](https://tass.com/politics/2215555)
+- [VOA 한국어, 미·러·우 아부다비 회담 (2026-11-11)](https://www.voakorea.com/a/us-russia-ukraine-111026/8221086.html)
 - [What midterm win really means for Kyiv — Euromaidan Press](https://euromaidanpress.com/2026/11/04/democrats-took-congress-overnight-but-ukraine-isnt-their-top-three-priority-what-midterm-win-really-means-for-kyiv)
 - [Election Day 2026 live updates — CBS News](https://www.cbsnews.com/live-updates/election-day-2026-midterms/)
 - [2026 Senate midterm election results — CBS News](https://www.cbsnews.com/live-updates/senate-election-results-2026/)
