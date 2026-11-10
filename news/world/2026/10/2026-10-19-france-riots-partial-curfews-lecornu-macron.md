@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-11-08T20:43:00+09:00
+updated_at: 2026-11-10T20:47:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,13 +18,13 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-08T20:43:00+09:00
-    note: 7일 시위 내무부 14만 6,000명(파리 4만 6,000명), 체포 360명 잠정, 노란조끼 콩코르드 연좌 10여 명과 주최자 체포, 8개 노조의 9일 후속 결정 방침 반영
+    at: 2026-11-10T20:47:00+09:00
+    note: 9일 사회협의회 결과(Smic 1.6% 인상 12월 1일 선적용, 순 1,502유로)와 노조 반응, CGT의 17일 총파업 호소, 노란조끼 14일 5막 반영
   checkpoints:
-    - date: 2026-11-10
-      note: 교육 부문 인터생디칼 파업과 8개 노조의 9일 사회협의회 뒤 후속 행동 결정
-    - date: 2026-11-09
-      note: 르코르뉘 총리가 소집한 노사 사회협의회(구매력·임금)의 결과와 하원에서 부결된 사회보장재정법안 상원 심사 시작
+    - date: 2026-11-14
+      note: 노란조끼 '5막' 규모와 충돌 여부, 하원에서 부결된 사회보장재정법안의 상원 심사 경과
+    - date: 2026-11-17
+      note: CGT와 공공부문 노조의 17일 총파업 규모(CFDT·FO 불참)와 업종별 최저임금 데크레 공포 여부
     - date: 2026-11-20
       note: 하원에서 세입이 부결된 2027년 예산안의 상원 본회의 심의 시작
 ---
@@ -147,6 +147,14 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 
 10월 17일 거리를 채운 쪽은 노란조끼였지만 11월의 숫자는 노조가 만들고 있다. 정부가 대화 상대로 고른 것도 노조다. 8개 노조는 9일 마티뇽 사회협의회가 끝난 뒤 다시 모여 후속 행동을 정하기로 했고([Echos Plus](https://echosplus.com/2026/11/06/conference-sociale-a-matignon-lintersyndicale-decidera-lundi-de-la-suite-de-la-mobilisation/)), 교육 부문은 10일 파업을 예고했다. 노란조끼 쪽은 조직자가 구금된 채 동원이 꺾였다. 협의회에서 최저임금 인상 폭이 나오면 거리의 압력은 협상장으로 옮겨 가고, 나오지 않으면 노조가 다음 날짜를 잡는다. 이는 해석이다.
 
+## 11월 9~10일: 정부는 23유로를 내놨고, 노조는 갈라졌다
+
+르코르뉘 총리는 9일 사회협의회 뒤 최저임금(Smic)을 1.6% 올려 12월 1일부터 적용한다고 발표했다. 월 순액은 1,477.93유로에서 1,502유로로 23.65유로 오른다. 이 가운데 약 1%포인트는 내년 1월 자동 인상분을 앞당긴 것이고 정부가 얹은 몫은 0.6%포인트다([France 24](https://www.france24.com/fr/france/20261109-en-direct-lecornu-re%C3%A7oit-syndicats-et-patronat-pour-tenter-de-r%C3%A9pondre-aux-revendications-sociales), [Economie Matin](https://www.economiematin.fr/smic-hausse-1-6-pourcent-cout-travail-secteurs)). 르코르뉘는 "부스러기라고 말하는 이들에게 말하자면, 20년 만에 두 번째로 큰 인상"이라며 "더 큰 인상은 더 큰 일자리 파괴를 낳았을 것"이라고 했다. 임금 추적위원회 신설, 경유 가격 인하, 초과근무 면세 상한 1만 유로 확대도 함께 내놨다.
+
+노조는 갈라졌다. CGT의 소피 비네는 "정부는 부스러기만 내놨다", "5유로는 토마토 1킬로그램 값"이라며 17일 총파업을 호소했고, 공공부문 노조들이 따랐다. CFDT의 마릴리즈 레옹은 선적용을 "좋은 일"이라면서도 폭은 "기대에 못 미친다"고 했고 FO는 "인상 금기가 깨졌다"며 업종 협상을 지켜보기로 했다. CFDT와 FO는 17일에 참여하지 않는다([Public Sénat](https://www.publicsenat.fr/actualites/politique/hausse-du-smic-les-syndicats-jugent-la-reponse-insuffisante-et-la-cgt-appelle-a-la-greve-le-17-novembre), [Basta!](https://basta.media/Quelles-suites-pour-la-mobilisation-apres-les-annonces-Lecornu)). 노란조끼는 14일 '5막'을 예고했다.
+
+이 글은 9일을 10월 17일 이후 처음으로 정부가 주도권을 쥔 날로 본다. 가장 큰 두 노조를 협상 테이블에 묶어 두고 가장 강경한 노조만 거리에 남겼기 때문이다. 다만 23유로가 한 달 뒤 고지서에 찍힐 때 '20년 만에 두 번째'라는 수식어가 거리에서 통할지는 다른 문제다. 이는 해석이다.
+
 ## 의미
 
 이번 대응의 특징은 정부가 비상사태 대신 지사 단위의 부분 통행금지와 집회 금지권이라는 '아래로부터의' 수단을 골랐다는 점이다. 르코르뉘 총리가 상황이 "매우 제각각"이라고 말한 데서 보이듯, 리모주·마르세유·릴처럼 피해가 집중된 도시와 그렇지 않은 곳을 한 틀로 묶기 어렵고, 전국 비상사태는 대선을 앞둔 정부가 치러야 할 정치적 비용이 크다. 다만 통행금지의 실효성은 24일 노란조끼 2차 시위에서 바로 시험된다. 뉘녜스 장관 스스로 "극도로 기동성이 높은 집단"에 경찰 전략이 맞지 않았다고 인정한 만큼, 고정된 구역을 지키는 통행금지가 이동하며 약탈하는 집단에 얼마나 효과를 내느냐가 관건이다.
@@ -188,9 +196,14 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 2026-11-05: 5일 파업 잠정 집계와 충돌, 정부·노조 발언 반영. 최종 집계 확인을 11월 6일 일정으로 변경
 - 2026-11-05: 5일 파업 확정 집계와 충돌, 르코르뉘의 9일 사회협의회 소집 반영. 11월 6일 확인 일정 제거, 9일 일정에 사회협의회 추가
 - 2026-11-08: 7일 시위 규모와 체포, 노란조끼 콩코르드 연좌 상황, 노조의 9일 후속 결정 방침 반영. 11월 7일 확인 일정을 11월 10일로 변경
+- 2026-11-10: 9일 사회협의회 결과와 노조 반응, 17일 총파업 호소, 노란조끼 14일 계획 반영. 11월 9·10일 확인 일정을 11월 14·17일로 변경
 
 ## 출처
 
+- [En direct: Lecornu reçoit syndicats et patronat — France 24](https://www.france24.com/fr/france/20261109-en-direct-lecornu-re%C3%A7oit-syndicats-et-patronat-pour-tenter-de-r%C3%A9pondre-aux-revendications-sociales)
+- [Hausse du Smic: les syndicats jugent la réponse insuffisante — Public Sénat](https://www.publicsenat.fr/actualites/politique/hausse-du-smic-les-syndicats-jugent-la-reponse-insuffisante-et-la-cgt-appelle-a-la-greve-le-17-novembre)
+- [Smic +1,6 %: coût du travail et secteurs — Economie Matin](https://www.economiematin.fr/smic-hausse-1-6-pourcent-cout-travail-secteurs)
+- [Quelles suites pour la mobilisation — Basta!](https://basta.media/Quelles-suites-pour-la-mobilisation-apres-les-annonces-Lecornu)
 - [En direct: nouvelle journée de mobilisation — France 24](https://www.france24.com/fr/france/20261107-en-direct-nouvelle-journ%C3%A9e-de-mobilisation-en-france-pour-faire-pression-sur-le-gouvernement)
 - [Manifestation du 7 novembre à Paris — France 3](https://france3-regions.franceinfo.fr/paris-ile-de-france/paris/manifestation-du-7-novembre-a-paris-interpellation-de-gilets-jaunes-a-concorde-defile-dans-le-calme-entre-republique-et-nation-60-000-personnes-attendues-3446016.html)
 - [L'intersyndicale décidera lundi de la suite — Echos Plus](https://echosplus.com/2026/11/06/conference-sociale-a-matignon-lintersyndicale-decidera-lundi-de-la-suite-de-la-mobilisation/)

@@ -13,12 +13,12 @@ tags:
 summary: 민주당의 양원 장악으로 트럼프 관세가 풀릴 것이라는 기대는 접어야 한다. 대신 의회의 예산이 걸린 조선과 전작권은 트럼프와의 약속만으로 움직이지 않게 됐다. 핵잠은 정권 교체로 취소된 전례를 찾지 못했지만, 진짜 위험은 약속이 아직 법적 협정이 아니라는 점이다.
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-08T20:43:00+09:00
+updated_at: 2026-11-10T20:47:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-08T20:43:00+09:00
-    note: 미시시피(2,574표 차)·알래스카(637표 차) 미판정과 인증 일정, 하원 민주 252석, 백악관 비서실장 교체(밀러) 반영
+    at: 2026-11-10T20:47:00+09:00
+    note: 미시시피 콜럼 2,500표 이상·알래스카 펠톨라 2,517표 리드, 하원 254 대 163 반영
   checkpoints:
     - date: 2026-12-31
       note: NDAA 처리와 반도체 세액공제 연장 여부, 한미 핵잠 2차 협의 개최 여부
@@ -90,6 +90,8 @@ KEI의 분석처럼 이 MOU는 조약이 아니라 "관세 위협으로 집행"�
 
 한국에 이 인사는 의석수보다 가까운 변수다. 밀러는 이민과 대중국 강경론의 설계자로 알려져 있고, 조지아 구금 사태처럼 한국 기업 인력이 걸린 사안이 그의 손에 들어간다. 민주당 의회가 감독을 강화하는 동안 백악관은 더 단단해지는 셈이다. 이는 해석이다.
 
+9일 기준 미시시피는 콜럼이 2,500표 넘게 앞선 채 13일 카운티 인증을 기다리고, 알래스카는 펠톨라의 리드가 637표에서 2,517표로 벌어졌다. 알래스카 선호투표 집계는 18일, 인증은 25일이다([WLBT](https://www.wlbt.com/2026/11/09/colom-leads-hyde-smith-by-more-than-2500-votes-mississippi-awaits-final-senate-result/), [Anchorage Daily News](https://www.adn.com/politics/2026/11/09/mary-peltola-inches-further-ahead-of-sen-sullivan-in-alaskas-senate-race/)). 두 곳 모두 민주당이 이기면 상원은 56 대 44가 된다. 하원은 AP 집계로 254 대 163에 18석이 남았다.
+
 ## 조선·전작권: 가장 먼저 부딪힐 곳
 
 **조선.** 공화당 다수 의회에서도 하원 NDAA와 세출안이 해외 건조를 제한했고, 상원 초안도 비전투 지원함 2척까지만 예외를 뒀다([서울경제](https://en.sedaily.com/international/2026/10/18/us-congress-shipbuilders-push-back-on-trumps-overseas)). 코트라는 SHIPS Act 등 초당적 분야의 기회를 말한다([아주경제](https://www.ajunews.com/view/20261105075610664)). 그러나 기회의 성격이 다르다. **미국 조선소 투자로 가는 돈은 환영받아도 한국 조선소에서 군함을 짓는 구상은 민주당에서도 표를 얻기 어렵다.** 마스가의 무게 중심을 현지 투자와 비전투함으로 현실화해야 한다. 이는 해석이다.
@@ -119,9 +121,12 @@ KEI의 분석처럼 이 MOU는 조약이 아니라 "관세 위협으로 집행"�
 ## 갱신 기록
 
 - 2026-11-08: 상원 미판정 2석 집계와 인증 일정, 하원 집계, 백악관 비서실장 교체 반영
+- 2026-11-10: 미시시피·알래스카 개표 진행과 하원 집계 반영
 
 ## 출처
 
+- [Colom leads Hyde-Smith by more than 2,500 votes — WLBT](https://www.wlbt.com/2026/11/09/colom-leads-hyde-smith-by-more-than-2500-votes-mississippi-awaits-final-senate-result/)
+- [Peltola inches further ahead — Anchorage Daily News](https://www.adn.com/politics/2026/11/09/mary-peltola-inches-further-ahead-of-sen-sullivan-in-alaskas-senate-race/)
 - [Mississippi Senate ballot fight — Democracy Docket](https://www.democracydocket.com/news-alerts/live-mississippi-senate-ballot-fight-heats-up/)
 - [Alaska is still counting ballots — Anchorage Daily News](https://www.adn.com/politics/2026/11/06/like-in-past-elections-alaska-is-still-counting-ballots-when-will-we-know-who-won/)
 - [House results — NBC News](https://www.nbcnews.com/politics/2026-elections/house-results)

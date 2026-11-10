@@ -14,12 +14,12 @@ tags:
 summary: 이란 혁명수비대는 14일 컨테이너선 침몰, 17일 200만 배럴급 유조선 2척, 19일 유조선 1척이 기뢰에 부딪혔다고 주장했지만 로이터는 독립 확인이 없다고 했고 미 중부사령부는 발사체 공격이라고 반박했다. 10월 들어 피격 선박은 20척이 넘고(UKMTO·CNBC), 10월 12일까지 한 주 해협 통과 원유는 하루 850만 배럴로 전쟁 전보다 약 40% 적었다(Kpler). 브렌트유는 16일 110달러를 찍었고 이란은 "6일 안 재개방" 제안이 유효하다고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-09T09:44:00+09:00
+updated_at: 2026-11-10T20:47:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-09T09:44:00+09:00
-    note: 8일 리야드 아람코 건물 파편 피해와 후티 공격 주장, 7일 사나 공습 사망자, 루비오 '돌파구 아니다', 중재 중단, 9일 개장 브렌트유 97.57달러 반영
+    at: 2026-11-10T20:47:00+09:00
+    note: 9일 브렌트유 92.57달러(5.85% 하락), 트럼프 '군사적으로 사실상 끝났다'·이란 '가짜 협상설', 한국 청해부대 작전구역 오만 남쪽 확대 의결 반영
   checkpoints:
     - date: 2026-11-15
       note: 이란의 이틀 재개방 제안에 대한 미국의 공식 답변과 선거 뒤 협상·공습 재개 여부
@@ -125,6 +125,12 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 이 글이 10월에 쓴 대로 유가는 호르무즈 하나로 움직이지 않는다. 리야드 피격이 유가를 올리지 못한 것은 시장이 아직 사우디 생산 차질을 가격에 넣지 않았다는 뜻이지, 위험이 없다는 뜻이 아니다. 2019년 아브카이크 피격 때 유가가 하루 15% 뛴 기억은 시장에도 있다. 이는 해석이다.
 
+## 11월 9~10일: 유가는 합의를 가격에 넣었고, 한국은 함정을 더 가까이 보냈다
+
+9일 브렌트유는 5.85% 내린 92.57달러로 마감했다. 이란이 해협 통제 요구를 접었다는 이스라엘 매체 보도가 방아쇠였는데 카타르는 이를 부인했다([네이션(로이터)](https://www.nationthailand.com/news/world/40073309)). 트럼프는 카타르 총리를 만난 뒤 추가 군사행동이 "꽤 가능성이 낮다"고 했고([The National](https://www.thenationalnews.com/news/us/2026/11/09/trump-meets-qatari-pm-and-calls-renewed-military-action-on-iran-quite-unlikely/)), 이란에 대해 "군사적으로 사실상 끝났다"고 했다. 이란 국가안보회의의 레자에이는 "상상 속 협상에 관한 가짜 뉴스 제조를 멈추라"고 했다([Euronews](https://www.euronews.com/2026/11/10/trump-says-iran-war-effectively-over-as-tehran-denies-planned-talks)). 유가는 2주 사이 117달러에서 92달러로 내려왔지만 양측이 합의를 확인한 적은 없다.
+
+한국은 이날 호르무즈 쪽으로 한 걸음 갔다. 10일 국무회의는 청해부대 작전구역을 아덴만에서 호르무즈 해협에서 약 650km 떨어진 오만 남쪽 해역까지 넓히고 해상초계기와 폭발물 처리, 무인 소해 장비를 더하는 파견 연장 수정 동의안을 의결했다. 임무에 "국제 해상교통로 항행의 자유 회복 지원"이 들어갔고 국회 동의가 남았다. 이란 외무부는 한국에 파병 자제를 요구했고 외교부는 전쟁 불관여 원칙을 밝혔다([경향신문](https://www.khan.co.kr/article/202611101729001/)). 이 글은 이 결정을 유가 하락과 같은 판단의 다른 얼굴로 본다. 봉쇄가 길어질수록 해협을 지나는 한국 선박의 보호는 미국에만 맡길 수 없고, 그 비용은 국회 동의 절차에서 처음 숫자로 드러날 것이다. 이는 해석이다.
+
 ## 한국: 10월 물량은 확보, 11월 이후 비용과 우회로가 변수
 
 한국석유공사 통계로 7월 한국의 원유 수입 9,318만 배럴 가운데 쿠웨이트·이라크 등 걸프 안쪽에서만 실을 수 있는 물량은 687만 배럴(7.4%)이었고, 사우디·UAE처럼 송유관으로 우회할 수 있는 물량이 4,499만 배럴(48.3%), 해협과 무관한 비중동·오만산이 4,132만 배럴(44.3%)이었다. 이라크산 수입은 2006년 5월 이후 처음으로 0이었다. 8월 31일 기준 정부 비축유는 1억 배럴로, 사우디·UAE 물량까지 하루 167만 배럴이 끊기면 60일, 전체 수입이 끊기면 33일을 버틸 수 있다는 단순 계산이 나온다. 이 계산은 민간 비축과 수요 감축, 대체 도입을 반영하지 않은 것이다([이포커스](https://www.e-focus.co.kr/news/articleView.html?idxno=3003095)).
@@ -165,9 +171,14 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - 2026-11-05: 5일 걸프 선박 피격과 브렌트유 반등 반영
 - 2026-11-08: 5~8일 선박 피격과 미군 작전, 유가, 중재 상황 반영
 - 2026-11-09: 8일 리야드 피격과 사나 공습, 미·이란 협상 중단 발언, 9일 개장 유가 반영
+- 2026-11-10: 9일 유가 급락과 협상 공방, 10일 청해부대 작전구역 확대 의결 반영
 
 ## 출처
 
+- [Brent settles down 5.85% — The Nation(로이터)](https://www.nationthailand.com/news/world/40073309)
+- [Trump meets Qatari PM, calls renewed action 'quite unlikely' — The National](https://www.thenationalnews.com/news/us/2026/11/09/trump-meets-qatari-pm-and-calls-renewed-military-action-on-iran-quite-unlikely/)
+- [Trump says Iran war effectively over as Tehran denies talks — Euronews](https://www.euronews.com/2026/11/10/trump-says-iran-war-effectively-over-as-tehran-denies-planned-talks)
+- [청해부대 작전구역 호르무즈 쪽 확대 의결 — 경향신문](https://www.khan.co.kr/article/202611101729001/)
 - [Saudi-led coalition intercepts missiles fired towards Riyadh — The National](https://www.thenationalnews.com/news/gulf/2026/11/08/saudi-led-coalition-intercepts-two-houthi-missiles-fired-towards-riyadh/)
 - [Aramco building in Riyadh damaged — AP(ABC News)](https://abcnews.com/International/wireStory/saudi-arabia-intercepts-missiles-aramco-building-riyadh-damaged-137951443)
 - [33 killed in Saudi strikes on Yemen — Manila Times(AFP)](https://www.manilatimes.net/2026/11/09/world/33-killed-in-saudi-arabia-strikes-on-yemen/2464735)
