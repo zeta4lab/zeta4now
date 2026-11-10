@@ -14,12 +14,12 @@ tags:
 summary: 엔비디아 이사회는 8일 젠슨 황 CEO가 외국 정보기관의 표적이 됐다는 보도에 따라 독립 조사를 열었고, 황은 직원들에게 "아내에게 부정했다"고 인정했다. 미 하원 3개 위원회는 18일 비공개 브리핑을 요구한다. 같은 주말 젠슨 황의 딸 매디슨 황은 배경훈 부총리 면담을 포함한 방한 일정을 취소했다. 이 글은 스파이 의혹의 진위보다, 한국의 AI 인프라 계획이 한 회사와 한 사람과의 관계 위에 세워져 있다는 점을 문제로 본다.
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-09T18:46:00+09:00
+updated_at: 2026-11-10T20:47:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-09T18:46:00+09:00
-    note: AI 데이 서울의 엔비디아·SKT·리벨리온 NVLink Fusion MOU, 매디슨 황 관련 추가 설명 없음, NVDA 프리마켓 5.2% 하락 반영
+    at: 2026-11-10T20:47:00+09:00
+    note: 9일 엔비디아 주가 4.27% 하락(178.67달러, 거래량 평소 3.7배), 나스닥 2.74% 상승과 대조. 하원 브리핑 회신은 미확인
   checkpoints:
     - date: 2026-11-11
       note: 젠슨 황의 하원 3개 위원회 브리핑(11월 18일) 수락 여부 회신 기한
@@ -74,6 +74,8 @@ tracking:
 
 이 MOU는 이 글이 말한 방향과 겹친다. 엔비디아 플랫폼 안에서 국산 NPU에 자리를 만드는 것은 의존을 끊는 일이 아니라 의존의 조건을 바꾸는 일이다. 2028년이라는 시점과 '확대 방침'이 계약으로 이어지는지가 다음 확인 지점이다. 이는 해석이다.
 
+9일 미국 시장에서 엔비디아는 4.27% 내린 178.67달러로 마감했고 거래량은 3개월 평균의 3.7배였다. 같은 날 나스닥은 2.74% 올랐다([Motley Fool](https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-nvidia-stock-plunges-4-on-jensen-huang-investigation-as-nasdaq-surges-nearly-3/)). 시장 전체가 반등하는 날 이 종목만 빠졌다는 것은 하락 이유가 거시가 아니라 이 회사라는 뜻이다. 하원이 요구한 11일 회신 여부는 10일 밤까지 공개되지 않았다.
+
 ## 영향 평가
 
 | 대상 | 영향 | 판단 |
@@ -102,9 +104,11 @@ tracking:
 ## 갱신 기록
 
 - 2026-11-09: 9일 AI 데이 서울 MOU와 엔비디아의 무응답, 프리마켓 주가 반영
+- 2026-11-10: 9일 엔비디아 주가와 거래량 반영
 
 ## 출처
 
+- [Nvidia stock plunges 4% on Huang investigation — Motley Fool](https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-nvidia-stock-plunges-4-on-jensen-huang-investigation-as-nasdaq-surges-nearly-3/)
 - [엔비디아·SKT·리벨리온 NVLink Fusion MOU — 파이낸셜뉴스](https://www.fnnews.com/news/202611091444371881)
 - [AI 데이 서울, 매디슨 황 불참 질문에 답 없어 — 재경일보](https://news.jkn.co.kr/post/1080731)
 - [Nvidia shares fall premarket after Huang admission — CNBC](https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html)
