@@ -14,15 +14,15 @@ tags:
 summary: 엔비디아 이사회는 8일 젠슨 황 CEO가 외국 정보기관의 표적이 됐다는 보도에 따라 독립 조사를 열었고, 황은 직원들에게 "아내에게 부정했다"고 인정했다. 미 하원 3개 위원회는 18일 비공개 브리핑을 요구한다. 같은 주말 젠슨 황의 딸 매디슨 황은 배경훈 부총리 면담을 포함한 방한 일정을 취소했다. 이 글은 스파이 의혹의 진위보다, 한국의 AI 인프라 계획이 한 회사와 한 사람과의 관계 위에 세워져 있다는 점을 문제로 본다.
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-10T20:47:00+09:00
+updated_at: 2026-11-11T08:48:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-10T20:47:00+09:00
-    note: 9일 엔비디아 주가 4.27% 하락(178.67달러, 거래량 평소 3.7배), 나스닥 2.74% 상승과 대조. 하원 브리핑 회신은 미확인
+    at: 2026-11-11T08:48:00+09:00
+    note: 하원 외교위 매스트 위원장 10일 "아직 답을 들었다고 말할 수 없다". 회신 기한 11일(미국 시각) 결과 미확인
   checkpoints:
-    - date: 2026-11-11
-      note: 젠슨 황의 하원 3개 위원회 브리핑(11월 18일) 수락 여부 회신 기한
+    - date: 2026-11-12
+      note: 젠슨 황의 하원 3개 위원회 브리핑(18일) 회신 기한(11일, 미국 시각) 결과와 의회 후속 조치
     - date: 2026-11-18
       note: 엔비디아 3분기 실적 발표(17일)와 하원 비공개 브리핑(18일) 결과
     - date: 2026-12-31
@@ -53,6 +53,8 @@ tracking:
 황 본인은 10월 29일 "우리의 관계와 교류는 메가스피드와 관련된 것이었고 완전히 정상적이었다"고 했고, 엔비디아는 밀반입 의혹이 "지난해 철저히 조사돼 반박됐다"고 했다([디칸 크로니클(블룸버그)](https://www.deccanchronicle.com/amp/technology/nvidia-ceo-jensen-huang-says-ties-to-company-in-spy-probe-were-normal-2000242)). 열흘 뒤 나온 이메일은 '정상적인 교류'라는 설명과 '부정'이라는 고백 사이의 거리를 남겼다. 다만 이메일이 FT 보도의 특정 인물이나 스파이 평가를 확인한 것은 아니다.
 
 메가스피드는 싱가포르 경찰의 수사 대상이고, NYT는 말레이시아 자매사가 2024년 6월부터 2026년 2월까지 엔비디아 칩을 포함한 AI 장비를 최소 48억 달러어치 샀으며 미 상무부 조사가 법무부로 넘어갔다고 전했다. 트럼프 대통령은 10월 31일 "젠슨을 매우 존경한다", "아주 면밀히 살펴보겠다"고 했다([ARY(AFP)](https://arynews.tv/trump-us-looking-closely-report-nvidia-ceo-target-china-spy-plot)).
+
+회신 기한을 하루 앞둔 10일(현지시각) 브라이언 매스트 하원 외교위원장은 "아직 답을 들었다고 말할 수 없다"고 했다([CNBC](https://www.cnbc.com/2026/11/10/moolenaar-nvidia-jensen-huang-affair-chinese-spy.html)). 세 위원장은 5일 보도자료에서 11일까지 18일 브리핑을 수락하거나 다른 날짜를 제안하라고 요구했다([하원 외교위](https://foreignaffairs.house.gov/news/press-releases/chairmen-mast-moolenaar-and-crawford-request-jensen-huang-brief-congress-on-link-to-chinese-intelligence-asset)).
 
 ## 서울: 창구가 닫힌 주말
 
@@ -105,9 +107,12 @@ tracking:
 
 - 2026-11-09: 9일 AI 데이 서울 MOU와 엔비디아의 무응답, 프리마켓 주가 반영
 - 2026-11-10: 9일 엔비디아 주가와 거래량 반영
+- 2026-11-11: 매스트 하원 외교위원장의 10일 "회신 못 받았다" 발언 반영, 확인 일정을 11월 12일로 변경
 
 ## 출처
 
+- [CNBC, Moolenaar on Nvidia and Jensen Huang (2026-11-10)](https://www.cnbc.com/2026/11/10/moolenaar-nvidia-jensen-huang-affair-chinese-spy.html)
+- [하원 외교위 보도자료 (2026-11-05)](https://foreignaffairs.house.gov/news/press-releases/chairmen-mast-moolenaar-and-crawford-request-jensen-huang-brief-congress-on-link-to-chinese-intelligence-asset)
 - [Nvidia stock plunges 4% on Huang investigation — Motley Fool](https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-nvidia-stock-plunges-4-on-jensen-huang-investigation-as-nasdaq-surges-nearly-3/)
 - [엔비디아·SKT·리벨리온 NVLink Fusion MOU — 파이낸셜뉴스](https://www.fnnews.com/news/202611091444371881)
 - [AI 데이 서울, 매디슨 황 불참 질문에 답 없어 — 재경일보](https://news.jkn.co.kr/post/1080731)
