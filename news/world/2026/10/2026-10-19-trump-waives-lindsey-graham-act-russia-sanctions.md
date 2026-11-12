@@ -14,15 +14,15 @@ tags:
 summary: 트럼프 대통령이 10월 16일(현지시각) 자신이 9월 18일 서명한 '린지 그레이엄 러시아·이란 제재법'의 500% 관세, 러시아 석유 구매국 100% 관세, 은행·그림자 선단 제재 조항을 시행 이틀 전 행정명령으로 유예했다. 의회에는 "국익"이라고만 통보했고 만료일은 없다. 젤렌스키는 "유감"이라며 미·러·우 3자 회담 추진을 밝혔고, 공화당 틸리스 의원은 "무책임을 넘어섰다"고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-11T08:48:00+09:00
+updated_at: 2026-11-12T12:22:46+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-11T08:48:00+09:00
-    note: 아부다비 미·러·우 3자 회담 1일차(10일) 약 4시간 진행, 공동 발표 없이 11일 재개. 포로 대규모 교환 합의설은 미확인
+    at: 2026-11-12T12:22:46+09:00
+    note: 아부다비 회담 11일 종료. 러·우 양측 대표가 대규모 포로 교환 원칙 합의 공식 확인, 규모·시기 미정. 다음 회담 일정 없음
   checkpoints:
-    - date: 2026-11-12
-      note: 아부다비 미·러·우 회담 2일차(11일) 결과와 후속 회담 일정, 포로 교환 합의 공식 확인 여부
+    - date: 2026-11-13
+      note: 위트코프·쿠슈너의 12일 모스크바 푸틴 면담과 더블린 젤렌스키 면담 결과, 포로 교환 규모 확정 여부
     - date: 2026-11-20
       note: 복귀한 의회의 유예 철회 요구와 믹스 의원의 러시아 석유 거래 금지 법안 진행 여부
     - date: 2026-11-18
@@ -103,6 +103,10 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 
 회담은 10일 아부다비에서 2월 이후 9개월 만에 열렸다. 미국은 위트코프 특사와 쿠슈너, 러시아는 메딘스키 대통령 보좌관, 우크라이나는 우메로우 대표가 이끌었고, 유럽 각국 안보보좌관과 NATO·EU는 별도 형식으로 참여했다. 1일차는 휴식을 포함해 약 4시간 30분 만에 끝났고 공동 발표는 없었으며 11일 재개한다([Kyiv Independent](https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/), [TASS](https://tass.com/politics/2215555)). 미국 대표단 인사는 "차이가 좁혀졌다"고 했고, 우크라이나 매체는 대표단과 가까운 인사를 인용해 가까운 시일 안의 대규모 포로 교환에 합의했다고 전했지만 공식 확인은 없다([VOA](https://www.voakorea.com/a/us-russia-ukraine-111026/8221086.html)). 러시아 외무부 자하로바 대변인은 "3자 형식은 러시아, 우크라이나, 미국 대표 외에는 누구의 참여도 허용하지 않는다"고 했고, 젤렌스키 대통령은 유럽 안보 문제는 유럽 국가가 참여한 가운데 논의해야 한다고 맞섰다. 유예의 명분인 '진행 중인 협상'이 실제로 열렸지만, 첫날 성과는 대화 재개 그 자체에 머물렀다. 이는 해석이다.
 
+이틀간의 회담에서 나온 확실한 결과는 포로 교환 하나였고, 영토와 휴전에서는 돌파구가 없었다. 우크라이나 대표단장 우메로우는 11일 "주요 결과는 대규모 포로 교환에 합의한 것"이라며 "지금은 세부 사항과 실제 이행을 합의하는 중"이라고 했고, 러시아 대표단장 메딘스키도 "또 한 차례의 대규모 포로 교환에 원칙적으로 합의했다. 세부 사항은 곧 발표하겠다"고 했다. 1일차에 비공식으로만 전해졌던 합의를 양측 대표가 공식 확인한 것이다. 다만 규모와 시기는 어느 쪽도 공개하지 않았다. 타스는 러시아 총참모부의 알렉산드르 조린 장군을 인용해 양측 각 1,000명이 넘는 "사상 최대" 교환이 될 것이라고 전했다([Kyiv Independent(Yahoo)](https://www.yahoo.com/news/world/articles/large-scale-prisoner-exchange-agreed-145436847.html)).
+
+쿠슈너는 "우리가 가장 큰 규모의 인도적 포로 석방에 합의한 것은 긍정적인 점 가운데 하나"라며 숫자는 12일 확정한다고 했지만, "현실은 지금 양측 사이에 신뢰가 없다는 것"이라고도 말했다. AP에 따르면 위트코프와 쿠슈너는 12일 모스크바에서 푸틴 대통령을 만난 뒤 더블린으로 가 젤렌스키 대통령을 만난다. 다음 회담의 날짜와 장소는 발표되지 않았다([AP(MS NOW)](https://www.ms.now/news/russia-and-ukraine-agree-to-a-large-prisoner-exchange-envoys-say)). 메딘스키는 영토 문제에 대해 "우리 땅은 한 치도 빠짐없이 러시아로 돌아올 것"이라고 했고, 쿠슈너는 우크라이나 안보 보장에서는 "상당한 진전"이 있었지만 영토가 "가장 어렵다"고 했다([Meduza](https://meduza.io/en/feature/2026/11/11/russia-ukraine-peace-talks-conclude-in-abu-dhabi-with-prisoner-exchange-agreement-but-no-breakthrough-on-territory)). 협상 무대는 아부다비에서 모스크바로 옮겨 갔고, 유예를 유지할 명분도 당분간 이어지게 됐다. 이는 해석이다.
+
 ## 의미
 
 이 법은 애초 의회가 대통령의 재량을 좁히려고 만든 것이었다. 기존 행정명령 제재를 법률로 굳히고, 500% 관세와 2차 관세를 '해야 한다'는 의무 조항으로 적고, 제재를 끝내려면 평화협정 서명을 인증하고 의회 심사를 거치게 했다. 그러나 같은 법의 115조는 "국익" 인증서 한 장으로 어떤 조항이든 유예할 수 있게 했고, 트럼프는 서명 28일 만에 그 조항으로 나머지를 모두 비워 냈다. 바이든 정부 당국자였던 존 파이너가 법 통과 전에 "대통령이 갖지 못한 새 제재 권한을 더하지 않으면서 유예 조항과 광범위한 관세 권한을 준다"고 지적했던 구조가 그대로 드러난 셈이다([Wikipedia](https://en.wikipedia.org/wiki/Sanctioning_Russia_Act)).
@@ -119,16 +123,20 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 - 젤렌스키가 말한 3자 정상회담은 러시아와 미국 어느 쪽도 확인하지 않았다. WSJ가 보도한 푸틴의 미·중·러 회담 제안도 미 고위 당국자가 "트럼프가 아직 동의하지 않았다"고 한 단계다.
 - 트럼프의 "매우 좋은 결정" 발언은 폭스비즈니스 보도에 기댔으며 발언 장소와 전체 맥락은 확인하지 못했다.
 - 워싱턴포스트·더힐·CNBC 원문은 접근이 막혀 다른 매체의 같은 내용으로 대체했다.
-- 남은 일정: 11월 11일 아부다비 회담 2일차, 11월 18~19일 선전 APEC, 12월 중순 60일 검토 기한, 12월 마이애미 G20.
+- 남은 일정: 11월 12일 위트코프·쿠슈너의 푸틴·젤렌스키 면담, 11월 18~19일 선전 APEC, 12월 중순 60일 검토 기한, 12월 마이애미 G20.
 
 ## 갱신 기록
 
 - 2026-11-04: 중간선거 추정 결과와 믹스 의원 법안 상황, 11월 10~11일 아부다비 평화회담 발표와 자포리자 공습 반영. 11월 3일 확인 일정을 11월 11일·20일로 변경
 - 2026-11-05: 민주당 상·하원 장악 판정과 의석수로 어제 추정치 수정, 슈머·달더 발언 반영
 - 2026-11-11: 아부다비 미·러·우 회담 1일차 결과 반영, 확인 일정을 11월 12일로 변경
+- 2026-11-12: 아부다비 회담 2일차 종료와 포로 교환 원칙 합의 공식 확인, 위트코프·쿠슈너 모스크바·더블린 방문 반영. 확인 일정을 11월 13일로 변경
 
 ## 출처
 
+- [Kyiv Independent(Yahoo), 'Large-scale' prisoner exchange agreed as 2nd day of Abu Dhabi talks concludes, Umerov says (2026-11-11)](https://www.yahoo.com/news/world/articles/large-scale-prisoner-exchange-agreed-145436847.html)
+- [AP(MS NOW), Russia and Ukraine agree to a large prisoner exchange, envoys say (2026-11-11)](https://www.ms.now/news/russia-and-ukraine-agree-to-a-large-prisoner-exchange-envoys-say)
+- [Meduza, Russia–Ukraine peace talks conclude in Abu Dhabi with prisoner exchange agreement (2026-11-11)](https://meduza.io/en/feature/2026/11/11/russia-ukraine-peace-talks-conclude-in-abu-dhabi-with-prisoner-exchange-agreement-but-no-breakthrough-on-territory)
 - [Kyiv Independent, Ukraine, Russia, US resume trilateral peace talks in Abu Dhabi (2026-11-10)](https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/)
 - [TASS, 아부다비 회담 1일차 종료 (2026-11-10)](https://tass.com/politics/2215555)
 - [VOA 한국어, 미·러·우 아부다비 회담 (2026-11-11)](https://www.voakorea.com/a/us-russia-ukraine-111026/8221086.html)
