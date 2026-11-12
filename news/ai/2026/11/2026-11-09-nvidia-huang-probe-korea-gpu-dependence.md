@@ -14,15 +14,15 @@ tags:
 summary: 엔비디아 이사회는 8일 젠슨 황 CEO가 외국 정보기관의 표적이 됐다는 보도에 따라 독립 조사를 열었고, 황은 직원들에게 "아내에게 부정했다"고 인정했다. 미 하원 3개 위원회는 18일 비공개 브리핑을 요구한다. 같은 주말 젠슨 황의 딸 매디슨 황은 배경훈 부총리 면담을 포함한 방한 일정을 취소했다. 이 글은 스파이 의혹의 진위보다, 한국의 AI 인프라 계획이 한 회사와 한 사람과의 관계 위에 세워져 있다는 점을 문제로 본다.
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-11T08:48:00+09:00
+updated_at: 2026-11-12T12:23:38+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-11T08:48:00+09:00
-    note: 하원 외교위 매스트 위원장 10일 "아직 답을 들었다고 말할 수 없다". 회신 기한 11일(미국 시각) 결과 미확인
+    at: 2026-11-12T12:23:38+09:00
+    note: 11일 기한 당일까지 황 회신 확인 안 됨. 하원 위원장들 소환장 준비, 의원들 사임 요구. 두 번째 외도 보도 뒤 이사회 거취 논의 보도
   checkpoints:
-    - date: 2026-11-12
-      note: 젠슨 황의 하원 3개 위원회 브리핑(18일) 회신 기한(11일, 미국 시각) 결과와 의회 후속 조치
+    - date: 2026-11-13
+      note: 젠슨 황의 하원 브리핑 요청 회신 여부와 소환장 발부, 엔비디아 이사회의 황 거취 결정
     - date: 2026-11-18
       note: 엔비디아 3분기 실적 발표(17일)와 하원 비공개 브리핑(18일) 결과
     - date: 2026-12-31
@@ -56,6 +56,14 @@ tracking:
 
 회신 기한을 하루 앞둔 10일(현지시각) 브라이언 매스트 하원 외교위원장은 "아직 답을 들었다고 말할 수 없다"고 했다([CNBC](https://www.cnbc.com/2026/11/10/moolenaar-nvidia-jensen-huang-affair-chinese-spy.html)). 세 위원장은 5일 보도자료에서 11일까지 18일 브리핑을 수락하거나 다른 날짜를 제안하라고 요구했다([하원 외교위](https://foreignaffairs.house.gov/news/press-releases/chairmen-mast-moolenaar-and-crawford-request-jensen-huang-brief-congress-on-link-to-chinese-intelligence-asset)).
 
+## 11일 워싱턴: 회신은 확인되지 않았고, 질문은 거취로 넘어갔다
+
+기한인 11일(미국 시각) 오후까지 황이 하원에 회신했다는 확인은 없다. **의회의 질문은 브리핑에 나올지에서 CEO 자리에 남을지로 옮겨 갔다.** 매스트와 몰레나 위원장은 11일 오후 기자들에게 아직 황에게서 답을 듣지 못했고 그날이 끝날 때까지 기다리겠다고 했다. 황이 응하지 않으면 소환장을 보내겠느냐는 질문에 매스트는 "그렇다"고 답했고, 몰레나는 "세 위원회 모두 소환권이 있다", "계속 추진하겠다"고 했다([CNBC](https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-congress-resign-ai-chips.html), [TechCrunch](https://techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair/)). 엔비디아는 언론의 논평 요청에 바로 답하지 않았다.
+
+같은 날 의회에서는 사임 요구가 나왔다. 케빈 크레이머 공화당 상원의원은 "스스로의 양심에 따라 사임해야 한다"며 황이 "협박과 갈취에 매우 취약하다"고 했고, 수하스 수브라마니암 민주당 하원의원과 돈 베이컨 공화당 하원의원도 사임을 요구했다. 엘리자베스 워런·짐 뱅크스 상원의원은 국방수권법(NDAA)에 'AI 오버워치법'을 넣으라고 촉구했고, MATCH법과 칩보안법도 거론됐다([CNBC](https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-congress-resign-ai-chips.html)). 사임 요구가 초당적으로 나왔고, 논의가 한 사람의 처신에서 칩 수출 경로 입법으로 번졌다는 점이 한국에는 더 중요하다.
+
+11일 장 마감 뒤에는 회사 안쪽이 흔들렸다. NYT는 황이 사내 임원인 킴벌리 파월 헬스케어 부사장과도 혼외 관계였다고 보도했고, WSJ는 이사회가 황의 해임을 준비하며 이르면 그날 회의를 열 수 있다고 전했다. 로이터는 소식통을 인용해 이사회가 11일 늦게 회의를 연다고 했고, 블룸버그는 이사회가 외부 업체와 후임 후보를 찾고 있다고 보도했다. 엔비디아와 파월은 논평 요청에 바로 답하지 않았고, 엔비디아 주가는 시간외 거래에서 9% 넘게 내렸다([CNBC](https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-affair-employee.html), [Investing.com(로이터)](https://www.investing.com/news/stock-market-news/nvidia-is-preparing-to-oust-ceo-jensen-huang-wsj-reports-5019991)). 12일 낮(한국 시각)까지 이사회 결정은 발표되지 않았다. 이는 모두 익명 취재원 보도다.
+
 ## 서울: 창구가 닫힌 주말
 
 젠슨 황의 딸 매디슨 황 엔비디아 수석이사는 8일 서울 콘래드호텔에서 배경훈 부총리 겸 과기정통부 장관을 만나고, 9~10일 코엑스 'AI 데이 서울'에 참석하며, 9일 류제명 2차관과 스타트업 포럼을 공동 주재하고 리벨리온 본사를 찾을 예정이었다. 엔비디아는 7일 그가 "부득이한 사정으로" 참석하지 못한다고 알렸고, 연합뉴스는 소식통을 인용해 "가족 문제"라고 전했다. 과기정통부는 "면담 불발은 아쉽지만 예정된 협력과 간담회는 차질 없이 진행한다"고 했다([ZDNet Korea](https://zdnet.co.kr/view/?no=20261108115633), [코리아타임스(연합)](https://www.koreatimes.co.kr/business/companies/20261107/nvidia-ceos-daughter-cancels-planned-visit-to-korea-sources), [한국일보](https://www.hankookilbo.com/news/article/A2026110810050001381)). 취소와 의혹의 연관은 어느 보도도 확인하지 못했다. 행사는 다른 임원들이 대신 나와 예정대로 열린다.
@@ -76,13 +84,13 @@ tracking:
 
 이 MOU는 이 글이 말한 방향과 겹친다. 엔비디아 플랫폼 안에서 국산 NPU에 자리를 만드는 것은 의존을 끊는 일이 아니라 의존의 조건을 바꾸는 일이다. 2028년이라는 시점과 '확대 방침'이 계약으로 이어지는지가 다음 확인 지점이다. 이는 해석이다.
 
-9일 미국 시장에서 엔비디아는 4.27% 내린 178.67달러로 마감했고 거래량은 3개월 평균의 3.7배였다. 같은 날 나스닥은 2.74% 올랐다([Motley Fool](https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-nvidia-stock-plunges-4-on-jensen-huang-investigation-as-nasdaq-surges-nearly-3/)). 시장 전체가 반등하는 날 이 종목만 빠졌다는 것은 하락 이유가 거시가 아니라 이 회사라는 뜻이다. 하원이 요구한 11일 회신 여부는 10일 밤까지 공개되지 않았다.
+9일 미국 시장에서 엔비디아는 4.27% 내린 178.67달러로 마감했고 거래량은 3개월 평균의 3.7배였다. 같은 날 나스닥은 2.74% 올랐다([Motley Fool](https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-nvidia-stock-plunges-4-on-jensen-huang-investigation-as-nasdaq-surges-nearly-3/)). 시장 전체가 반등하는 날 이 종목만 빠졌다는 것은 하락 이유가 거시가 아니라 이 회사라는 뜻이다. 하원이 요구한 11일 회신 여부는 기한 당일까지도 확인되지 않았다.
 
 ## 영향 평가
 
 | 대상 | 영향 | 판단 |
 |---|---|---|
-| 엔비디아 경영 | 이사회 조사, 의회 브리핑, 17일 실적이 2주 안에 몰림 | 애널리스트 댄 아이브스는 조사 결과에 따라 CEO 교체 위험이 있다고 봤다([Yahoo Finance](https://finance.yahoo.com/markets/article/nvidias-jensen-huang-admits-to-affair-after-allegations-of-romance-with-chinese-spy-report-205122263.html)). 회사는 부인한다 |
+| 엔비디아 경영 | 이사회 조사, 의회 브리핑과 소환장 압박, 17일 실적이 2주 안에 몰림 | 애널리스트 댄 아이브스는 조사 결과에 따라 CEO 교체 위험이 있다고 봤다([Yahoo Finance](https://finance.yahoo.com/markets/article/nvidias-jensen-huang-admits-to-affair-after-allegations-of-romance-with-chinese-spy-report-205122263.html)). 11일에는 이사회가 해임을 논의한다는 보도까지 나왔다. 회사는 확인하지 않았다 |
 | 한국 정부 GPU 계획 | 발표된 26만 장 중 계약으로 묶인 비중이 공개되지 않음 | 계약과 납기를 공개해야 한다. 약속의 상대가 흔들릴 때 약속의 형식이 중요해진다 |
 | 삼성·SK하이닉스 | 단기 발주 영향 없음. 수출통제 강화 시 준수 비용 증가 | 고객 다변화가 다시 과제가 된다 |
 | 피지컬 AI 협력 | 창구였던 인물의 방한 취소 | 기업 간 실무 채널로 옮겨야 한다. 리벨리온 같은 국산 NPU 기업과의 협력은 엔비디아 일정과 무관하게 진행돼야 한다 |
@@ -101,6 +109,7 @@ tracking:
 - 황의 이메일은 외도 상대를 특정하지 않았다. 이메일과 FT 보도의 인물을 같은 사람으로 단정할 근거는 없다.
 - 매디슨 황의 방한 취소 사유는 엔비디아가 밝히지 않았고, '가족 문제'는 연합뉴스가 소식통을 인용한 표현이다. 의혹과의 연관은 확인되지 않았다.
 - 26만 장 GPU 가운데 계약으로 확정된 물량은 공개 자료에서 확인하지 못했다. 삼성·SK하이닉스의 엔비디아 매출 의존도 수치는 넣지 않았다.
+- 황이 11일 기한 안에 하원에 회신했는지는 12일 낮(한국 시각)까지 어느 보도도 확인하지 못했다. 소환장은 발부되지 않았다. 두 번째 외도와 이사회 해임 논의는 NYT·WSJ·로이터·블룸버그의 익명 취재원 보도이고, 블룸버그 원문은 접속이 막혀 2차 보도로 확인했다.
 - 의존 구조에 대한 판단, 수출통제 강화 전망, 영향 평가와 제안은 이 글의 해석이다.
 
 ## 갱신 기록
@@ -108,9 +117,14 @@ tracking:
 - 2026-11-09: 9일 AI 데이 서울 MOU와 엔비디아의 무응답, 프리마켓 주가 반영
 - 2026-11-10: 9일 엔비디아 주가와 거래량 반영
 - 2026-11-11: 매스트 하원 외교위원장의 10일 "회신 못 받았다" 발언 반영, 확인 일정을 11월 12일로 변경
+- 2026-11-12: 11일 회신 기한 당일 상황(회신 미확인, 소환장 준비, 사임 요구, NDAA 수출통제 법안)과 두 번째 외도·이사회 해임 논의 보도 반영, 확인 일정을 11월 13일로 변경
 
 ## 출처
 
+- [Jensen Huang affair in D.C.: Resignation calls and moves to tighten Nvidia China exports — CNBC (2026-11-11)](https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-congress-resign-ai-chips.html)
+- [Congress to call Jensen Huang in to answer for alleged Chinese spy affair — TechCrunch (2026-11-11)](https://techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair/)
+- [Nvidia prepares to oust Jensen Huang, WSJ reports — CNBC (2026-11-11)](https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-affair-employee.html)
+- [Nvidia board meets to decide CEO Huang's future, source says — Investing.com(로이터) (2026-11-11)](https://www.investing.com/news/stock-market-news/nvidia-is-preparing-to-oust-ceo-jensen-huang-wsj-reports-5019991)
 - [CNBC, Moolenaar on Nvidia and Jensen Huang (2026-11-10)](https://www.cnbc.com/2026/11/10/moolenaar-nvidia-jensen-huang-affair-chinese-spy.html)
 - [하원 외교위 보도자료 (2026-11-05)](https://foreignaffairs.house.gov/news/press-releases/chairmen-mast-moolenaar-and-crawford-request-jensen-huang-brief-congress-on-link-to-chinese-intelligence-asset)
 - [Nvidia stock plunges 4% on Huang investigation — Motley Fool](https://www.fool.com/coverage/stock-market-today/2026/11/09/stock-market-today-nov-9-nvidia-stock-plunges-4-on-jensen-huang-investigation-as-nasdaq-surges-nearly-3/)
