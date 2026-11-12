@@ -86,7 +86,7 @@ tracking:
 2. 본문과 표를 고치고, 확인을 마친 일정은 `checkpoints`에서 지운다. 새로 생긴 일정은 추가한다.
 3. 갱신 시각을 `updated_at`과 `tracking.last_update.at`에 같은 값으로 쓰고, `tracking.last_update.note`에 반영한 내용을 120자 이하로 쓴다.
 4. `## 출처` 바로 앞의 `## 갱신 기록`에 `- 2026-10-15: 박종준 항소심 선고 결과 반영`처럼 날짜와 바뀐 내용을 한 줄씩 남긴다.
-5. 초안을 보여 주고 승인을 받은 뒤 `desk/<slug>-update-<YYYYMMDD>` 브랜치로 PR을 연다. 커밋 메시지는 `content: <제목> 갱신`이다.
+5. 초안을 보여 주고 승인을 받은 뒤 PR을 연다. 한 번의 지시로 갱신한 기사는 기사마다 PR을 따로 열지 않고 `desk/tracking-update-<YYYYMMDD>` 브랜치 하나에 기사별 커밋(`content: <제목> 갱신`)으로 쌓아 PR 하나로 묶는다. PR 제목은 `content: 추적 기사 <N>건 갱신`이고, 본문에 기사별 반영 내용을 한 줄씩 적는다. 머지도 이 PR 하나로 한다. 결과가 없어 고치지 않은 기사는 PR 본문에 따로 적는다. 한 건만 갱신했으면 `desk/<slug>-update-<YYYYMMDD>` 브랜치와 `content: <제목> 갱신` 제목을 쓴다.
 
 추적 결과와 관계없는 수정(오탈자, 사실관계 정정 등)은 일반 갱신이다. `updated_at`과 `## 갱신 기록`만 고치고 `tracking.last_update`는 건드리지 않는다. now.zeta4.net은 `tracking.last_update`가 있는 기사만 '추적 갱신' 목록에 올리고, 일반 갱신은 '수정' 표시로만 보여 준다.
 
