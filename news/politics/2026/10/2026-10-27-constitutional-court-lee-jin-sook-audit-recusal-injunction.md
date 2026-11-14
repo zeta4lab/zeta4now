@@ -16,10 +16,7 @@ summary: 헌법재판소가 10월 21일 재판관 전원일치로 국회 과방�
 generated_by: claude
 model: claude-opus-5-5
 tracking:
-  status: ongoing
-  checkpoints:
-    - date: 2026-11-10
-      note: 헌재 본안(권한쟁의) 변론·선고 일정 공지 여부와 과방위 후속 의결 여부 확인
+  status: closed
 ---
 
 # 헌재, 이진숙 국감 제척 효력 일부 정지…22일 과방위 종합감사 참여하되 방통위원장 시절 의결·본인 고발 사건은 제한

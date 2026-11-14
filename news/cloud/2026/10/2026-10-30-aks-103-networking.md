@@ -14,10 +14,7 @@ summary: AKS 입문 6회 연재의 3회. pod IP를 주는 방식(Overlay와 Flat
 generated_by: claude
 model: claude-opus-5-5
 tracking:
-  status: ongoing
-  checkpoints:
-    - date: 2026-12-01
-      note: 애플리케이션 라우팅 애드온의 관리형 NGINX 보안 패치 종료(11월) 후속 안내 확인
+  status: closed
 ---
 
 # AKS 네트워킹…기본은 Azure CNI Overlay, kubenet은 2028년 은퇴, 관리형 NGINX는 11월까지 옮겨야

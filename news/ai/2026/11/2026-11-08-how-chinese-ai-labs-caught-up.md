@@ -18,8 +18,6 @@ model: unspecified
 tracking:
   status: ongoing
   checkpoints:
-    - date: 2026-12-31
-      note: Qwen 4와 DeepSeek 차기 모델 공개 여부, 화웨이 Atlas 950 슈퍼노드 4분기 배치 여부
     - date: 2027-02-15
       note: 독자 AI 파운데이션 모델 3차 평가 결과와 글로벌 오픈웨이트 수준 도달 여부
     - date: 2027-03-31
