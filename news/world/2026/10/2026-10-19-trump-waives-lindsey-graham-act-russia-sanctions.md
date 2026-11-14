@@ -14,19 +14,19 @@ tags:
 summary: 트럼프 대통령이 10월 16일(현지시각) 자신이 9월 18일 서명한 '린지 그레이엄 러시아·이란 제재법'의 500% 관세, 러시아 석유 구매국 100% 관세, 은행·그림자 선단 제재 조항을 시행 이틀 전 행정명령으로 유예했다. 의회에는 "국익"이라고만 통보했고 만료일은 없다. 젤렌스키는 "유감"이라며 미·러·우 3자 회담 추진을 밝혔고, 공화당 틸리스 의원은 "무책임을 넘어섰다"고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-12T12:22:46+09:00
+updated_at: 2026-11-14T14:26:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-12T12:22:46+09:00
-    note: 아부다비 회담 11일 종료. 러·우 양측 대표가 대규모 포로 교환 원칙 합의 공식 확인, 규모·시기 미정. 다음 회담 일정 없음
+    at: 2026-11-14T14:26:00+09:00
+    note: 12일 푸틴·젤렌스키 연쇄 면담. 다음 회담에 유럽 참여 합의, 포로 교환은 '최대 규모'라지만 숫자·날짜 미정
   checkpoints:
-    - date: 2026-11-13
-      note: 위트코프·쿠슈너의 12일 모스크바 푸틴 면담과 더블린 젤렌스키 면담 결과, 포로 교환 규모 확정 여부
+    - date: 2026-11-30
+      note: 유럽이 참여하는 다음 미·러·우 회담 날짜·장소 발표와 최대 규모 포로 교환 실행 여부
     - date: 2026-11-20
       note: 복귀한 의회의 유예 철회 요구와 믹스 의원의 러시아 석유 거래 금지 법안 진행 여부
     - date: 2026-11-18
-      note: 선전 APEC(18~19일) 계기로 푸틴이 제안했다는 트럼프·시진핑과의 3자 회담 성사 여부(WSJ 보도)
+      note: 선전 APEC(18~19일) 계기 트럼프·푸틴 우크라이나 논의(우샤코프 예고)와 시진핑 포함 3자 회담 성사 여부
     - date: 2026-12-15
       note: 루비오 장관이 말한 '최대 60일' 검토 기한(행정명령 10월 16일 기준). 유예 유지·해제 결정 확인
     - date: 2026-12-31
@@ -107,6 +107,12 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 
 쿠슈너는 "우리가 가장 큰 규모의 인도적 포로 석방에 합의한 것은 긍정적인 점 가운데 하나"라며 숫자는 12일 확정한다고 했지만, "현실은 지금 양측 사이에 신뢰가 없다는 것"이라고도 말했다. AP에 따르면 위트코프와 쿠슈너는 12일 모스크바에서 푸틴 대통령을 만난 뒤 더블린으로 가 젤렌스키 대통령을 만난다. 다음 회담의 날짜와 장소는 발표되지 않았다([AP(MS NOW)](https://www.ms.now/news/russia-and-ukraine-agree-to-a-large-prisoner-exchange-envoys-say)). 메딘스키는 영토 문제에 대해 "우리 땅은 한 치도 빠짐없이 러시아로 돌아올 것"이라고 했고, 쿠슈너는 우크라이나 안보 보장에서는 "상당한 진전"이 있었지만 영토가 "가장 어렵다"고 했다([Meduza](https://meduza.io/en/feature/2026/11/11/russia-ukraine-peace-talks-conclude-in-abu-dhabi-with-prisoner-exchange-agreement-but-no-breakthrough-on-territory)). 협상 무대는 아부다비에서 모스크바로 옮겨 갔고, 유예를 유지할 명분도 당분간 이어지게 됐다. 이는 해석이다.
 
+12일 모스크바와 더블린 면담은 유예의 명분을 연장했지만, 제재가 다시 살아날 계기는 만들지 않았다. AP에 따르면 위트코프와 쿠슈너는 12일 크렘린에서 푸틴과 약 2시간 만났고, 우샤코프 보좌관은 회담이 "실질적이고 건설적이며 솔직하고 유익했다"며 러시아가 제안을 "새로운 고려 사항"으로 보완하겠다고 했다. 푸틴은 휴전 뒤 유럽 군대 배치는 "절대 받아들일 수 없다"며 "다시 말해 전쟁이 즉시 재개될 것"이라고 했고, 2021년 러시아가 요구한 NATO의 중·동유럽 배치 철회안을 다시 꺼냈다([AP(WHDH)](https://whdh.com/news/us-envoys-meet-with-putin-in-moscow-on-ukraine-talks-then-see-zelenskyy-in-dublin/)). 위트코프는 "진전이 있었다"며 "새 회담을 잡았다"고 했고, 우샤코프는 푸틴이 이달 중국 APEC 정상회의에서 트럼프와 우크라이나 논의를 이어 간다고 말했다([TIME](https://time.com/article/2026/11/12/ukraine-russia-peace-deal-talks-putin-zelensky-witkoff-kushner/)).
+
+두 특사는 같은 날 밤 더블린 근교 발도널 비행장에서 젤렌스키 대통령을 만났다. 젤렌스키는 포로 교환이 "전쟁 포로의 가장 큰 교환"이 될 것이라며 "진짜 결과"라고 했고, 다음 회담에는 유럽이 협상팀을 두고 "목소리를 갖게 될 것"이라고 했다. 쿠슈너는 "포로 교환을 마무리할 수 있었다"면서 "유럽이 테이블에 앉지 않으면 이 합의를 마무리할 수 없다"고 말했다([TheJournal.ie](https://www.thejournal.ie/zelenskyy-kushner-baldonnel-meeting-7224099-Nov2026/)). 다만 규모와 날짜는 여전히 공개되지 않았다. 쿠슈너는 X에 "수천 명을 가족과 다시 만나게 할 수 있는" 교환이라고만 썼고, 일정은 "곧" 발표한다고 했다([Meduza](https://meduza.io/en/news/2026/11/13/kushner-says-ukraine-and-russia-are-preparing-what-could-be-the-war-s-largest-prisoner-swap)). 다음 회담의 날짜와 장소도 정해지지 않았다. 젤렌스키는 우크라이나가 에너지 시설 공격 중단을 요구했지만 러시아 대표단은 논의할 권한이 없다고 답했다고 전했다([Euromaidan Press](https://euromaidanpress.com/2026/11/13/the-wars-largest-pow-exchange-is-coming-zelenskyy-says-after-meeting-witkoff-and-kushner-russia-wont-discuss-sparing-the-grid/)).
+
+이틀 사이 협상의 의제가 우크라이나 영토에서 유럽 안보 질서로 넓어졌다는 점이 제재 유예에는 더 중요하다. 유럽이 테이블에 앉고 러시아가 NATO 배치 철회를 다시 요구하는 순간, 협상은 몇 주가 아니라 몇 달짜리가 된다. 트럼프가 "협상 테이블에서 러시아를 밀어내지 않겠다"는 논리로 유예를 정당화하는 한, 협상이 길어질수록 유예도 길어진다. 루비오의 60일 기한(12월 중순)에 성과 없이 유예를 연장한다면, 그 판단 근거는 평화가 아니라 협상 일정 자체가 된다. 이는 해석이다.
+
 ## 의미
 
 이 법은 애초 의회가 대통령의 재량을 좁히려고 만든 것이었다. 기존 행정명령 제재를 법률로 굳히고, 500% 관세와 2차 관세를 '해야 한다'는 의무 조항으로 적고, 제재를 끝내려면 평화협정 서명을 인증하고 의회 심사를 거치게 했다. 그러나 같은 법의 115조는 "국익" 인증서 한 장으로 어떤 조항이든 유예할 수 있게 했고, 트럼프는 서명 28일 만에 그 조항으로 나머지를 모두 비워 냈다. 바이든 정부 당국자였던 존 파이너가 법 통과 전에 "대통령이 갖지 못한 새 제재 권한을 더하지 않으면서 유예 조항과 광범위한 관세 권한을 준다"고 지적했던 구조가 그대로 드러난 셈이다([Wikipedia](https://en.wikipedia.org/wiki/Sanctioning_Russia_Act)).
@@ -123,7 +129,8 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 - 젤렌스키가 말한 3자 정상회담은 러시아와 미국 어느 쪽도 확인하지 않았다. WSJ가 보도한 푸틴의 미·중·러 회담 제안도 미 고위 당국자가 "트럼프가 아직 동의하지 않았다"고 한 단계다.
 - 트럼프의 "매우 좋은 결정" 발언은 폭스비즈니스 보도에 기댔으며 발언 장소와 전체 맥락은 확인하지 못했다.
 - 워싱턴포스트·더힐·CNBC 원문은 접근이 막혀 다른 매체의 같은 내용으로 대체했다.
-- 남은 일정: 11월 12일 위트코프·쿠슈너의 푸틴·젤렌스키 면담, 11월 18~19일 선전 APEC, 12월 중순 60일 검토 기한, 12월 마이애미 G20.
+- 우샤코프의 APEC 발언은 TIME의 요약 보도에 기댔고 직접 인용문은 확인하지 못했다. 포로 교환 규모는 타스가 전한 '각 1,000명 이상'과 쿠슈너의 '수천 명' 외에 공식 숫자가 없다.
+- 남은 일정: 11월 18~19일 선전 APEC 계기 트럼프·푸틴 논의, 유럽이 참여하는 다음 3자 회담(날짜 미정), 12월 중순 60일 검토 기한, 12월 마이애미 G20.
 
 ## 갱신 기록
 
@@ -131,8 +138,15 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 - 2026-11-05: 민주당 상·하원 장악 판정과 의석수로 어제 추정치 수정, 슈머·달더 발언 반영
 - 2026-11-11: 아부다비 미·러·우 회담 1일차 결과 반영, 확인 일정을 11월 12일로 변경
 - 2026-11-12: 아부다비 회담 2일차 종료와 포로 교환 원칙 합의 공식 확인, 위트코프·쿠슈너 모스크바·더블린 방문 반영. 확인 일정을 11월 13일로 변경
+- 2026-11-14: 12일 위트코프·쿠슈너의 푸틴 면담(약 2시간)과 더블린 젤렌스키 면담 결과, 유럽의 다음 회담 참여와 포로 교환 규모 미정 반영. 11월 13일 확인 일정을 11월 30일 다음 회담 확인으로 변경
 
 ## 출처
+
+- [AP(WHDH), US envoys meet with Putin in Moscow on Ukraine talks, then see Zelenskyy in Dublin (2026-11-13)](https://whdh.com/news/us-envoys-meet-with-putin-in-moscow-on-ukraine-talks-then-see-zelenskyy-in-dublin/)
+- [TIME, Trump Envoys Witkoff and Kushner Meet With Putin in Moscow for Ukraine Talks (2026-11-12)](https://time.com/article/2026/11/12/ukraine-russia-peace-deal-talks-putin-zelensky-witkoff-kushner/)
+- [TheJournal.ie, Zelenskyy hails 'real results' on prisoner of war exchange after meeting with Kushner and Witkoff (2026-11-12)](https://www.thejournal.ie/zelenskyy-kushner-baldonnel-meeting-7224099-Nov2026/)
+- [Meduza, Kushner says Ukraine and Russia are preparing what could be the war's largest prisoner swap (2026-11-13)](https://meduza.io/en/news/2026/11/13/kushner-says-ukraine-and-russia-are-preparing-what-could-be-the-war-s-largest-prisoner-swap)
+- [Euromaidan Press, The war's largest POW exchange is coming, Zelenskyy says (2026-11-13)](https://euromaidanpress.com/2026/11/13/the-wars-largest-pow-exchange-is-coming-zelenskyy-says-after-meeting-witkoff-and-kushner-russia-wont-discuss-sparing-the-grid/)
 
 - [Kyiv Independent(Yahoo), 'Large-scale' prisoner exchange agreed as 2nd day of Abu Dhabi talks concludes, Umerov says (2026-11-11)](https://www.yahoo.com/news/world/articles/large-scale-prisoner-exchange-agreed-145436847.html)
 - [AP(MS NOW), Russia and Ukraine agree to a large prisoner exchange, envoys say (2026-11-11)](https://www.ms.now/news/russia-and-ukraine-agree-to-a-large-prisoner-exchange-envoys-say)
