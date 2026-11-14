@@ -23,8 +23,6 @@ tracking:
   checkpoints:
     - date: 2026-11-30
       note: DGX Spark 64GB 국내 유통가, 맥 스튜디오 512GB 원화 가격과 배송, NVIDIA Sync 8대 클러스터 지원 공개 여부
-    - date: 2026-12-31
-      note: 메모리 가격 추이에 따른 기기 가격 변동, AMD 192GB Ryzen AI Halo 출시 여부
 ---
 
 # 집에서 AI 모델 돌리고 다듬는 기기, 2026년 10월의 선택지…메모리 부족에 DGX Spark는 64GB로, 맥 스튜디오는 512GB로

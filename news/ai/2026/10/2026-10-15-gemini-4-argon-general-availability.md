@@ -14,10 +14,7 @@ summary: 구글이 9월 30일 Fairwind 보안 파트너에게만 열었던 플�
 generated_by: claude
 model: claude-fable-5-1
 tracking:
-  status: ongoing
-  checkpoints:
-    - date: 2026-11-30
-      note: 도입 가격 종료와 12월 1일 정가(입력 4달러·출력 20달러) 전환 여부
+  status: closed
 ---
 
 # Gemini 4 Argon, 보안 전문가 한정 2주 만에 전면 공개…11월 말까지 100만 토큰당 2·10달러

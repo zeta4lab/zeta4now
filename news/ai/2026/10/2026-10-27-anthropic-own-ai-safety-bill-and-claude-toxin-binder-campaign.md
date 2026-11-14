@@ -16,12 +16,8 @@ model: claude-opus-5-5
 tracking:
   status: ongoing
   checkpoints:
-    - date: 2026-11-04
-      note: 미국 중간선거 직후. Anthropic이 예고한 선점 조항 수정 문안과 평가자 요건 후속 제안이 공개되는지, 법안이 실제 발의되는지 확인
     - date: 2026-12-22
       note: 전갈 독소 결합체 211개 설계·실험 데이터의 Hugging Face 공개 여부와 독립 연구진의 재현·검증 보고 확인
-    - date: 2027-02-01
-      note: Anthropic이 다음 단계로 든 천연 독소 결합 확인, 패치클램프 기능 시험, 생쥐 보호 실험 결과가 나오는지 확인
 ---
 
 # Anthropic이 직접 쓴 연방 AI 안전 법안 초안 유출…나흘 뒤엔 Claude가 64시간 자율 캠페인으로 전갈 독소 결합체 17개 확인

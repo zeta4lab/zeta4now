@@ -14,10 +14,7 @@ summary: Anthropic 프런티어 레드팀이 10월 12일 공개한 연구는 구
 generated_by: claude
 model: claude-fable-5-1
 tracking:
-  status: ongoing
-  checkpoints:
-    - date: 2026-12-31
-      note: Anthropic이 추정한 시점까지 소형 오픈웨이트 모델이 GLM-5.2 수준의 종단간 복제 능력에 도달했는지
+  status: closed
 ---
 
 # 55달러 TV 박스 15대로 돌린 AI…Anthropic "소형 모델, 연말이면 데이터센터 없이 스스로 퍼질 수 있다"

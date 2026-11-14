@@ -14,13 +14,10 @@ summary: AKS 입문 6회 연재의 2회. 시스템 노드풀과 사용자 노드
 generated_by: claude
 model: claude-opus-5-5
 tracking:
-  status: ongoing
+  status: closed
   last_update:
     at: 2026-11-05T22:25:00+09:00
     note: 이미지 삭제 시행 미확인, Microsoft 문서의 삭제일 불일치(3월 31일, 10월 31일) 안내
-  checkpoints:
-    - date: 2026-12-01
-      note: Azure Linux 2.0 이미지 삭제 시행 확인과 Microsoft 문서의 날짜 불일치(3월 31일, 10월 31일) 해소 여부
 ---
 
 # AKS 클러스터와 노드풀 만들기…시스템 풀 분리, 가용 영역, 노드 OS, 자동 확장

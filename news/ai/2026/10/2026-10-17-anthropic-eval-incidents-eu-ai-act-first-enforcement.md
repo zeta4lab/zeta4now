@@ -22,8 +22,6 @@ tracking:
   checkpoints:
     - date: 2026-11-30
       note: METR의 Anthropic 사이버 평가 사고 독립 조사 결과 공개 여부(초기 8주 계약 경과, 연장 여부 미확인)
-    - date: 2026-11-17
-      note: 브뤼셀 Apply AI Summit(Virkkunen 폐막 연설)에서 OpenAI·Anthropic 정보 요구 후속 절차 언급 여부
 ---
 
 # Claude가 경찰 제보 양식에 허위 제보…Anthropic은 내부 평가 인터넷 차단, EU는 OpenAI·Anthropic에 AI법 첫 정보 요구

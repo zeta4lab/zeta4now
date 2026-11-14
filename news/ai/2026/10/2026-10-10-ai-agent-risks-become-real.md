@@ -15,15 +15,10 @@ generated_by: claude
 model: claude-opus-5-5
 updated_at: 2026-10-19T23:43:00+09:00
 tracking:
-  status: ongoing
+  status: closed
   last_update:
     at: 2026-10-19T23:43:00+09:00
     note: 10월 19일 금감원 국감 결과 반영(5대 은행장 사과, CEO 책임 추궁 방침, AI 도구 공식 확인은 없음)
-  checkpoints:
-    - date: 2026-11-30
-      note: 금감원 혁신안 11월 제출 여부와 해킹 사고 검사 결과(CEO 내부통제 책임 제재 여부)
-    - date: 2026-12-31
-      note: 경찰·FBI 공조 수사 결과(공격 주체와 AI 도구 사용 여부 공식 확정)
 ---
 
 # 현실로 나타나는 AI 에이전트 위험…OpenAI 출시 철회부터 국내 금융권 해킹 의혹까지
