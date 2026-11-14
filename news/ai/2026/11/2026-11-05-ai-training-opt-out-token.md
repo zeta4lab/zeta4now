@@ -22,12 +22,8 @@ tracking:
   checkpoints:
     - date: 2026-12-01
       note: 지상파·네이버 9차 변론 종결 여부와 선고 일정
-    - date: 2026-12-15
-      note: Bing 임시 그라운딩 설정 개시 여부
     - date: 2027-02-01
       note: Bing의 학습·그라운딩 선호 반영 시작 여부
-    - date: 2027-03-31
-      note: 구글의 토큰 지원 시작 여부와 Google-Extended 해석 방식 변경 여부
     - date: 2027-05-03
       note: 초안 만료 시점의 표준화 진행 상황과 오픈AI·메타 등의 실제 지원 여부
 ---

@@ -18,8 +18,6 @@ tracking:
   checkpoints:
     - date: 2027-04-09
       note: Deno Deploy 종료(발표 기준 6개월)와 유료 고객 이전 지원 결과
-    - date: 2027-10-09
-      note: Deno 런타임 공식 지원 종료와 커뮤니티 이어받기 여부
 ---
 
 # Deno 팀 전원 Cloudflare로…Deno 런타임은 1년 뒤 개발 종료, Deno Deploy는 6개월 뒤 문 닫는다
