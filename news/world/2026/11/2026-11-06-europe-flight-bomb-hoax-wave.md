@@ -13,17 +13,15 @@ tags:
 summary: 11월 2일부터 5일까지 유럽에서 여객기 30편 넘게 폭탄 위협을 받았고 5일 하루에만 최소 27편이 수색·회항·전투기 호위를 겪었다. 폭발물은 한 건도 없었다. 위협 메일은 러시아의 극단주의 단체 이름으로 서명됐지만 귀속은 확인되지 않았다. 이 글은 이 사건을 테러가 아니라 유럽 항공 보안 대응의 비용과 한계를 재는 시험으로 본다.
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-08T20:43:00+09:00
+updated_at: 2026-11-14T14:26:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-08T20:43:00+09:00
-    note: 6일 방송사 대상 위협 확산, 스페인·이탈리아·아일랜드의 '하이브리드' 규정, 파리 검찰의 외세 연계 조사, 체포 0명 유지 반영
+    at: 2026-11-14T14:26:00+09:00
+    note: 11일 이탈리아 학교 6,300곳 위협 확산, EU 전문가 회의는 출처 결론·추가 대책 없음, 공개된 피의자·귀속 여전히 없음
   checkpoints:
-    - date: 2026-11-13
-      note: 이탈리아·체코·프랑스 수사의 체포·귀속 여부와 EU 항공보안 정보공유 메커니즘의 결과
     - date: 2026-11-30
-      note: 추가 위협 재발 여부, EASA·유로컨트롤의 공식 지침 발표 여부
+      note: 추가 위협 재발 여부, 두 나라 체포의 신원·관련성 공개, 이탈리아·프랑스 수사의 귀속 결과
     - date: 2026-12-31
       note: 에브뢰 검찰의 에어링구스 기장 '착륙 명령 불복' 수사 결과
 ---
@@ -70,9 +68,17 @@ tracking:
 
 방송사로 번진 것은 이 글의 판단을 강화한다. 항공기든 방송국이든 공통점은 '위협을 무시할 수 없는 조직'이라는 점이고, 공격자는 대응 비용이 보장되는 표적을 고르고 있다. 정부들이 '하이브리드'라는 말을 쓰기 시작한 것도 보낸 쪽이 바라던 반응일 수 있다. 이는 해석이다.
 
+## 11월 9~13일: 학교로 번졌고, EU는 '새 대책 없음'을 택했다
+
+일주일이 지나도 누가 보냈는지는 밝혀지지 않았다. 11일 이탈리아에서는 약 6,300개 학교가 같은 폭탄 위협 메일을 받았고, 발디타라 교육장관은 최소 300곳이 영향을 받았다고 했다. 로이터에 따르면 메일은 멜로니 총리를 위협했고 "미소지니스탄 빌라야트 지도자 미하일 안드로포프"로 서명됐으며, 같은 발신자 명의로 6일 아일랜드와 불가리아 방송사에도 위협이 갔다. 발디타라는 "전략이 작동하고 있는 것은 분명하다"면서도 "지금은 누가 배후인지 말하기 어렵다"고 했다. 스코틀랜드와 북아일랜드 학교에도 비슷한 메일이 왔지만 경찰은 신빙성이 없다며 학교를 열어 두게 했다([Al Jazeera](https://aljazeera.com/news/2026/11/11/at-least-300-italian-schools-evacuated-after-email-bomb-alerts)).
+
+같은 날 브뤼셀에서는 EU 회원국 항공보안 전문가 회의가 열렸다. 치치코스타스 집행위원은 회의 뒤 지난주 약 40건이 기록됐고 모두 허위였으며, 전화와 이메일의 출처에 대한 결론은 나오지 않았다고 했다. 모든 절차가 지켜지고 있어 별도 대책은 필요 없다며 광범위한 수사가 진행 중이라고 했고, 두 유럽 국가에서 체포가 있었다고 밝혔지만 어느 나라인지는 말하지 않았다([emakedonia](https://emakedonia.gr/apeiles-gia-vomves-se-ptiseis-ti-leei-o-eyropaios-epitropos-ap-tzitzikostas-syllipseis-se-dyo-chores-833279)). 하루 전에는 "오늘은 추가 사건이 없었다"며 경계 수준을 매일 높게 유지하고 있다고 했다([LaPresse](https://uk.lapresse.it/world-en/2026/11/10/eu-on-bomb-threats-ready-to-act-at-any-moment/)). 이탈리아에서는 로마와 부스토아르시치오 검찰이 '허위 경보 유발' 혐의로 신원 미상자를 수사하고 국가반마피아·반테러검찰청이 이를 조율한다([Euronews 이탈리아어](https://it.euronews.com/2026/11/06/allarmi-bomba-sui-voli-indagini-coordinate-dallantimafia-meloni-sotto-attacco-le-infrastru)). 파리 검찰도 7일 수사를 열고 외세 개입 가능성을 배제하지 않았다. 신원이 공개된 피의자는 아직 없다. 5일 암스테르담 스히폴 공항에서 프라하행 항공편 위협과 관련해 한 남성이 붙잡혔지만 다음 날 풀려났다([AP(ABC News)](https://abcnews.com/International/wireStory/hoax-bomb-threats-targeted-flights-europe-137937700)).
+
+이 일주일은 두 가지를 보여 준다. 첫째, 서명이 계속 바뀐다. 항공편 메일은 '남성 국가', 방송사와 학교 메일은 '미하일 안드로포프'였다. 한 집단이 가면을 바꿔 쓰는 것이든 모방범이 붙은 것이든, 서명으로 범인을 찾는 길은 사실상 막혔다. 둘째, EU가 새 대책을 내놓지 않은 것은 이 글이 던진 질문 "다음에도 똑같이 반응할 것이냐"에 대한 첫 답이다. 기존 절차를 그대로 돌리겠다는 것은 대응을 줄이지 않겠다는 뜻이고, 공격자 입장에서는 비용 구조가 그대로 남는다. 항공에서 학교로 표적이 넓어지면서 위협을 받는 쪽은 더 작고 대응 역량이 약한 조직이 됐고, 같은 메일 한 통이 사는 대응의 총량은 오히려 늘었다. 이는 해석이다.
+
 ## 인도의 2024년이 보여 준 것
 
-이런 물결은 처음이 아니다. 인도는 허위 폭탄 위협이 2023년 71건에서 2024년 728건으로 늘었고, 그해 13명을 체포했다([트리뷴](https://www.tribuneindia.com/news/india/hoax-bomb-threats-to-airlines-see-massive-increase-from-71-in-2023-to-728-in-2024-parliament-told)). 건당 비용은 6만 달러 이상으로 추정됐다. 인도의 교훈은 체포가 늦을수록 모방이 는다는 것이다. 유럽은 6일 아침 기준 체포 0명, 공식 귀속 0건이다.
+이런 물결은 처음이 아니다. 인도는 허위 폭탄 위협이 2023년 71건에서 2024년 728건으로 늘었고, 그해 13명을 체포했다([트리뷴](https://www.tribuneindia.com/news/india/hoax-bomb-threats-to-airlines-see-massive-increase-from-71-in-2023-to-728-in-2024-parliament-told)). 건당 비용은 6만 달러 이상으로 추정됐다. 인도의 교훈은 체포가 늦을수록 모방이 는다는 것이다. 유럽은 6일 아침 기준 체포 0명, 공식 귀속 0건이었고, 13일 현재도 신원이 공개된 피의자와 공식 귀속은 없다.
 
 ## 한국에는
 
@@ -84,13 +90,22 @@ tracking:
 - '남성 국가' 서명은 ANSA·로이터가 전한 메일 내용이고, 이 단체가 실제로 보냈다는 확인은 없다. 러시아와 이란은 부인했다.
 - 이탈리아 피안테도시 내무장관, 스페인·폴란드·독일 정부의 발언은 확인하지 못했다. 스웨덴의 국경통제 재도입 보도는 1차 자료로 확인하지 못해 넣지 않았다.
 - 회항 비용 25만 달러는 전문가 추정이다. 전투기 출격 비용은 최신 공식 수치가 없어 적지 않았다.
+- 치치코스타스의 '두 나라 체포' 발언은 그리스 매체(emakedonia, Greek City Times) 보도로만 확인했고, 나라와 인원, 이번 위협과의 관련성은 공개되지 않았다. 스히폴 체포와 같은 사건인지도 알 수 없다.
+- 학교 위협 메일의 서명과 방송사 위협이 같은 발신자 명의라는 내용은 알자지라가 전한 로이터 보도에 기댔다.
 - 한국 항공사의 유럽 노선 수는 위키백과와 스케줄 사이트로 확인했고 회사 공식 자료는 보지 못했다. '표적은 대응 체계'라는 판단과 한국 제안은 이 글의 해석이다.
 
 ## 갱신 기록
 
 - 2026-11-08: 6일 방송사 위협 확산과 각국 귀속 발언, 기장 수사 경과 반영
+- 2026-11-14: 11일 이탈리아 학교 위협 확산, EU 전문가 회의 결과(출처 결론·추가 대책 없음), 이탈리아·프랑스 수사 현황과 스히폴 체포·석방 반영. 11월 13일 확인 일정 삭제
 
 ## 출처
+
+- [At least 300 Italian schools evacuated after email bomb alerts — Al Jazeera (2026-11-11)](https://aljazeera.com/news/2026/11/11/at-least-300-italian-schools-evacuated-after-email-bomb-alerts)
+- [Απειλές για βόμβες σε πτήσεις: Τι λέει ο Τζιτζικώστας — emakedonia (2026-11-11)](https://emakedonia.gr/apeiles-gia-vomves-se-ptiseis-ti-leei-o-eyropaios-epitropos-ap-tzitzikostas-syllipseis-se-dyo-chores-833279)
+- [EU on bomb threats: 'Ready to act at any moment' — LaPresse (2026-11-10)](https://uk.lapresse.it/world-en/2026/11/10/eu-on-bomb-threats-ready-to-act-at-any-moment/)
+- [Allarmi bomba sui voli, Antimafia coordina indagini — Euronews 이탈리아어 (2026-11-06)](https://it.euronews.com/2026/11/06/allarmi-bomba-sui-voli-indagini-coordinate-dallantimafia-meloni-sotto-attacco-le-infrastru)
+- [What to know about the hoax bomb threats that targeted flights in Europe — AP(ABC News) (2026-11-07)](https://abcnews.com/International/wireStory/hoax-bomb-threats-targeted-flights-europe-137937700)
 
 - [Europe bomb threats raise fear of new warfare — TIME](https://time.com/article/2026/11/07/europe-bomb-threats-raise-fear-new-warfare/)
 - [Aer Lingus pilot under investigation — Irish Times](https://www.irishtimes.com/ireland/2026/11/06/aer-lingus-pilot-under-investigation-for-initially-refusing-to-land-during-bomb-threat/)
