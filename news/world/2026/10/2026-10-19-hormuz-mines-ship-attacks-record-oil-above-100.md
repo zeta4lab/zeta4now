@@ -14,15 +14,13 @@ tags:
 summary: 이란 혁명수비대는 14일 컨테이너선 침몰, 17일 200만 배럴급 유조선 2척, 19일 유조선 1척이 기뢰에 부딪혔다고 주장했지만 로이터는 독립 확인이 없다고 했고 미 중부사령부는 발사체 공격이라고 반박했다. 10월 들어 피격 선박은 20척이 넘고(UKMTO·CNBC), 10월 12일까지 한 주 해협 통과 원유는 하루 850만 배럴로 전쟁 전보다 약 40% 적었다(Kpler). 브렌트유는 16일 110달러를 찍었고 이란은 "6일 안 재개방" 제안이 유효하다고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-10T20:47:00+09:00
+updated_at: 2026-11-15T14:10:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-10T20:47:00+09:00
-    note: 9일 브렌트유 92.57달러(5.85% 하락), 트럼프 '군사적으로 사실상 끝났다'·이란 '가짜 협상설', 한국 청해부대 작전구역 오만 남쪽 확대 의결 반영
+    at: 2026-11-15T14:10:00+09:00
+    note: 이틀 제안에 미국 공식 답변 없음, 트럼프 '합의 필요 없다'·베선트 '계속 조인다', 협상 정체와 제한적 교전, 12일 브렌트유 95.82달러 반영
   checkpoints:
-    - date: 2026-11-15
-      note: 이란의 이틀 재개방 제안에 대한 미국의 공식 답변과 선거 뒤 협상·공습 재개 여부
     - date: 2026-11-29
       note: OPEC+ 7개국 다음 회의 결과
     - date: 2026-11-30
@@ -131,6 +129,18 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 
 한국은 이날 호르무즈 쪽으로 한 걸음 갔다. 10일 국무회의는 청해부대 작전구역을 아덴만에서 호르무즈 해협에서 약 650km 떨어진 오만 남쪽 해역까지 넓히고 해상초계기와 폭발물 처리, 무인 소해 장비를 더하는 파견 연장 수정 동의안을 의결했다. 임무에 "국제 해상교통로 항행의 자유 회복 지원"이 들어갔고 국회 동의가 남았다. 이란 외무부는 한국에 파병 자제를 요구했고 외교부는 전쟁 불관여 원칙을 밝혔다([경향신문](https://www.khan.co.kr/article/202611101729001/)). 이 글은 이 결정을 유가 하락과 같은 판단의 다른 얼굴로 본다. 봉쇄가 길어질수록 해협을 지나는 한국 선박의 보호는 미국에만 맡길 수 없고, 그 비용은 국회 동의 절차에서 처음 숫자로 드러날 것이다. 이는 해석이다.
 
+## 11월 10~14일: 미국은 답하지 않는 것으로 답했다
+
+이란의 이틀 재개방 제안에 대한 미국의 공식 수락이나 거부는 14일까지 나오지 않았다. 대신 트럼프 대통령은 12일 트루스소셜에 "우리는 이란과 합의할 필요가 없다"(We don't need a deal with Iran), "그런 시절은 오래전에 지났다"고 썼다([CBS](https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/)). 베선트 재무장관은 13일 CNBC에서 "트럼프 대통령은 합의가 필요하다고 생각하지 않고, 우리는 계속 조일 것"이라고 했다([CBS](https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/)). 루비오 국무장관은 10일 파리에서 "경제 작전이 매우 파괴적이어서 지금은 대규모 전투 작전이 필요 없다"고 했고, 백악관 관계자는 12일 협상이 멈췄느냐는 질문에 답하지 않은 채 "역사상 최대의 해상 봉쇄"를 내세웠다([ABC](https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256)). 9일 "군사적으로 사실상 끝났다"던 말이 사흘 만에 "합의가 필요 없다"로 바뀌었다.
+
+이란도 물러서지 않았다. 레자에이 국가안보회의 대변인은 10일 협상설을 "순전한 거짓말"이라고 했고, 미국의 첫 답변은 "불충분하고 기만적"이었으며 7개 조건이 충족되기 전에는 해협이 닫혀 있다고 했다. 아라그치 외무장관은 이틀 제안이 "여전히 테이블 위에 있다"고 했다([알자지라](https://www.aljazeera.com/news/2026/11/11/iran-denies-talks-with-us-says-hormuz-will-stay-shut-until-demands-are-met)). 갈리바프 의회 의장은 11일 "공은 이제 미국 쪽에 있다"며 해협이 전쟁 전 상태로 "결코 돌아가지 않을 것"이고 이란과 오만이 해협 감독에 양해했다고 말했다([알자지라](https://www.aljazeera.com/news/2026/11/11/strait-of-hormuz-will-never-return-to-pre-war-status-ghalibaf)). 12일에는 전문가회의가 핵확산금지조약(NPT) 회원 지위 재검토를 요구했다([CBS](https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/)). 탈퇴 결정이 아니라 재검토 요구다.
+
+공습은 대규모로 재개되지 않았다. ABC는 13일 양측이 "공격을 계속 주고받았지만 격렬한 교전으로 돌아가지는 않았다"고 정리했다. 미 중부사령부는 혁명수비대가 바레인 쪽으로 쏜 자폭 드론 2기를 격추했고 피해가 없었다고 밝혔다. 11일 라스알카이마 앞 14해리에서 상선이 맞아 불이 났고 선원 22명이 대피했다. 혁명수비대는 14일 유조선 2척이 기뢰에 닿았다고 주장했지만 독립 확인은 없다([CBS](https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/), [Fox News](https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-november-12)). 해협 통과는 7일 화물선 5척, 8일 0척(Kpler)으로 사실상 멈춰 있다([알자지라](https://aljazeera.com/news/2026/11/12/no-war-no-peace-can-iran-break-the-deadlock-with-the-us)). 네타냐후 이스라엘 총리는 14일 "이 실존적 위협을 영원히 제거해야 한다"고 했다([CBS](https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/)).
+
+유가는 합의 기대를 일부 거둬들였다. 브렌트유는 12일 3.06달러(3.3%) 오른 95.82달러로 마감했고 WTI는 88.74달러였다([Fox News(로이터)](https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-november-12)). 13일 오후 2시(미 동부시각)에도 95.89달러로 거의 같았다. 같은 날 국제에너지기구(IEA)는 전쟁 이후 처음으로 공급이 수요를 넘어섰다고 했다([CBS](https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/)).
+
+이 글은 이번 주를 미국이 협상 대신 봉쇄를 정책으로 고른 주로 본다. 답을 주지 않으면 이틀 제안은 이란의 것으로만 남고, 시간은 봉쇄를 쥔 쪽 편이라는 계산이다. 다만 그 계산은 해협이 닫힌 채로 유지된다는 뜻이기도 하다. IEA의 공급 과잉 진단은 해협 밖 물량이 늘었다는 뜻이지 해협이 열린다는 뜻이 아니다. 9일의 92달러가 합의를 가격에 넣은 값이었다면 12일의 96달러는 합의 없는 봉쇄의 값이다. 11월 30일 유류세 인하 종료를 결정해야 하는 한국 정부는 합의가 아니라 장기 봉쇄를 기본 시나리오로 놓아야 한다. 이는 해석이다.
+
 ## 한국: 10월 물량은 확보, 11월 이후 비용과 우회로가 변수
 
 한국석유공사 통계로 7월 한국의 원유 수입 9,318만 배럴 가운데 쿠웨이트·이라크 등 걸프 안쪽에서만 실을 수 있는 물량은 687만 배럴(7.4%)이었고, 사우디·UAE처럼 송유관으로 우회할 수 있는 물량이 4,499만 배럴(48.3%), 해협과 무관한 비중동·오만산이 4,132만 배럴(44.3%)이었다. 이라크산 수입은 2006년 5월 이후 처음으로 0이었다. 8월 31일 기준 정부 비축유는 1억 배럴로, 사우디·UAE 물량까지 하루 167만 배럴이 끊기면 60일, 전체 수입이 끊기면 33일을 버틸 수 있다는 단순 계산이 나온다. 이 계산은 민간 비축과 수요 감축, 대체 도입을 반영하지 않은 것이다([이포커스](https://www.e-focus.co.kr/news/articleView.html?idxno=3003095)).
@@ -160,6 +170,7 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - (갱신) 10월 공격 건수 집계는 더 엇갈린다. CBS는 UKMTO를 인용해 19일까지 한 주 10건으로 10월이 3월 이후 선박 공격이 가장 많은 달이라고 했고, IBTimes는 UKMTO 집계로 16일까지 한 주 최소 12건, Kpler 집계로 2주간 최소 18건이라고 했다. 본문의 '10월 20척 이상'(CNBC, 14일 기준)은 갱신하지 않았다.
 - (갱신) 22일 혁명수비대의 '유조선 7척 피격' 주장은 독립 확인이 없다. 23일 브렌트유 117달러 안팎 마감은 IBTimes AU 보도이고 거래소 자료로 확인하지 않았다. 10월 공격 28건은 워싱턴근동정책연구소 집계로, 앞선 UKMTO·Kpler 집계와 기준이 다르다.
 - (갱신) OPEC 보도자료 목록에 접속하지 못해 11월 1일 성명 원문을 직접 확인하지 못했고, Xinhua와 Gulf Insider의 인용으로 대신했다. 117.64달러는 더내셔널 보도이며 거래소 자료로 확인하지 않았다. 기사에 적힌 '금요일'은 기사 날짜로 볼 때 10월 30일로 추정된다. 회원국별 실제 생산량 수치는 찾지 못했다.
+- (갱신) 이틀 제안을 이름으로 지목해 수락하거나 거부한 미국 정부 문서나 발언은 찾지 못했다. 혁명수비대의 14일 기뢰 피격, 바레인 레이더 파괴, MQ-1 격추 주장은 독립 확인이 없고 미국은 레이더 파괴를 부인했다. 13일 브렌트유는 CBS(AP)의 오후 2시 시세이며 종가는 거래소 자료로 확인하지 못했다. 11일 브렌트유 종가는 찾지 못했다.
 
 ## 갱신 기록
 
@@ -172,9 +183,17 @@ Kpler 자료로 해협을 지난 원유는 10월 8일 약 2,080만 배럴에서 
 - 2026-11-08: 5~8일 선박 피격과 미군 작전, 유가, 중재 상황 반영
 - 2026-11-09: 8일 리야드 피격과 사나 공습, 미·이란 협상 중단 발언, 9일 개장 유가 반영
 - 2026-11-10: 9일 유가 급락과 협상 공방, 10일 청해부대 작전구역 확대 의결 반영
+- 2026-11-15: 이틀 제안에 대한 미국의 공식 답변 부재와 트럼프·베선트·루비오 발언, 이란의 7개 조건 고수와 NPT 재검토 요구, 제한적 교전, 12~13일 유가 반영. 11월 15일 확인 일정 제거
 
 ## 출처
 
+- [Iran denies talks with US, says Hormuz will stay shut — Al Jazeera](https://www.aljazeera.com/news/2026/11/11/iran-denies-talks-with-us-says-hormuz-will-stay-shut-until-demands-are-met)
+- [Hormuz will 'never return' to pre-war status, Ghalibaf says — Al Jazeera](https://www.aljazeera.com/news/2026/11/11/strait-of-hormuz-will-never-return-to-pre-war-status-ghalibaf)
+- [No war, no peace: Can Iran break the deadlock with the US? — Al Jazeera](https://aljazeera.com/news/2026/11/12/no-war-no-peace-can-iran-break-the-deadlock-with-the-us)
+- [Trump says "we don't need a deal with Iran" — CBS News](https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/)
+- [US-Iran war live updates, Nov 13–14 — CBS News](https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/)
+- [Iran war news, November 12 — Fox News](https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-november-12)
+- [Iran live updates — ABC News](https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256)
 - [Brent settles down 5.85% — The Nation(로이터)](https://www.nationthailand.com/news/world/40073309)
 - [Trump meets Qatari PM, calls renewed action 'quite unlikely' — The National](https://www.thenationalnews.com/news/us/2026/11/09/trump-meets-qatari-pm-and-calls-renewed-military-action-on-iran-quite-unlikely/)
 - [Trump says Iran war effectively over as Tehran denies talks — Euronews](https://www.euronews.com/2026/11/10/trump-says-iran-war-effectively-over-as-tehran-denies-planned-talks)

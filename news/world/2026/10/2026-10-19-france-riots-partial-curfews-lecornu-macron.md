@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-11-10T20:47:00+09:00
+updated_at: 2026-11-15T14:10:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,15 +18,15 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-10T20:47:00+09:00
-    note: 9일 사회협의회 결과(Smic 1.6% 인상 12월 1일 선적용, 순 1,502유로)와 노조 반응, CGT의 17일 총파업 호소, 노란조끼 14일 5막 반영
+    at: 2026-11-15T14:10:00+09:00
+    note: 14일 '5막'(내무부 10만 6,000명, 체포 219명)과 노란조끼 21일 '6막' 예고, 상원의 사회보장재정법안 1·2부 가결 반영
   checkpoints:
-    - date: 2026-11-14
-      note: 노란조끼 '5막' 규모와 충돌 여부, 하원에서 부결된 사회보장재정법안의 상원 심사 경과
     - date: 2026-11-17
-      note: CGT와 공공부문 노조의 17일 총파업 규모(CFDT·FO 불참)와 업종별 최저임금 데크레 공포 여부
+      note: CGT 주도 17일 파업·시위 규모(노란조끼 합류, CFDT 공공부문 참여)와 업종별 최저임금 데크레 공포 여부
     - date: 2026-11-20
       note: 하원에서 세입이 부결된 2027년 예산안의 상원 본회의 심의 시작
+    - date: 2026-11-26
+      note: 사회보장재정법안 의회 심의 기한(50일). 상원 18일 표결과 양원 합동위원회 결과
 ---
 
 # 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마크롱은 "예측·정보 실패" 인정하고 "통제 상실" 시인한 뉘녜스 내무장관 사의 반려
@@ -155,6 +155,16 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 
 이 글은 9일을 10월 17일 이후 처음으로 정부가 주도권을 쥔 날로 본다. 가장 큰 두 노조를 협상 테이블에 묶어 두고 가장 강경한 노조만 거리에 남겼기 때문이다. 다만 23유로가 한 달 뒤 고지서에 찍힐 때 '20년 만에 두 번째'라는 수식어가 거리에서 통할지는 다른 문제다. 이는 해석이다.
 
+## 11월 13~14일: '5막'은 10만 명으로 줄었고, 싸움은 상원과 17일로 옮겨 갔다
+
+14일(토) '5막' 집회는 내무부 집계로 전국 10만 6,000명, 파리 2만 4,000명이었다. 일주일 전 14만 6,000명(파리 4만 6,000명)보다 적다. 노란조끼 조정위원회와 함께 집회를 연 청년 인터생디칼은 전국 20만 명, 파리 약 10만 명이라고 했다. 내무부는 오후 6시 기준 체포 219명, 경찰관 경상 10명을 집계하고 상황이 "전국적으로 대체로 통제됐다"(globalement maîtrisée)고 평가했다. 사건이 보고된 곳은 마르세유, 그르노블, 리옹, 보르도, 푸아티에다. 리옹에서는 시위대가 폭죽을 쏘고 경찰이 최루탄으로 맞섰으며 바리케이드에 불이 난 직후 BFM TV 취재진이 공격받았다. 보르도에서는 32명이 체포됐고, 도심 집회가 금지된 낭트에서도 1,000~1,500명이 모였다. 파리 행진은 레퓌블리크에서 나시옹까지 대체로 조용히 끝났고 샬리니 거리에서 투척물을 던진 무리에게 최루탄이 쓰였다([franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-manifestations-du-14-novembre-suivez-la-journee-de-mobilisation-a-l-appel-de-gilets-jaunes-et-d-organisations-de-jeunesse_8281187.html), [ICI](https://www.ici.fr/infos/societe/mobilisation-du-14-novembre-suivez-l-acte-v-des-manifestations-contre-la-vie-chere-et-pour-la-jeunesse-5378889)). 뉘녜스 내무장관은 13일 LCI에서 경찰·헌병 약 7만 명을 배치한다고 했다.
+
+노란조끼는 다음 날짜를 노조 일정에 맞췄다. 조정위원회의 벤자맹 발은 노란조끼 8주년인 17일 노조 시위에 합류하고 21일(토) '6막'으로 이어 간다고 했다. CGT가 부른 17일 파업·시위에는 정부가 13일 공무원 봉급 지수 인상을 거부한 뒤 CFDT 공공부문도 합류했다([ICI](https://www.ici.fr/infos/societe/mobilisation-du-14-novembre-suivez-l-acte-v-des-manifestations-contre-la-vie-chere-et-pour-la-jeunesse-5378889)). 9일 협의회 직후 CGT와 공공부문 노조만 부르던 17일은 이로써 CFDT의 일부까지 끌어들였다.
+
+의회에서는 상원이 하원에서 부결된 사회보장재정법안을 다시 쓰고 있다. 하원이 10월 23일 세입 부분을 부결하면서 법안 전체가 부결됐기 때문에 상원은 하원 수정이 하나도 없는 정부 원안을 받았다. 상원은 9일 1부를 찬성 217, 반대 127로, 13일 세입을 다룬 2부를 찬성 200, 반대 110, 기권 32로 가결했다. 공화당(LR)과 중도연합이 찬성했고 좌파가 반대했다. 2부 심사에서는 정부 반대에도 보충 건강보험(뮈튀엘)에 물리려던 2.05% 기여금 조항을 삭제했다([Legiwatch(9일)](https://www.legiwatch.fr/actualites/financement-securite-sociale-2027-senat-adopte-2026-11-09/), [Legiwatch(13일)](https://www.legiwatch.fr/actualites/financement-securite-sociale-2027-senat-adopte-2026-11-13/)). 상원 전체 표결은 18일이고, 헌법 47-1조의 50일 심의 기한은 26일 자정이다. 그때까지 의회가 결론을 내지 못하면 정부는 법안 내용을 오르도낭스(정부 명령)로 시행할 수 있다([상원](https://www.senat.fr/travaux-parlementaires/textes-legislatifs/la-loi-en-clair/projet-de-loi-de-financement-de-la-securite-sociale-pour-2027.html), [NosParlementaires](https://nosparlementaires.fr/actualites/plfss-2027-calendrier-examen-date-par-date)).
+
+10월 17일 55만 명이던 거리는 한 달 만에 5분의 1로 줄었고, 체포는 2,397명에서 219명이 됐다. 이 글은 이 감소를 분노가 식은 것이 아니라 압력이 옮겨 간 것으로 읽는다. 노란조끼는 독자 날짜 대신 노조 일정에 올라탔고, 정부 재정의 실제 결정은 하원에서 115 대 1로 부결된 법안을 우파 다수 상원이 고쳐 쓰는 경로로 넘어갔다. 다음 고비는 26일이다. 상원안과 하원이 합동위원회에서 합의하지 못해 정부가 오르도낭스를 쓰면, 하원이 한 번도 통과시키지 않은 사회보장 재정이 하원 표결 없이 시행된다. 거리에 그보다 좋은 동원 명분은 없다. 이는 해석이다.
+
 ## 의미
 
 이번 대응의 특징은 정부가 비상사태 대신 지사 단위의 부분 통행금지와 집회 금지권이라는 '아래로부터의' 수단을 골랐다는 점이다. 르코르뉘 총리가 상황이 "매우 제각각"이라고 말한 데서 보이듯, 리모주·마르세유·릴처럼 피해가 집중된 도시와 그렇지 않은 곳을 한 틀로 묶기 어렵고, 전국 비상사태는 대선을 앞둔 정부가 치러야 할 정치적 비용이 크다. 다만 통행금지의 실효성은 24일 노란조끼 2차 시위에서 바로 시험된다. 뉘녜스 장관 스스로 "극도로 기동성이 높은 집단"에 경찰 전략이 맞지 않았다고 인정한 만큼, 고정된 구역을 지키는 통행금지가 이동하며 약탈하는 집단에 얼마나 효과를 내느냐가 관건이다.
@@ -182,6 +192,8 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 내무장관 이름 표기는 매체마다 누녜스·누네스·누녜즈·뉘녜스로 다르다. 이 글은 '뉘녜스'로 통일했다.
 - (갱신) 31일 참가 인원의 17일 대비 감소율은 L'Express가 24%, franceinfo가 42%로 다르게 전했다. 내무부 집계(55만 명→32만 명)로 계산하면 약 42%다.
 - (갱신) L'Express는 앞선 두 시위일의 체포를 2,628명과 1,436명으로 적었지만 날짜를 명시하지 않았다. 본문의 17일 2,397명, 24일 약 1,000명과 달라 본문 수치를 바꾸지 않았다.
+- (갱신) 14일 체포 219명과 경찰 부상 10명은 내무부의 오후 6시 집계이며, 이후 최종 집계는 찾지 못했다. 르코르뉘 총리의 14일 시위 관련 발언도 찾지 못했다.
+- (갱신) 상원의 9일 표결 대상은 Legiwatch가 '1부 전체'라고 썼고, 13일 표결은 같은 매체와 상원 안내가 '세입을 다룬 2부'라고 썼다. 표결 수는 상원 공개표결 원문이 아니라 Legiwatch 정리로 확인했다. 양원 합동위원회 날짜는 공개되지 않았다.
 - (갱신) 파리 통행금지는 시행 전 보도(Public Sénat, 10월 30일)로 확인했다. 노조 측이 예고한 행정법원 제소의 결과와 실제 집행 상황, 31일 파리 참가 인원은 확인하지 못했다.
 
 ## 갱신 기록
@@ -197,9 +209,16 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 2026-11-05: 5일 파업 확정 집계와 충돌, 르코르뉘의 9일 사회협의회 소집 반영. 11월 6일 확인 일정 제거, 9일 일정에 사회협의회 추가
 - 2026-11-08: 7일 시위 규모와 체포, 노란조끼 콩코르드 연좌 상황, 노조의 9일 후속 결정 방침 반영. 11월 7일 확인 일정을 11월 10일로 변경
 - 2026-11-10: 9일 사회협의회 결과와 노조 반응, 17일 총파업 호소, 노란조끼 14일 계획 반영. 11월 9·10일 확인 일정을 11월 14·17일로 변경
+- 2026-11-15: 14일 '5막' 규모·체포와 21일 '6막' 예고, CFDT 공공부문의 17일 합류, 상원의 사회보장재정법안 1·2부 가결과 26일 기한 반영. 11월 14일 확인 일정 제거, 11월 26일 일정 추가
 
 ## 출처
 
+- [Manifestations du 14 novembre — franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-manifestations-du-14-novembre-suivez-la-journee-de-mobilisation-a-l-appel-de-gilets-jaunes-et-d-organisations-de-jeunesse_8281187.html)
+- [Mobilisation du 14 novembre: l'acte V — ICI](https://www.ici.fr/infos/societe/mobilisation-du-14-novembre-suivez-l-acte-v-des-manifestations-contre-la-vie-chere-et-pour-la-jeunesse-5378889)
+- [PLFSS 2027: le Sénat adopte (9 novembre) — Legiwatch](https://www.legiwatch.fr/actualites/financement-securite-sociale-2027-senat-adopte-2026-11-09/)
+- [PLFSS 2027: le Sénat adopte (13 novembre) — Legiwatch](https://www.legiwatch.fr/actualites/financement-securite-sociale-2027-senat-adopte-2026-11-13/)
+- [Projet de loi de financement de la sécurité sociale pour 2027 — Sénat](https://www.senat.fr/travaux-parlementaires/textes-legislatifs/la-loi-en-clair/projet-de-loi-de-financement-de-la-securite-sociale-pour-2027.html)
+- [Calendrier PLFSS 2027 — NosParlementaires](https://nosparlementaires.fr/actualites/plfss-2027-calendrier-examen-date-par-date)
 - [En direct: Lecornu reçoit syndicats et patronat — France 24](https://www.france24.com/fr/france/20261109-en-direct-lecornu-re%C3%A7oit-syndicats-et-patronat-pour-tenter-de-r%C3%A9pondre-aux-revendications-sociales)
 - [Hausse du Smic: les syndicats jugent la réponse insuffisante — Public Sénat](https://www.publicsenat.fr/actualites/politique/hausse-du-smic-les-syndicats-jugent-la-reponse-insuffisante-et-la-cgt-appelle-a-la-greve-le-17-novembre)
 - [Smic +1,6 %: coût du travail et secteurs — Economie Matin](https://www.economiematin.fr/smic-hausse-1-6-pourcent-cout-travail-secteurs)
