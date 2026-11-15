@@ -16,15 +16,15 @@ tags:
   - 선전
 generated_by: claude
 model: unspecified
+updated_at: 2026-11-15T14:10:00+09:00
 tracking:
   status: ongoing
+  last_update:
+    at: 2026-11-15T14:10:00+09:00
+    note: 크렘린 19일 3자 회담 합의 발표, 백악관 '핵감축·이란 논의, 우크라이나 제외', 대통령실 16·18일 일정 발표(한중 회담 미정) 반영
   checkpoints:
-    - date: 2026-11-15
-      note: APEC 최종 고위관리회의 종료, 미·중·러 3자 회담 성사·형식 발표 여부
-    - date: 2026-11-17
-      note: 마닐라 ASEAN+3, 이재명 대통령 참석 공식 확인과 한미 접촉
     - date: 2026-11-19
-      note: 선전 APEC 폐막. 3자 회담 성사 여부, 공동성명 한반도 문구, 한중 정상회담 결과
+      note: 선전 3자 회담 결과(핵감축·이란 의제, 성명 여부)와 한반도 언급, 한중 정상회담 개최 여부
 ---
 
 # 선전의 세 정상 사이에 한국 자리는 없다…트럼프 '미·중·러 3자 회담'에서 한반도가 의제가 되는 순간
@@ -91,16 +91,37 @@ tracking:
 
 이 글은 둘 다 맞다고 본다. 선전에서 나올 것은 사진 한 장과 모호한 성명일 가능성이 크다. 그러나 그 사진이 반복되면 형식이 제도가 된다. 모테기 일본 외무상이 10월 23일 "3개국만으로 국제 정세가 결정되는 것이 바람직한지에 대해서는 여러 국가에서 다양한 의견이 나올 수 있다"고 한 것은 일본이 이 형식 자체를 경계한다는 뜻이다([뉴스핌](https://www.newspim.com/news/view/20261023000833)). 한국 정부의 같은 수준 공개 입장은 아직 없다.
 
+## 발행 뒤(11월 12~14일): 3자 회담은 19일로 잡혔고, 의제 목록에 한반도는 없다
+
+회담은 성사 쪽으로 정리됐다. 페스코프 크렘린 대변인은 14일 TASS에 "19일 푸틴 대통령, 시진핑 주석, 트럼프 대통령의 3자 회담을 열기로 합의했다. 선전에서 APEC 정상회의 계기에 열린다"고 했다([TASS](https://tass.com/politics/2218203), [아나돌루](https://aa.com.tr/en/eurasia/kremlin-says-putin-xi-trump-to-hold-trilateral-meeting-in-shenzhen-on-nov-19/4125290)). 우샤코프 대통령 보좌관은 12일 이를 "이런 형식의 첫 회담"이라고 했다([Kyiv Post](https://www.kyivpost.com/post/89960)). 중국 외교부는 4일 "관련 당사자와 소통을 유지하고 있다"고 한 뒤 회담 개최나 형식을 따로 발표하지 않았다.
+
+백악관은 13일 의제를 좁혔다. AFP에 따르면 올리비아 웨일스 대변인은 트럼프 대통령이 "세계 핵무기 감축"을 논의할 것이라고 했고, 고위 당국자는 "중국은 그 트랙의 일부가 아니어서 거기서 우크라이나를 논의하는 것은 적절해 보이지 않는다"며 우크라이나를 빼고 이란은 다루겠다고 했다([Kyiv Post](https://www.kyivpost.com/post/90092)). AP는 트럼프가 19일 시진핑과 오찬을 하지만 푸틴과의 별도 양자회담은 일정에 없다고 전했다([Time News(AP)](https://time.news/trump-xi-and-poutine-to-meet-in-china-white-house-says/)). 우샤코프가 선전에서 푸틴과 트럼프가 우크라이나 문제를 계속 논의할 것이라고 한 것과 어긋난다. 회담 시간과 길이, 각본형인지 자유 토론인지, 공동성명을 낼지는 발표되지 않았다. 어느 쪽 발표에도 한반도나 북한은 나오지 않는다.
+
+한국 일정은 일부만 공식화됐다. 대통령실 강유정 수석대변인은 13일 서면 브리핑에서 이재명 대통령이 16일 오후 아세안 관련 정상회의 계기에 아누틴 태국 총리, 마르코스 필리핀 대통령과 양자회담을 하고 18일 선전에서 화남 지역 동포 오찬 간담회를 연다고 밝혔다. 다른 양자회담은 상대국과 일정이 조율되는 대로 발표하겠다고 했고, 한중 정상회담은 이 발표에 없다([대통령실](https://www.president.go.kr/briefings/R3SPjWVP)).
+
+위 시나리오 표에서 선전은 '3자 성사, 한반도 미언급' 쪽으로 기울었다. 백악관이 의제 첫 줄에 올린 것은 '세계 핵무기 감축'이고, 이는 트럼프의 '비핵화'가 한반도가 아니라는 이 글의 첫 판단과 맞는다. 우크라이나까지 빠지면서 회담은 핵 숫자와 이란을 두고 사진을 찍는 자리에 가까워졌다. 한국 쪽에서 확정된 것은 태국·필리핀 양자회담과 동포 간담회이고, 선전에서 가장 중요한 한중 회담은 아직 빈칸이다. 3자 테이블 주변의 양자 접촉 밀도가 한국이 쥔 유일한 변수라면, 회담 닷새 전 그 밀도는 낮다. 이는 해석이다.
+
 ## 확인하지 못한 것
 
 - WSJ 9일자 원문은 유료 장벽으로 직접 열지 못했고 경향신문·아시아경제·진일보 재인용에 의존했다.
-- 이재명 대통령의 마닐라·선전 일정과 한중 정상회담 추진은 공식 발표를 확인하지 못했다.
+- 이재명 대통령의 마닐라·선전 일정과 한중 정상회담 추진은 공식 발표를 확인하지 못했다. (갱신) 대통령실이 13일 16일 태국·필리핀 양자회담과 18일 선전 동포 간담회를 발표했지만, 브리핑 본문은 회의 장소를 '아세안 관련 정상회의'로만 적었고 한중 정상회담은 발표하지 않았다.
+- (갱신) 크렘린·백악관 발언은 kremlin.ru, whitehouse.gov 원문이 아니라 TASS·아나돌루·Kyiv Post(AFP)·Time News(AP) 보도로 확인했다. 중국 외교부가 3자 회담 개최를 공식 확인했는지와 14~15일 APEC 최종 고위관리회의 결과는 찾지 못했다.
 - 트럼프의 선전 참석은 백악관 공식 일정 발표문을 확인하지 못했다. 필리핀 대통령실은 마닐라 참석만 확인했다.
 - 미중 무역휴전 연장은 2차 보도로만 확인했다.
 - 그레이엄법 면제의 '12월 15일 검토'는 공식 문서에 없다. 루비오 장관이 10월 17일 말한 "60일 검토 기간"의 산술일 뿐이다.
 
+## 갱신 기록
+
+- 2026-11-15: 크렘린의 19일 3자 회담 합의 발표, 백악관의 의제(핵감축·이란, 우크라이나 제외) 설명, 대통령실 13일 일정 발표 반영. 11월 15일 확인 일정 제거, 11월 17일 일정을 19일 일정에 합침
+
 ## 출처
 
+- [TASS, Putin, Xi Jinping, Trump trilateral summit to be held in Shenzhen on November 19 (2026-11-14)](https://tass.com/politics/2218203)
+- [Anadolu, Kremlin says Putin, Xi, Trump to hold trilateral meeting in Shenzhen on Nov. 19](https://aa.com.tr/en/eurasia/kremlin-says-putin-xi-trump-to-hold-trilateral-meeting-in-shenzhen-on-nov-19/4125290)
+- [Kyiv Post, Trump, Putin to Meet at China's APEC Summit as Kremlin Eyes Trilateral Talks With Xi](https://www.kyivpost.com/post/89960)
+- [Kyiv Post, Trump to Meet Putin and Xi in China, But Won't Discuss Russia's War in Ukraine](https://www.kyivpost.com/post/90092)
+- [Time News(AP), Trump, Xi and Putin to Meet in China, White House Says](https://time.news/trump-xi-and-poutine-to-meet-in-china-white-house-says/)
+- [대통령실, 아세안 및 APEC 정상회의 추가 일정 관련 강유정 수석대변인 서면 브리핑 (2026-11-13)](https://www.president.go.kr/briefings/R3SPjWVP)
 - [RTHK, Trump expects to meet Xi and Putin in China (2026-11-09)](https://news.rthk.hk/rthk/en/component/k2/1877112-20261109.htm)
 - [Nikkei Asia(Reuters), Trump says he thinks he'll meet with Xi and Putin at China APEC summit](https://asia.nikkei.com/politics/international-relations/trump-says-he-thinks-he-ll-meet-with-xi-and-putin-at-china-apec-summit)
 - [TASS, 크렘린 3자 회담 신호 교환 (2026-11-03)](https://tass.com/politics/2212623)
