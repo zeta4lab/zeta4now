@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-11-15T14:10:00+09:00
+updated_at: 2026-11-18T09:12:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,11 +18,9 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-15T14:10:00+09:00
-    note: 14일 '5막'(내무부 10만 6,000명, 체포 219명)과 노란조끼 21일 '6막' 예고, 상원의 사회보장재정법안 1·2부 가결 반영
+    at: 2026-11-18T09:12:00+09:00
+    note: 17일 파업·시위(내무부 14만 6,000명, 국가공무원 파업률 2.59%)와 10일 관보에 실린 업종 최저임금 데크레, 스미크 데크레 미공포 반영
   checkpoints:
-    - date: 2026-11-17
-      note: CGT 주도 17일 파업·시위 규모(노란조끼 합류, CFDT 공공부문 참여)와 업종별 최저임금 데크레 공포 여부
     - date: 2026-11-20
       note: 하원에서 세입이 부결된 2027년 예산안의 상원 본회의 심의 시작
     - date: 2026-11-26
@@ -165,6 +163,16 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 
 10월 17일 55만 명이던 거리는 한 달 만에 5분의 1로 줄었고, 체포는 2,397명에서 219명이 됐다. 이 글은 이 감소를 분노가 식은 것이 아니라 압력이 옮겨 간 것으로 읽는다. 노란조끼는 독자 날짜 대신 노조 일정에 올라탔고, 정부 재정의 실제 결정은 하원에서 115 대 1로 부결된 법안을 우파 다수 상원이 고쳐 쓰는 경로로 넘어갔다. 다음 고비는 26일이다. 상원안과 하원이 합동위원회에서 합의하지 못해 정부가 오르도낭스를 쓰면, 하원이 한 번도 통과시키지 않은 사회보장 재정이 하원 표결 없이 시행된다. 거리에 그보다 좋은 동원 명분은 없다. 이는 해석이다.
 
+## 11월 17일: 노조가 앞장섰지만 거리는 7일 수준이었고 파업률은 5일의 4분의 1이었다
+
+CGT가 부르고 공공부문 노조가 따른 17일 파업·시위는 내무부 집계로 전국 14만 6,000명, 파리 2만 8,000명(파리경찰청)이었다. 토요일이던 7일과 같은 규모이고, 5일(57만 5,000명)의 4분의 1 수준이다. CGT와 일드프랑스 공동투쟁본부는 전국 50만 명 이상, 파리 17만 5,000명이라고 했다. 마르세유는 도청 약 5,000명과 CGT 8만 명, 리옹은 도청 7,000명과 노조 1만 2,000명으로 집계 차이가 컸다. 파리경찰청은 오후 5시 행진이 "평온"하다고 했다. 전국 체포 집계는 나오지 않았고, 리옹 6명이 확인됐다. 렌에서는 물대포가 쓰였다([France 24](https://www.france24.com/fr/france/20261117-en-direct-nouvelle-journ%C3%A9e-mobilisation-gr%C3%A8ve-fonction-publique-gilets-jaunes-pouvoir-achat-%C3%A9tudiants-lyc%C3%A9ens), [franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-greve-et-manifestations-du-17-novembre-suivez-la-journee-de-mobilisation_8285927.html), [ICI](https://www.ici.fr/infos/economie-social/direct-mobilisation-du-17-novembre-suivez-la-nouvelle-journee-de-greve-et-de-manifestations-3379678), [Sud Radio](https://www.sudradio.fr/societe/fonctionnaires-jeunesse-salaries-du-prive-une-colere-qui-converge-malgre-des-corteges-moins-fournis)).
+
+파업 참여는 더 낮았다. 공공회계부의 오후 잠정 집계로 국가공무원 파업률은 2.59%로 5일의 약 10%에서 크게 내려갔고, 지방공무원은 4.60%에서 1.96%로 떨어졌다. 병원공무원은 3.93%로 5일과 같았다. 교육부 집계로 교사 파업률은 3.76%였고, 대학은 정오 기준 27%가 수업 차질을 빚었다. 8개 지역 TER과 일드프랑스 J·N선이 차질을 빚었다([France 24](https://www.france24.com/fr/france/20261117-en-direct-nouvelle-journ%C3%A9e-mobilisation-gr%C3%A8ve-fonction-publique-gilets-jaunes-pouvoir-achat-%C3%A9tudiants-lyc%C3%A9ens)). CFDT 공공부문은 13일 마티뇽 회의 뒤 합류를 발표했다. 로르 르벨은 정부 제안이 "불충분하다, 아니 없다시피 하다"며 12월 중순까지 답을 요구했다. 정부는 13일 봉급 지수 일괄 인상을 거부하는 대신 스미크에 못 미치는 공무원 약 66만 명에게 연금 산정에서 빠지는 보전수당을 주기로 했고, 아미엘 공공회계장관은 비용이 10억 유로를 넘는다고 했다([LCP](https://lcp.fr/actualites/fonction-publique-sebastien-lecornu-ouvre-une-discussion-d-un-mois-sur-les-bas-salaires), [Sud Radio](https://www.sudradio.fr/societe/fonctionnaires-jeunesse-salaries-du-prive-une-colere-qui-converge-malgre-des-corteges-moins-fournis)). 노란조끼 조정위원회는 노조 곁에 서겠다고 예고했고 생로·캉·릴 등에서 집회를 열었지만, 노란조끼 참여 규모를 따로 낸 집계는 없다. CGT의 소피 비네는 "솔직히 턱없이 모자란다"며 "우리 요구에 답해야만 동원이 멈춘다"고 했다. 17일 르코르뉘 총리나 장관의 반응은 찾지 못했다.
+
+임금 쪽 데크레는 이미 나와 있었다. 업종별 최저임금이 1년 내내 스미크보다 낮은 업종은 사용자 사회보험료 감면을 스미크가 아니라 업종 최저임금 기준으로 계산하게 하는 데크레(n° 2026-1037)가 10일 관보에 실려 11일 시행됐다. 새 계산은 2027년분 보험료부터이고, 대상 업종은 매년 1월 31일까지 장관령으로 정한다. 스미크에 못 미치는 업종은 지금 69개인데, 노동부는 12월 1일 스미크 인상으로 64개가 늘어난다고 했다. CGT는 164개로 본다([franceinfo](https://www.franceinfo.fr/economie/le-decret-pour-sanctionner-les-branches-ayant-des-minima-conventionnels-sous-le-smic-publie-au-journal-officiel_8276099.html), [Légifrance](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055075486), [Economie Matin](https://www.economiematin.fr/cotisations-patronales-decret-2026-1037-minima-branche-smic-10-novembre-2026)). 정작 12월 1일 스미크 1.6% 인상 데크레는 17일까지 공포되지 않았다([Le Club des Juristes](https://www.leclubdesjuristes.com/droit/hausse-du-smic-de-16-au-1er-decembre-un-coup-de-pouce-qui-interroge-18450/)). 다음 거리 일정은 19일 퇴직자 시위, 21일(토) 노란조끼 '6막', 26일 대학가 동원이다.
+
+이 글은 17일을 노조 단독 동원의 한계가 드러난 날로 본다. CFDT 공공부문까지 합류했는데도 국가공무원 파업률이 5일의 4분의 1로 내려간 것은, 9일 스미크 인상과 13일 보전수당이 강경 노조 바깥의 참여를 상당 부분 빼냈다는 뜻이다. 다만 정부가 내놓은 두 장치에는 같은 시차가 있다. 업종 데크레는 스미크 인상 때문에 대상 업종이 두 배 가까이 늘어나는데 제재는 2027년분 보험료부터 걸리고, 공무원 보전수당은 연금에 반영되지 않는다. 지금 고지서에 찍히는 것은 23유로뿐이다. 거리는 줄었지만 불만의 근거는 그대로 남았다. 다음 압력은 18일 상원 표결과 26일 기한에 걸린 사회보장재정법안이다. 이는 해석이다.
+
 ## 의미
 
 이번 대응의 특징은 정부가 비상사태 대신 지사 단위의 부분 통행금지와 집회 금지권이라는 '아래로부터의' 수단을 골랐다는 점이다. 르코르뉘 총리가 상황이 "매우 제각각"이라고 말한 데서 보이듯, 리모주·마르세유·릴처럼 피해가 집중된 도시와 그렇지 않은 곳을 한 틀로 묶기 어렵고, 전국 비상사태는 대선을 앞둔 정부가 치러야 할 정치적 비용이 크다. 다만 통행금지의 실효성은 24일 노란조끼 2차 시위에서 바로 시험된다. 뉘녜스 장관 스스로 "극도로 기동성이 높은 집단"에 경찰 전략이 맞지 않았다고 인정한 만큼, 고정된 구역을 지키는 통행금지가 이동하며 약탈하는 집단에 얼마나 효과를 내느냐가 관건이다.
@@ -194,6 +202,7 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - (갱신) L'Express는 앞선 두 시위일의 체포를 2,628명과 1,436명으로 적었지만 날짜를 명시하지 않았다. 본문의 17일 2,397명, 24일 약 1,000명과 달라 본문 수치를 바꾸지 않았다.
 - (갱신) 14일 체포 219명과 경찰 부상 10명은 내무부의 오후 6시 집계이며, 이후 최종 집계는 찾지 못했다. 르코르뉘 총리의 14일 시위 관련 발언도 찾지 못했다.
 - (갱신) 상원의 9일 표결 대상은 Legiwatch가 '1부 전체'라고 썼고, 13일 표결은 같은 매체와 상원 안내가 '세입을 다룬 2부'라고 썼다. 표결 수는 상원 공개표결 원문이 아니라 Legiwatch 정리로 확인했다. 양원 합동위원회 날짜는 공개되지 않았다.
+- (갱신) 17일 파업률은 공공회계부 오후 잠정치이며, 국가공무원 파업률은 Sud Radio가 2.79%로 다르게 전했다. 전국 체포 수와 SNCF·RATP 파업률은 찾지 못했다. 14일 체포는 Ouest-France가 제목에서 '전국 400명 이상, 파리 126명'으로 전했지만 본문을 열지 못해 본문의 내무부 오후 6시 집계(219명)를 바꾸지 않았다.
 - (갱신) 파리 통행금지는 시행 전 보도(Public Sénat, 10월 30일)로 확인했다. 노조 측이 예고한 행정법원 제소의 결과와 실제 집행 상황, 31일 파리 참가 인원은 확인하지 못했다.
 
 ## 갱신 기록
@@ -210,9 +219,19 @@ franceinfo는 법안이 국민연합의 지지로 통과됐다고 전했다. 뉘
 - 2026-11-08: 7일 시위 규모와 체포, 노란조끼 콩코르드 연좌 상황, 노조의 9일 후속 결정 방침 반영. 11월 7일 확인 일정을 11월 10일로 변경
 - 2026-11-10: 9일 사회협의회 결과와 노조 반응, 17일 총파업 호소, 노란조끼 14일 계획 반영. 11월 9·10일 확인 일정을 11월 14·17일로 변경
 - 2026-11-15: 14일 '5막' 규모·체포와 21일 '6막' 예고, CFDT 공공부문의 17일 합류, 상원의 사회보장재정법안 1·2부 가결과 26일 기한 반영. 11월 14일 확인 일정 제거, 11월 26일 일정 추가
+- 2026-11-18: 17일 파업·시위 규모와 공공부문 파업률, 정부의 13일 공무원 보전수당, 10일 관보에 실린 업종 최저임금 데크레와 미공포된 스미크 데크레 반영. 11월 17일 확인 일정 제거
 
 ## 출처
 
+- [En direct: nouvelle journée de mobilisation, 17 novembre — France 24](https://www.france24.com/fr/france/20261117-en-direct-nouvelle-journ%C3%A9e-mobilisation-gr%C3%A8ve-fonction-publique-gilets-jaunes-pouvoir-achat-%C3%A9tudiants-lyc%C3%A9ens)
+- [Grève et manifestations du 17 novembre — franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-greve-et-manifestations-du-17-novembre-suivez-la-journee-de-mobilisation_8285927.html)
+- [Mobilisation du 17 novembre — ICI](https://www.ici.fr/infos/economie-social/direct-mobilisation-du-17-novembre-suivez-la-nouvelle-journee-de-greve-et-de-manifestations-3379678)
+- [Une colère qui converge malgré des cortèges moins fournis — Sud Radio](https://www.sudradio.fr/societe/fonctionnaires-jeunesse-salaries-du-prive-une-colere-qui-converge-malgre-des-corteges-moins-fournis)
+- [Fonction publique: Lecornu ouvre une discussion d'un mois sur les bas salaires — LCP](https://lcp.fr/actualites/fonction-publique-sebastien-lecornu-ouvre-une-discussion-d-un-mois-sur-les-bas-salaires)
+- [Le décret pour sanctionner les branches sous le Smic publié au JO — franceinfo](https://www.franceinfo.fr/economie/le-decret-pour-sanctionner-les-branches-ayant-des-minima-conventionnels-sous-le-smic-publie-au-journal-officiel_8276099.html)
+- [Décret n° 2026-1037 — Légifrance](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055075486)
+- [Décret 2026-1037: minima de branche et Smic — Economie Matin](https://www.economiematin.fr/cotisations-patronales-decret-2026-1037-minima-branche-smic-10-novembre-2026)
+- [Hausse du Smic de 1,6 % au 1er décembre — Le Club des Juristes](https://www.leclubdesjuristes.com/droit/hausse-du-smic-de-16-au-1er-decembre-un-coup-de-pouce-qui-interroge-18450/)
 - [Manifestations du 14 novembre — franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-manifestations-du-14-novembre-suivez-la-journee-de-mobilisation-a-l-appel-de-gilets-jaunes-et-d-organisations-de-jeunesse_8281187.html)
 - [Mobilisation du 14 novembre: l'acte V — ICI](https://www.ici.fr/infos/societe/mobilisation-du-14-novembre-suivez-l-acte-v-des-manifestations-contre-la-vie-chere-et-pour-la-jeunesse-5378889)
 - [PLFSS 2027: le Sénat adopte (9 novembre) — Legiwatch](https://www.legiwatch.fr/actualites/financement-securite-sociale-2027-senat-adopte-2026-11-09/)
