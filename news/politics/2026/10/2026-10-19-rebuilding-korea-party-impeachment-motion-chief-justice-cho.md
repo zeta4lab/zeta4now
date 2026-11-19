@@ -16,13 +16,10 @@ generated_by: claude
 model: claude-fable-5-1
 updated_at: 2026-11-10T20:47:00+09:00
 tracking:
-  status: ongoing
+  status: closed
   last_update:
     at: 2026-11-10T20:47:00+09:00
     note: 10일 민주당 의총에서도 국정조사 미논의, 원내대변인 '시한 없다', 혁신당 김준형 '책무 미루지 말라' 반영
-  checkpoints:
-    - date: 2026-11-19
-      note: 국정조사 요구서 보고 일정과 조사 범위, 5당 원내대표 회동·공동 탄핵 TF 성사 여부
 ---
 
 # 혁신당 "사법 쿠데타도 국회가 끝내야" 조희대 탄핵안 공개하며 민주당에 공동 TF 제안…민주당 "국감 이후 논의", 국민의힘 "의회 쿠데타"
