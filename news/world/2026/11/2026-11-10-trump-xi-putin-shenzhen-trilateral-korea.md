@@ -16,15 +16,12 @@ tags:
   - 선전
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-15T14:10:00+09:00
+updated_at: 2026-11-20T09:16:00+09:00
 tracking:
-  status: ongoing
+  status: closed
   last_update:
-    at: 2026-11-15T14:10:00+09:00
-    note: 크렘린 19일 3자 회담 합의 발표, 백악관 '핵감축·이란 논의, 우크라이나 제외', 대통령실 16·18일 일정 발표(한중 회담 미정) 반영
-  checkpoints:
-    - date: 2026-11-20
-      note: 선전 3자 회담 결과(핵감축·이란 의제, 성명 여부)와 한반도 언급, 한중 정상회담 개최 여부
+    at: 2026-11-20T09:16:00+09:00
+    note: 19일 3자 회담 4개 항 평화선언(한반도·이란·우크라이나 없음), 중국 발표문의 한반도 한 줄, 한중 정상회담과 양측 발표 차이 반영
 ---
 
 # 선전의 세 정상 사이에 한국 자리는 없다…트럼프 '미·중·러 3자 회담'에서 한반도가 의제가 되는 순간
@@ -101,6 +98,16 @@ tracking:
 
 위 시나리오 표에서 선전은 '3자 성사, 한반도 미언급' 쪽으로 기울었다. 백악관이 의제 첫 줄에 올린 것은 '세계 핵무기 감축'이고, 이는 트럼프의 '비핵화'가 한반도가 아니라는 이 글의 첫 판단과 맞는다. 우크라이나까지 빠지면서 회담은 핵 숫자와 이란을 두고 사진을 찍는 자리에 가까워졌다. 한국 쪽에서 확정된 것은 태국·필리핀 양자회담과 동포 간담회이고, 선전에서 가장 중요한 한중 회담은 아직 빈칸이다. 3자 테이블 주변의 양자 접촉 밀도가 한국이 쥔 유일한 변수라면, 회담 닷새 전 그 밀도는 낮다. 이는 해석이다.
 
+## 19일: 선언문에 한반도는 없었고, 중국 발표문에 한 줄이 있었다
+
+3자 회담은 19일 오후 선전 기린산장에서 열렸다. 예정보다 2시간 가까이 늦은 현지 시각 오후 4시 27분께 시작해 약 1시간 반 동안 이어졌고, 공개 발언 10여 분 뒤 비공개로 진행됐다([TASS](https://tass.com/politics/2221611), [CBS](https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/)). 세 정부는 같은 문안의 4개 항 공동선언을 냈다. 백악관은 이를 '평화를 향한 미·러·중 정상 선언'이라고 불렀다. 선언은 유엔 개혁, 정제 석유제품의 생산·공급 확대와 안정적 에너지 흐름, 국가 동의 원칙과 국가 공직자 면제 존중(국제형사재판소 등의 관할권 남용 반대), 그리고 "핵전쟁은 이길 수 없고 결코 일어나서는 안 된다"는 재확인과 "핵 위험 감소와 핵확산 방지에 관한 대화"를 담았다([백악관](https://www.whitehouse.gov/briefings-statements/2026/11/u-s-russia-china-heads-of-state-declaration-toward-peace/), [중국 외교부](https://www.fmprc.gov.cn/zyxw/202611/t20261119_12063191.shtml)). 선언문에는 이란, 우크라이나, 한반도, 북한, 비핵화라는 단어가 없다. 백악관이 의제 첫 줄에 올렸던 '세계 핵무기 감축'은 '위험 감소와 비확산 대화'로 낮아졌고, 대화의 날짜나 형식도 정해지지 않았다.
+
+한반도는 중국 외교부 발표문에만 나온다. 중국은 시진핑 주석이 주재한 회담에서 세 정상이 "우크라이나 위기, 핵무기 확산 방지, 중동 정세, 한반도 등 중대한 국제·지역 문제에 대해서도 의견을 교환했다"고 적었지만 내용은 밝히지 않았다([중국 외교부](https://www.mfa.gov.cn/web/wjdt_674879/gjldrhd_674881/202611/t20261119_12063234.shtml)). 크렘린이 공개한 발언록과 푸틴 대통령의 기자회견, 백악관 자료에는 한반도 언급이 없다([크렘린](https://en.kremlin.ru/events/president/news/81303), [크렘린 기자회견](https://en.kremlin.ru/events/president/news/81305)). 트럼프 대통령은 공개 발언에서 "일단 핵무기를 가지면 갖지 않기가 매우 어렵다. 한 나라의 지도자로서 포기하기가 아주 어렵다"고 했고, 이란에 대해서는 핵무기를 갖게 두지 않겠다고 했다([크렘린](https://en.kremlin.ru/events/president/news/81303)). 우크라이나도 다뤄졌다. 트럼프는 러시아·우크라이나 전쟁을 "논의할 것이고 이미 했다"고 했고, 두 사람은 같은 날 3자 회담 전 약 35~40분 따로 만났다. 백악관이 13일 일정에 없다고 했던 회동이다([TASS](https://tass.com/politics/2221037)). 김정은 국무위원장은 선전에 오지 않았다.
+
+한국은 하루 앞서 시진핑 주석과 만났다. 이재명 대통령과 시 주석은 18일 34분간 정상회담을 했다([파이낸셜뉴스(뉴시스)](https://www.fnnews.com/news/202611181251387953)). 한국 측 발표에 따르면 시 주석은 "북·미 대화 등 한반도 긴장 완화를 위한 다양한 노력을 지지한다"고 했고, 이 대통령은 한반도 문제를 "우리의 사활적 이익"이라고 했다([경향신문](https://www.khan.co.kr/article/202611182130005/)). 같은 회담을 전한 중국 측 발표에는 한반도가 없고, 한중 자유무역협정 2단계 협상의 실질 타결과 함께 이 대통령이 하나의 중국 정책이 "변하지 않았고 변하지 않을 것"이라고 했다는 문장이 들어 있다([중국 외교부](https://www.fmprc.gov.cn/eng/xw/zyxw/202611/t20261118_12062076.html)). 이 대통령은 18일 만찬 뒤 푸틴 대통령과 약 10분간 약식으로 만났고, 트럼프 대통령과 정식 회담은 없었다. 회담 뒤 청와대의 공식 논평은 찾지 못했다.
+
+이 글은 선전의 결과가 발행 때의 판단을 확인했다고 본다. 한반도는 세 정상의 공동 문서에 들어가지 않았고, 들어간 곳은 회담을 주재한 중국의 발표문 한 줄이었다. 무엇이 오갔는지는 한국이 직접 들을 수 없다. 같은 이틀 동안 중국은 한중 회담 발표문에서 한반도를 빼고 3자 회담 발표문에서 한반도를 넣었다. 중국이 한반도를 한국과의 양자 의제가 아니라 강대국 사이의 의제로 다룬다는 신호로 읽힌다. 선언이 약속한 '핵 위험 감소 대화'가 실제 일정을 갖게 되면, 북한 핵은 그 대화의 한 줄이 될 수 있다. 그 대화에 한국의 자리는 지금 없다. 이는 해석이다.
+
 ## 확인하지 못한 것
 
 - WSJ 9일자 원문은 유료 장벽으로 직접 열지 못했고 경향신문·아시아경제·진일보 재인용에 의존했다.
@@ -108,14 +115,27 @@ tracking:
 - (갱신) 크렘린·백악관 발언은 kremlin.ru, whitehouse.gov 원문이 아니라 TASS·아나돌루·Kyiv Post(AFP)·Time News(AP) 보도로 확인했다. 중국 외교부가 3자 회담 개최를 공식 확인했는지와 14~15일 APEC 최종 고위관리회의 결과는 찾지 못했다.
 - 트럼프의 선전 참석은 백악관 공식 일정 발표문을 확인하지 못했다. 필리핀 대통령실은 마닐라 참석만 확인했다.
 - 미중 무역휴전 연장은 2차 보도로만 확인했다.
+- (갱신) 3자 회담 시간은 TASS·CBS가 약 1시간 반, VOA·알자지라가 약 1시간으로 전해 차이가 있다. 비공개 부분에서 한반도에 관해 무엇이 오갔는지는 어느 쪽도 공개하지 않았다. 한중 정상회담 한국 측 발표 원문은 언론 보도로 확인했다.
 - 그레이엄법 면제의 '12월 15일 검토'는 공식 문서에 없다. 루비오 장관이 10월 17일 말한 "60일 검토 기간"의 산술일 뿐이다.
 
 ## 갱신 기록
 
 - 2026-11-15: 크렘린의 19일 3자 회담 합의 발표, 백악관의 의제(핵감축·이란, 우크라이나 제외) 설명, 대통령실 13일 일정 발표 반영. 11월 15일 확인 일정 제거, 11월 17일 일정을 19일 일정에 합침
+- 2026-11-20: 19일 3자 회담 결과(4개 항 평화선언, 한반도·이란·우크라이나 미포함, 중국 발표문의 한반도 의견 교환 한 줄)와 트럼프·푸틴 별도 회동, 18일 한중 정상회담과 양측 발표 차이 반영. 남은 확인 일정이 없어 추적 종료
 
 ## 출처
 
+- [U.S.-Russia-China Heads of State Declaration toward Peace — 백악관 (2026-11-19)](https://www.whitehouse.gov/briefings-statements/2026/11/u-s-russia-china-heads-of-state-declaration-toward-peace/)
+- [中俄美元首和平宣言 — 중국 외교부 (2026-11-19)](https://www.fmprc.gov.cn/zyxw/202611/t20261119_12063191.shtml)
+- [习近平主持中俄美元首会晤 — 중국 외교부 (2026-11-19)](https://www.mfa.gov.cn/web/wjdt_674879/gjldrhd_674881/202611/t20261119_12063234.shtml)
+- [Russia-China-US summit — 크렘린 (2026-11-19)](https://en.kremlin.ru/events/president/news/81303)
+- [Putin news conference in Shenzhen — 크렘린 (2026-11-19)](https://en.kremlin.ru/events/president/news/81305)
+- [Trilateral summit timing — TASS (2026-11-19)](https://tass.com/politics/2221611)
+- [Putin-Trump meeting was preparatory — TASS (2026-11-19)](https://tass.com/politics/2221037)
+- [Trump, Xi, Putin meet in China — CBS (2026-11-19)](https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/)
+- [한중 정상회담 34분 — 파이낸셜뉴스(뉴시스) (2026-11-18)](https://www.fnnews.com/news/202611181251387953)
+- [한중 정상회담 — 경향신문 (2026-11-18)](https://www.khan.co.kr/article/202611182130005/)
+- [Xi Jinping meets ROK President — 중국 외교부 (2026-11-18)](https://www.fmprc.gov.cn/eng/xw/zyxw/202611/t20261118_12062076.html)
 - [TASS, Putin, Xi Jinping, Trump trilateral summit to be held in Shenzhen on November 19 (2026-11-14)](https://tass.com/politics/2218203)
 - [Anadolu, Kremlin says Putin, Xi, Trump to hold trilateral meeting in Shenzhen on Nov. 19](https://aa.com.tr/en/eurasia/kremlin-says-putin-xi-trump-to-hold-trilateral-meeting-in-shenzhen-on-nov-19/4125290)
 - [Kyiv Post, Trump, Putin to Meet at China's APEC Summit as Kremlin Eyes Trilateral Talks With Xi](https://www.kyivpost.com/post/89960)
