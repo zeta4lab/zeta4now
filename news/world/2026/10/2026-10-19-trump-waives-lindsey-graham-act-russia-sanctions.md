@@ -14,17 +14,15 @@ tags:
 summary: 트럼프 대통령이 10월 16일(현지시각) 자신이 9월 18일 서명한 '린지 그레이엄 러시아·이란 제재법'의 500% 관세, 러시아 석유 구매국 100% 관세, 은행·그림자 선단 제재 조항을 시행 이틀 전 행정명령으로 유예했다. 의회에는 "국익"이라고만 통보했고 만료일은 없다. 젤렌스키는 "유감"이라며 미·러·우 3자 회담 추진을 밝혔고, 공화당 틸리스 의원은 "무책임을 넘어섰다"고 했다.
 generated_by: claude
 model: claude-fable-5-1
-updated_at: 2026-11-14T14:26:00+09:00
+updated_at: 2026-11-20T09:16:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-14T14:26:00+09:00
-    note: 12일 푸틴·젤렌스키 연쇄 면담. 다음 회담에 유럽 참여 합의, 포로 교환은 '최대 규모'라지만 숫자·날짜 미정
+    at: 2026-11-20T09:16:00+09:00
+    note: 19일 선전 트럼프·푸틴 별도 회동(우크라이나 주요 의제, 크렘린 발표)과 3자 평화선언의 우크라이나 미포함, 의회는 비판만 하고 유예 철회 입법 진전 없음 반영
   checkpoints:
     - date: 2026-11-30
       note: 유럽이 참여하는 다음 미·러·우 회담 날짜·장소 발표와 최대 규모 포로 교환 실행 여부
-    - date: 2026-11-20
-      note: 선전 3자 회담(19일)의 우크라이나 논의와 트럼프·푸틴 별도 회동 여부, 의회의 유예 철회 요구·믹스 법안 진행
     - date: 2026-12-15
       note: 루비오 장관이 말한 '최대 60일' 검토 기한(행정명령 10월 16일 기준). 유예 유지·해제 결정 확인
 ---
@@ -109,6 +107,16 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 
 이틀 사이 협상의 의제가 우크라이나 영토에서 유럽 안보 질서로 넓어졌다는 점이 제재 유예에는 더 중요하다. 유럽이 테이블에 앉고 러시아가 NATO 배치 철회를 다시 요구하는 순간, 협상은 몇 주가 아니라 몇 달짜리가 된다. 트럼프가 "협상 테이블에서 러시아를 밀어내지 않겠다"는 논리로 유예를 정당화하는 한, 협상이 길어질수록 유예도 길어진다. 루비오의 60일 기한(12월 중순)에 성과 없이 유예를 연장한다면, 그 판단 근거는 평화가 아니라 협상 일정 자체가 된다. 이는 해석이다.
 
+## 선전(11월 19일): 우크라이나는 양자 회동에서 다뤄졌고, 선언문에는 없었다
+
+트럼프 대통령과 푸틴 대통령은 19일 선전에서 3자 회담에 앞서 약 35~40분 따로 만났다. 백악관이 13일 일정에 없다고 했던 회동이다. 미국 측에서 루비오 국무장관과 베선트 재무장관이, 러시아 측에서 라브로프 외무장관, 실루아노프 재무장관, 우샤코프 보좌관, 드미트리예프 특사가 배석했다. 우샤코프는 회동이 "3자 회담을 앞둔 준비 성격"이었고 "당연히 우크라이나 분쟁 해결 문제도 다뤘다"며, 우크라이나가 핵심이었느냐는 질문에 "그렇다고 할 수 있다"고 했다. 그러면서 "양측 모두 특별히 중요한 발언은 하지 않았다"고 했다([TASS](https://tass.com/politics/2221037), [TASS](https://tass.com/politics/2220993)). 백악관은 이 회동의 결과 발표문을 내지 않았다.
+
+3자 회담에서 트럼프는 러시아·우크라이나 전쟁을 "논의할 것이고 이미 했다"고 했고, 푸틴은 미국 대통령의 제안으로 양자 회동에서 우크라이나에 "상당한 시간을 할애했다"고 했다([크렘린](https://en.kremlin.ru/events/president/news/81303)). 그러나 세 정상의 4개 항 공동선언에는 우크라이나가 들어가지 않았다. 선언의 에너지 항목은 세 나라가 "모든 나라를 위해 정제 석유제품의 생산과 공급을 늘릴 계획"이라고 적었다([백악관](https://www.whitehouse.gov/briefings-statements/2026/11/u-s-russia-china-heads-of-state-declaration-toward-peace/)). 이 글의 배경이 된 미·러 경유 거래와 같은 방향의 문장이다.
+
+의회의 반응은 비판에 그쳤다. 그레고리 믹스 하원 외교위 민주당 간사는 성명에서 이번 순방이 "레임덕 대통령의 사진 촬영 기회에 불과했다"며 "러시아의 전쟁을 끝내지도, 우크라이나에서의 푸틴 전쟁범죄를 막지도 못했다"고 했지만 제재 유예나 자신의 러시아 석유 거래 금지 법안은 언급하지 않았다([하원 외교위 민주당](https://democrats-foreignaffairs.house.gov/2026/11/meeks-dismisses-trilateral-summit-as-pointless-photo-op-that-only-elevated-autocrats/)). 척 슈머 상원 민주당 원내대표는 "사진 한 장을 위해 적에게 고개 숙이기를 무엇보다 좋아하는 대통령의 미국 배신"이라고 했고, 공화당 릭 스콧 상원의원도 "푸틴은 깡패라고 생각한다"고 했다([NBC](https://www.nbcnews.com/politics/trump-administration/live-blog/trump-xi-putin-nuclear-ukraine-congress-2026-live-updates-rcna610150)). 11월 14일 이후 유예 철회 결의나 법안이 진전됐다는 보도는 찾지 못했다.
+
+이 글은 선전이 유예의 논리를 한 단계 굳혔다고 본다. 트럼프가 유예를 정당화한 근거는 러시아를 협상 테이블에 붙잡아 둔다는 것이었다. 선전에서 그 테이블은 미·러 양자에서 미·중·러 3자로 넓어졌고, 우크라이나는 공동 문서에 오르지 못한 채 양자 회동의 의제로만 남았다. 대신 석유제품 공급 확대가 세 나라의 공동 문장이 됐다. 제재를 다시 걸면 이 문장과 부딪친다. 의회가 비판 성명 이상으로 나아가지 않는 한 12월 15일 '60일' 시점에 유예가 해제될 가능성은 더 낮아졌다. 이는 해석이다.
+
 ## 의미
 
 이 법은 애초 의회가 대통령의 재량을 좁히려고 만든 것이었다. 기존 행정명령 제재를 법률로 굳히고, 500% 관세와 2차 관세를 '해야 한다'는 의무 조항으로 적고, 제재를 끝내려면 평화협정 서명을 인증하고 의회 심사를 거치게 했다. 그러나 같은 법의 115조는 "국익" 인증서 한 장으로 어떤 조항이든 유예할 수 있게 했고, 트럼프는 서명 28일 만에 그 조항으로 나머지를 모두 비워 냈다. 바이든 정부 당국자였던 존 파이너가 법 통과 전에 "대통령이 갖지 못한 새 제재 권한을 더하지 않으면서 유예 조항과 광범위한 관세 권한을 준다"고 지적했던 구조가 그대로 드러난 셈이다([Wikipedia](https://en.wikipedia.org/wiki/Sanctioning_Russia_Act)).
@@ -135,9 +143,16 @@ AP는 이 법을 "러시아의 전쟁 자금 흐름을 조이기 위해 러시�
 - 2026-11-11: 아부다비 미·러·우 회담 1일차 결과 반영, 확인 일정을 11월 12일로 변경
 - 2026-11-12: 아부다비 회담 2일차 종료와 포로 교환 원칙 합의 공식 확인, 위트코프·쿠슈너 모스크바·더블린 방문 반영. 확인 일정을 11월 13일로 변경
 - 2026-11-14: 12일 위트코프·쿠슈너의 푸틴 면담(약 2시간)과 더블린 젤렌스키 면담 결과, 유럽의 다음 회담 참여와 포로 교환 규모 미정 반영. 11월 13일 확인 일정을 11월 30일 다음 회담 확인으로 변경
+- 2026-11-20: 19일 선전 트럼프·푸틴 별도 회동(우크라이나 주요 의제)과 3자 공동선언의 우크라이나 미포함·석유제품 공급 확대 문구, 의회 반응(비판 성명, 유예 철회 입법 진전 없음) 반영. 11월 20일 확인 일정 제거
 
 ## 출처
 
+- [Putin-Trump meeting was preparatory — TASS (2026-11-19)](https://tass.com/politics/2221037)
+- [Putin-Trump meeting in Shenzhen — TASS (2026-11-19)](https://tass.com/politics/2220993)
+- [Russia-China-US summit — 크렘린 (2026-11-19)](https://en.kremlin.ru/events/president/news/81303)
+- [U.S.-Russia-China Heads of State Declaration toward Peace — 백악관 (2026-11-19)](https://www.whitehouse.gov/briefings-statements/2026/11/u-s-russia-china-heads-of-state-declaration-toward-peace/)
+- [Meeks dismisses trilateral summit as pointless photo-op — 하원 외교위 민주당 (2026-11-19)](https://democrats-foreignaffairs.house.gov/2026/11/meeks-dismisses-trilateral-summit-as-pointless-photo-op-that-only-elevated-autocrats/)
+- [Trump, Xi, Putin live updates — NBC (2026-11-19)](https://www.nbcnews.com/politics/trump-administration/live-blog/trump-xi-putin-nuclear-ukraine-congress-2026-live-updates-rcna610150)
 - [AP(WHDH), US envoys meet with Putin in Moscow on Ukraine talks, then see Zelenskyy in Dublin (2026-11-13)](https://whdh.com/news/us-envoys-meet-with-putin-in-moscow-on-ukraine-talks-then-see-zelenskyy-in-dublin/)
 - [TIME, Trump Envoys Witkoff and Kushner Meet With Putin in Moscow for Ukraine Talks (2026-11-12)](https://time.com/article/2026/11/12/ukraine-russia-peace-deal-talks-putin-zelensky-witkoff-kushner/)
 - [TheJournal.ie, Zelenskyy hails 'real results' on prisoner of war exchange after meeting with Kushner and Witkoff (2026-11-12)](https://www.thejournal.ie/zelenskyy-kushner-baldonnel-meeting-7224099-Nov2026/)
