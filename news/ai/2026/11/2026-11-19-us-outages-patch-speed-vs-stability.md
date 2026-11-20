@@ -19,7 +19,7 @@ model: claude-opus-5-5
 tracking:
   status: ongoing
   checkpoints:
-    - date: 2026-11-20
+    - date: 2026-11-21
       note: 마이크로소프트 365 장애 최종 사후 보고서(11월 20일 예정)의 근본 원인과 재발 방지책
 ---
 
