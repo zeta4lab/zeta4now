@@ -14,7 +14,7 @@ tags:
 summary: 엔비디아 이사회는 8일 젠슨 황 CEO가 외국 정보기관의 표적이 됐다는 보도에 따라 독립 조사를 열었고, 황은 12일 CEO와 이사직에서 즉시 물러났다. 같은 주 매디슨 황은 배경훈 부총리 면담을 포함한 방한 일정을 취소했고, 정부는 13일 엔비디아에서 GPU 26만 장 공급을 '회사 차원에서' 재확인받았다. 이 글은 스파이 의혹의 진위보다, 한국의 AI 인프라 계획이 한 회사와 한 사람과의 관계 위에 세워져 있었다는 점을 문제로 본다.
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-18T09:12:00+09:00
+updated_at: 2026-11-21T14:55:00+09:00
 tracking:
   status: ongoing
   last_update:
@@ -90,6 +90,14 @@ tracking:
 
 이 글은 17일 자료에서 두 가지를 읽는다. 첫째, 이사회가 복귀를 닫으면서 '한 사람'의 문제는 끝났지만, 13일 한국 정부가 받아 둔 '회사 차원의 재확인'은 여전히 정부 발표로만 남아 있다. 엔비디아가 투자자에게 내놓은 자료에는 26만 장이 한 줄도 없다. 둘째, 엔비디아가 계약의 언어로 말하는 한국은 고객 한국이 아니라 공급망 한국이다. 공급 약정 증가분 1,110억 달러의 대부분이 메모리라면, 삼성전자와 SK하이닉스에 실제로 걸린 돈은 이쪽이다. 한국이 협상력을 찾을 곳도 GPU를 받는 쪽보다 HBM과 기판을 대는 쪽이다. 마지막으로, 하원 증언이 비공개로 가면 수출통제 논의의 공개 무대는 12월 3일 상원 청문회가 된다. 이는 해석이다.
 
+## 17~18일: 미국이 허가한 중국 판매를 엔비디아가 스스로 멈췄다
+
+**같은 실적 통화에서 크레스 임시 CEO는 미국 정부 허가를 받은 중국향 호퍼 칩 출하를 멈췄다고 밝혔다. 황이 떠난 뒤 엔비디아가 가장 먼저 줄인 것은 워싱턴의 의심을 살 수 있는 매출이다.**
+
+로이터에 따르면 크레스는 17일 통화에서 "허가받은 호퍼 데이터센터 제품을 더 이상 중국에 출하하지 않는다"고 했다. 10월 25일로 끝난 3분기에 이 제품의 중국 매출은 24억 달러였고, 추가 출하 계획은 없으며 4분기 전망에서도 뺐다. 멈춘 이유와 재개 여부는 말하지 않았다([더 스탠더드(로이터)](https://www.thestandard.com.hk/china/article/348898/Nvidia-stops-shipping-US-approved-AI-chips-to-China), [블룸버그 거번먼트](https://news.bgov.com/bloomberg-government-news/nvidia-stops-selling-ai-chips-to-china-despite-us-approval)). 다음 날인 18일 브렛 거스리 하원 에너지상업위원장은 크레스와 러트닉 상무장관에게 서한을 보내, 엔비디아가 고객사 메가스피드의 수출통제 회피를 도왔는지 다음 달 브리핑하라고 요구했다. 그는 "보도된 사건들은 회사가 현행 연방법을 지키고 있는지 의문을 제기한다"고 썼다([저스트 더 뉴스](https://justthenews.com/government/congress/house-commerce-committee-requests-briefings-lutnick-nvidia-interim-ceo-export)). 12월 1일 하원 3개 위원회 인터뷰와 별개인 네 번째 위원회 조사다. 혐의는 입증되지 않았다.
+
+이 글은 출하 중단을 회사의 방어로 읽는다. 허가는 정부가 내줬지만, 그 허가가 어떻게 나왔는지를 의회가 묻는 상황에서 판매를 이어 가면 다음 청문회의 질문이 된다. 한국에는 두 가지가 걸린다. 첫째, H200에는 SK하이닉스의 HBM3E가 주로 들어가므로, 분기 24억 달러 규모의 판로 하나가 닫힌 셈이다. 다만 엔비디아의 메모리 조달 약정은 오히려 늘었으므로 당장의 물량 감소로 단정할 근거는 없다. 둘째, 16일 상무부의 원격 접근 규칙과 이번 출하 중단은 같은 방향을 가리킨다. 중국과 닿는 연산은 허가가 있어도 회사가 먼저 끊는다. 한국 데이터센터가 중국계 고객에게 연산을 빌려줄 때 공급자의 눈치를 먼저 보게 되는 구조가 이미 시작됐다([관련 기사](https://now.zeta4.net/a/2026-11-18-us-remote-access-rule-compute-kyc-korea)). 이는 해석이다.
+
 ## 서울: 창구가 닫힌 주말
 
 젠슨 황의 딸 매디슨 황 엔비디아 수석이사는 8일 서울 콘래드호텔에서 배경훈 부총리 겸 과기정통부 장관을 만나고, 9~10일 코엑스 'AI 데이 서울'에 참석하며, 9일 류제명 2차관과 스타트업 포럼을 공동 주재하고 리벨리온 본사를 찾을 예정이었다. 엔비디아는 7일 그가 "부득이한 사정으로" 참석하지 못한다고 알렸고, 연합뉴스는 소식통을 인용해 "가족 문제"라고 전했다. 과기정통부는 "면담 불발은 아쉽지만 예정된 협력과 간담회는 차질 없이 진행한다"고 했다([ZDNet Korea](https://zdnet.co.kr/view/?no=20261108115633), [코리아타임스(연합)](https://www.koreatimes.co.kr/business/companies/20261107/nvidia-ceos-daughter-cancels-planned-visit-to-korea-sources), [한국일보](https://www.hankookilbo.com/news/article/A2026110810050001381)). 취소와 의혹의 연관은 어느 보도도 확인하지 못했다. 행사는 다른 임원들이 대신 나와 예정대로 열린다.
@@ -139,6 +147,7 @@ tracking:
 - 황의 하원 일정(12월 1일)과 테터 법무책임자 일정(2일)은 CNBC가 전한 세 위원장 성명으로 확인했다. 위원장 성명 원문은 보지 못했다. CNBC는 형식을 '속기 인터뷰'로 쓰고 선서 여부는 밝히지 않았다. 황의 상원 청문회 출석 여부는 확인되지 않았다.
 - (갱신) 존스 의장의 발언은 실적 발표 통화를 전한 CNBC 보도로 확인했고, 통화 녹취록 원문은 보지 못했다. 공급 약정 직전 분기 수치는 일부 국내 보도가 2,780억 달러로 썼지만 엔비디아 CFO 해설의 2,790억 달러를 따랐다.
 - 정부가 밝힌 '2만 1천 장 확보'가 계약 기준인지 반입 기준인지는 보도에서 확인하지 못했다. 엔비디아가 '회사 차원에서' 재확인했다는 것은 정부 발표이며, 엔비디아의 별도 공식 입장은 찾지 못했다.
+- (갱신) 크레스의 출하 중단 발언은 로이터 보도로, 거스리 위원장 서한은 저스트 더 뉴스 보도로 확인했고 서한 원문은 보지 못했다. H200에 SK하이닉스 HBM3E가 주로 쓰인다는 것은 2025년 국내 보도에 근거한다. 출하 중단 뒤 한국 정부의 26만 장 계획에 관한 새 발표는 찾지 못했다.
 - 의존 구조에 대한 판단, 수출통제 강화 전망, 영향 평가와 제안은 이 글의 해석이다.
 
 ## 갱신 기록
@@ -149,9 +158,13 @@ tracking:
 - 2026-11-12: 11일 회신 기한 당일 상황(회신 미확인, 소환장 준비, 사임 요구, NDAA 수출통제 법안)과 두 번째 외도·이사회 해임 논의 보도 반영, 확인 일정을 11월 13일로 변경
 - 2026-11-14: 12일 황 CEO·이사 사임과 크레스 임시 CEO 선임, 황의 하원 증언 동의와 상원 은행위 12월 증언 요구, 13일 정부·엔비디아 현안점검회의와 국가AI전략위 긴급회의 반영, 확인 일정을 11월 18일·27일로 조정
 - 2026-11-18: 17일 3분기 실적과 전망, 존스 의장의 복귀 불가 발언과 황 성명, 공급 약정 증가와 공급망 발표의 한국 관련 내용, 황 하원 인터뷰 12월 1일·상원 청문회 3일 일정 반영. 11월 18·27일 확인 일정을 12월 2·3일로 변경
+- 2026-11-21: 크레스 임시 CEO의 중국향 허가 호퍼 칩 출하 중단 발언(3분기 24억 달러)과 하원 에너지상업위의 메가스피드 관련 브리핑 요구 반영
 
 ## 출처
 
+- [Nvidia stops shipping US-approved AI chips to China — The Standard(Reuters) (2026-11-18)](https://www.thestandard.com.hk/china/article/348898/Nvidia-stops-shipping-US-approved-AI-chips-to-China)
+- [Nvidia stops selling AI chips to China despite US approval — Bloomberg Government (2026-11-18)](https://news.bgov.com/bloomberg-government-news/nvidia-stops-selling-ai-chips-to-china-despite-us-approval)
+- [House Commerce Committee requests briefings from Lutnick, Nvidia interim CEO — Just The News (2026-11-18)](https://justthenews.com/government/congress/house-commerce-committee-requests-briefings-lutnick-nvidia-interim-ceo-export)
 - [NVIDIA Announces Financial Results for Third Quarter Fiscal 2027 — 엔비디아 (2026-11-17)](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027)
 - [NVIDIA Third Quarter 2027 CFO Commentary — MarketScreener (2026-11-17)](https://www.marketscreener.com/news/nvidia-third-quarter-2027-cfo-commentary-ce785edcdc81f420)
 - [NVIDIA Expands Commitments With Supply Chain Partners — 엔비디아 (2026-11-17)](https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout)
