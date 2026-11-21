@@ -16,7 +16,7 @@ tags:
   - AI 안전
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-20T09:16:00+09:00
+updated_at: 2026-11-21T14:50:00+09:00
 tracking:
   status: closed
   last_update:
@@ -87,7 +87,7 @@ Mythos 5.2는 "특정 사이버·생물 안전장치를 제거한 같은 모델"
 
 ## 한국: 청약할 수 없고, 첫날 살 수는 있다
 
-신고서는 한국에 관해 주식이 자본시장법에 따라 등록되지 않았고 등록되지 않을 것이며, 한국에서는 사모로만 제공되고, 법이 허용하는 예외를 빼면 한국 거주자에게 제공·판매·인도될 수 없다고 명시했다. 인수단 22곳에 국내 증권사는 없고, 이투데이는 10월 29일 국내 대형 증권사들이 불참했다고 전했다. 5월 SpaceX 상장 때 미래에셋이 물량을 배정받지 못해 금감원 현장검사로 이어진 일이 부담으로 거론됐다([이투데이](https://www.etoday.co.kr/news/view/2641937)). 한국 투자자의 경로는 상장 후 직접 매수, 앤트로픽 비중이 있는 ETF, 지분을 가진 아마존·알파벳 등을 통한 간접 보유 정도다([헤럴드경제](https://biz.heraldcorp.com/article/10918833)).
+신고서는 한국에 관해 주식이 자본시장법에 따라 등록되지 않았고 등록되지 않을 것이며, 한국에서는 사모로만 제공되고, 법이 허용하는 예외를 빼면 한국 거주자에게 제공·판매·인도될 수 없다고 명시했다. 인수단 22곳에 국내 증권사는 없고, 이투데이는 10월 29일 국내 대형 증권사들이 불참했다고 전했다. 6월 SpaceX 상장 때 미래에셋이 물량을 배정받지 못해 금감원 현장검사로 이어진 일이 부담으로 거론됐다([이투데이](https://www.etoday.co.kr/news/view/2641937)). 한국 투자자의 경로는 상장 후 직접 매수, 앤트로픽 비중이 있는 ETF, 지분을 가진 아마존·알파벳 등을 통한 간접 보유 정도다([헤럴드경제](https://biz.heraldcorp.com/article/10918833)).
 
 첫날 직접 매수에는 신고서가 적은 구조적 조건이 있다. 180일 락업 대상 중 36억 주는 조기 해제가 가능하고, 그중 비창업 임직원 보유분의 최대 10%는 첫 거래일부터 팔 수 있다. 사모로 들어오는 전략적 투자자 지분 약 3억 5,000만 주는 인수단 락업 대상이 아니다. 리테일 배정은 슈왑·피델리티·로빈후드·소파이 등 미국 판매단을 통해 "소수"로 한정된다. 김민규 KB증권 연구원은 SpaceX 상장 후 한 달간 국내 투자자 순매수의 97%가 그 종목에 쏠렸다며 이번에도 수급 쏠림을 전망했다. 첫날 매수자는 공모가 투자자가 아니라 조기 해제 물량의 매수 상대방이 될 수 있다는 점을 알고 들어가야 한다.
 
@@ -101,6 +101,12 @@ Mythos 5.2는 "특정 사이버·생물 안전장치를 제거한 같은 모델"
 
 이 글은 시장이 이 글의 첫 판단을 가격에 넣지 않았다고 본다. 모델 공개 문서는 Fable 5.2가 위험 임계점에 이르지 않았다고 적었고, 공모 신고서는 임계점 충족을 위험 요인으로 적었다. 투자자들은 그 불일치보다 매출 성장과 공급망 파트너의 사모 참여를 봤다. 그러나 상장으로 이 회사의 문서는 이제 증권법의 공시 책임을 진다. 앞으로 시스템 카드와 분기 보고서가 같은 모델을 다르게 설명하면, 그 차이는 안전 연구자의 논쟁이 아니라 공시의 정확성 문제가 된다. 이는 해석이다.
 
+## 둘째 날(11월 20일): 공모가에서 5센트 위까지 내려갔다
+
+둘째 날 주가는 첫날 상승분을 대부분 돌려줬다. 포천에 따르면 20일 장중 저가는 83.05달러로 공모가보다 5센트 높았고, 전날 종가보다 14% 넘게 떨어졌다가 낮에 87달러 선을 회복했다([포천](https://fortune.com/2026/11/20/anthropic-stock-teeters-close-to-ipo-price-in-second-day-of-trading/)). 야후 파이낸스는 종가를 88.91달러(약 8.5% 하락), 시가총액을 1조 1,700억 달러로 전했다([야후 파이낸스](https://finance.yahoo.com/markets/stocks/article/anthropic-stock-dives-after-rip-roaring-ipo-095411951.html)). 포천은 엔비디아 악재와 중간선거 뒤의 불안을 하락 배경으로 들었다. CNBC에 따르면 리테일 배정은 목표 약 20%에 못 미친 약 15%였고, 기관 주문의 약 절반은 배정받지 못했다([CNBC](https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html)).
+
+이 글은 둘째 날 가격을 첫날 판단의 연장으로 읽는다. 기관 주문의 절반이 채워지지 않았다는 수요가 하루 만에 공모가 근처까지 밀린 것은, 시장이 이 주식을 앤트로픽 한 회사의 실적보다 AI 인프라 전체의 위험과 함께 가격을 매기고 있다는 뜻이다. 사모로 들어온 7개 공급망 기업이 앤트로픽의 고객이자 공급자이자 주주인 구조는 상장 전에는 안정 장치로 읽혔지만, AI 인프라 주가가 함께 흔들릴 때는 같은 방향으로 움직이는 위험이 된다. 주가가 공모가 아래로 내려가면 인수단의 안정화 매수와 초과배정 옵션 행사 여부가 다음 확인 대상이다. 이는 해석이다.
+
 ## 확인하지 못한 것
 
 - 공모가 확정일 18일·거래 개시 19일은 CNBC 익명 소식통 보도이고 회사 공식 일정은 없다. 리테일 배정 비율도 신고서에 없다.
@@ -113,9 +119,13 @@ Mythos 5.2는 "특정 사이버·생물 안전장치를 제거한 같은 모델"
 ## 갱신 기록
 
 - 2026-11-20: 공모가 확정(83달러, 범위 상단 초과)과 공모 규모 확대, 나스닥 첫날 시초가·종가·거래량 반영. 남은 확인 일정이 없어 추적 종료
+- 2026-11-21: 둘째 날 장중 저가(83.05달러)와 종가(88.91달러), 리테일·기관 배정 반영. SpaceX 상장 시점 정정(기존 5월 → 6월)
 
 ## 출처
 
+- [Anthropic stock teeters close to IPO price in second day of trading — Fortune (2026-11-20)](https://fortune.com/2026/11/20/anthropic-stock-teeters-close-to-ipo-price-in-second-day-of-trading/)
+- [Anthropic stock dives after rip-roaring IPO — Yahoo Finance (2026-11-20)](https://finance.yahoo.com/markets/stocks/article/anthropic-stock-dives-after-rip-roaring-ipo-095411951.html)
+- [SpaceX IPO makes history as largest ever — NPR (2026-06-12)](https://www.npr.org/2026/06/12/nx-s1-5855004/stock-ai-spacex-ipo-elon-musk)
 - [Anthropic 424B4 최종 투자설명서 — SEC (2026-11-19)](https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm)
 - [Anthropic prices initial public offering — 앤트로픽 (2026-11-18)](https://www.anthropic.com/news/anthropic-prices-initial-public-offering)
 - [Anthropic IPO: ANT live updates — CNBC (2026-11-19)](https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html)
