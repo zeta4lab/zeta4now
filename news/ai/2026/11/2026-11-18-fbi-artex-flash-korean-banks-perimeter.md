@@ -16,6 +16,7 @@ tags:
   - 사이버보안
 generated_by: claude
 model: claude-opus-5-5
+updated_at: 2026-11-21T15:00:00+09:00
 tracking:
   status: ongoing
   checkpoints:
@@ -89,6 +90,14 @@ FBI의 권고도 이 길목을 가리킨다. 권고 첫머리는 협력사·공�
 
 이 글은 금융보안원이 이 사건의 기술 보고서를 공개해야 한다고 본다. 어떤 창구가 어떤 방식으로 뚫렸는지, 침해지표가 무엇인지, 다른 금융사가 무엇을 점검해야 하는지를 이름을 가린 채라도 공개하는 것이다. 미국 사이버보안·인프라보안청(CISA)과 FBI가 사건마다 하는 일이다. 11월 30일 외부 접점 점검 결과가 '점검 완료'라는 숫자로만 나온다면, 다음 공격자도 한국 은행의 약점을 한국 당국보다 미국 보안업체 블로그에서 먼저 읽게 된다.
 
+## 11월 19일 브뤼셀: 'AI'는 확인했고, 들어온 길은 말하지 않았다
+
+**유럽연합 집행위원회도 같은 도구로 보이는 공격을 받았다. 집행위는 'AI가 만든 공격'이라는 사실은 확인했지만, 이 글이 핵심으로 본 질문인 어디로 들어왔는지는 밝히지 않았다.**
+
+토마 레니에 집행위 대변인은 19일 정오 브리핑에서 "AI가 생성한 사이버 캠페인이었음을 확인할 수 있다"며 "공개적으로 구할 수 있는 AI 도구의 오용"이라고 했다. 도구 이름과 공격 주체는 밝히지 않았고, 몸값 요구는 알지 못한다고 했다. 데이터는 "집행위 직원 전체에 영향을 준 유출 증거는 발견하지 못했다"고 했고, 시스템은 "대부분 복구됐다"고 했다([MLQ](https://mlq.ai/news/european-commission-says-hackers-targeted-some-of-its-systems-as-pay-and-leave-tools-stay-offline-for-about-10-days/), [시큐리티위크](https://www.securityweek.com/european-commission-confirms-ai-assisted-cyberattack-disrupted-services/)). 폴리티코를 인용한 보도에 따르면 EU 기관 사이버보안 조직(CERT-EU)은 10월 22일 공격을 탐지해 26일 확인했고, 방어 측은 ARTEX가 쓰이는 것을 관측했다. CERT-EU는 11월 5일 관할 기관들에 ARTEX를 이용한 공격이 의심된다고 경고했다. 급여·휴가 시스템(Sysper)과 의료비 환급 시스템(MyPMO)이 10일 넘게 멈췄고, Sysper는 복구 뒤 18일 다시 멈췄으며, 17일에는 번역 서비스도 중단됐다. 폴리티코는 대량의 개인정보가 노출됐을 수 있다고 보도해, 대변인의 '직원 전체' 표현과 엇갈린다([더 레지스터](https://www.theregister.com/cyber-crime/2026/11/19/european-commission-scrambles-to-contain-ai-assisted-cyberattack/5311103), [하이제](https://www.heise.de/en/news/Cyberattack-hits-European-Commission-causing-days-of-outages-11531713.html)).
+
+이 글은 브뤼셀의 발표가 서울과 같은 모양이라고 본다. 'AI가 만든 공격'은 확인됐고 제목이 됐다. 그러나 경계의 어느 창구가 열려 있었는지, 계정을 빼앗겼는지 외부 시스템의 취약점이 쓰였는지는 집행위도 말하지 않았다. 한국 사건에서 길목은 대출모집인 조회창과 직원 모바일 업무 시스템이었다. 다른 기관이 같은 공격을 막으려면 'AI'라는 단어가 아니라 그 길목을 알아야 한다. 차이도 하나 있다. CERT-EU는 집행위가 공격을 인정하기 2주 전에 도구 이름을 들어 관할 기관에 경고했다. 한국에서는 금융보안원이 ARTEX라는 이름으로 낸 공식 경고를 지금도 찾지 못했다. 이는 해석이다.
+
 ## 확인하지 못한 것
 
 - 6만 7,000명이 어느 기관들을 합친 수치인지는 FBI와 지스케일러 모두 밝히지 않았다. TechCrunch 등이 쓴 6만 8,000명은 10월 초 언론 보도 수치다.
@@ -97,9 +106,18 @@ FBI의 권고도 이 길목을 가리킨다. 권고 첫머리는 협력사·공�
 - 금융보안원 상시평가 사이트 침해는 연합뉴스 기사를 재게재한 페이지로 확인했다. ARTEX와의 관련은 보도되지 않았다.
 - 마이크로소프트의 Storm-0940 귀속은 마이크로소프트의 판단이며, FBI 경보는 이 이름을 직접 쓰지 않았다.
 - 앤트로픽과 OpenAI가 ARTEX 악용에 대응했다는 발표는 찾지 못했다.
+- (갱신) 집행위 공격에 ARTEX가 쓰였다는 것과 CERT-EU의 11월 5일 경고는 폴리티코 보도를 전한 2차 보도로 확인했다. 폴리티코 원문과 CERT-EU 경고문은 열지 못했다. 침투 경로와 피해 규모는 공개되지 않았다. 금융당국의 580개사 점검에 대한 11월 12일 이후 새 발표는 찾지 못했다.
+
+## 갱신 기록
+
+- 2026-11-21: 유럽연합 집행위원회의 AI 생성 사이버 공격 확인(19일)과 ARTEX 관련 보도, 시스템 중단 내용 반영
 
 ## 출처
 
+- [European Commission says hackers targeted some of its systems — MLQ (2026-11-19)](https://mlq.ai/news/european-commission-says-hackers-targeted-some-of-its-systems-as-pay-and-leave-tools-stay-offline-for-about-10-days/)
+- [European Commission Confirms AI-Assisted Cyberattack Disrupted Services — SecurityWeek (2026-11-19)](https://www.securityweek.com/european-commission-confirms-ai-assisted-cyberattack-disrupted-services/)
+- [European Commission scrambles to contain AI-assisted cyberattack — The Register (2026-11-19)](https://www.theregister.com/cyber-crime/2026/11/19/european-commission-scrambles-to-contain-ai-assisted-cyberattack/5311103)
+- [Cyberattack hits European Commission, causing days of outages — heise (2026-11-19)](https://www.heise.de/en/news/Cyberattack-hits-European-Commission-causing-days-of-outages-11531713.html)
 - [Threat Overview of ARTEX Autonomous Penetration Testing Framework, FLASH-20261113-001 — FBI (2026-11-13)](https://www.ic3.gov/CSA/2026/261113.pdf)
 - [FBI says ARTEX AI open-source hacking tool used to breach networks in under three hours — TechCrunch (2026-11-16)](https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/)
 - [Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance — 크라우드스트라이크 (2026-10-07)](https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/)
