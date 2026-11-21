@@ -16,11 +16,9 @@ tags:
   - CISA
 generated_by: claude
 model: claude-opus-5-5
+updated_at: 2026-11-21T13:48:00+09:00
 tracking:
-  status: ongoing
-  checkpoints:
-    - date: 2026-11-21
-      note: 마이크로소프트 365 장애 최종 사후 보고서(11월 20일 예정)의 근본 원인과 재발 방지책
+  status: closed
 ---
 
 # 미국을 닷새 동안 멈춘 것은 AI가 아니라 '변경'이었다…AI가 취약점을 기계 속도로 찾자 '즉시 고쳐라'와 '충분히 시험하라'가 부딪치기 시작했다
@@ -81,6 +79,16 @@ flowchart LR
 
 전날 이 사이트는 한국 은행을 뚫은 AI 침투 도구가 외부에 열린 주변 시스템을 노렸다고 썼다([관련 기사](https://now.zeta4.net/a/2026-11-18-fbi-artex-flash-korean-banks-perimeter)). 공격 쪽은 AI로 빨라졌고, 방어 쪽은 AI가 찾은 구멍을 메우느라 스스로 넘어지고 있다. 둘은 같은 현상의 양면이다. 이는 해석이다.
 
+## 발행 뒤(11월 18~20일): 단계 배포로도 잡히지 않은 결함, 그리고 NSA를 빼고 만드는 조사위원회
+
+마이크로소프트의 예비 사후 보고서 원문을 보면 이 글의 처방 하나를 다듬어야 한다. 보고서는 문제의 수정본이 "안전 배포 절차를 거쳐 몇 주에 걸쳐 전 세계로 퍼졌고 그동안 문제가 없었다"며 "3개월 넘게 전 세계에서 영향 없이 운영됐다"고 적었다. 결함은 코어가 많은 신형 장비에서 특정 부하가 걸릴 때만 드러났고, 회사의 부하 시험은 코어가 적은 장비 위주였다. 장애가 커진 데는 구획 사이의 격벽이 "별도 문제" 때문에 연쇄 장애를 막지 못한 것도 있었다([마이크로소프트 예비 사후 보고서(넥스트 게재)](https://next.ink/wp-content/uploads/2026/11/PostIncidentReport.pdf)). 보고서에는 이 수정본이 보안 패치였다는 서술도, AI에 관한 언급도 없다. 최종 보고서는 20일까지 고객 관리자에게 제공하기로 돼 있었지만 공개된 내용은 찾지 못했다.
+
+NSA는 20일 직원 안내에서 "일부 예외를 두고 정상 운영 중"이라고 알렸다([내셔널데스크](https://thenationaldesk.com/news/americas-news-now/nsa-national-security-agency-internal-network-outage-resolved-after-3-days-sources-say-maryland-headquarters-employees-staggered-start-time-classified-information-scheduled-maintenance-foreign-intelligence-military-policymakers)). CBS는 소식통을 인용해 장애가 AI의 도움으로 찾은 PHP 결함 2건의 긴급 패치와 관련 있다고 보도했다([CBS](https://www.cbsnews.com/news/national-security-agency-network-outage-software-vulnerability/)). 클레이턴 국가정보장은 18일 하원 청문회에서 "패치 속도와 시스템 업그레이드 속도가 빨라지는 환경에 있다"고 했고, 멀린 국토안보부 장관은 대규모 패치 전에 고객에게 미리 알리자며 업계와 대화를 시작하겠다고 했다([넥스트고브](https://www.nextgov.com/cybersecurity/2026/11/security-officials-tell-congress-tech-outages-are-not-malicious/417312/)). 체이스는 자사 버그가 거래 상대 은행들에도 영향을 줬을 수 있다고 밝혀, 웰스파고 장애의 상당 부분이 체이스 버그의 파급일 가능성이 생겼다([TNW](https://thenextweb.com/news/chase-software-bug-bank-outages-zelle)).
+
+의회에서는 18일 공격 증거가 없어도 잘못된 업데이트, 설정 오류, AI 실패로 생긴 대형 장애를 조사하는 위원회를 미국 사이버보안·인프라보안청(CISA) 안에 두는 '루트 코즈 법안'이 초당적으로 발의됐다. 그러나 NSA망 같은 국가안보 시스템은 조사 대상에서 빠진다([하원 국토안보위](https://homeland.house.gov/2026/11/18/homeland-republicans-lead-legislation-to-strengthen-modernize-dhss-cybersecurity-mission-as-ai-reshapes-the-threat-landscape/), [넥스트고브](https://www.nextgov.com/policy/2026/11/bipartisan-bill-would-create-cyber-and-ai-review-board-amid-series-tech-outages/417299/)). 한국 금융위원회는 같은 날 대형 금융사의 보안 취약점 점검을 연 2회로 늘리는 전자금융감독규정 개정을 예고하며 "AI를 통한 침해위협이 빠르게 진화·발전하고 있으며, 전산자원의 취약점도 과거와 비교할 수 없이 자주 나타나고 있다"고 했다. 개정 예고문에 패치 뒤 장애나 시험에 관한 내용은 없다([정책브리핑](https://www.korea.kr/news/policyNewsView.do?newsId=148975994)).
+
+이 글은 마이크로소프트 사례가 단계 배포가 필요 없다는 뜻이 아니라, 단계 배포만으로는 부족하다는 뜻이라고 본다. 몇 주에 걸친 단계 배포와 석 달의 무사고를 통과한 결함이 트래픽 이동과 용량 감소가 겹친 날 터졌다. 그렇다면 처방은 배포 속도보다 시험 장비가 실제 운영 장비를 닮았는지, 그리고 몇 달 전 변경까지 되돌릴 경로가 있는지로 옮겨 가야 한다. 미국 의회가 만들려는 조사위원회가 실명으로 확인된 유일한 'AI 패치' 장애인 NSA를 조사할 수 없고, 한국의 개정안이 점검 횟수만 늘리는 것은 두 나라 모두 아직 '빨리 찾고 빨리 고치는' 쪽만 제도로 만들고 있다는 뜻이다. 이는 해석이다.
+
 ## 무엇을 바꿔야 하나
 
 1. **패치 속도와 장애율을 함께 보고하게 한다.** 지금 규정과 평가는 '얼마나 빨리 고쳤나'를 잰다. 같은 보고서에 '고친 뒤 몇 번 시스템이 멈췄나'(변경 실패율)를 넣지 않으면, 기관은 시한을 지키려고 시험을 줄인다.
@@ -95,9 +103,22 @@ flowchart LR
 - 마이크로소프트 10월 패치 건수는 업체마다 1,407~1,416건으로 다르다. CVE 연간 건수도 집계 방식에 따라 차이가 있다.
 - 전자금융감독규정은 2025년 2월 시행본으로 확인했고, 2026년 7월 개정 고시와 시행세칙 원문은 대조하지 못했다. '충분한 테스트' 문구는 개정 전 조문이며 현재는 세칙으로 옮겨진 것으로 보인다.
 - 2026년 국내 금융권에서 보안 패치가 직접 원인이 된 전산장애 사례는 찾지 못했다.
+- (갱신) 마이크로소프트 예비 사후 보고서는 회사가 아니라 프랑스 매체 넥스트가 게재한 사본으로 확인했다. 최종 보고서는 고객 관리자에게만 제공되는 것으로 보이며 공개된 내용은 찾지 못했다. NSA 복구와 PHP 패치 관련성은 소식통 보도이고 NSA 공식 입장은 17일 성명 그대로다.
+
+## 갱신 기록
+
+- 2026-11-21: 마이크로소프트 예비 사후 보고서 원문의 '단계 배포를 거친 결함' 내용, NSA 복구와 의회 청문회 발언, 체이스 버그의 타 은행 파급, 루트 코즈 법안 발의(NSA 제외), 금융위 전자금융감독규정 개정 예고 반영. 최종 보고서가 공개되지 않아 확인 일정을 지우고 추적 종료
 
 ## 출처
 
+- [Preliminary Post Incident Report for Microsoft 365 (2026-11-15) — 넥스트 게재](https://next.ink/wp-content/uploads/2026/11/PostIncidentReport.pdf)
+- [NSA internal network outage resolved — 내셔널데스크 (2026-11-20)](https://thenationaldesk.com/news/americas-news-now/nsa-national-security-agency-internal-network-outage-resolved-after-3-days-sources-say-maryland-headquarters-employees-staggered-start-time-classified-information-scheduled-maintenance-foreign-intelligence-military-policymakers)
+- [NSA network outage and software vulnerability — CBS (2026-11-18)](https://www.cbsnews.com/news/national-security-agency-network-outage-software-vulnerability/)
+- [Security officials tell Congress tech outages are not malicious — 넥스트고브 (2026-11-18)](https://www.nextgov.com/cybersecurity/2026/11/security-officials-tell-congress-tech-outages-are-not-malicious/417312/)
+- [Chase software bug and bank outages — TNW (2026-11-16)](https://thenextweb.com/news/chase-software-bug-bank-outages-zelle)
+- [Homeland Republicans lead legislation (ROOT CAUSE Act) — 하원 국토안보위 (2026-11-18)](https://homeland.house.gov/2026/11/18/homeland-republicans-lead-legislation-to-strengthen-modernize-dhss-cybersecurity-mission-as-ai-reshapes-the-threat-landscape/)
+- [Bipartisan bill would create cyber and AI review board — 넥스트고브 (2026-11-18)](https://www.nextgov.com/policy/2026/11/bipartisan-bill-would-create-cyber-and-ai-review-board-amid-series-tech-outages/417299/)
+- [대형 금융사 보안 취약점 점검 연 2회로 — 정책브리핑 (2026-11-18)](https://www.korea.kr/news/policyNewsView.do?newsId=148975994)
 - [Bank CEOs, NSA Tell Congress That AI-Driven Patches Are Behind Outages — 워싱턴선 (2026-11-17)](https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages)
 - [Jay Clayton addresses concerns amid widespread tech outages — 폭스비즈니스 (2026-11-17)](https://www.foxbusiness.com/technology/jay-clayton-addresses-concerns-amid-widespread-tech-outages)
 - [NSA network disruptions — 더레코드 (2026-11-17)](https://therecord.media/nsa-net-disruptions)

@@ -3,7 +3,7 @@ title: 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마�
 slug: 2026-10-19-france-riots-partial-curfews-lecornu-macron
 topic: world
 published_at: 2026-10-19T23:45:00+09:00
-updated_at: 2026-11-18T09:12:00+09:00
+updated_at: 2026-11-21T13:48:00+09:00
 tags:
   - 프랑스
   - 르코르뉘
@@ -18,13 +18,13 @@ model: claude-fable-5-1
 tracking:
   status: ongoing
   last_update:
-    at: 2026-11-18T09:12:00+09:00
-    note: 17일 파업·시위(내무부 14만 6,000명, 국가공무원 파업률 2.59%)와 10일 관보에 실린 업종 최저임금 데크레, 스미크 데크레 미공포 반영
+    at: 2026-11-21T13:48:00+09:00
+    note: 상원 18일 사회보장재정법안 가결(201 대 124), 20일 2027년 예산안 상원 본회의 심의 시작과 정부의 재정수지 -5.2% 전망 반영
   checkpoints:
-    - date: 2026-11-21
-      note: 하원에서 세입이 부결된 2027년 예산안의 상원 본회의 심의 시작
     - date: 2026-11-26
-      note: 사회보장재정법안 의회 심의 기한(50일). 상원 18일 표결과 양원 합동위원회 결과
+      note: 사회보장재정법안 의회 심의 기한(50일)과 같은 날 양원 합동위원회 결과, 오르도낭스 시행 여부
+    - date: 2026-12-17
+      note: 2027년 예산안 헌법 47조 70일 기한. 상원 표결(12월 9일 예정)과 합동위원회 결과
 ---
 
 # 르코르뉘 "오늘 밤부터 부분적·국지적 통행금지"…마크롱은 "예측·정보 실패" 인정하고 "통제 상실" 시인한 뉘녜스 내무장관 사의 반려
@@ -173,6 +173,16 @@ CGT가 부르고 공공부문 노조가 따른 17일 파업·시위는 내무부
 
 이 글은 17일을 노조 단독 동원의 한계가 드러난 날로 본다. CFDT 공공부문까지 합류했는데도 국가공무원 파업률이 5일의 4분의 1로 내려간 것은, 9일 스미크 인상과 13일 보전수당이 강경 노조 바깥의 참여를 상당 부분 빼냈다는 뜻이다. 다만 정부가 내놓은 두 장치에는 같은 시차가 있다. 업종 데크레는 스미크 인상 때문에 대상 업종이 두 배 가까이 늘어나는데 제재는 2027년분 보험료부터 걸리고, 공무원 보전수당은 연금에 반영되지 않는다. 지금 고지서에 찍히는 것은 23유로뿐이다. 거리는 줄었지만 불만의 근거는 그대로 남았다. 다음 압력은 18일 상원 표결과 26일 기한에 걸린 사회보장재정법안이다. 이는 해석이다.
 
+## 11월 18~20일: 상원이 두 예산을 다시 쓰고, 기한은 26일과 12월 17일로 다가온다
+
+상원은 18일 하원에서 부결된 사회보장재정법안을 수정해 찬성 201, 반대 124로 가결했다. 아미엘 공공회계장관은 표결 직후 "사회보장 적자는 127억에서 140억 유로로 늘어난다"며 양원 왕복 심의에서 계속 줄여야 한다고 했다([상원 속기록(18일)](https://www.senat.fr/cra/s20261118/s20261118.pdf)). 상원은 연금 부분 동결 조항을 지우고 2027년 연금을 물가에 완전 연동하는 대신, 그 재원을 예산안에서 퇴직자 10% 소득공제를 폐지해 마련하기로 했다. 보충건강보험 2.05% 부담금도 삭제했다([퍼블릭세나](https://www.publicsenat.fr/actualites/politique/budget-2027-de-la-securite-sociale-les-modifications-a-retenir-apres-le-passage-du-projet-de-loi-au-senat)). 퍼블릭세나는 양원 합동위원회가 26일 소집되며 합의 가능성은 낮다고 전했다. 26일은 헌법 47-1조의 50일 심의 기한이 끝나는 날이기도 하다([NosParlementaires](https://nosparlementaires.fr/actualites/plfss-2027-calendrier-examen-date-par-date)).
+
+20일에는 2027년 예산안 상원 본회의 심의가 시작됐다. 하원이 11월 4일 1부를 부결해 상원은 하원 수정이 없는 정부안을 받았고, 라바르드 상원 재정위 보고관은 "상원이 법안 전체를 심사하는 유일한 의회가 된다"고 했다. 아미엘 장관은 결산 추경과 사회보장재정법안 표결을 반영하면 재정수지가 "현재 GDP 대비 -5.2%로 악화됐다"며 "원안보다 추가 노력이 필요하다"고 했다. 그는 대선 뒤 다음 정부가 되돌릴 수 있는 "되돌릴 수 있는 예산"을 짜자고 했고, "정부는 국민연합(RN)과도, 굴복하지 않는 프랑스(LFI)와도 협상하지 않는다"고 했다. 레스퀴르 경제장관은 오르도낭스를 "가드레일에 불과하다"며 논의로 합의하자고 했다. 첫날 상원은 공산계 의원들의 사전 각하 동의를 찬성 19, 반대 249로 부결하고 총칙 조항을 수정 가결했다([상원 속기록(20일)](https://www.senat.fr/cra/s20261120/s20261120.pdf)). 본회의는 12월 9일까지 이어지고, 퍼블릭세나는 엄숙 표결을 12월 9일, 헌법 47조의 70일 기한을 12월 17일 자정으로 전했다([상원](https://www.senat.fr/dossier-legislatif/pjlf2027.html), [퍼블릭세나](https://www.publicsenat.fr/actualites/politique/budget-2027-calendrier-49-3-ordonnancesquelles-sont-les-echeances-a-venir-et-les-scenarios-possibles)).
+
+거리의 요구와 상원의 계산이 정면으로 부딪치는 지점도 생겼다. 19일 파리에서 행진한 퇴직자 단체들은 연금 10% 인상과 함께 "10% 소득공제 완전 유지"를 요구했다. CGT는 1만 명이 행진했다고 했고, 경찰 집계는 찾지 못했다([CGT](https://www.cgt.fr/comm-de-presse/19-novembre-2026-forte-mobilisation-des-retraitees)). 상원 다수파가 연금 연동의 재원으로 없애려는 것이 바로 그 공제다. 같은 날 상원은 경찰의 정당방위를 추정하는 법안을 찬성 205, 반대 110으로 최종 가결했다([상원 속기록(20일)](https://www.senat.fr/cra/s20261120/s20261120.pdf)). 노란조끼는 21일(토) '6막'을 예고했다.
+
+이 글은 프랑스 재정의 결정권이 하원에서 상원과 시간으로 넘어갔다고 본다. 하원은 두 법안 모두 지출편을 보기도 전에 부결했고, 우파 다수 상원이 정부안을 고쳐 쓰고 있다. 그러나 상원의 수정은 퇴직자 공제처럼 거리의 요구와 반대 방향인 항목을 담고 있어, 합동위원회에서 하원 좌파와 국민연합의 동의를 얻기 어렵다. 그렇다면 결론은 26일과 12월 17일의 기한이 낸다. 기한이 지나면 정부는 오르도낭스로 원안을 시행할 수 있지만, 그것은 제5공화국에서 한 번도 쓰지 않은 길이다. 하원이 한 번도 통과시키지 않은 사회보장 재정과 국가 예산이 하원 표결 없이 시행되는 순간, 10월부터 이어진 거리의 분노는 가장 분명한 명분을 얻는다. 이는 해석이다.
+
 ## 의미
 
 이번 대응의 특징은 정부가 비상사태 대신 지사 단위의 부분 통행금지와 집회 금지권이라는 '아래로부터의' 수단을 골랐다는 점이다. 르코르뉘 총리가 상황이 "매우 제각각"이라고 말한 데서 보이듯, 리모주·마르세유·릴처럼 피해가 집중된 도시와 그렇지 않은 곳을 한 틀로 묶기 어렵고, 전국 비상사태는 대선을 앞둔 정부가 치러야 할 정치적 비용이 크다. 다만 통행금지의 실효성은 24일 노란조끼 2차 시위에서 바로 시험된다. 뉘녜스 장관 스스로 "극도로 기동성이 높은 집단"에 경찰 전략이 맞지 않았다고 인정한 만큼, 고정된 구역을 지키는 통행금지가 이동하며 약탈하는 집단에 얼마나 효과를 내느냐가 관건이다.
@@ -203,6 +213,7 @@ CGT가 부르고 공공부문 노조가 따른 17일 파업·시위는 내무부
 - (갱신) 14일 체포 219명과 경찰 부상 10명은 내무부의 오후 6시 집계이며, 이후 최종 집계는 찾지 못했다. 르코르뉘 총리의 14일 시위 관련 발언도 찾지 못했다.
 - (갱신) 상원의 9일 표결 대상은 Legiwatch가 '1부 전체'라고 썼고, 13일 표결은 같은 매체와 상원 안내가 '세입을 다룬 2부'라고 썼다. 표결 수는 상원 공개표결 원문이 아니라 Legiwatch 정리로 확인했다. 양원 합동위원회 날짜는 공개되지 않았다.
 - (갱신) 17일 파업률은 공공회계부 오후 잠정치이며, 국가공무원 파업률은 Sud Radio가 2.79%로 다르게 전했다. 전국 체포 수와 SNCF·RATP 파업률은 찾지 못했다. 14일 체포는 Ouest-France가 제목에서 '전국 400명 이상, 파리 126명'으로 전했지만 본문을 열지 못해 본문의 내무부 오후 6시 집계(219명)를 바꾸지 않았다.
+- (갱신) 상원 표결 수와 정부 발언은 상원 속기록 원문으로 확인했다. 26일 합동위원회 소집은 퍼블릭세나 보도이며 양원 의사일정에는 아직 오르지 않았다. 예산안 엄숙 표결 12월 9일은 11월 3일 시점 보도다. 스미크 1.6% 인상 데크레의 관보 공포는 21일까지 확인하지 못했다.
 - (갱신) 파리 통행금지는 시행 전 보도(Public Sénat, 10월 30일)로 확인했다. 노조 측이 예고한 행정법원 제소의 결과와 실제 집행 상황, 31일 파리 참가 인원은 확인하지 못했다.
 
 ## 갱신 기록
@@ -220,9 +231,16 @@ CGT가 부르고 공공부문 노조가 따른 17일 파업·시위는 내무부
 - 2026-11-10: 9일 사회협의회 결과와 노조 반응, 17일 총파업 호소, 노란조끼 14일 계획 반영. 11월 9·10일 확인 일정을 11월 14·17일로 변경
 - 2026-11-15: 14일 '5막' 규모·체포와 21일 '6막' 예고, CFDT 공공부문의 17일 합류, 상원의 사회보장재정법안 1·2부 가결과 26일 기한 반영. 11월 14일 확인 일정 제거, 11월 26일 일정 추가
 - 2026-11-18: 17일 파업·시위 규모와 공공부문 파업률, 정부의 13일 공무원 보전수당, 10일 관보에 실린 업종 최저임금 데크레와 미공포된 스미크 데크레 반영. 11월 17일 확인 일정 제거
+- 2026-11-21: 상원의 18일 사회보장재정법안 가결(201 대 124)과 주요 수정, 20일 2027년 예산안 상원 심의 시작과 정부 발언, 퇴직자 시위와 경찰 정당방위 추정법 가결 반영. 11월 21일 확인 일정 제거, 12월 17일 일정 추가
 
 ## 출처
 
+- [Compte rendu analytique, séance du 18 novembre 2026 — 프랑스 상원](https://www.senat.fr/cra/s20261118/s20261118.pdf)
+- [Compte rendu analytique, séance du 20 novembre 2026 — 프랑스 상원](https://www.senat.fr/cra/s20261120/s20261120.pdf)
+- [Projet de loi de finances pour 2027 — 프랑스 상원](https://www.senat.fr/dossier-legislatif/pjlf2027.html)
+- [Budget 2027 de la Sécurité sociale: les modifications après le Sénat — 퍼블릭세나 (2026-11-18)](https://www.publicsenat.fr/actualites/politique/budget-2027-de-la-securite-sociale-les-modifications-a-retenir-apres-le-passage-du-projet-de-loi-au-senat)
+- [Budget 2027: calendrier, 49.3, ordonnances — 퍼블릭세나 (2026-11-03)](https://www.publicsenat.fr/actualites/politique/budget-2027-calendrier-49-3-ordonnancesquelles-sont-les-echeances-a-venir-et-les-scenarios-possibles)
+- [19 novembre 2026: forte mobilisation des retraité·es — CGT (2026-11-20)](https://www.cgt.fr/comm-de-presse/19-novembre-2026-forte-mobilisation-des-retraitees)
 - [En direct: nouvelle journée de mobilisation, 17 novembre — France 24](https://www.france24.com/fr/france/20261117-en-direct-nouvelle-journ%C3%A9e-mobilisation-gr%C3%A8ve-fonction-publique-gilets-jaunes-pouvoir-achat-%C3%A9tudiants-lyc%C3%A9ens)
 - [Grève et manifestations du 17 novembre — franceinfo](https://www.franceinfo.fr/societe/manifestations/direct-greve-et-manifestations-du-17-novembre-suivez-la-journee-de-mobilisation_8285927.html)
 - [Mobilisation du 17 novembre — ICI](https://www.ici.fr/infos/economie-social/direct-mobilisation-du-17-novembre-suivez-la-nouvelle-journee-de-greve-et-de-manifestations-3379678)
