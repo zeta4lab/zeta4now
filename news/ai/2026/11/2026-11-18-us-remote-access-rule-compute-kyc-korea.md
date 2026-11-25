@@ -16,6 +16,7 @@ tags:
   - 한국
 generated_by: claude
 model: claude-opus-5-5
+updated_at: 2026-11-26T08:40:00+09:00
 tracking:
   status: ongoing
   checkpoints:
@@ -82,6 +83,14 @@ flowchart LR
 
 여기에는 한국이 볼 대목이 하나 있다. 보도의 근거로 거론되는 행정명령 14320은 미국 AI 기술 스택의 수출을 지원하는 명령이다([백악관](https://www.whitehouse.gov/presidential-actions/2025/07/promoting-the-export-of-the-american-ai-technology-stack/)). 그런데 이를 시행하는 상무부의 4월 공모 공고에서 '국가대표 기업'(National Champion Enterprises)은 미국 기업이 아니라 각 나라용 패키지에서 하드웨어나 모델을 가장 많이 공급하는 **외국 기업**을 가리킨다. 공고는 외국 기업을 낀 컨소시엄은 "자국용 패키지에서만" 국가대표로 지정될 수 있다고 썼다([연방관보](https://www.federalregister.gov/documents/2026/04/10/2026-06952/american-ai-exports-program-call-for-proposals-for-pre-set-consortia)). 보도의 용어와 공식 용어가 어긋난다. 공고 구조대로라면 한국 기업이 미국 기술 스택을 한국에 들여오는 패키지에서 국가대표 자리를 노릴 수 있다. 이는 공고문 구조에서 끌어낸 추론이다.
 
+## 발행 뒤(11월 23~25일): 명부를 거르는 손이 늘었다
+
+규칙이 나온 지 일주일 만에 이 글이 말한 '고객 확인'이 세 방향으로 퍼졌다. 첫째, 미국 상무부는 23일부터 말레이시아·싱가포르·태국의 7개 법인을 거래제한 명단에 올렸다. 첨단 연산 품목을 허가받지 않은 용도나 사용자에게 빼돌릴 "상당한 위험"이 이유이고, 허가 심사는 거부를 전제로 한다. 싱가포르의 'Apex Enterprise Solutions'와 엔비디아 사태에 등장한 메가스피드 계열 법인들이 들어 있다([연방관보](https://www.federalregister.gov/documents/2026/11/25/2026-23999/additions-to-the-entity-list)). Apex가 알리바바 계열이라는 보도와 알리바바의 "잘못된 지정" 반발이 나왔지만 관보 원문에는 알리바바라는 이름이 없다. 둘째, 말레이시아 투자통상산업부는 24일 데이터센터 사업자에게 이 법인들을 입주시키거나 서비스를 제공하지 말라고 권고하겠다며 "말레이시아는 수출통제를 우회하는 통로로 쓰이지 않을 것"이라고 했다([FMT](https://www.freemalaysiatoday.com/category/nation/2026/11/24/miti-to-advise-data-centres-against-hosting-us-blacklisted-firms)). 셋째, 블룸버그를 인용한 보도에 따르면 씨티와 스탠다드차타드가 싱가포르·말레이시아 등의 데이터센터 고객을 점검하기 시작했고, 싱가포르 은행들도 고객과 새 규정을 논의하거나 추가 공개를 요구하고 있다. 규칙이 은행에 고객 심사를 직접 명령하지는 않는다([토큰포스트](https://www.tokenpost.kr/news/policy/444368)).
+
+시장도 움직였다. 블룸버그를 인용한 TNW에 따르면 중국 수요를 잃은 아시아 데이터센터들이 남는 B300 연산을 미국 고객에게 팔려 하고 있고, 리퀴드컴퓨트가 내는 B300 임대료 지수는 10월 말 GPU 시간당 7.72달러에서 24일 7.19달러로 7% 내렸다([TNW](https://thenextweb.com/news/asia-data-centres-b300-prices-us-buyers-chip-rules)). 지수를 내는 회사가 재판매 중개로 이익을 보는 곳이라는 점은 감안해야 한다.
+
+이 글은 이 일주일이 위 판단을 앞당겨 확인했다고 본다. 이 글은 고객 명부를 감독하는 권한이 그 나라 정부가 아니라 미국 규칙과 칩 공급 계약에 있다고 썼는데, 말레이시아는 그 규칙을 스스로 집행하는 쪽을 택했다. 명부를 거르는 손은 칩 공급자와 데이터센터에서 주재국 정부와 대출 은행으로 늘었다. 자금세탁방지 체계가 은행에서 출발해 결국 거래 사슬 전체를 감시하게 된 것과 같은 경로다. 국내에서는 법무법인 태평양이 고객 확인 부담이 "반도체 수출자뿐 아니라 데이터센터에도 직접 미친다"고 분석했고([한국경제](https://www.hankyung.com/article/202611197500g)), 업계에서는 칩 공급사의 고객 확인 요청에 답할 수 있느냐가 추가 GPU 조달에 영향을 줄 수 있다는 말이 나왔다([아이티데일리](https://www.itdaily.kr/news/articleView.html?idxno=243003)). 정부와 국내 클라우드 사업자의 공식 입장은 25일까지도 찾지 못했다. 이는 해석이다.
+
 ## 한국이 해야 할 일
 
 1. **고객 확인 기준을 정부가 먼저 만든다.** 사업자마다 엔비디아와 따로 서류를 맞추면 협상력이 없다. 국내 데이터센터가 공통으로 쓰는 최종 모회사 확인과 기록 보존 기준을 만들어 두면, 미국과 '신뢰할 수 있는 데이터센터'를 서로 인정하는 협상의 근거가 된다. 은행이 자금세탁방지 기준을 개별 계약이 아니라 법으로 맞춘 것과 같은 방식이다.
@@ -97,13 +106,24 @@ flowchart LR
 - 의견 제출 마감(게재 후 60일)과 90일 유예 종료일은 원문의 '게재일 기준' 문구에 11월 19일 게재를 넣어 계산한 날짜다. 원문에 날짜가 직접 적혀 있지는 않다.
 - 원문 안에서 90일 유예의 대상이 엇갈린다. 서문 일부는 상업용 추천 시스템용 연산을 제공하던 사업자에 대한 것으로 서술하고, 조문은 모든 기존 사업자로 읽힌다.
 - 'AI 국가대표' 보도는 월스트리트저널 원문을 열지 못해 2차 보도로 확인했다. 지정 기업 수는 '20곳 이상'과 '24곳 이상'으로 보도마다 다르다.
-- 한국 데이터센터가 중국계 고객에게 연산을 제공한 사례는 공개 보도에서 찾지 못했다. 정부와 국내 클라우드 사업자의 입장도 찾지 못했다.
-- 미국 내 데이터센터가 규칙 밖이라는 판단은 규칙 구조에 따른 이 글의 해석이다. 로펌과 싱크탱크의 규칙 해설은 발표 이틀째인 18일까지 찾지 못했다.
+- 한국 데이터센터가 중국계 고객에게 연산을 제공한 사례는 공개 보도에서 찾지 못했다. 정부와 국내 클라우드 사업자의 입장도 11월 25일까지 찾지 못했다.
+- 미국 내 데이터센터가 규칙 밖이라는 판단은 규칙 구조에 따른 이 글의 해석이다. 로펌과 싱크탱크의 규칙 해설은 발표 이틀째인 18일까지 찾지 못했고, 이후 법무법인 태평양의 분석이 보도됐다.
 - H100 750개 환산은 TechCrunch의 추정이다.
+- (갱신) 블룸버그 원문은 열지 못해 B300 임대료와 은행 점검은 블룸버그를 인용한 TNW와 토큰포스트로 확인했다. Apex의 알리바바 소유관계와 알리바바 성명은 2차 보도이고, 말레이시아 정부 성명은 FMT 보도로 확인했다.
 - 원격접근보안법(RASA)의 하원 통과와 상원 계류는 여러 2차 보도로 확인했고, 의회 표결 기록 원문은 보지 못했다.
+
+## 갱신 기록
+
+- 2026-11-26: 미국 거래제한 명단 7개 법인 추가(11월 23일 시행), 말레이시아 정부의 데이터센터 입주 금지 권고, 씨티·스탠다드차타드의 데이터센터 고객 점검, B300 임대료 하락, 국내 법률 해설 반영
 
 ## 출처
 
+- [Additions to the Entity List — 미국 연방관보 (2026-11-25 게재, 11-23 시행)](https://www.federalregister.gov/documents/2026/11/25/2026-23999/additions-to-the-entity-list)
+- [MITI to advise data centres against hosting US-blacklisted firms — FMT (2026-11-24)](https://www.freemalaysiatoday.com/category/nation/2026/11/24/miti-to-advise-data-centres-against-hosting-us-blacklisted-firms)
+- [Asia data centres B300 prices and US buyers — TNW (2026-11-25)](https://thenextweb.com/news/asia-data-centres-b300-prices-us-buyers-chip-rules)
+- [은행들, 데이터센터 고객 점검 — 토큰포스트 (2026-11-26)](https://www.tokenpost.kr/news/policy/444368)
+- [美 원격접근 규칙, 데이터센터 고객 확인 부담 — 한국경제 (2026-11-19)](https://www.hankyung.com/article/202611197500g)
+- [美 규칙과 국내 GPU 조달 — 아이티데일리 (2026-11-18)](https://www.itdaily.kr/news/articleView.html?idxno=243003)
 - [BIS Issues Rule Addressing Remote Access to American Super Intelligence Technology — BIS (2026-11-16)](https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology)
 - [Addressing Remote Access to Advanced Semiconductors, 규칙 원문 — BIS](https://www.bis.gov/media/documents/rin-0694-ak50.pdf)
 - [Addressing Remote Access to Advanced Semiconductors — 연방관보 사전공개 (FR Doc. 2026-23529)](https://www.federalregister.gov/public-inspection/2026-23529/addressing-remote-access-to-advanced-semiconductors)

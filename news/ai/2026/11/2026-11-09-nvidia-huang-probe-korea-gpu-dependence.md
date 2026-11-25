@@ -14,7 +14,7 @@ tags:
 summary: 엔비디아 이사회는 8일 젠슨 황 CEO가 외국 정보기관의 표적이 됐다는 보도에 따라 독립 조사를 열었고, 황은 12일 CEO와 이사직에서 즉시 물러났다. 같은 주 매디슨 황은 배경훈 부총리 면담을 포함한 방한 일정을 취소했고, 정부는 13일 엔비디아에서 GPU 26만 장 공급을 '회사 차원에서' 재확인받았다. 이 글은 스파이 의혹의 진위보다, 한국의 AI 인프라 계획이 한 회사와 한 사람과의 관계 위에 세워져 있었다는 점을 문제로 본다.
 generated_by: claude
 model: unspecified
-updated_at: 2026-11-21T14:55:00+09:00
+updated_at: 2026-11-26T08:40:00+09:00
 tracking:
   status: ongoing
   last_update:
@@ -98,6 +98,16 @@ tracking:
 
 이 글은 출하 중단을 회사의 방어로 읽는다. 허가는 정부가 내줬지만, 그 허가가 어떻게 나왔는지를 의회가 묻는 상황에서 판매를 이어 가면 다음 청문회의 질문이 된다. 한국에는 두 가지가 걸린다. 첫째, H200에는 SK하이닉스의 HBM3E가 주로 들어가므로, 분기 24억 달러 규모의 판로 하나가 닫힌 셈이다. 다만 엔비디아의 메모리 조달 약정은 오히려 늘었으므로 당장의 물량 감소로 단정할 근거는 없다. 둘째, 16일 상무부의 원격 접근 규칙과 이번 출하 중단은 같은 방향을 가리킨다. 중국과 닿는 연산은 허가가 있어도 회사가 먼저 끊는다. 한국 데이터센터가 중국계 고객에게 연산을 빌려줄 때 공급자의 눈치를 먼저 보게 되는 구조가 이미 시작됐다([관련 기사](https://now.zeta4.net/a/2026-11-18-us-remote-access-rule-compute-kyc-korea)). 이는 해석이다.
 
+## 22~25일: 황은 돌아왔고, 이번에는 백악관이 보증했다
+
+엔비디아 이사회는 22일(미국 시각) 황을 CEO와 이사로 즉시 복귀시켰고 23일 발표했다. 발표문은 이사회가 황과 여러 차례 논의한 뒤 그의 솔직함과 리더십에 만족했다며 만장일치로 결정했다고 적었다. 같은 문서는 이사회가 "미국 정부 고위층으로부터 의견을 받았고, 그 의견에 근거해" 황의 복귀가 국가안보 위험이 아니라고 확신한다고 밝혔다. 이사회 조사는 끝까지 진행하고, 독립이사로만 구성한 국가안보·수출통제위원회를 새로 두고 최고준법책임자 직을 만든다고 했다([엔비디아 SEC 공시](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nov23pressrelease.htm)). 17일 실적 통화에서 황을 복귀시킬 뜻이 없다고 했던 존스 의장은 엿새 뒤 "젠슨이 엔비디아를 이끌 적임자"라는 성명을 냈다.
+
+트럼프 대통령은 CNBC 인터뷰에서 "내가 그들을 설득했다", "내가 거래를 성사시켰다"며 "알고 있는 모든 것에 비춰 우리는 그들에게 보증을 줬다"고 했다. CNBC는 소식통을 인용해 22일 트럼프의 개인적 약속이 결정적이었다고 전했다([CNBC](https://www.cnbc.com/2026/11/23/trump-nvidia-jensen-huang.html)). 트럼프는 수사로 황이 무혐의가 됐다는 취지로 말했지만, 같은 CNBC 보도는 로이터를 인용해 법무부가 복귀 전에 황을 정식으로 수사한 적은 없다고 전했다([CNBC](https://www.cnbc.com/2026/11/25/vance-jensen-huang-nvidia-doj-investigation.html)). 의회는 물러서지 않았다. 하원 3개 위원회 위원장은 황과 테터 법무책임자가 12월 1·2일 비공개 속기 인터뷰에 예정대로 나온다고 밝혔고, 상원 은행위원회는 황을 단독 증인으로 3일 공개 청문회를 연다([NBC](https://www.nbcnews.com/politics/congress/congress-criticism-jensen-huang-nvidia-reinstated-ceo-trump-rcna610926)). 슈머 상원 민주당 원내대표는 24일 X에서 황이 "미국 수출통제법을 위반해" 첨단 칩을 중국에 보냈다고 주장했다. 근거는 밝히지 않았고 입증된 혐의도 아니다([로이터(CP24 게재)](https://www.cp24.com/news/world/2026/11/24/schumer-accuses-nvidia-ceo-of-violating-us-export-control-law/)).
+
+서울의 반응은 안도였다. 과기정통부 고위 관계자는 13일 회의에서 엔비디아로부터 기존 협업 과제를 그대로 이행한다는 답을 받았다며 "일희일비할 문제는 아니지만 젠슨 황 CEO의 복귀 자체는 다행"이라고 했다([머니투데이](https://www.mt.co.kr/tech/2026/11/24/2026112413455223376)). 업계에서는 "사업의 연속성과 예측 가능성이 높아진다"는 평가가 나왔다([연합뉴스(네이트 게재)](https://m.news.nate.com/view/20261124n12433)). 정부의 새 공식 발표나 26만 장 공급에 관한 새 수치는 없었다.
+
+이 글은 이 복귀가 이 기사의 판단을 약하게 하는 것이 아니라 강하게 만든다고 본다. 정부의 "다행"이라는 반응은 한국의 AI 인프라 약속이 여전히 한 사람의 거취에 걸려 있다는 고백이다. 그리고 그 한 사람의 자리는 이제 이사회의 판단만이 아니라 미국 대통령의 보증 위에 서 있다. 이사회가 발표문에 정부 의견을 근거로 적었고, 대통령이 거래를 성사시켰다고 말했다. 한국이 기대는 사슬에 고리가 하나 늘었다. 젠슨 황 개인에서 젠슨 황과 백악관의 관계로. 12월 의회 증언과 내년 1월 민주당의 위원장직 인수는 그 고리를 다시 흔들 수 있다. 이는 해석이다.
+
 ## 서울: 창구가 닫힌 주말
 
 젠슨 황의 딸 매디슨 황 엔비디아 수석이사는 8일 서울 콘래드호텔에서 배경훈 부총리 겸 과기정통부 장관을 만나고, 9~10일 코엑스 'AI 데이 서울'에 참석하며, 9일 류제명 2차관과 스타트업 포럼을 공동 주재하고 리벨리온 본사를 찾을 예정이었다. 엔비디아는 7일 그가 "부득이한 사정으로" 참석하지 못한다고 알렸고, 연합뉴스는 소식통을 인용해 "가족 문제"라고 전했다. 과기정통부는 "면담 불발은 아쉽지만 예정된 협력과 간담회는 차질 없이 진행한다"고 했다([ZDNet Korea](https://zdnet.co.kr/view/?no=20261108115633), [코리아타임스(연합)](https://www.koreatimes.co.kr/business/companies/20261107/nvidia-ceos-daughter-cancels-planned-visit-to-korea-sources), [한국일보](https://www.hankookilbo.com/news/article/A2026110810050001381)). 취소와 의혹의 연관은 어느 보도도 확인하지 못했다. 행사는 다른 임원들이 대신 나와 예정대로 열린다.
@@ -124,7 +134,7 @@ tracking:
 
 | 대상 | 영향 | 판단 |
 |---|---|---|
-| 엔비디아 경영 | 12일 황 사임, 크레스 임시 CEO 체제. 17일 이사회 의장이 황 복귀 불가를 밝힘. 12월 1일 하원 인터뷰, 3일 상원 청문회가 이어짐 | CEO 교체 위험은 현실이 됐다. 후임이 정해질 때까지 한국과의 약속을 지킬 책임자는 임시 체제다 |
+| 엔비디아 경영 | 12일 황 사임, 크레스 임시 CEO 체제. 17일 이사회 의장이 황 복귀 불가를 밝혔으나 22일 미국 정부 의견을 근거로 황 복귀. 12월 1일 하원 인터뷰, 3일 상원 청문회는 예정대로 | CEO 교체 위험은 한 번 현실이 됐다가 되돌려졌다. 한국과의 약속을 지킬 책임자는 돌아왔지만, 그 자리는 이제 미국 정부의 보증에 기대고 있다 |
 | 한국 정부 GPU 계획 | 13일 엔비디아가 26만 장 공급을 '회사 차원에서' 재확인. 정부분 3만 5천 장 중 2만 1천 장 확보 발표 | 주어가 사람에서 회사로 옮겨진 것은 진전이다. 그래도 '확보'의 기준과 민간 몫의 계약·납기는 여전히 공개되지 않았다 |
 | 삼성·SK하이닉스 | 단기 발주 영향 없음. 수출통제 강화 시 준수 비용 증가 | 고객 다변화가 다시 과제가 된다 |
 | 피지컬 AI 협력 | 창구였던 인물의 방한 취소 | 기업 간 실무 채널로 옮겨야 한다. 리벨리온 같은 국산 NPU 기업과의 협력은 엔비디아 일정과 무관하게 진행돼야 한다 |
@@ -149,6 +159,7 @@ tracking:
 - 정부가 밝힌 '2만 1천 장 확보'가 계약 기준인지 반입 기준인지는 보도에서 확인하지 못했다. 엔비디아가 '회사 차원에서' 재확인했다는 것은 정부 발표이며, 엔비디아의 별도 공식 입장은 찾지 못했다.
 - (갱신) 크레스의 출하 중단 발언은 로이터 보도로, 거스리 위원장 서한은 저스트 더 뉴스 보도로 확인했고 서한 원문은 보지 못했다. H200에 SK하이닉스 HBM3E가 주로 쓰인다는 것은 2025년 국내 보도에 근거한다. 출하 중단 뒤 한국 정부의 26만 장 계획에 관한 새 발표는 찾지 못했다.
 - 의존 구조에 대한 판단, 수출통제 강화 전망, 영향 평가와 제안은 이 글의 해석이다.
+- (갱신) 법무부가 황을 정식 수사한 적 없다는 내용은 로이터 보도를 인용한 CNBC 기사로 확인했고 로이터 원문은 보지 못했다. 상원 은행위 공식 페이지는 열지 못해 청문회 일정은 CNBC·NBC 보도로 확인했다. 슈머의 X 게시물 전문은 확인하지 못했다.
 
 ## 갱신 기록
 
@@ -159,9 +170,18 @@ tracking:
 - 2026-11-14: 12일 황 CEO·이사 사임과 크레스 임시 CEO 선임, 황의 하원 증언 동의와 상원 은행위 12월 증언 요구, 13일 정부·엔비디아 현안점검회의와 국가AI전략위 긴급회의 반영, 확인 일정을 11월 18일·27일로 조정
 - 2026-11-18: 17일 3분기 실적과 전망, 존스 의장의 복귀 불가 발언과 황 성명, 공급 약정 증가와 공급망 발표의 한국 관련 내용, 황 하원 인터뷰 12월 1일·상원 청문회 3일 일정 반영. 11월 18·27일 확인 일정을 12월 2·3일로 변경
 - 2026-11-21: 크레스 임시 CEO의 중국향 허가 호퍼 칩 출하 중단 발언(3분기 24억 달러)과 하원 에너지상업위의 메가스피드 관련 브리핑 요구 반영
+- 2026-11-26: 22일 황 CEO 복귀(이사회가 미국 정부 고위층 의견을 근거로 명시), 트럼프의 '거래 성사' 발언과 법무부 수사 여부 엇갈림, 하원 인터뷰·상원 청문회 예정대로 진행, 슈머의 수출통제법 위반 주장, 과기정통부·업계 반응 반영
 
 ## 출처
 
+- [NVIDIA Board reinstates Jensen Huang as CEO — 엔비디아 SEC 공시 첨부 보도자료 (2026-11-23)](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nov23pressrelease.htm)
+- [NVIDIA Form 8-K — SEC (2026-11-23)](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nvda-20261122.htm)
+- [Trump says he convinced Nvidia board to bring back Huang — CNBC (2026-11-23)](https://www.cnbc.com/2026/11/23/trump-nvidia-jensen-huang.html)
+- [Vance says DOJ told him Huang was under no investigation — CNBC (2026-11-25)](https://www.cnbc.com/2026/11/25/vance-jensen-huang-nvidia-doj-investigation.html)
+- [Congress criticism of Huang reinstatement — NBC News (2026-11-23)](https://www.nbcnews.com/politics/congress/congress-criticism-jensen-huang-nvidia-reinstated-ceo-trump-rcna610926)
+- [Schumer accuses Nvidia CEO of violating US export control law — 로이터(CP24 게재, 2026-11-24)](https://www.cp24.com/news/world/2026/11/24/schumer-accuses-nvidia-ceo-of-violating-us-export-control-law/)
+- [과기정통부, 젠슨 황 복귀 예의주시 — 머니투데이 (2026-11-24)](https://www.mt.co.kr/tech/2026/11/24/2026112413455223376)
+- [젠슨 황 복귀에 국내 업계 반응 — 연합뉴스(네이트 게재, 2026-11-24)](https://m.news.nate.com/view/20261124n12433)
 - [Nvidia stops shipping US-approved AI chips to China — The Standard(Reuters) (2026-11-18)](https://www.thestandard.com.hk/china/article/348898/Nvidia-stops-shipping-US-approved-AI-chips-to-China)
 - [Nvidia stops selling AI chips to China despite US approval — Bloomberg Government (2026-11-18)](https://news.bgov.com/bloomberg-government-news/nvidia-stops-selling-ai-chips-to-china-despite-us-approval)
 - [House Commerce Committee requests briefings from Lutnick, Nvidia interim CEO — Just The News (2026-11-18)](https://justthenews.com/government/congress/house-commerce-committee-requests-briefings-lutnick-nvidia-interim-ceo-export)

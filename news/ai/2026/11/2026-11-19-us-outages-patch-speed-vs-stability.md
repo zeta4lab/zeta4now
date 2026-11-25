@@ -16,7 +16,7 @@ tags:
   - CISA
 generated_by: claude
 model: claude-opus-5-5
-updated_at: 2026-11-21T13:48:00+09:00
+updated_at: 2026-11-26T08:40:00+09:00
 tracking:
   status: closed
 ---
@@ -89,6 +89,14 @@ NSA는 20일 직원 안내에서 "일부 예외를 두고 정상 운영 중"이�
 
 이 글은 마이크로소프트 사례가 단계 배포가 필요 없다는 뜻이 아니라, 단계 배포만으로는 부족하다는 뜻이라고 본다. 몇 주에 걸친 단계 배포와 석 달의 무사고를 통과한 결함이 트래픽 이동과 용량 감소가 겹친 날 터졌다. 그렇다면 처방은 배포 속도보다 시험 장비가 실제 운영 장비를 닮았는지, 그리고 몇 달 전 변경까지 되돌릴 경로가 있는지로 옮겨 가야 한다. 미국 의회가 만들려는 조사위원회가 실명으로 확인된 유일한 'AI 패치' 장애인 NSA를 조사할 수 없고, 한국의 개정안이 점검 횟수만 늘리는 것은 두 나라 모두 아직 '빨리 찾고 빨리 고치는' 쪽만 제도로 만들고 있다는 뜻이다. 이는 해석이다.
 
+## 발행 뒤(11월 20~25일): '1시간 안에 전 세계로'와 하루 만에 악용된 드루팔 결함
+
+로이터가 24일 보도한 마이크로소프트 내부 메모에서 이 글이 짚은 충돌이 한 회사 안에 그대로 드러났다. 제이슨 헨더슨 M365 코어 사장은 이번 장애를 Exchange Online 역사상 고객 영향이 가장 큰 사고로 규정하고 '코드 레드'를 선언했다. 그는 "수년간 해 온 모든 일이 목요일에 우리를 지키기에 충분하지 않았다"고 썼다. 대책은 부하 차단, 지역별 트래픽 분할, 더 빠른 복구 장치 등 다섯 갈래이고, 앞으로 장애를 전 세계에서 1시간 안에 해소하는 것이 목표다. 헨더슨은 이달 초 앞선 메모에서 다른 사고의 긴급 수정본이 전 세계에 퍼지는 데 5~6일 걸렸다며 "가장 긴급한 보안 문제는 탐지에서 안전한 전 세계 배포까지 1시간 안에 가야 한다. 말할 필요도 없이 아직 거기에 이르지 못했다"고 했다([로이터(클레임스저널 게재)](https://www.claimsjournal.com/news/national/2026/11/24/341515.htm)). 몇 주의 단계 배포를 거친 변경이 장애를 낸 회사가, 같은 달 보안 수정은 1시간 안에 전 세계로 보내야 한다고 쓴 것이다. 메모가 전한 대책에 변경 동결이나 배포 제한은 없고, 중심은 격리와 복구 속도다.
+
+같은 주 '빨리 고쳐야 하는 이유'도 실명으로 나왔다. 드루팔은 18일 앤트로픽의 오픈소스 스캐너가 찾은 설치기 원격 코드 실행 결함(CVE-2026-132165)을 '매우 심각' 등급으로 고쳤고, 이틀 전 사전 공지에서 "몇 시간이나 며칠 안에" 공격 코드가 나올 수 있다고 경고했다. 실제 공격은 19일 19시(세계협정시)에 보고됐다. 패치가 나온 지 하루 남짓이다([드루팔](https://www.drupal.org/sa-core-2026-017), [드루팔 사전 공지](https://www.drupal.org/psa-2026-11-16)). CISA는 24일 이 결함을 '알려진 악용 취약점' 목록에 올리고 연방기관에 27일까지, 사흘 안에 조치하라고 했다. 목록 항목은 BOD 26-04 준수와 포렌식 분류를 요구한다([CISA](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-132165), [시큐리티위크](https://www.securityweek.com/drupal-flaw-found-by-anthropic-scanner-exploited-in-attacks/)).
+
+이 글은 두 사건을 함께 읽어야 한다고 본다. AI가 찾은 결함은 패치 하루 만에 공격으로 이어졌고, 그래서 '1시간 배포'라는 목표는 과장이 아니다. 그러나 그 목표를 내건 회사는 동시에 몇 달 전 변경 하나로 하루를 멈췄다. 마이크로소프트의 답은 속도를 늦추는 것이 아니라 터져도 작게 터지고 빨리 돌아오게 하는 것이고, 이는 이 글이 처방으로 든 되돌릴 경로와 같은 방향이다. 한국 금융당국의 개정 예고에는 아직 이 두 번째 절반이 없다. 이는 해석이다.
+
 ## 무엇을 바꿔야 하나
 
 1. **패치 속도와 장애율을 함께 보고하게 한다.** 지금 규정과 평가는 '얼마나 빨리 고쳤나'를 잰다. 같은 보고서에 '고친 뒤 몇 번 시스템이 멈췄나'(변경 실패율)를 넣지 않으면, 기관은 시한을 지키려고 시험을 줄인다.
@@ -104,12 +112,20 @@ NSA는 20일 직원 안내에서 "일부 예외를 두고 정상 운영 중"이�
 - 전자금융감독규정은 2025년 2월 시행본으로 확인했고, 2026년 7월 개정 고시와 시행세칙 원문은 대조하지 못했다. '충분한 테스트' 문구는 개정 전 조문이며 현재는 세칙으로 옮겨진 것으로 보인다.
 - 2026년 국내 금융권에서 보안 패치가 직접 원인이 된 전산장애 사례는 찾지 못했다.
 - (갱신) 마이크로소프트 예비 사후 보고서는 회사가 아니라 프랑스 매체 넥스트가 게재한 사본으로 확인했다. 최종 보고서는 고객 관리자에게만 제공되는 것으로 보이며 공개된 내용은 찾지 못했다. NSA 복구와 PHP 패치 관련성은 소식통 보도이고 NSA 공식 입장은 17일 성명 그대로다.
+- (갱신) 마이크로소프트 '코드 레드' 메모는 로이터 원문이 아니라 클레임스저널 재게재본으로 확인했고, 메모의 정확한 날짜는 기사에 없다. 7월 결함이 보안 패치였는지는 여전히 확인되지 않았다. 드루팔 결함의 공격 규모는 공개되지 않았고, 이 패치로 장애가 났다는 보고는 찾지 못했다.
 
 ## 갱신 기록
 
 - 2026-11-21: 마이크로소프트 예비 사후 보고서 원문의 '단계 배포를 거친 결함' 내용, NSA 복구와 의회 청문회 발언, 체이스 버그의 타 은행 파급, 루트 코즈 법안 발의(NSA 제외), 금융위 전자금융감독규정 개정 예고 반영. 최종 보고서가 공개되지 않아 확인 일정을 지우고 추적 종료
+- 2026-11-26: 마이크로소프트 내부 '코드 레드' 메모(1시간 복구·배포 목표)와 앤트로픽 스캐너가 찾은 드루팔 결함의 패치 하루 뒤 악용, CISA 3일 조치 기한 반영
 
 ## 출처
+
+- [Microsoft Declares 'Code Red' After Historic Outage, Internal Memos Show — 로이터(클레임스저널 게재, 2026-11-24)](https://www.claimsjournal.com/news/national/2026/11/24/341515.htm)
+- [SA-CORE-2026-017: Drupal core - Highly critical - Remote code execution — 드루팔 (2026-11-18)](https://www.drupal.org/sa-core-2026-017)
+- [PSA-2026-11-16 — 드루팔 (2026-11-16)](https://www.drupal.org/psa-2026-11-16)
+- [Known Exploited Vulnerabilities Catalog: CVE-2026-132165 — CISA (2026-11-24)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-132165)
+- [Drupal flaw found by Anthropic scanner exploited in attacks — SecurityWeek (2026-11-25)](https://www.securityweek.com/drupal-flaw-found-by-anthropic-scanner-exploited-in-attacks/)
 
 - [Preliminary Post Incident Report for Microsoft 365 (2026-11-15) — 넥스트 게재](https://next.ink/wp-content/uploads/2026/11/PostIncidentReport.pdf)
 - [NSA internal network outage resolved — 내셔널데스크 (2026-11-20)](https://thenationaldesk.com/news/americas-news-now/nsa-national-security-agency-internal-network-outage-resolved-after-3-days-sources-say-maryland-headquarters-employees-staggered-start-time-classified-information-scheduled-maintenance-foreign-intelligence-military-policymakers)
