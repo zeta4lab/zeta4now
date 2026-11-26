@@ -12,15 +12,15 @@ tags:
 summary: 메타가 9월 Connect 2026에서 레이밴 메타 3세대와 카메라 없는 오디오 안경을 내놓았고, 3세대는 10월 12일 국내에서도 74만 원부터 판매를 시작했다. 2021년 첫 모델부터 세대별 변화와 장단점을 정리하고, 이 기기가 맞는 사람과 기다려도 되는 사람을 나눠 봤다.
 generated_by: claude
 model: claude-opus-5-5
-updated_at: 2026-10-31T12:43:00+09:00
+updated_at: 2026-11-27T08:51:00+09:00
 tracking:
   status: ongoing
   last_update:
-    at: 2026-10-31T12:43:00+09:00
-    note: 두 재단의 가처분 기일 신청(10.13)과 소비자연맹 소송 제기(10.15), 암스테르담 지방법원 11월 26일 심리 반영
+    at: 2026-11-27T08:51:00+09:00
+    note: 11월 26일 암스테르담 지방법원 가처분 심리(원고·메타·에실로룩소티카 주장)와 12월 24일 판결 선고 일정 반영
   checkpoints:
-    - date: 2026-11-26
-      note: 암스테르담 지방법원의 메타 안경 소송 심리 결과와 판결 선고 일정
+    - date: 2026-12-24
+      note: 암스테르담 지방법원 가처분 판결 선고(오전 10시). 판매 금지 또는 설정 변경 명령 여부
 ---
 
 # 메타 AI 안경 5년…세대별로 무엇이 달라졌고 누구에게 필요한가
@@ -37,7 +37,7 @@ Connect 2026의 발표는 '선택지 확대'로 요약된다. 레이밴 메타 3
 
 시장은 메타가 사실상 독주하고 있다. 카운터포인트리서치에 따르면 2026년 상반기 AI 안경 출하량은 1년 전보다 263% 늘었고, 디스플레이 없는 AI 안경 시장에서 메타 점유율은 94%였다([9to5Mac](https://9to5mac.com/2026/09/21/report-ai-glasses-shipments-surged-263-in-h1-2026-as-apple-prepares-to-enter-the-market/)). 생산을 맡은 에실로룩소티카는 2분기 AI 안경 매출이 전년 대비 거의 두 배가 됐다고 밝혔다([Investing.com](https://www.investing.com/news/transcripts/earnings-call-transcript-essilorluxottica-posts-solid-h1-2026-growth-93CH-4817816)). 삼성·구글은 젠틀몬스터·와비파커와 만든 안드로이드 XR 안경 4종을 "올가을" 출시한다고 밝혔지만 가격은 공개하지 않았다([Road to VR](https://roadtovr.com/samsung-google-smart-glasses-designs-gentle-monster-warby-parker-release/)).
 
-사생활 논란은 오히려 커졌다. 네덜란드 안경 체인 한스 안데르스는 10월 초 네덜란드·벨기에에서 메타 안경 판매를 무기한 중단했다. 네덜란드 소비자연맹은 촬영 표시등(LED)을 스티커로 가린 채 촬영할 수 있었다며 메타에 10월 13일을 기한으로 이행 최고장을 보냈다([VRT](https://www.vrt.be/vrtnws/nl/2026/10/02/hans-anders-schort-verkoop-van-meta-camerabril-op-ook-in-belgie/)). 메타는 최신 모델은 LED를 가리면 카메라가 꺼진다고 설명한다. 기한인 10월 13일 메타는 네덜란드에서 판매를 중단하지 않겠다고 밝혔다. 안경 사업을 맡은 알렉스 하이멜은 기자간담회에서 이 논란을 카메라 달린 스마트폰이 처음 나왔을 때에 비유했다. 오프리미츠와 더파이어월 두 재단은 가처분 소송(kort geding)을 내기로 했고, 소비자연맹은 법적 조치를 검토한다고 했다([iBestuur](https://ibestuur.nl/data-en-ai/ethiek/meta-weigert-camerabrillen-uit-verkoop-te-halen)). 두 재단은 13일 오후 법원에 가처분 심리 기일을 신청했고, 몰래 촬영할 수 있는 한 안경을 시장에서 빼라고 요구한다([Villamedia](https://www.villamedia.nl/artikel/consumentenbond-offlimits-en-the-firewall-stappen-naar-rechter-om-meta-bril)). 소비자연맹도 15일 메타를 상대로 소송을 낸다고 밝혔고, 심리는 11월 26일 암스테르담 지방법원에서 열린다([Consumentenbond](https://www.consumentenbond.nl/nieuws/2026/consumentenbond-start-rechtszaak-tegen-meta-om-camerabril)). 소비자연맹은 메타가 판결 뒤 2주 안에 안경과 기본 설정을 고치고 촬영물을 AI 학습에 쓰지 말라고 요구한다. 메타가 법에 맞출 수 없다고 하면 판매 금지를 청구하되, 의료상 필요한 경우는 예외로 해 달라고 했다([MIXED](https://mixed-news.com/en/consumentenbond-court-case-meta-camera-glasses-sales-ban/)). 10월 31일 현재 판결은 나오지 않았다.
+사생활 논란은 오히려 커졌다. 네덜란드 안경 체인 한스 안데르스는 10월 초 네덜란드·벨기에에서 메타 안경 판매를 무기한 중단했다. 네덜란드 소비자연맹은 촬영 표시등(LED)을 스티커로 가린 채 촬영할 수 있었다며 메타에 10월 13일을 기한으로 이행 최고장을 보냈다([VRT](https://www.vrt.be/vrtnws/nl/2026/10/02/hans-anders-schort-verkoop-van-meta-camerabril-op-ook-in-belgie/)). 메타는 최신 모델은 LED를 가리면 카메라가 꺼진다고 설명한다. 기한인 10월 13일 메타는 네덜란드에서 판매를 중단하지 않겠다고 밝혔다. 안경 사업을 맡은 알렉스 하이멜은 기자간담회에서 이 논란을 카메라 달린 스마트폰이 처음 나왔을 때에 비유했다. 오프리미츠와 더파이어월 두 재단은 가처분 소송(kort geding)을 내기로 했고, 소비자연맹은 법적 조치를 검토한다고 했다([iBestuur](https://ibestuur.nl/data-en-ai/ethiek/meta-weigert-camerabrillen-uit-verkoop-te-halen)). 두 재단은 13일 오후 법원에 가처분 심리 기일을 신청했고, 몰래 촬영할 수 있는 한 안경을 시장에서 빼라고 요구한다([Villamedia](https://www.villamedia.nl/artikel/consumentenbond-offlimits-en-the-firewall-stappen-naar-rechter-om-meta-bril)). 소비자연맹도 15일 메타를 상대로 소송을 낸다고 밝혔고, 심리는 11월 26일 암스테르담 지방법원에서 열린다([Consumentenbond](https://www.consumentenbond.nl/nieuws/2026/consumentenbond-start-rechtszaak-tegen-meta-om-camerabril)). 소비자연맹은 메타가 판결 뒤 2주 안에 안경과 기본 설정을 고치고 촬영물을 AI 학습에 쓰지 말라고 요구한다. 메타가 법에 맞출 수 없다고 하면 판매 금지를 청구하되, 의료상 필요한 경우는 예외로 해 달라고 했다([MIXED](https://mixed-news.com/en/consumentenbond-court-case-meta-camera-glasses-sales-ban/)). 두 사건은 11월 26일 오전 암스테르담 지방법원에서 함께 심리됐다. 원고 측은 메타를 "세계 최대의 사생활 침해자"라고 불렀고, 오프리미츠 변호인은 직접 안경을 써 봤더니 "몰래 엿보는 사람이 된 기분이었지만 아무도 알아보지 못했다", "많은 피해자는 자신이 촬영된 사실조차 모른다"고 했다. 메타는 안경이 몰래 녹화하는 장치로 설계되거나 판매되지 않았고 소수 사용자의 오용까지 책임질 수 없으며, 판매 금지는 판사가 아니라 정치권과 감독기관이 정할 일이고 가처분이 아니라 본안 소송에서 다룰 사안이라고 맞섰다. 안경 데이터로 AI를 학습시킨다는 주장은 부인했다. 에실로룩소티카는 "사용자가 내리는 결정은 안경의 속성이 아니다"라고 했다([TPO](https://tpo.nl/2026/11/26/meta-camerabril-kort-geding-verkoopverbod-amsterdam/), [Adformatie](https://www.adformatie.nl/tech/artificial-intelligence/organisaties-eisen-in-kort-geding-verkoopverbod-meta-bril)). 판결은 12월 24일 오전 10시에 선고된다([The Firewall](https://www.thefirewall.eu/metabril)). 쟁점은 결국 하나로 모인다. 오용을 막을 책임이 쓰는 사람에게 있는가, 오용이 쉬운 설계를 판 회사에 있는가다. 법원이 어느 쪽 손을 들든, 국내에서 같은 안경을 사는 사람에게는 촬영 표시등이 상대에게 보이는지가 여전히 가장 현실적인 확인 사항이다. 이는 해석이다.
 
 ## 세대별 비교
 
@@ -93,9 +93,13 @@ Connect 2026의 발표는 '선택지 확대'로 요약된다. 레이밴 메타 3
 
 - 2026-10-15: 레이밴 메타 3세대 국내 출시(10월 12일, 74만 원부터) 반영, 메타의 네덜란드 판매 중단 거부와 두 재단의 가처분 소송 예고 추가
 - 2026-10-31: 오프리미츠·더파이어월의 가처분 심리 기일 신청(10월 13일), 소비자연맹 소송 제기(10월 15일)와 11월 26일 암스테르담 지방법원 심리 일정 반영
+- 2026-11-27: 11월 26일 암스테르담 지방법원 가처분 심리 내용과 12월 24일 판결 선고 일정 반영. 11월 26일 확인 일정을 12월 24일로 변경
 
 ## 출처
 
+- [Meta camerabril kort geding verkoopverbod Amsterdam — TPO (2026-11-26)](https://tpo.nl/2026/11/26/meta-camerabril-kort-geding-verkoopverbod-amsterdam/)
+- [Organisaties eisen in kort geding verkoopverbod Meta-bril — Adformatie (2026-11-26)](https://www.adformatie.nl/tech/artificial-intelligence/organisaties-eisen-in-kort-geding-verkoopverbod-meta-bril)
+- [Meta-bril rechtszaak — The Firewall](https://www.thefirewall.eu/metabril)
 - [Ray-Ban Meta Audio and the deepest AI glasses lineup — Meta](https://www.meta.com/blog/ray-ban-meta-audio-and-deepest-ai-glasses-lineup/)
 - [Meta Connect 2026: everything we announced — Meta](https://www.meta.com/blog/meta-connect-2026-everything-we-announced/)
 - [The biggest news from Connect 2026 — Meta](https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/)
